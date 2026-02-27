@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Camp &amp; Afterschool Care Finder</title>
+  <meta name="description" content="Find summer camps and afterschool care programs for K–12 students in your area. Filter by grade, subject, cost, and more." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ===== Header ===== -->
+  <header>
+    <div class="header-content">
+      <span class="header-icon">🏕️</span>
+      <h1>Camp &amp; Afterschool Care Finder</h1>
+      <p class="subtitle">Explore summer camps and afterschool programs for K–12 students. Filter by grade, subject, location, and budget.</p>
+    </div>
+  </header>
+
+  <!-- ===== Main Content ===== -->
+  <main>
+
+    <!-- Search & Filter Panel -->
+    <section class="filter-panel" aria-label="Search and filter programs">
+      <div class="search-row">
+        <div class="search-box">
+          <span class="search-icon" aria-hidden="true">🔍</span>
+          <input
+            type="search"
+            id="searchInput"
+            placeholder="Search by name, organization, or keyword…"
+            aria-label="Search programs"
+            autocomplete="off"
+          />
+        </div>
+        <button class="btn-clear-search" id="btnClearSearch" aria-label="Clear search">Clear</button>
+      </div>
+
+      <div class="filter-grid">
+        <div class="filter-group">
+          <label for="filterType">Program Type</label>
+          <select id="filterType" aria-label="Filter by program type">
+            <option value="">All Types</option>
+            <option value="Summer Camp">Summer Camp</option>
+            <option value="Afterschool Care">Afterschool Care</option>
+            <option value="Both">Both</option>
+          </select>
+        </div>
+
+        <div class="filter-group">
+          <label for="filterSession">Session</label>
+          <select id="filterSession" aria-label="Filter by session type">
+            <option value="">All Sessions</option>
+            <option value="Summer">Summer</option>
+            <option value="School Year">School Year</option>
+            <option value="Year-Round">Year-Round</option>
+          </select>
+        </div>
+
+        <div class="filter-group">
+          <label for="filterGrades">Grade</label>
+          <select id="filterGrades" aria-label="Filter by grade">
+            <option value="">All Grades</option>
+            <option value="K">Kindergarten</option>
+            <option value="1">1st Grade</option>
+            <option value="2">2nd Grade</option>
+            <option value="3">3rd Grade</option>
+            <option value="4">4th Grade</option>
+            <option value="5">5th Grade</option>
+            <option value="6">6th Grade</option>
+            <option value="7">7th Grade</option>
+            <option value="8">8th Grade</option>
+            <option value="9">9th Grade</option>
+            <option value="10">10th Grade</option>
+            <option value="11">11th Grade</option>
+            <option value="12">12th Grade</option>
+          </select>
+        </div>
+
+        <div class="filter-group">
+          <label for="filterCity">City</label>
+          <select id="filterCity" aria-label="Filter by city">
+            <option value="">All Cities</option>
+            <option value="Springfield">Springfield</option>
+            <option value="Riverside">Riverside</option>
+            <option value="Lakewood">Lakewood</option>
+            <option value="Westfield">Westfield</option>
+          </select>
+        </div>
+
+        <div class="filter-group">
+          <label for="filterSubject">Subject / Activity</label>
+          <select id="filterSubject" aria-label="Filter by subject or activity">
+            <option value="">All Subjects</option>
+            <option value="STEM">STEM</option>
+            <option value="Science">Science</option>
+            <option value="Technology">Technology</option>
+            <option value="Coding">Coding</option>
+            <option value="Math">Math</option>
+            <option value="Reading">Reading</option>
+            <option value="Writing">Writing</option>
+            <option value="Arts">Arts</option>
+            <option value="Drama">Drama</option>
+            <option value="Music">Music</option>
+            <option value="Sports">Sports</option>
+            <option value="Soccer">Soccer</option>
+            <option value="Basketball">Basketball</option>
+            <option value="Outdoor Education">Outdoor Education</option>
+            <option value="Nature">Nature</option>
+            <option value="Homework Help">Homework Help</option>
+          </select>
+        </div>
+
+        <div class="filter-group">
+          <label for="filterMaxCost">Max Cost (monthly equiv.)</label>
+          <select id="filterMaxCost" aria-label="Filter by maximum cost">
+            <option value="">Any Cost</option>
+            <option value="0">Free only</option>
+            <option value="100">Up to $100</option>
+            <option value="200">Up to $200</option>
+            <option value="400">Up to $400</option>
+            <option value="800">Up to $800</option>
+          </select>
+        </div>
+
+        <div class="filter-group">
+          <label for="filterScholarship">Financial Aid</label>
+          <select id="filterScholarship" aria-label="Filter by scholarship availability">
+            <option value="">Any</option>
+            <option value="yes">Aid Available</option>
+          </select>
+        </div>
+      </div>
+    </section>
+
+    <!-- Results Header -->
+    <div class="results-header">
+      <p class="results-count" id="resultsCount" aria-live="polite"></p>
+      <button class="btn-reset" id="btnReset">Reset All Filters</button>
+    </div>
+
+    <!-- Program Cards -->
+    <div class="cards-grid" id="cardsGrid" role="list" aria-label="Program listings"></div>
+
+    <!-- No Results State -->
+    <div class="no-results" id="noResults" style="display:none;" role="status">
+      <span class="no-results-icon">🔎</span>
+      <h3>No programs found</h3>
+      <p>Try adjusting your search or filters to see more results.</p>
+    </div>
+
+  </main>
+
+  <!-- ===== Program Detail Modal ===== -->
+  <div class="modal-overlay" id="modalOverlay" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal">
+      <div class="modal-header">
+        <div class="modal-header-text">
+          <span id="modalBadge" class="card-type-badge"></span>
+          <h2 class="modal-title" id="modalTitle"></h2>
+          <p class="modal-org" id="modalOrg"></p>
+        </div>
+        <button class="modal-close" id="modalClose" aria-label="Close details">✕</button>
+      </div>
+
+      <div class="modal-body">
+        <div class="modal-section">
+          <h4>About This Program</h4>
+          <p class="modal-description" id="modalDescription"></p>
+        </div>
+
+        <div class="modal-section">
+          <h4>Program Details</h4>
+          <div class="modal-detail-grid">
+            <div class="modal-detail-item">
+              <span class="modal-detail-label">Grades Served</span>
+              <span class="modal-detail-value" id="modalGrades"></span>
+            </div>
+            <div class="modal-detail-item">
+              <span class="modal-detail-label">Session Type</span>
+              <span class="modal-detail-value" id="modalSession"></span>
+            </div>
+            <div class="modal-detail-item">
+              <span class="modal-detail-label">Hours</span>
+              <span class="modal-detail-value" id="modalHours"></span>
+            </div>
+            <div class="modal-detail-item">
+              <span class="modal-detail-label">Days</span>
+              <span class="modal-detail-value" id="modalDays"></span>
+            </div>
+            <div class="modal-detail-item">
+              <span class="modal-detail-label">Cost</span>
+              <span class="modal-detail-value" id="modalCost"></span>
+            </div>
+            <div class="modal-detail-item">
+              <span class="modal-detail-label">Financial Aid</span>
+              <span class="modal-detail-value" id="modalScholarship"></span>
+            </div>
+            <div class="modal-detail-item">
+              <span class="modal-detail-label">Transportation</span>
+              <span class="modal-detail-value" id="modalTransportation"></span>
+            </div>
+            <div class="modal-detail-item">
+              <span class="modal-detail-label">Meals Provided</span>
+              <span class="modal-detail-value" id="modalMeals"></span>
+            </div>
+            <div class="modal-detail-item">
+              <span class="modal-detail-label">Registration</span>
+              <span class="modal-detail-value" id="modalRegistration"></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal-section">
+          <h4>Activities &amp; Subjects</h4>
+          <div class="tags" id="modalSubjects"></div>
+        </div>
+
+        <div class="modal-section">
+          <h4>Contact &amp; Location</h4>
+          <div class="modal-detail-grid">
+            <div class="modal-detail-item" style="grid-column: 1 / -1;">
+              <span class="modal-detail-label">📍 Address</span>
+              <span class="modal-detail-value" id="modalLocation"></span>
+            </div>
+            <div class="modal-detail-item">
+              <span class="modal-detail-label">📞 Phone</span>
+              <span class="modal-detail-value" id="modalPhone"></span>
+            </div>
+            <div class="modal-detail-item">
+              <span class="modal-detail-label">✉️ Email</span>
+              <a class="modal-detail-value" id="modalEmail" href="#"></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <a class="btn-primary" id="modalWebsiteLink" href="#" target="_blank" rel="noopener noreferrer">🌐 Visit Website</a>
+        <a class="btn-secondary" id="modalEmailBtn" href="#">✉️ Send Email</a>
+        <button class="btn-secondary" id="modalCloseBtn">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== Footer ===== -->
+  <footer>
+    <p>Camp &amp; Afterschool Care Finder &mdash; Helping families in the K–12 community find the right programs.</p>
+    <p style="margin-top:0.4rem;">Program information is collected from public sources. Contact programs directly to confirm availability and details.</p>
+  </footer>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
