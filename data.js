@@ -24,7 +24,7 @@ const programsData = [
     "subjects": [
       "Equestrian"
     ],
-    "description": "",
+    "description": "AC Equestrians, Charlotte. 553 likes · 7 talking about this · 28 were here. Founded by Ashley Clark my mission is to provide a solid foundation for riders, whether you are just wanting to interact...",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -55,7 +55,7 @@ const programsData = [
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
     "subjects": [],
-    "description": "",
+    "description": "Aikido of Champlain Valley offers this summer program in Vermont. Open to students in grades 2–6.",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -88,7 +88,7 @@ const programsData = [
     "subjects": [
       "Basketball"
     ],
-    "description": "",
+    "description": "Alisa Kresge Basketball Camp @ UVM offers this summer program in Vermont. Open to students in grades 1–9. Activities include Basketball. Cost: $75 per week.",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -121,7 +121,7 @@ const programsData = [
     "subjects": [
       "Basketball"
     ],
-    "description": "",
+    "description": "Alisa Kresge Basketball Camp @ UVM offers this summer program in Vermont. Activities include Basketball.",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -151,8 +151,12 @@ const programsData = [
     "hours": "",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [],
-    "description": "",
+    "subjects": [
+      "Arts",
+      "Music",
+      "Swim"
+    ],
+    "description": "For over 25 years we have been offering summer camps to the children of Central Vermont. At AllTogetherNow! Summer Camps we know how to have fun! Days are spent outside, telling stories, swimming in the pool, making art, stilt walking, singing, playing co",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -183,7 +187,7 @@ const programsData = [
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
     "subjects": [],
-    "description": "",
+    "description": "Animal Welfare Warriors (Chittenden Humane Society) offers this summer program in South Burlington, VT. Open to students in grades 8–9. Cost: $300 per session.",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -214,7 +218,7 @@ const programsData = [
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
     "subjects": [],
-    "description": "",
+    "description": "Arbaseque Etc. offers this summer program in Richmond, VT. Cost: $10 per day.",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -247,7 +251,7 @@ const programsData = [
     "subjects": [
       "Outdoor Education"
     ],
-    "description": "",
+    "description": "Arrowhead Forest Farm offers this summer program in Milton, VT. Activities include Outdoor Education. Cost: $45 per day.",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -310,8 +314,10 @@ const programsData = [
     "hours": "",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [],
-    "description": "",
+    "subjects": [
+      "Outdoor Education"
+    ],
+    "description": "Calling all explorers, investigators, and lovers of nature - sign your child up and they will discover our 255 acres of wild and fun!",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -341,8 +347,10 @@ const programsData = [
     "hours": "",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [],
-    "description": "",
+    "subjects": [
+      "Outdoor Education"
+    ],
+    "description": "Calling all explorers, investigators, and lovers of nature - sign your child up and they will discover our 255 acres of wild and fun!",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -372,8 +380,10 @@ const programsData = [
     "hours": "",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [],
-    "description": "",
+    "subjects": [
+      "Outdoor Education"
+    ],
+    "description": "Calling all explorers, investigators, and lovers of nature - sign your child up and they will discover our 255 acres of wild and fun!",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -403,8 +413,10 @@ const programsData = [
     "hours": "",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [],
-    "description": "",
+    "subjects": [
+      "Outdoor Education"
+    ],
+    "description": "Calling all explorers, investigators, and lovers of nature - sign your child up and they will discover our 255 acres of wild and fun!",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -434,8 +446,10 @@ const programsData = [
     "hours": "",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [],
-    "description": "",
+    "subjects": [
+      "Outdoor Education"
+    ],
+    "description": "Calling all explorers, investigators, and lovers of nature - sign your child up and they will discover our 255 acres of wild and fun!",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -465,8 +479,10 @@ const programsData = [
     "hours": "",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [],
-    "description": "",
+    "subjects": [
+      "Outdoor Education"
+    ],
+    "description": "Calling all explorers, investigators, and lovers of nature - sign your child up and they will discover our 255 acres of wild and fun!",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -496,8 +512,10 @@ const programsData = [
     "hours": "",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [],
-    "description": "",
+    "subjects": [
+      "Outdoor Education"
+    ],
+    "description": "Calling all explorers, investigators, and lovers of nature - sign your child up and they will discover our 255 acres of wild and fun!",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -527,8 +545,10 @@ const programsData = [
     "hours": "",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [],
-    "description": "",
+    "subjects": [
+      "Outdoor Education"
+    ],
+    "description": "Calling all explorers, investigators, and lovers of nature - sign your child up and they will discover our 255 acres of wild and fun!",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -629,7 +649,7 @@ const programsData = [
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
     "subjects": [],
-    "description": "",
+    "description": "Boys and Girls club of Burlington offers this summer program in Vermont. Open to students in grades 1–8.",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -972,7 +992,7 @@ const programsData = [
     "subjects": [
       "Arts"
     ],
-    "description": "",
+    "description": "Burlington City Arts offers this summer program in Burlington, VT. Activities include Arts.",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -1003,7 +1023,7 @@ const programsData = [
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
     "subjects": [],
-    "description": "",
+    "description": "Disc Golf Vermont offers a limited number of Disc Golf Summer Camps throughout the state. Camps are lead by Innova professional and DGVT owner, Chris Young",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -1036,7 +1056,7 @@ const programsData = [
     "subjects": [
       "Soccer"
     ],
-    "description": "",
+    "description": "BFC has sponsorship opportunities at all levels.   CLICK HERE  to inquire about how your business can become a BFC Sponsor.",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -1067,9 +1087,10 @@ const programsData = [
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
     "subjects": [
-      "Basketball"
+      "Basketball",
+      "Swim"
     ],
-    "description": "",
+    "description": "Spend Your Summer at Burlington, Vermont Parks! Find the latest info on Summer Camps, Beaches, and Events from Burlington Parks, Recreation & Waterfront",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -1099,8 +1120,10 @@ const programsData = [
     "hours": "08:00 AM – 12:00 PM",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [],
-    "description": "",
+    "subjects": [
+      "Swim"
+    ],
+    "description": "Spend Your Summer at Burlington, Vermont Parks! Find the latest info on Summer Camps, Beaches, and Events from Burlington Parks, Recreation & Waterfront",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -1130,8 +1153,10 @@ const programsData = [
     "hours": "09:00 AM – 12:00 PM",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [],
-    "description": "",
+    "subjects": [
+      "Swim"
+    ],
+    "description": "Spend Your Summer at Burlington, Vermont Parks! Find the latest info on Summer Camps, Beaches, and Events from Burlington Parks, Recreation & Waterfront",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -1162,9 +1187,10 @@ const programsData = [
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
     "subjects": [
-      "Basketball"
+      "Basketball",
+      "Swim"
     ],
-    "description": "",
+    "description": "Spend Your Summer at Burlington, Vermont Parks! Find the latest info on Summer Camps, Beaches, and Events from Burlington Parks, Recreation & Waterfront",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -1194,8 +1220,10 @@ const programsData = [
     "hours": "09:00 AM – 12:00 PM",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [],
-    "description": "",
+    "subjects": [
+      "Swim"
+    ],
+    "description": "Spend Your Summer at Burlington, Vermont Parks! Find the latest info on Summer Camps, Beaches, and Events from Burlington Parks, Recreation & Waterfront",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -1225,8 +1253,10 @@ const programsData = [
     "hours": "09:00 AM – 12:00 PM",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [],
-    "description": "",
+    "subjects": [
+      "Swim"
+    ],
+    "description": "Spend Your Summer at Burlington, Vermont Parks! Find the latest info on Summer Camps, Beaches, and Events from Burlington Parks, Recreation & Waterfront",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -1256,8 +1286,10 @@ const programsData = [
     "hours": "09:30 AM – 12:00 PM",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [],
-    "description": "",
+    "subjects": [
+      "Swim"
+    ],
+    "description": "Spend Your Summer at Burlington, Vermont Parks! Find the latest info on Summer Camps, Beaches, and Events from Burlington Parks, Recreation & Waterfront",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -1287,8 +1319,10 @@ const programsData = [
     "hours": "09:00 AM – 12:00 PM",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [],
-    "description": "",
+    "subjects": [
+      "Swim"
+    ],
+    "description": "Spend Your Summer at Burlington, Vermont Parks! Find the latest info on Summer Camps, Beaches, and Events from Burlington Parks, Recreation & Waterfront",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -1318,8 +1352,10 @@ const programsData = [
     "hours": "08:00 AM – 12:00 PM",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [],
-    "description": "",
+    "subjects": [
+      "Swim"
+    ],
+    "description": "Spend Your Summer at Burlington, Vermont Parks! Find the latest info on Summer Camps, Beaches, and Events from Burlington Parks, Recreation & Waterfront",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -1350,9 +1386,10 @@ const programsData = [
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
     "subjects": [
-      "Soccer"
+      "Soccer",
+      "Swim"
     ],
-    "description": "",
+    "description": "Spend Your Summer at Burlington, Vermont Parks! Find the latest info on Summer Camps, Beaches, and Events from Burlington Parks, Recreation & Waterfront",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -1383,9 +1420,10 @@ const programsData = [
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
     "subjects": [
-      "Soccer"
+      "Soccer",
+      "Swim"
     ],
-    "description": "",
+    "description": "Spend Your Summer at Burlington, Vermont Parks! Find the latest info on Summer Camps, Beaches, and Events from Burlington Parks, Recreation & Waterfront",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -1415,8 +1453,10 @@ const programsData = [
     "hours": "09:00 AM – 12:00 PM",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [],
-    "description": "",
+    "subjects": [
+      "Swim"
+    ],
+    "description": "Spend Your Summer at Burlington, Vermont Parks! Find the latest info on Summer Camps, Beaches, and Events from Burlington Parks, Recreation & Waterfront",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -1446,8 +1486,10 @@ const programsData = [
     "hours": "09:30 AM – 12:00 PM",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [],
-    "description": "",
+    "subjects": [
+      "Swim"
+    ],
+    "description": "Spend Your Summer at Burlington, Vermont Parks! Find the latest info on Summer Camps, Beaches, and Events from Burlington Parks, Recreation & Waterfront",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -1477,8 +1519,10 @@ const programsData = [
     "hours": "09:00 AM – 12:00 PM",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [],
-    "description": "",
+    "subjects": [
+      "Swim"
+    ],
+    "description": "Spend Your Summer at Burlington, Vermont Parks! Find the latest info on Summer Camps, Beaches, and Events from Burlington Parks, Recreation & Waterfront",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -1508,8 +1552,10 @@ const programsData = [
     "hours": "09:00 AM – 12:00 PM",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [],
-    "description": "",
+    "subjects": [
+      "Swim"
+    ],
+    "description": "Spend Your Summer at Burlington, Vermont Parks! Find the latest info on Summer Camps, Beaches, and Events from Burlington Parks, Recreation & Waterfront",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -1539,8 +1585,10 @@ const programsData = [
     "hours": "09:00 AM – 12:00 PM",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [],
-    "description": "",
+    "subjects": [
+      "Swim"
+    ],
+    "description": "Spend Your Summer at Burlington, Vermont Parks! Find the latest info on Summer Camps, Beaches, and Events from Burlington Parks, Recreation & Waterfront",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -1570,8 +1618,10 @@ const programsData = [
     "hours": "09:30 AM – 12:00 PM",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [],
-    "description": "",
+    "subjects": [
+      "Swim"
+    ],
+    "description": "Spend Your Summer at Burlington, Vermont Parks! Find the latest info on Summer Camps, Beaches, and Events from Burlington Parks, Recreation & Waterfront",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -1601,8 +1651,10 @@ const programsData = [
     "hours": "08:00 AM – 12:00 PM",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [],
-    "description": "",
+    "subjects": [
+      "Swim"
+    ],
+    "description": "Spend Your Summer at Burlington, Vermont Parks! Find the latest info on Summer Camps, Beaches, and Events from Burlington Parks, Recreation & Waterfront",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -1632,8 +1684,10 @@ const programsData = [
     "hours": "09:00 AM – 12:00 PM",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [],
-    "description": "",
+    "subjects": [
+      "Swim"
+    ],
+    "description": "Spend Your Summer at Burlington, Vermont Parks! Find the latest info on Summer Camps, Beaches, and Events from Burlington Parks, Recreation & Waterfront",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -1664,9 +1718,10 @@ const programsData = [
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
     "subjects": [
-      "Soccer"
+      "Soccer",
+      "Swim"
     ],
-    "description": "",
+    "description": "Spend Your Summer at Burlington, Vermont Parks! Find the latest info on Summer Camps, Beaches, and Events from Burlington Parks, Recreation & Waterfront",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -1697,9 +1752,10 @@ const programsData = [
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
     "subjects": [
-      "Basketball"
+      "Basketball",
+      "Swim"
     ],
-    "description": "",
+    "description": "Spend Your Summer at Burlington, Vermont Parks! Find the latest info on Summer Camps, Beaches, and Events from Burlington Parks, Recreation & Waterfront",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -1729,8 +1785,10 @@ const programsData = [
     "hours": "09:30 AM – 12:00 PM",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [],
-    "description": "",
+    "subjects": [
+      "Swim"
+    ],
+    "description": "Spend Your Summer at Burlington, Vermont Parks! Find the latest info on Summer Camps, Beaches, and Events from Burlington Parks, Recreation & Waterfront",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -1760,8 +1818,10 @@ const programsData = [
     "hours": "09:00 AM – 12:00 PM",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [],
-    "description": "",
+    "subjects": [
+      "Swim"
+    ],
+    "description": "Spend Your Summer at Burlington, Vermont Parks! Find the latest info on Summer Camps, Beaches, and Events from Burlington Parks, Recreation & Waterfront",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -1791,8 +1851,10 @@ const programsData = [
     "hours": "08:00 AM – 12:00 PM",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [],
-    "description": "",
+    "subjects": [
+      "Swim"
+    ],
+    "description": "Spend Your Summer at Burlington, Vermont Parks! Find the latest info on Summer Camps, Beaches, and Events from Burlington Parks, Recreation & Waterfront",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -1822,8 +1884,10 @@ const programsData = [
     "hours": "09:30 AM – 12:00 PM",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [],
-    "description": "",
+    "subjects": [
+      "Swim"
+    ],
+    "description": "Spend Your Summer at Burlington, Vermont Parks! Find the latest info on Summer Camps, Beaches, and Events from Burlington Parks, Recreation & Waterfront",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -1853,8 +1917,10 @@ const programsData = [
     "hours": "09:00 AM – 12:00 PM",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [],
-    "description": "",
+    "subjects": [
+      "Swim"
+    ],
+    "description": "Spend Your Summer at Burlington, Vermont Parks! Find the latest info on Summer Camps, Beaches, and Events from Burlington Parks, Recreation & Waterfront",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -1884,8 +1950,10 @@ const programsData = [
     "hours": "08:00 AM – 12:00 PM",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [],
-    "description": "",
+    "subjects": [
+      "Swim"
+    ],
+    "description": "Spend Your Summer at Burlington, Vermont Parks! Find the latest info on Summer Camps, Beaches, and Events from Burlington Parks, Recreation & Waterfront",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -1916,9 +1984,10 @@ const programsData = [
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
     "subjects": [
-      "Soccer"
+      "Soccer",
+      "Swim"
     ],
-    "description": "",
+    "description": "Spend Your Summer at Burlington, Vermont Parks! Find the latest info on Summer Camps, Beaches, and Events from Burlington Parks, Recreation & Waterfront",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -1949,9 +2018,10 @@ const programsData = [
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
     "subjects": [
-      "Soccer"
+      "Soccer",
+      "Swim"
     ],
-    "description": "",
+    "description": "Spend Your Summer at Burlington, Vermont Parks! Find the latest info on Summer Camps, Beaches, and Events from Burlington Parks, Recreation & Waterfront",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -1981,8 +2051,10 @@ const programsData = [
     "hours": "12:00 AM – 03:00 PM",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [],
-    "description": "",
+    "subjects": [
+      "Swim"
+    ],
+    "description": "Spend Your Summer at Burlington, Vermont Parks! Find the latest info on Summer Camps, Beaches, and Events from Burlington Parks, Recreation & Waterfront",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -2012,8 +2084,10 @@ const programsData = [
     "hours": "12:00 AM – 03:00 PM",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [],
-    "description": "",
+    "subjects": [
+      "Swim"
+    ],
+    "description": "Spend Your Summer at Burlington, Vermont Parks! Find the latest info on Summer Camps, Beaches, and Events from Burlington Parks, Recreation & Waterfront",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -2044,9 +2118,10 @@ const programsData = [
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
     "subjects": [
-      "Soccer"
+      "Soccer",
+      "Swim"
     ],
-    "description": "",
+    "description": "Spend Your Summer at Burlington, Vermont Parks! Find the latest info on Summer Camps, Beaches, and Events from Burlington Parks, Recreation & Waterfront",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -2076,8 +2151,10 @@ const programsData = [
     "hours": "12:00 AM – 03:00 PM",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [],
-    "description": "",
+    "subjects": [
+      "Swim"
+    ],
+    "description": "Spend Your Summer at Burlington, Vermont Parks! Find the latest info on Summer Camps, Beaches, and Events from Burlington Parks, Recreation & Waterfront",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -2108,9 +2185,10 @@ const programsData = [
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
     "subjects": [
-      "Soccer"
+      "Soccer",
+      "Swim"
     ],
-    "description": "",
+    "description": "Spend Your Summer at Burlington, Vermont Parks! Find the latest info on Summer Camps, Beaches, and Events from Burlington Parks, Recreation & Waterfront",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -2140,8 +2218,10 @@ const programsData = [
     "hours": "12:30 AM – 03:30 PM",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [],
-    "description": "",
+    "subjects": [
+      "Swim"
+    ],
+    "description": "Spend Your Summer at Burlington, Vermont Parks! Find the latest info on Summer Camps, Beaches, and Events from Burlington Parks, Recreation & Waterfront",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -2171,8 +2251,10 @@ const programsData = [
     "hours": "09:00 AM – 04:00 PM",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [],
-    "description": "",
+    "subjects": [
+      "Swim"
+    ],
+    "description": "Spend Your Summer at Burlington, Vermont Parks! Find the latest info on Summer Camps, Beaches, and Events from Burlington Parks, Recreation & Waterfront",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -2202,8 +2284,10 @@ const programsData = [
     "hours": "09:00 AM – 04:00 PM",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [],
-    "description": "",
+    "subjects": [
+      "Swim"
+    ],
+    "description": "Spend Your Summer at Burlington, Vermont Parks! Find the latest info on Summer Camps, Beaches, and Events from Burlington Parks, Recreation & Waterfront",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -2234,9 +2318,10 @@ const programsData = [
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
     "subjects": [
-      "Arts"
+      "Arts",
+      "Swim"
     ],
-    "description": "",
+    "description": "Spend Your Summer at Burlington, Vermont Parks! Find the latest info on Summer Camps, Beaches, and Events from Burlington Parks, Recreation & Waterfront",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -2266,8 +2351,10 @@ const programsData = [
     "hours": "09:00 AM – 04:00 PM",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [],
-    "description": "",
+    "subjects": [
+      "Swim"
+    ],
+    "description": "Spend Your Summer at Burlington, Vermont Parks! Find the latest info on Summer Camps, Beaches, and Events from Burlington Parks, Recreation & Waterfront",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -2298,9 +2385,10 @@ const programsData = [
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
     "subjects": [
-      "Basketball"
+      "Basketball",
+      "Swim"
     ],
-    "description": "",
+    "description": "Spend Your Summer at Burlington, Vermont Parks! Find the latest info on Summer Camps, Beaches, and Events from Burlington Parks, Recreation & Waterfront",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -2331,9 +2419,10 @@ const programsData = [
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
     "subjects": [
-      "Science"
+      "Science",
+      "Swim"
     ],
-    "description": "",
+    "description": "Spend Your Summer at Burlington, Vermont Parks! Find the latest info on Summer Camps, Beaches, and Events from Burlington Parks, Recreation & Waterfront",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -2363,8 +2452,10 @@ const programsData = [
     "hours": "09:00 AM – 04:00 PM",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [],
-    "description": "",
+    "subjects": [
+      "Swim"
+    ],
+    "description": "Spend Your Summer at Burlington, Vermont Parks! Find the latest info on Summer Camps, Beaches, and Events from Burlington Parks, Recreation & Waterfront",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -2394,8 +2485,10 @@ const programsData = [
     "hours": "09:00 AM – 04:00 PM",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [],
-    "description": "",
+    "subjects": [
+      "Swim"
+    ],
+    "description": "Spend Your Summer at Burlington, Vermont Parks! Find the latest info on Summer Camps, Beaches, and Events from Burlington Parks, Recreation & Waterfront",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -2426,9 +2519,10 @@ const programsData = [
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
     "subjects": [
-      "Equestrian"
+      "Equestrian",
+      "Swim"
     ],
-    "description": "",
+    "description": "Spend Your Summer at Burlington, Vermont Parks! Find the latest info on Summer Camps, Beaches, and Events from Burlington Parks, Recreation & Waterfront",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -2459,9 +2553,10 @@ const programsData = [
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
     "subjects": [
-      "Arts"
+      "Arts",
+      "Swim"
     ],
-    "description": "",
+    "description": "Spend Your Summer at Burlington, Vermont Parks! Find the latest info on Summer Camps, Beaches, and Events from Burlington Parks, Recreation & Waterfront",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -2492,9 +2587,10 @@ const programsData = [
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
     "subjects": [
-      "Soccer"
+      "Soccer",
+      "Swim"
     ],
-    "description": "",
+    "description": "Spend Your Summer at Burlington, Vermont Parks! Find the latest info on Summer Camps, Beaches, and Events from Burlington Parks, Recreation & Waterfront",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -2524,8 +2620,10 @@ const programsData = [
     "hours": "09:00 AM – 04:00 PM",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [],
-    "description": "",
+    "subjects": [
+      "Swim"
+    ],
+    "description": "Spend Your Summer at Burlington, Vermont Parks! Find the latest info on Summer Camps, Beaches, and Events from Burlington Parks, Recreation & Waterfront",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -2555,8 +2653,10 @@ const programsData = [
     "hours": "09:00 AM – 04:00 PM",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [],
-    "description": "",
+    "subjects": [
+      "Swim"
+    ],
+    "description": "Spend Your Summer at Burlington, Vermont Parks! Find the latest info on Summer Camps, Beaches, and Events from Burlington Parks, Recreation & Waterfront",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -2586,8 +2686,10 @@ const programsData = [
     "hours": "08:30 AM – 04:30 PM",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [],
-    "description": "",
+    "subjects": [
+      "Swim"
+    ],
+    "description": "Spend Your Summer at Burlington, Vermont Parks! Find the latest info on Summer Camps, Beaches, and Events from Burlington Parks, Recreation & Waterfront",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -2617,8 +2719,10 @@ const programsData = [
     "hours": "08:30 AM – 04:30 PM",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [],
-    "description": "",
+    "subjects": [
+      "Swim"
+    ],
+    "description": "Spend Your Summer at Burlington, Vermont Parks! Find the latest info on Summer Camps, Beaches, and Events from Burlington Parks, Recreation & Waterfront",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -2648,8 +2752,10 @@ const programsData = [
     "hours": "08:30 AM – 04:30 PM",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [],
-    "description": "",
+    "subjects": [
+      "Swim"
+    ],
+    "description": "Spend Your Summer at Burlington, Vermont Parks! Find the latest info on Summer Camps, Beaches, and Events from Burlington Parks, Recreation & Waterfront",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -2679,8 +2785,10 @@ const programsData = [
     "hours": "08:30 AM – 04:30 PM",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [],
-    "description": "",
+    "subjects": [
+      "Swim"
+    ],
+    "description": "Spend Your Summer at Burlington, Vermont Parks! Find the latest info on Summer Camps, Beaches, and Events from Burlington Parks, Recreation & Waterfront",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -2710,8 +2818,10 @@ const programsData = [
     "hours": "08:30 AM – 04:30 PM",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [],
-    "description": "",
+    "subjects": [
+      "Swim"
+    ],
+    "description": "Spend Your Summer at Burlington, Vermont Parks! Find the latest info on Summer Camps, Beaches, and Events from Burlington Parks, Recreation & Waterfront",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -2741,8 +2851,10 @@ const programsData = [
     "hours": "08:30 AM – 04:30 PM",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [],
-    "description": "",
+    "subjects": [
+      "Swim"
+    ],
+    "description": "Spend Your Summer at Burlington, Vermont Parks! Find the latest info on Summer Camps, Beaches, and Events from Burlington Parks, Recreation & Waterfront",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -2772,8 +2884,10 @@ const programsData = [
     "hours": "08:30 AM – 04:30 PM",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [],
-    "description": "",
+    "subjects": [
+      "Swim"
+    ],
+    "description": "Spend Your Summer at Burlington, Vermont Parks! Find the latest info on Summer Camps, Beaches, and Events from Burlington Parks, Recreation & Waterfront",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -2803,8 +2917,10 @@ const programsData = [
     "hours": "08:30 AM – 04:30 PM",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [],
-    "description": "",
+    "subjects": [
+      "Swim"
+    ],
+    "description": "Spend Your Summer at Burlington, Vermont Parks! Find the latest info on Summer Camps, Beaches, and Events from Burlington Parks, Recreation & Waterfront",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -2834,8 +2950,10 @@ const programsData = [
     "hours": "08:30 AM – 04:30 PM",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [],
-    "description": "",
+    "subjects": [
+      "Swim"
+    ],
+    "description": "Spend Your Summer at Burlington, Vermont Parks! Find the latest info on Summer Camps, Beaches, and Events from Burlington Parks, Recreation & Waterfront",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -2865,8 +2983,10 @@ const programsData = [
     "hours": "08:30 AM – 04:30 PM",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [],
-    "description": "",
+    "subjects": [
+      "Swim"
+    ],
+    "description": "Spend Your Summer at Burlington, Vermont Parks! Find the latest info on Summer Camps, Beaches, and Events from Burlington Parks, Recreation & Waterfront",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -2896,8 +3016,10 @@ const programsData = [
     "hours": "08:30 AM – 04:30 PM",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [],
-    "description": "",
+    "subjects": [
+      "Swim"
+    ],
+    "description": "Spend Your Summer at Burlington, Vermont Parks! Find the latest info on Summer Camps, Beaches, and Events from Burlington Parks, Recreation & Waterfront",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -2927,8 +3049,10 @@ const programsData = [
     "hours": "08:30 AM – 04:30 PM",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [],
-    "description": "",
+    "subjects": [
+      "Swim"
+    ],
+    "description": "Spend Your Summer at Burlington, Vermont Parks! Find the latest info on Summer Camps, Beaches, and Events from Burlington Parks, Recreation & Waterfront",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -2958,8 +3082,10 @@ const programsData = [
     "hours": "08:30 AM – 04:30 PM",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [],
-    "description": "",
+    "subjects": [
+      "Swim"
+    ],
+    "description": "Spend Your Summer at Burlington, Vermont Parks! Find the latest info on Summer Camps, Beaches, and Events from Burlington Parks, Recreation & Waterfront",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -2989,8 +3115,10 @@ const programsData = [
     "hours": "08:30 AM – 04:30 PM",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [],
-    "description": "",
+    "subjects": [
+      "Swim"
+    ],
+    "description": "Spend Your Summer at Burlington, Vermont Parks! Find the latest info on Summer Camps, Beaches, and Events from Burlington Parks, Recreation & Waterfront",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -3020,8 +3148,10 @@ const programsData = [
     "hours": "08:30 AM – 04:30 PM",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [],
-    "description": "",
+    "subjects": [
+      "Swim"
+    ],
+    "description": "Spend Your Summer at Burlington, Vermont Parks! Find the latest info on Summer Camps, Beaches, and Events from Burlington Parks, Recreation & Waterfront",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -3051,8 +3181,10 @@ const programsData = [
     "hours": "12:00 AM – 05:00 PM",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [],
-    "description": "",
+    "subjects": [
+      "Swim"
+    ],
+    "description": "Spend Your Summer at Burlington, Vermont Parks! Find the latest info on Summer Camps, Beaches, and Events from Burlington Parks, Recreation & Waterfront",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -3082,8 +3214,10 @@ const programsData = [
     "hours": "12:00 AM – 05:00 PM",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [],
-    "description": "",
+    "subjects": [
+      "Swim"
+    ],
+    "description": "Spend Your Summer at Burlington, Vermont Parks! Find the latest info on Summer Camps, Beaches, and Events from Burlington Parks, Recreation & Waterfront",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -3113,8 +3247,10 @@ const programsData = [
     "hours": "01:00 AM – 05:00 PM",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [],
-    "description": "",
+    "subjects": [
+      "Swim"
+    ],
+    "description": "Spend Your Summer at Burlington, Vermont Parks! Find the latest info on Summer Camps, Beaches, and Events from Burlington Parks, Recreation & Waterfront",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -3144,8 +3280,10 @@ const programsData = [
     "hours": "12:00 AM – 05:00 PM",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [],
-    "description": "",
+    "subjects": [
+      "Swim"
+    ],
+    "description": "Spend Your Summer at Burlington, Vermont Parks! Find the latest info on Summer Camps, Beaches, and Events from Burlington Parks, Recreation & Waterfront",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -3175,8 +3313,10 @@ const programsData = [
     "hours": "01:00 AM – 05:00 PM",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [],
-    "description": "",
+    "subjects": [
+      "Swim"
+    ],
+    "description": "Spend Your Summer at Burlington, Vermont Parks! Find the latest info on Summer Camps, Beaches, and Events from Burlington Parks, Recreation & Waterfront",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -3206,8 +3346,10 @@ const programsData = [
     "hours": "12:00 AM – 05:00 PM",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [],
-    "description": "",
+    "subjects": [
+      "Swim"
+    ],
+    "description": "Spend Your Summer at Burlington, Vermont Parks! Find the latest info on Summer Camps, Beaches, and Events from Burlington Parks, Recreation & Waterfront",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -3237,8 +3379,10 @@ const programsData = [
     "hours": "12:00 AM – 05:00 PM",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [],
-    "description": "",
+    "subjects": [
+      "Swim"
+    ],
+    "description": "Spend Your Summer at Burlington, Vermont Parks! Find the latest info on Summer Camps, Beaches, and Events from Burlington Parks, Recreation & Waterfront",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -3269,7 +3413,7 @@ const programsData = [
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
     "subjects": [],
-    "description": "",
+    "description": "Burlington School District offers this summer program in Burlington, VT.",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -3517,7 +3661,7 @@ const programsData = [
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
     "subjects": [],
-    "description": "",
+    "description": "Burlington Tennis Club offers this summer program in South Burlington, VT. Cost: $412 per session.",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -3548,7 +3692,7 @@ const programsData = [
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
     "subjects": [],
-    "description": "",
+    "description": "Burlington YMCA offers Camp Splash in Burlington, VT. Open to students in grades K–10. Cost: $375 per session.",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -3579,7 +3723,7 @@ const programsData = [
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
     "subjects": [],
-    "description": "",
+    "description": "Burlington YMCA offers Camp Splash in Burlington, VT. Open to students in grades K–10. Cost: $375 per session.",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -3610,7 +3754,7 @@ const programsData = [
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
     "subjects": [],
-    "description": "",
+    "description": "Burlington YMCA offers Camp Splash in Burlington, VT. Open to students in grades K–10. Cost: $375 per session.",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -3641,7 +3785,7 @@ const programsData = [
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
     "subjects": [],
-    "description": "",
+    "description": "Burlington YMCA offers Camp Splash in Burlington, VT. Open to students in grades K–10. Cost: $375 per session.",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -3672,7 +3816,7 @@ const programsData = [
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
     "subjects": [],
-    "description": "",
+    "description": "Burlington YMCA offers Camp Splash in Burlington, VT. Open to students in grades K–10. Cost: $375 per session.",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -3703,7 +3847,7 @@ const programsData = [
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
     "subjects": [],
-    "description": "",
+    "description": "Burlington YMCA offers Camp Splash in Burlington, VT. Open to students in grades K–10. Cost: $375 per session.",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -3734,7 +3878,7 @@ const programsData = [
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
     "subjects": [],
-    "description": "",
+    "description": "Burlington YMCA offers Camp Splash in Burlington, VT. Open to students in grades K–10. Cost: $375 per session.",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -3765,7 +3909,7 @@ const programsData = [
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
     "subjects": [],
-    "description": "",
+    "description": "Burlington YMCA offers Camp Splash in Burlington, VT. Open to students in grades K–10. Cost: $375 per session.",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -3833,7 +3977,7 @@ const programsData = [
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
     "subjects": [],
-    "description": "",
+    "description": "Come join us at Camp Outright - the residential summer camp with a queer twist! Here, we believe in empowerment and self-expression for all. Ready to make some lifelong friends and unforgettable memories?",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -3864,7 +4008,7 @@ const programsData = [
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
     "subjects": [],
-    "description": "",
+    "description": "Camp Paw Paw (Chittenden Humane Society) offers this summer program in South Burlington, VT. Open to students in grades K–6. Cost: $259 per session.",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -3895,7 +4039,7 @@ const programsData = [
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
     "subjects": [],
-    "description": "",
+    "description": "Camp Splash - Burlington Y offers this summer program in Vermont.",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -3928,7 +4072,7 @@ const programsData = [
     "subjects": [
       "Soccer"
     ],
-    "description": "",
+    "description": "Capital Soccer offers this summer program in Vermont. Activities include Soccer.",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -3959,7 +4103,7 @@ const programsData = [
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
     "subjects": [],
-    "description": "",
+    "description": "Catamount Kids offers this summer program in St. Albans, VT. Open to students in grades 3–8.",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -4982,7 +5126,7 @@ const programsData = [
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
     "subjects": [],
-    "description": "",
+    "description": "CHAMP - Champlain Adaptive Mounted Program offers this summer program in South Hero, VT. Open to students in grades 1–12.",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -5015,7 +5159,7 @@ const programsData = [
     "subjects": [
       "Equestrian"
     ],
-    "description": "",
+    "description": "Charlotte Equestrian Center-Horse Camp offers this summer program in Charlotte, VT. Open to students in grades K–12. Activities include Equestrian. Cost: $400 per session.",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -5232,7 +5376,7 @@ const programsData = [
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
     "subjects": [],
-    "description": "",
+    "description": "Christ the King Saplings Camp offers this summer program in Burlington, VT. Open to students in grades 3–8. Cost: $375 per session.",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -5329,7 +5473,7 @@ const programsData = [
     "subjects": [
       "Arts"
     ],
-    "description": "",
+    "description": "Colchester Parks & Recreation Department offers this summer program in Colchester, VT. Activities include Arts.",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -5923,7 +6067,7 @@ const programsData = [
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
     "subjects": [],
-    "description": "",
+    "description": "Crow Path offers this summer program in Vermont. Cost: $400 per week.",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -5954,7 +6098,7 @@ const programsData = [
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
     "subjects": [],
-    "description": "",
+    "description": "Davis Studio offers this summer program in South Burlington, VT. Cost: $415 per session.",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -6377,8 +6521,12 @@ const programsData = [
     "hours": "",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [],
-    "description": "",
+    "subjects": [
+      "Arts",
+      "Equestrian",
+      "Swim"
+    ],
+    "description": "For children ages 5 and up. Children will be kept very busy with horseback riding, games on horseback, crafts, barn chores, caring for the horses, fun barn games, lessons on horse anatomy, breeds, tack, and more! During the warmer days, children will get to bathe the horses, learn the proper way to clean the tack, and have some water fun of their own!",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -6409,7 +6557,7 @@ const programsData = [
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
     "subjects": [],
-    "description": "",
+    "description": "Enchantment Camps offers this summer program in Vermont.",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -6440,9 +6588,10 @@ const programsData = [
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
     "subjects": [
+      "STEM",
       "Arts"
     ],
-    "description": "",
+    "description": "Please note that EJRP has switched to a new software system as of August, 2025. If you have not created a new account for your family since then, you will need to prior to completing the Summer Full Day Camps registration process.",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -6738,7 +6887,7 @@ const programsData = [
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
     "subjects": [],
-    "description": "",
+    "description": "Flynn Center offers this summer program in Burlington, VT.",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -6769,7 +6918,7 @@ const programsData = [
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
     "subjects": [],
-    "description": "",
+    "description": "Flynn Center offers this summer program in Vermont.",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -6802,7 +6951,7 @@ const programsData = [
     "subjects": [
       "Dance"
     ],
-    "description": "",
+    "description": "Footworks Studio of Dance offers this summer program in Milton, VT. Activities include Dance.",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -6833,7 +6982,7 @@ const programsData = [
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
     "subjects": [],
-    "description": "",
+    "description": "Full Stride Summer Hockey Camp offers this summer program in South Burlington, VT.",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -6863,8 +7012,10 @@ const programsData = [
     "hours": "",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [],
-    "description": "",
+    "subjects": [
+      "Dance"
+    ],
+    "description": "Our goal at Fusion 802 is to pass on to our students the love of dance in a safe, friendly and fun environment",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -6895,7 +7046,7 @@ const programsData = [
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
     "subjects": [],
-    "description": "",
+    "description": "Future Einsteins offers this summer program in Vermont.",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -6926,7 +7077,7 @@ const programsData = [
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
     "subjects": [],
-    "description": "",
+    "description": "Gan Isreal offers this summer program in Burlington, VT. Cost: $375 per session.",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -7087,7 +7238,7 @@ const programsData = [
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
     "subjects": [],
-    "description": "",
+    "description": "Girl Scouts Camp Fansworth offers this summer program in Thetford, VT.",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -7118,7 +7269,7 @@ const programsData = [
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
     "subjects": [],
-    "description": "",
+    "description": "Girl Scouts Twin Hills Day Camp offers this summer program in Richmond, VT.",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -7151,7 +7302,7 @@ const programsData = [
     "subjects": [
       "Sports"
     ],
-    "description": "",
+    "description": "Gina Bullard of WCAX recently visited Gonzo’s HD Sports to talk with Steve Gonsalves about some tips to help get ready for golf season. Watch the video on WCAX.",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -7478,7 +7629,7 @@ const programsData = [
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
     "subjects": [],
-    "description": "",
+    "description": "Green Mountain Field Hockey Academy offers this summer program in Burlington, VT.",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -7509,7 +7660,7 @@ const programsData = [
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
     "subjects": [],
-    "description": "",
+    "description": "Green Mountain Lacrosse Camp offers this summer program in Vermont. Cost: $150 per session.",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -7540,7 +7691,7 @@ const programsData = [
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
     "subjects": [],
-    "description": "",
+    "description": "Green Mountain Training Center offers this summer program in Williston, VT.",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -7604,7 +7755,7 @@ const programsData = [
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
     "subjects": [],
-    "description": "",
+    "description": "Hard'ack Recreation Area & Pool (dates presented are all of St. Abans Rec - location unclear) offers this summer program in St. Albans, VT. Cost: $318 per session.",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -7634,8 +7785,10 @@ const programsData = [
     "hours": "",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [],
-    "description": "",
+    "subjects": [
+      "Swim"
+    ],
+    "description": "Hockey camp location in Waterbury, Vermont",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -7666,7 +7819,7 @@ const programsData = [
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
     "subjects": [],
-    "description": "",
+    "description": "Hometown Hockey VT offers this summer program in South Burlington, VT.",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -7697,7 +7850,7 @@ const programsData = [
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
     "subjects": [],
-    "description": "",
+    "description": "To inspire people of all ages to learn, explore, grow, and become their best selves.",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -7730,7 +7883,7 @@ const programsData = [
     "subjects": [
       "Outdoor Education"
     ],
-    "description": "",
+    "description": "To inspire people of all ages to learn, explore, grow, and become their best selves.",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -7761,7 +7914,7 @@ const programsData = [
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
     "subjects": [],
-    "description": "",
+    "description": "International Sailing School & Club offers this summer program in Colchester, VT.",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -7792,7 +7945,7 @@ const programsData = [
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
     "subjects": [],
-    "description": "",
+    "description": "Iyengar Yoga Center -Yoga Adventure Camp offers this summer program in Burlington, VT. Cost: $325 per session.",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -7823,7 +7976,7 @@ const programsData = [
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
     "subjects": [],
-    "description": "",
+    "description": "Jay Peak Resort offers this summer program in Jay, VT.",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -7854,7 +8007,7 @@ const programsData = [
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
     "subjects": [],
-    "description": "",
+    "description": "Jay Peak Resort offers this summer program in Vermont.",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -7885,7 +8038,7 @@ const programsData = [
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
     "subjects": [],
-    "description": "",
+    "description": "Jericho Parks and Recreation offers this summer program in Jericho, VT.",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -7918,7 +8071,7 @@ const programsData = [
     "subjects": [
       "Basketball"
     ],
-    "description": "",
+    "description": "John Becker Basketball Camp offers this summer program in Vermont. Activities include Basketball. Cost: $425 per session.",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -7949,7 +8102,7 @@ const programsData = [
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
     "subjects": [],
-    "description": "",
+    "description": "Jordan Kent’s Just Kids Skill Camp offers this summer program in Burlington, VT.",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -8152,7 +8305,7 @@ const programsData = [
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
     "subjects": [],
-    "description": "",
+    "description": "Lake Champlain Waldorf School offers this summer program in Shelburne, VT. Cost: $360 per session.",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -8183,7 +8336,7 @@ const programsData = [
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
     "subjects": [],
-    "description": "",
+    "description": "Lake Champlain Yacht Club Junior Sailing Program offers this summer program in Vermont.",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -8250,7 +8403,7 @@ const programsData = [
     "subjects": [
       "STEM"
     ],
-    "description": "",
+    "description": "LetGoYourMind, Lego STEM Programs offers this summer program in Burlington, VT. Activities include STEM. Cost: $415 per session.",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -8317,7 +8470,7 @@ const programsData = [
       "Outdoor Education",
       "Equestrian"
     ],
-    "description": "",
+    "description": "Livery Horse Farm offers this summer program in Hinesburg, VT. Activities include Outdoor Education, Equestrian.",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -8348,9 +8501,10 @@ const programsData = [
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
     "subjects": [
+      "Arts",
       "Drama"
     ],
-    "description": "",
+    "description": "Low pressure & designed by age group - starting at 6, focused on unleashing imagination",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -8381,7 +8535,7 @@ const programsData = [
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
     "subjects": [],
-    "description": "",
+    "description": "Coed day camp offering traditional camp activities.",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -8414,7 +8568,7 @@ const programsData = [
     "subjects": [
       "Drama"
     ],
-    "description": "",
+    "description": "Lyric Theatre Company offers this summer program in South Burlington, VT. Activities include Drama.",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -8447,7 +8601,7 @@ const programsData = [
     "subjects": [
       "Technology"
     ],
-    "description": "",
+    "description": "Makery offers this summer program in Burlington, VT. Activities include Technology.",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -8478,7 +8632,7 @@ const programsData = [
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
     "subjects": [],
-    "description": "",
+    "description": "75 Maple Street, Essex Junction, VT 05452",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -8509,7 +8663,7 @@ const programsData = [
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
     "subjects": [],
-    "description": "",
+    "description": "Martial Way Self Defense Center offers Summer Camp in Vermont. Open to students in grades 2–8.",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -8540,7 +8694,7 @@ const programsData = [
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
     "subjects": [],
-    "description": "",
+    "description": "Martial Way Self Defense Center offers Summer Camp in Vermont. Open to students in grades 2–8.",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -8571,7 +8725,7 @@ const programsData = [
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
     "subjects": [],
-    "description": "",
+    "description": "Martial Way Self Defense Center offers Summer Camp in Vermont. Open to students in grades 2–8.",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -8604,7 +8758,7 @@ const programsData = [
     "subjects": [
       "Arts"
     ],
-    "description": "",
+    "description": "Martial Way Self Defense Center offers this summer program in Colchester, VT. Activities include Arts.",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -8635,7 +8789,7 @@ const programsData = [
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
     "subjects": [],
-    "description": "",
+    "description": "Mater Christi Camp offers this summer program in Burlington, VT. Cost: $395 per session.",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -8666,7 +8820,7 @@ const programsData = [
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
     "subjects": [],
-    "description": "",
+    "description": "Metro Rock offers this summer program in Essex, VT. Cost: $460 per day.",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -8699,7 +8853,7 @@ const programsData = [
     "subjects": [
       "Arts"
     ],
-    "description": "",
+    "description": "Milton Recreation Department offers this summer program in Milton, VT. Activities include Arts.",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -8764,7 +8918,7 @@ const programsData = [
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
     "subjects": [],
-    "description": "",
+    "description": "Do you love yarn? Must Love Yarn is an online and brick & mortar yarn store located in Vermont. Many unique yarns and products from Vermont and New England.",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -8795,7 +8949,7 @@ const programsData = [
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
     "subjects": [],
-    "description": "",
+    "description": "Myers Memorial Pool offers this summer program in Vermont.",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -8828,7 +8982,7 @@ const programsData = [
     "subjects": [
       "Outdoor Education"
     ],
-    "description": "",
+    "description": "New Horizons Farm LLC offers this summer program in Vermont. Activities include Outdoor Education.",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -8861,7 +9015,7 @@ const programsData = [
     "subjects": [
       "Outdoor Education"
     ],
-    "description": "",
+    "description": "New Village Farm offers this summer program in Shelburne, VT. Open to students in grade K. Activities include Outdoor Education. Cost: $390 per week.",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -8894,7 +9048,7 @@ const programsData = [
     "subjects": [
       "Outdoor Education"
     ],
-    "description": "",
+    "description": "North Branch Nature Center offers this summer program in Vermont. Activities include Outdoor Education.",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -8925,7 +9079,7 @@ const programsData = [
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
     "subjects": [],
-    "description": "",
+    "description": "Ohavi Zedek Summer Day Camp offers this summer program in Vermont.",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -9388,7 +9542,7 @@ const programsData = [
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
     "subjects": [],
-    "description": "",
+    "description": "Owl Feet Studio offers this summer program in Charlotte, VT.",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -9418,8 +9572,10 @@ const programsData = [
     "hours": "",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [],
-    "description": "",
+    "subjects": [
+      "Arts"
+    ],
+    "description": "Claire Giroux-Williams, former owner of the Burlington Paint & Sip Studio, is now bringing the party to you!",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -9449,8 +9605,10 @@ const programsData = [
     "hours": "",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [],
-    "description": "",
+    "subjects": [
+      "Outdoor Education"
+    ],
+    "description": "More than just a rock climbing camp, Petra Cliffs SumMAT (Summer “Mountain Adventure Training”) Camps provides a variety of opportunities for campers to challenge themselves mentally and physically through daily outdoor adventures. Each year, our Outdoor Expeditions and Day Camp programs provide cam",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -9481,9 +9639,11 @@ const programsData = [
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
     "subjects": [
-      "Equestrian"
+      "Arts",
+      "Equestrian",
+      "Swim"
     ],
-    "description": "",
+    "description": "For children ages 5 and up. Children will be kept very busy with horseback riding, games on horseback, crafts, barn chores, caring for the horses, fun barn games, lessons on horse anatomy, breeds, tack and more! During the warmer days, children will get to bathe the horses, learn the proper way to clean the tack and have some water fun of their own! All while making friends at ELPH!",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -9514,7 +9674,7 @@ const programsData = [
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
     "subjects": [],
-    "description": "",
+    "description": "Purple Knights offers this summer program in Colchester, VT.",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -9545,7 +9705,7 @@ const programsData = [
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
     "subjects": [],
-    "description": "",
+    "description": "Red Clover Camp offers this summer program in Lamoille Valley, VT.",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -9576,7 +9736,7 @@ const programsData = [
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
     "subjects": [],
-    "description": "",
+    "description": "Regal Gymnastics Academy offers this summer program in Vermont.",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -9607,7 +9767,7 @@ const programsData = [
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
     "subjects": [],
-    "description": "",
+    "description": "ReTribe offers this summer program in Vermont.",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -9640,7 +9800,7 @@ const programsData = [
     "subjects": [
       "Arts"
     ],
-    "description": "",
+    "description": "River Arts is a nonprofit community arts center located in the historic Peoples Academy schoolhouse in downtown Morrisville, Vermont. Home to two gallery spaces, a clay studio, classes & camps - we hope to see you soon!",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -9671,7 +9831,7 @@ const programsData = [
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
     "subjects": [],
-    "description": "",
+    "description": "Saint Michael's College Summer Camps offers this summer program in Vermont.",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -9704,7 +9864,7 @@ const programsData = [
     "subjects": [
       "Arts"
     ],
-    "description": "",
+    "description": "School of Creative and Performing Arts (SOCAPA) offers this summer program in Vermont. Activities include Arts.",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -9737,7 +9897,7 @@ const programsData = [
     "subjects": [
       "Outdoor Education"
     ],
-    "description": "",
+    "description": "Shelburne Farms offers this summer program in Shelburne, VT. Open to students in grades K–11. Activities include Outdoor Education. Cost: $325 per session.",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -9768,7 +9928,7 @@ const programsData = [
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
     "subjects": [],
-    "description": "",
+    "description": "Shelburne Museum Summer Camps offers this summer program in Shelburne, VT.",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -9801,7 +9961,7 @@ const programsData = [
     "subjects": [
       "Soccer"
     ],
-    "description": "",
+    "description": "South Burlington Parks, Recreation and Waterfront offers Soccer Sparks Camp in Vermont. Open to students in grades 2–5. Activities include Soccer. Cost: $175 per session.",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -9832,7 +9992,7 @@ const programsData = [
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
     "subjects": [],
-    "description": "",
+    "description": "South Burlington Parks, Recreation and Waterfront offers Chess Wizard Camp in Vermont. Open to students in grades 1–5. Cost: $260 per session.",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -9865,7 +10025,7 @@ const programsData = [
     "subjects": [
       "Soccer"
     ],
-    "description": "",
+    "description": "South Burlington Parks, Recreation and Waterfront offers Flag Football Camp 2025 in Vermont. Open to students in grades 4–8. Activities include Soccer. Cost: $175 per session.",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -9898,7 +10058,7 @@ const programsData = [
     "subjects": [
       "Drama"
     ],
-    "description": "",
+    "description": "South Burlington Parks, Recreation and Waterfront offers Improv Comedy Camp in Vermont. Open to students in grades 6–7. Activities include Drama. Cost: $190 per session.",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -9929,7 +10089,7 @@ const programsData = [
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
     "subjects": [],
-    "description": "",
+    "description": "South Burlington Parks, Recreation and Waterfront offers Baseball Camp in Vermont. Open to students in grades 2–6. Cost: $175 per session.",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -9960,7 +10120,7 @@ const programsData = [
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
     "subjects": [],
-    "description": "",
+    "description": "South Burlington Parks, Recreation and Waterfront offers Tennis Camp in Vermont. Open to students in grades K–7. Cost: $145 per session.",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -9993,7 +10153,7 @@ const programsData = [
     "subjects": [
       "Arts"
     ],
-    "description": "",
+    "description": "South Burlington Parks, Recreation and Waterfront offers Wicked Cool for Kids Summer Camps 2025 - Hogwarts STEAM Express in Vermont. Open to students in grades 1–5. Activities include Arts. Cost: $330 per session.",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -10026,7 +10186,7 @@ const programsData = [
     "subjects": [
       "Drama"
     ],
-    "description": "",
+    "description": "South Burlington Parks, Recreation and Waterfront offers Improv Comedy Camp in Vermont. Open to students in grades 6–7. Activities include Drama. Cost: $190 per session.",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -10057,7 +10217,7 @@ const programsData = [
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
     "subjects": [],
-    "description": "",
+    "description": "South Burlington Parks, Recreation and Waterfront offers Chess Wizard Camp in Vermont. Open to students in grades 1–5. Cost: $260 per session.",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -10090,7 +10250,7 @@ const programsData = [
     "subjects": [
       "Technology"
     ],
-    "description": "",
+    "description": "South Burlington Parks, Recreation and Waterfront offers Wicked Cool for Kids Summer Camps 2025 - Engineering Workshop in Vermont. Open to students in grades 1–5. Activities include Technology. Cost: $330 per session.",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -10123,7 +10283,7 @@ const programsData = [
     "subjects": [
       "Drama"
     ],
-    "description": "",
+    "description": "South Burlington Parks, Recreation and Waterfront offers Improv Comedy Camp in Vermont. Open to students in grades 6–7. Activities include Drama. Cost: $190 per session.",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -10156,7 +10316,7 @@ const programsData = [
     "subjects": [
       "Soccer"
     ],
-    "description": "",
+    "description": "South Burlington Parks, Recreation and Waterfront offers Soccer Sparks Camp in Vermont. Open to students in grades 2–5. Activities include Soccer. Cost: $215 per session.",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -10187,7 +10347,7 @@ const programsData = [
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
     "subjects": [],
-    "description": "",
+    "description": "South Burlington Parks, Recreation and Waterfront offers Lake Adventures Camp - Community Sailing Center in Vermont. Open to students in grades 3–4. Cost: $285 per session.",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -10218,7 +10378,7 @@ const programsData = [
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
     "subjects": [],
-    "description": "",
+    "description": "South Burlington Parks, Recreation and Waterfront offers Pottery Camp in Vermont. Open to students in grades 4–5. Cost: $125 per session.",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -10249,7 +10409,7 @@ const programsData = [
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
     "subjects": [],
-    "description": "",
+    "description": "South Burlington Parks, Recreation and Waterfront offers Pottery Camp in Vermont. Open to students in grades 7–12. Cost: $125 per session.",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -10282,7 +10442,7 @@ const programsData = [
     "subjects": [
       "Drama"
     ],
-    "description": "",
+    "description": "South Burlington Parks, Recreation and Waterfront offers Improv Comedy Camp in Vermont. Open to students in grades 9–12. Activities include Drama. Cost: $190 per session.",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -10313,7 +10473,7 @@ const programsData = [
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
     "subjects": [],
-    "description": "",
+    "description": "South Burlington Parks, Recreation and Waterfront offers Teen Stand-Up Comedy Camp in Vermont. Open to students in grades 9–12. Cost: $190 per session.",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -10346,7 +10506,7 @@ const programsData = [
     "subjects": [
       "Drama"
     ],
-    "description": "",
+    "description": "South Burlington Parks, Recreation and Waterfront offers Improv Comedy Camp in Vermont. Open to students in grades 9–12. Activities include Drama. Cost: $190 per session.",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -10377,7 +10537,7 @@ const programsData = [
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
     "subjects": [],
-    "description": "",
+    "description": "South Burlington Parks, Recreation and Waterfront offers Tennis Camp in Vermont. Open to students in grades K–7. Cost: $116 per session.",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -10410,7 +10570,7 @@ const programsData = [
     "subjects": [
       "Basketball"
     ],
-    "description": "",
+    "description": "South Burlington Parks, Recreation and Waterfront offers Girls Basketball Camp in Vermont. Open to students in grades 4–9. Activities include Basketball. Cost: $320 per session.",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -10441,7 +10601,7 @@ const programsData = [
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
     "subjects": [],
-    "description": "",
+    "description": "South Burlington Parks, Recreation and Waterfront offers Rocketry Camp in Vermont. Open to students in grades 3–7. Cost: $295 per session.",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -10472,7 +10632,7 @@ const programsData = [
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
     "subjects": [],
-    "description": "",
+    "description": "South Burlington Parks, Recreation and Waterfront offers Tennis Camp in Vermont. Open to students in grades K–7. Cost: $145 per session.",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -10503,7 +10663,7 @@ const programsData = [
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
     "subjects": [],
-    "description": "",
+    "description": "South Burlington Parks, Recreation and Waterfront offers Lake Adventures Camp - Community Sailing Center in Vermont. Open to students in grades 6–9. Cost: $285 per session.",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -10534,7 +10694,7 @@ const programsData = [
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
     "subjects": [],
-    "description": "",
+    "description": "South Burlington Recreation & Parks Tennis Camp offers this summer program in South Burlington, VT. Cost: $116 per session.",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -10565,7 +10725,7 @@ const programsData = [
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
     "subjects": [],
-    "description": "",
+    "description": "Spark Studios offers this summer program in Vermont.",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -10596,7 +10756,7 @@ const programsData = [
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
     "subjects": [],
-    "description": "",
+    "description": "Sparrow Project Summer Camp offers this summer program in Vermont.",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -10627,7 +10787,7 @@ const programsData = [
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
     "subjects": [],
-    "description": "",
+    "description": "Spotlight Vermont offers this summer program in South Burlington, VT. Cost: $225 per session.",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -10657,8 +10817,13 @@ const programsData = [
     "hours": "",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [],
-    "description": "",
+    "subjects": [
+      "Arts",
+      "Drama",
+      "Music",
+      "Dance"
+    ],
+    "description": "Spotlight Vermont is a performing arts academy and black box theater. We offer dance, acting, musical theater and technical theater education for both casual and professional students of all ages. Our performance space is an 80 seat black box theater with full lighting and sound.",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -10691,7 +10856,7 @@ const programsData = [
     "subjects": [
       "Arts"
     ],
-    "description": "",
+    "description": "Spruce Peak Performing Arts Center offers this summer program in Stowe, VT. Activities include Arts.",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -10755,8 +10920,11 @@ const programsData = [
     "hours": "",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [],
-    "description": "",
+    "subjects": [
+      "Outdoor Education",
+      "Equestrian"
+    ],
+    "description": "A small horse farm located in Monkton VT on a private road for the perfect country setting. Offers boarding, beginner lessons, and even childcare for those interested in the equine world!",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -10787,7 +10955,7 @@ const programsData = [
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
     "subjects": [],
-    "description": "",
+    "description": "Talent Skatepark offers Skate Camp in Burlington, VT. Cost: $425 per session.",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -10818,7 +10986,7 @@ const programsData = [
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
     "subjects": [],
-    "description": "",
+    "description": "Talent Skatepark offers Skate Camp in Burlington, VT. Cost: $425 per session.",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -10849,7 +11017,7 @@ const programsData = [
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
     "subjects": [],
-    "description": "",
+    "description": "Talent Skatepark offers Skate Camp in Burlington, VT. Cost: $425 per session.",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -10880,7 +11048,7 @@ const programsData = [
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
     "subjects": [],
-    "description": "",
+    "description": "Talent Skatepark offers Skate Camp in Burlington, VT. Cost: $425 per session.",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -10911,7 +11079,7 @@ const programsData = [
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
     "subjects": [],
-    "description": "",
+    "description": "Talent Skatepark offers Skate Camp in Burlington, VT. Cost: $425 per session.",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -10942,7 +11110,7 @@ const programsData = [
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
     "subjects": [],
-    "description": "",
+    "description": "Talent Skatepark offers Skate Camp in Burlington, VT. Cost: $425 per session.",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -10973,7 +11141,7 @@ const programsData = [
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
     "subjects": [],
-    "description": "",
+    "description": "Talent Skatepark offers Skate Camp in Burlington, VT. Cost: $425 per session.",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -11004,7 +11172,7 @@ const programsData = [
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
     "subjects": [],
-    "description": "",
+    "description": "The Schoolhouse Learning Center offers this summer program in South Burlington, VT.",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -11037,7 +11205,7 @@ const programsData = [
     "subjects": [
       "Arts"
     ],
-    "description": "",
+    "description": "United Fighting Arts Institute offers this summer program in Vermont. Activities include Arts.",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -11070,7 +11238,7 @@ const programsData = [
     "subjects": [
       "Dance"
     ],
-    "description": "",
+    "description": "Unit 3 Milton, VT 05468 Email @ udcnorth@gmail.com Contact Us",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -11100,8 +11268,10 @@ const programsData = [
     "hours": "",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [],
-    "description": "",
+    "subjects": [
+      "Outdoor Education"
+    ],
+    "description": "Calling all explorers, investigators, and lovers of nature - sign your child up and they will discover our 255 acres of wild and fun!",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -11134,7 +11304,7 @@ const programsData = [
     "subjects": [
       "Outdoor Education"
     ],
-    "description": "",
+    "description": "Vermont Farm and Forest school offers this summer program in Roxbury, VT. Activities include Outdoor Education. Cost: $425 per week.",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -11165,7 +11335,7 @@ const programsData = [
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
     "subjects": [],
-    "description": "",
+    "description": "Vermont Futbol Academy offers this summer program in Vermont.",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -11196,7 +11366,7 @@ const programsData = [
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
     "subjects": [],
-    "description": "",
+    "description": "Vermont Hockey Camps offers this summer program in Vermont.",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -11226,8 +11396,11 @@ const programsData = [
     "hours": "",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [],
-    "description": "",
+    "subjects": [
+      "Drama",
+      "Music"
+    ],
+    "description": "Summer Jazz Camp, a week-long music day camp, provides a relaxing, fun educational atmosphere for young musicians so that they can focus on the \"how to\" of performing in small and large jazz ensembles. As a result, they will simultaneously develop their overall musical skills. The Morning Session is designed to accommodate students of all experience levels. They will be assigned to entry level, intermediate, or high school level ensembles according to age, and/or skill level.",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -11258,7 +11431,7 @@ const programsData = [
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
     "subjects": [],
-    "description": "",
+    "description": "Vermont Lacrosse Camps offers this summer program in Vermont.",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -11289,7 +11462,7 @@ const programsData = [
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
     "subjects": [],
-    "description": "",
+    "description": "Vermont Simracer offers this summer program in Vermont.",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -11322,7 +11495,7 @@ const programsData = [
     "subjects": [
       "Drama"
     ],
-    "description": "",
+    "description": "Very Merry Theater offers this summer program in Vermont. Activities include Drama. Cost: $180 per session.",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -11355,7 +11528,7 @@ const programsData = [
     "subjects": [
       "Drama"
     ],
-    "description": "",
+    "description": "Very Merry Theater offers this summer program in Vermont. Activities include Drama.",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -11388,7 +11561,7 @@ const programsData = [
     "subjects": [
       "Outdoor Education"
     ],
-    "description": "",
+    "description": "Nature Camp Attention Camp Families Remember: Registration for VINS Nature Camp opens this Wednesday, January 21st at 6:30 AM. Registration Details: Please be aware that we anticipate high demand for…",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -11421,7 +11594,7 @@ const programsData = [
     "subjects": [
       "Outdoor Education"
     ],
-    "description": "",
+    "description": "Nature Camp Attention Camp Families Remember: Registration for VINS Nature Camp opens this Wednesday, January 21st at 6:30 AM. Registration Details: Please be aware that we anticipate high demand for…",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -11452,7 +11625,7 @@ const programsData = [
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
     "subjects": [],
-    "description": "",
+    "description": "VYOA Summer Symphony Camp offers this summer program in Vermont.",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -11482,8 +11655,13 @@ const programsData = [
     "hours": "",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [],
-    "description": "",
+    "subjects": [
+      "Reading",
+      "Music",
+      "Soccer",
+      "Outdoor Education"
+    ],
+    "description": "This summer, we invite your children to our Turtle Lane Campus for hands-on experiences, stories, games, and lots of time outdoors. All of our day camps are led by LCWS teachers and offer a relaxed and fun-filled taste of our Waldorf curriculum. From nature camp to music and soccer, we inspire campers to learn and Continue reading.",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -11516,7 +11694,7 @@ const programsData = [
     "subjects": [
       "Arts"
     ],
-    "description": "",
+    "description": "Wilder Arts Studio offers this summer program in Montpelier, VT. Activities include Arts.",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -11811,7 +11989,7 @@ const programsData = [
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
     "subjects": [],
-    "description": "",
+    "description": "Williston Recreation Summer Camp offers this summer program in Vermont.",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -11841,8 +12019,10 @@ const programsData = [
     "hours": "",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [],
-    "description": "",
+    "subjects": [
+      "Arts"
+    ],
+    "description": "Summer Art Camps Burlington Vermont l art camp l French camp l Wingspan Studio",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -11873,7 +12053,7 @@ const programsData = [
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
     "subjects": [],
-    "description": "",
+    "description": "Winooski Recreation & Park offers this summer program in Vermont.",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -11904,7 +12084,7 @@ const programsData = [
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
     "subjects": [],
-    "description": "",
+    "description": "Wonder Roots offers this summer program in Hinesburg, VT.",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -12223,7 +12403,7 @@ const programsData = [
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
     "subjects": [],
-    "description": "",
+    "description": "YMCA Camp Abnaki offers this summer program in Vermont.",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,

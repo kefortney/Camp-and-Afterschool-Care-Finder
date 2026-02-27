@@ -121,6 +121,33 @@ def extract_subjects(name: str, description: str) -> list:
     return found
 
 
+def build_fallback_description(org: str, name: str, city: str, subjects: list,
+                               sg: str, eg: str, cost: int, period: str) -> str:
+    """Generate a plain-English description from available metadata."""
+    parts = []
+
+    camp_label = name if name and name != org else "this summer program"
+    parts.append(f"{org} offers {camp_label}")
+
+    location = f"in {city}, VT" if city else "in Vermont"
+    parts[0] += f" {location}."
+
+    if sg and eg:
+        if sg == eg:
+            parts.append(f"Open to students in grade {sg}.")
+        else:
+            parts.append(f"Open to students in grades {sg}–{eg}.")
+
+    if subjects:
+        subj_str = ", ".join(subjects[:4])
+        parts.append(f"Activities include {subj_str}.")
+
+    if cost and cost > 0:
+        parts.append(f"Cost: ${cost:,} per {period}.")
+
+    return " ".join(parts)
+
+
 def build_hours(start_time: str, end_time: str) -> str:
     s = (start_time or "").strip()
     e = (end_time or "").strip()
@@ -198,6 +225,13 @@ def convert():
 
         # Subjects
         subjects = extract_subjects(name, desc)
+
+        # Fallback description if blank
+        if not desc:
+            desc = build_fallback_description(
+                org, name, city, subjects,
+                sg, eg, cost_val, cost_period or "session"
+            )
 
         # Dates
         start_date = normalize_date(row.get("Start Date") or "")
