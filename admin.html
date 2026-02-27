@@ -320,6 +320,7 @@
       </div>
       <div class="toolbar-actions">
         <span id="dirtyBadge" class="dirty-badge" style="display:none;">⚠ Unsaved changes</span>
+        <button class="btn-secondary" id="btnSaveAll">💾 Save All</button>
         <button class="btn-secondary" id="btnExport">⬇ Download data.js</button>
         <button class="btn-primary" id="btnAdd">+ Add Program</button>
       </div>
@@ -575,7 +576,8 @@
     const MONTH_ABBR = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
 
     // ===== State =====
-    let adminData = programsData.map(p => ({ ...p }));
+    const _saved = localStorage.getItem('adminData');
+    let adminData = _saved ? JSON.parse(_saved) : programsData.map(p => ({ ...p }));
     let sortCol   = 'name';
     let sortDir   = 'asc';
     let searchQuery = '';
@@ -846,6 +848,18 @@
       renderTable();
     }
 
+    // ===== Save All (localStorage) =====
+    function saveAll() {
+      localStorage.setItem('adminData', JSON.stringify(adminData));
+      isDirty = false;
+      document.getElementById('dirtyBadge').style.display = 'none';
+      const btn = document.getElementById('btnSaveAll');
+      const orig = btn.textContent;
+      btn.textContent = '✓ Saved';
+      btn.disabled = true;
+      setTimeout(() => { btn.textContent = orig; btn.disabled = false; }, 1500);
+    }
+
     // ===== Export =====
     function exportDataJs() {
       const json = JSON.stringify(adminData, null, 2);
@@ -881,6 +895,7 @@
 
     // Toolbar buttons
     document.getElementById('btnAdd').addEventListener('click', () => openEditModal(null));
+    document.getElementById('btnSaveAll').addEventListener('click', saveAll);
     document.getElementById('btnExport').addEventListener('click', exportDataJs);
     document.getElementById('btnConfirmDelete').addEventListener('click', executeDelete);
 
