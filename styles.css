@@ -654,6 +654,171 @@ footer {
   background: var(--white);
 }
 
+/* ===== View Toggle ===== */
+.view-toggle-bar {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.btn-view {
+  padding: 0.45rem 1.1rem;
+  border: 1.5px solid var(--gray-400);
+  border-radius: var(--radius-sm);
+  background: var(--white);
+  color: var(--gray-600);
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition);
+}
+
+.btn-view:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.btn-view.active {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: var(--white);
+}
+
+/* ===== Calendar View ===== */
+.calendar-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.calendar-month-label {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text);
+  min-width: 180px;
+  text-align: center;
+}
+
+.btn-cal-nav {
+  background: var(--white);
+  border: 1.5px solid var(--gray-400);
+  border-radius: var(--radius-sm);
+  padding: 0.4rem 0.9rem;
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  color: var(--gray-800);
+  transition: all var(--transition);
+}
+
+.btn-cal-nav:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.cal-header-row {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 2px;
+  margin-bottom: 2px;
+}
+
+.cal-dow {
+  text-align: center;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--gray-600);
+  padding: 0.3rem;
+}
+
+.cal-body {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 2px;
+}
+
+.cal-day {
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-sm);
+  min-height: 88px;
+  padding: 0.35rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  overflow: hidden;
+}
+
+.cal-day-empty {
+  background: var(--gray-100);
+  border-color: transparent;
+}
+
+.cal-day-weekend {
+  background: #fafafa;
+}
+
+.cal-day-has-camps {
+  border-color: var(--primary-light);
+}
+
+.cal-day-num {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--gray-600);
+  line-height: 1;
+  margin-bottom: 2px;
+}
+
+.cal-camp-badge {
+  background: var(--primary-light);
+  color: var(--primary-dark);
+  border: none;
+  border-radius: 3px;
+  padding: 0.15rem 0.35rem;
+  font-size: 0.68rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: background var(--transition);
+  width: 100%;
+  display: block;
+}
+
+.cal-camp-badge:hover {
+  background: var(--primary);
+  color: var(--white);
+}
+
+.cal-more {
+  font-size: 0.68rem;
+  color: var(--gray-600);
+  padding: 0.1rem 0.35rem;
+}
+
+.calendar-undated-note {
+  margin-top: 0.75rem;
+  font-size: 0.82rem;
+  color: var(--gray-600);
+  text-align: center;
+  font-style: italic;
+}
+
+/* ===== Map View ===== */
+.map-container {
+  height: 520px;
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--gray-200);
+}
+
 /* ===== Responsive ===== */
 @media (max-width: 640px) {
   .search-row {
@@ -670,6 +835,24 @@ footer {
 
   .modal-detail-grid {
     grid-template-columns: 1fr;
+  }
+
+  .cal-day {
+    min-height: 56px;
+    padding: 0.2rem;
+  }
+
+  .cal-camp-badge {
+    font-size: 0.6rem;
+  }
+
+  .cal-dow {
+    font-size: 0.62rem;
+    padding: 0.2rem 0;
+  }
+
+  .map-container {
+    height: 380px;
   }
 }
 

@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Camp &amp; Afterschool Care Finder</title>
   <meta name="description" content="Find summer camps and afterschool care programs for K–12 students in your area. Filter by grade, subject, cost, and more." />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -82,12 +83,9 @@
         </div>
 
         <div class="filter-group">
-          <label for="filterMonth">Month</label>
-          <select id="filterMonth" aria-label="Filter by month">
-            <option value="">Any Month</option>
-            <option value="6">June</option>
-            <option value="7">July</option>
-            <option value="8">August</option>
+          <label for="filterWeek">Week</label>
+          <select id="filterWeek" aria-label="Filter by week">
+            <option value="">Any Week</option>
           </select>
         </div>
 
@@ -119,14 +117,37 @@
       <button class="btn-reset" id="btnReset">Reset All Filters</button>
     </div>
 
-    <!-- Program Cards -->
-    <div class="cards-grid" id="cardsGrid" role="list" aria-label="Program listings"></div>
+    <!-- View Toggle -->
+    <div class="view-toggle-bar">
+      <button class="btn-view active" id="btnViewList" data-view="list">📋 List</button>
+      <button class="btn-view" id="btnViewCalendar" data-view="calendar">📅 Calendar</button>
+      <button class="btn-view" id="btnViewMap" data-view="map">🗺️ Map</button>
+    </div>
 
-    <!-- No Results State -->
-    <div class="no-results" id="noResults" style="display:none;" role="status">
-      <span class="no-results-icon">🔎</span>
-      <h3>No programs found</h3>
-      <p>Try adjusting your search or filters to see more results.</p>
+    <!-- List View -->
+    <div id="listView">
+      <div class="cards-grid" id="cardsGrid" role="list" aria-label="Program listings"></div>
+      <div class="no-results" id="noResults" style="display:none;" role="status">
+        <span class="no-results-icon">🔎</span>
+        <h3>No programs found</h3>
+        <p>Try adjusting your search or filters to see more results.</p>
+      </div>
+    </div>
+
+    <!-- Calendar View -->
+    <div id="calendarView" style="display:none;">
+      <div class="calendar-nav">
+        <button class="btn-cal-nav" id="btnCalPrev">← Prev</button>
+        <span class="calendar-month-label" id="calMonthLabel"></span>
+        <button class="btn-cal-nav" id="btnCalNext">Next →</button>
+      </div>
+      <div class="calendar-grid" id="calendarGrid"></div>
+      <p class="calendar-undated-note" id="calUndatedNote" style="display:none;"></p>
+    </div>
+
+    <!-- Map View -->
+    <div id="mapView" style="display:none;">
+      <div id="mapContainer" class="map-container"></div>
     </div>
 
   </main>
@@ -233,6 +254,7 @@
     <p style="margin-top:0.4rem;">Program information is collected from public sources. Contact programs directly to confirm availability and details.</p>
   </footer>
 
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV/XN/WPeE=" crossorigin=""></script>
   <script src="data.js"></script>
   <script src="app.js"></script>
 </body>
