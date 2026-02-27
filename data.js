@@ -54,8 +54,10 @@ const programsData = [
     "hours": "",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [],
-    "description": "Aikido of Champlain Valley offers this summer program in Vermont. Open to students in grades 2–6.",
+    "subjects": [
+      "Martial Arts"
+    ],
+    "description": "Aikido of Champlain Valley offers this summer program in Vermont. Open to students in grades 2–6. Activities include Martial Arts.",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -186,8 +188,10 @@ const programsData = [
     "hours": "",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [],
-    "description": "Animal Welfare Warriors (Chittenden Humane Society) offers this summer program in South Burlington, VT. Open to students in grades 8–9. Cost: $300 per session.",
+    "subjects": [
+      "Animals"
+    ],
+    "description": "Animal Welfare Warriors (Chittenden Humane Society) offers this summer program in South Burlington, VT. Open to students in grades 8–9. Activities include Animals. Cost: $300 per session.",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -579,9 +583,12 @@ const programsData = [
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
     "subjects": [
+      "Tennis",
       "Soccer",
-      "Outdoor Education",
-      "Swim"
+      "Volleyball",
+      "Disc Golf",
+      "Swim",
+      "Outdoor Education"
     ],
     "description": "Looking for the ultimate outdoor summer camp? You came to the right place! Together we’ll ride, swim, jump & hike all around thousands of acres of Bolton Valley wilderness. Our camps are packed with thrilling activities and classic games like soccer, tennis, volleyball, disc golf, manhunt and more! Plus, everyone gets the chance to cool off in our outdoor pool!",
     "indoorOutdoor": "Both",
@@ -614,9 +621,13 @@ const programsData = [
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
     "subjects": [
+      "Tennis",
       "Soccer",
-      "Outdoor Education",
-      "Swim"
+      "Volleyball",
+      "Mountain Biking",
+      "Disc Golf",
+      "Swim",
+      "Outdoor Education"
     ],
     "description": "Looking for the ultimate outdoor summer camp? You came to the right place! Together we’ll ride, swim, jump & hike all around thousands of acres of Bolton Valley wilderness. Our camps are packed with thrilling activities and classic games like soccer, tennis, volleyball, disc golf, manhunt and more! Plus, everyone gets the chance to cool off in our outdoor pool!",
     "indoorOutdoor": "Both",
@@ -681,7 +692,8 @@ const programsData = [
     "sessionType": "Summer",
     "subjects": [
       "Outdoor Education",
-      "Cooking"
+      "Cooking",
+      "Animals"
     ],
     "description": "We love to kick off our summer programs with Farmers in Training! All kids who come to Bread & Butter for ANY week will learn about the farm, our philosophy of land, plant, and animal management, and our reverence for the land that sustains us all. FIT week offers kids the opportunity to dig into life on our farm, taking on new roles and responsibilities. They'll learn about soil health and growing food, caring for animals by allowing them to be as wild as possible, the interaction between our farm animals and the wilderness, our farm store and how we sell our food to our community. The kids are truly immersed into day-to-day life on the farm and engage with the people/farmers and the plants and animals alike! We love kicking off the summer programs right away with helping to nurture the next generation of farmers!",
     "indoorOutdoor": "Both",
@@ -784,9 +796,9 @@ const programsData = [
     "sessionType": "Summer",
     "subjects": [
       "Arts",
-      "Sports",
       "Soccer",
       "Basketball",
+      "Sports",
       "Outdoor Education"
     ],
     "description": "Calling all athletes! This week at the farm will offer an opportunity to play hard, experience new physical challenges and even learn about where and how competition arose. From wiffle ball to archery, basketball to soccer, slack line to obstacle courses, we invite athletes of all sizes and abilities to come play and train with us but, most of all, to have fun. We will have many opportunities for competition this week AND we will always have non-competitive options for kids to participate in! This week will be a wonderful balance of sports and competition along with grounding land and farm skills and activities. We will culminate in a super fun, silly, olympic style all camp activity! Again, as always, we will have all the usual farm and camp activities in addition to all the movement!",
@@ -820,7 +832,8 @@ const programsData = [
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
     "subjects": [
-      "Outdoor Education"
+      "Outdoor Education",
+      "Animals"
     ],
     "description": "Learn about the animals on the farm and in our natural surroundings. What does it take to properly care for these creatures? How do we balance the responsibility of raising and working with our farm animals vs. the wild animals that live on this land and contribute to its health and beauty. From farm cats to barred owls, from cows and pigs, to snakes, opportunities will abound for animal lovers to engage. Campers will learn to care for, connect with, and respect the animals that form our land and farm community.",
     "indoorOutdoor": "Both",
@@ -854,7 +867,8 @@ const programsData = [
     "sessionType": "Summer",
     "subjects": [
       "Outdoor Education",
-      "Cooking"
+      "Cooking",
+      "Animals"
     ],
     "description": "Food week at Camp B&B is a highlight of the summer, as it celebrates all that the land provides for us as food nourishment! We will celebrate the connections between what we grow and what we eat, highlighting the beauty of being in close connection with the lives we take into ourselves as food, whether plant or animal. This week will focus on the incredible plants growing all around us, and how we can work with them to sustain us, whether as food or health helpers. Kids can expect to sample and enjoy delectable treats from the farm.",
     "indoorOutdoor": "Both",
@@ -1022,7 +1036,9 @@ const programsData = [
     "hours": "",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [],
+    "subjects": [
+      "Disc Golf"
+    ],
     "description": "Disc Golf Vermont offers a limited number of Disc Golf Summer Camps throughout the state. Camps are lead by Innova professional and DGVT owner, Chris Young",
     "indoorOutdoor": "Both",
     "transportation": false,
@@ -1087,8 +1103,7 @@ const programsData = [
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
     "subjects": [
-      "Basketball",
-      "Swim"
+      "Basketball"
     ],
     "description": "Spend Your Summer at Burlington, Vermont Parks! Find the latest info on Summer Camps, Beaches, and Events from Burlington Parks, Recreation & Waterfront",
     "indoorOutdoor": "Both",
@@ -1121,7 +1136,7 @@ const programsData = [
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
     "subjects": [
-      "Swim"
+      "Tennis"
     ],
     "description": "Spend Your Summer at Burlington, Vermont Parks! Find the latest info on Summer Camps, Beaches, and Events from Burlington Parks, Recreation & Waterfront",
     "indoorOutdoor": "Both",
@@ -1154,7 +1169,7 @@ const programsData = [
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
     "subjects": [
-      "Swim"
+      "Skateboarding"
     ],
     "description": "Spend Your Summer at Burlington, Vermont Parks! Find the latest info on Summer Camps, Beaches, and Events from Burlington Parks, Recreation & Waterfront",
     "indoorOutdoor": "Both",
@@ -1187,8 +1202,7 @@ const programsData = [
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
     "subjects": [
-      "Basketball",
-      "Swim"
+      "Basketball"
     ],
     "description": "Spend Your Summer at Burlington, Vermont Parks! Find the latest info on Summer Camps, Beaches, and Events from Burlington Parks, Recreation & Waterfront",
     "indoorOutdoor": "Both",
@@ -1221,7 +1235,7 @@ const programsData = [
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
     "subjects": [
-      "Swim"
+      "Ultimate Frisbee"
     ],
     "description": "Spend Your Summer at Burlington, Vermont Parks! Find the latest info on Summer Camps, Beaches, and Events from Burlington Parks, Recreation & Waterfront",
     "indoorOutdoor": "Both",
@@ -1254,7 +1268,7 @@ const programsData = [
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
     "subjects": [
-      "Swim"
+      "Skateboarding"
     ],
     "description": "Spend Your Summer at Burlington, Vermont Parks! Find the latest info on Summer Camps, Beaches, and Events from Burlington Parks, Recreation & Waterfront",
     "indoorOutdoor": "Both",
@@ -1286,9 +1300,7 @@ const programsData = [
     "hours": "09:30 AM – 12:00 PM",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [
-      "Swim"
-    ],
+    "subjects": [],
     "description": "Spend Your Summer at Burlington, Vermont Parks! Find the latest info on Summer Camps, Beaches, and Events from Burlington Parks, Recreation & Waterfront",
     "indoorOutdoor": "Both",
     "transportation": false,
@@ -1320,7 +1332,7 @@ const programsData = [
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
     "subjects": [
-      "Swim"
+      "Volleyball"
     ],
     "description": "Spend Your Summer at Burlington, Vermont Parks! Find the latest info on Summer Camps, Beaches, and Events from Burlington Parks, Recreation & Waterfront",
     "indoorOutdoor": "Both",
@@ -1353,7 +1365,7 @@ const programsData = [
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
     "subjects": [
-      "Swim"
+      "Tennis"
     ],
     "description": "Spend Your Summer at Burlington, Vermont Parks! Find the latest info on Summer Camps, Beaches, and Events from Burlington Parks, Recreation & Waterfront",
     "indoorOutdoor": "Both",
@@ -1386,8 +1398,7 @@ const programsData = [
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
     "subjects": [
-      "Soccer",
-      "Swim"
+      "Soccer"
     ],
     "description": "Spend Your Summer at Burlington, Vermont Parks! Find the latest info on Summer Camps, Beaches, and Events from Burlington Parks, Recreation & Waterfront",
     "indoorOutdoor": "Both",
@@ -1420,8 +1431,7 @@ const programsData = [
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
     "subjects": [
-      "Soccer",
-      "Swim"
+      "Soccer"
     ],
     "description": "Spend Your Summer at Burlington, Vermont Parks! Find the latest info on Summer Camps, Beaches, and Events from Burlington Parks, Recreation & Waterfront",
     "indoorOutdoor": "Both",
@@ -1454,7 +1464,7 @@ const programsData = [
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
     "subjects": [
-      "Swim"
+      "Skateboarding"
     ],
     "description": "Spend Your Summer at Burlington, Vermont Parks! Find the latest info on Summer Camps, Beaches, and Events from Burlington Parks, Recreation & Waterfront",
     "indoorOutdoor": "Both",
@@ -1486,9 +1496,7 @@ const programsData = [
     "hours": "09:30 AM – 12:00 PM",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [
-      "Swim"
-    ],
+    "subjects": [],
     "description": "Spend Your Summer at Burlington, Vermont Parks! Find the latest info on Summer Camps, Beaches, and Events from Burlington Parks, Recreation & Waterfront",
     "indoorOutdoor": "Both",
     "transportation": false,
@@ -1520,7 +1528,7 @@ const programsData = [
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
     "subjects": [
-      "Swim"
+      "Disc Golf"
     ],
     "description": "Spend Your Summer at Burlington, Vermont Parks! Find the latest info on Summer Camps, Beaches, and Events from Burlington Parks, Recreation & Waterfront",
     "indoorOutdoor": "Both",
@@ -1553,7 +1561,7 @@ const programsData = [
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
     "subjects": [
-      "Swim"
+      "Baseball"
     ],
     "description": "Spend Your Summer at Burlington, Vermont Parks! Find the latest info on Summer Camps, Beaches, and Events from Burlington Parks, Recreation & Waterfront",
     "indoorOutdoor": "Both",
@@ -1586,7 +1594,7 @@ const programsData = [
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
     "subjects": [
-      "Swim"
+      "Skateboarding"
     ],
     "description": "Spend Your Summer at Burlington, Vermont Parks! Find the latest info on Summer Camps, Beaches, and Events from Burlington Parks, Recreation & Waterfront",
     "indoorOutdoor": "Both",
@@ -1618,9 +1626,7 @@ const programsData = [
     "hours": "09:30 AM – 12:00 PM",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [
-      "Swim"
-    ],
+    "subjects": [],
     "description": "Spend Your Summer at Burlington, Vermont Parks! Find the latest info on Summer Camps, Beaches, and Events from Burlington Parks, Recreation & Waterfront",
     "indoorOutdoor": "Both",
     "transportation": false,
@@ -1652,7 +1658,7 @@ const programsData = [
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
     "subjects": [
-      "Swim"
+      "Tennis"
     ],
     "description": "Spend Your Summer at Burlington, Vermont Parks! Find the latest info on Summer Camps, Beaches, and Events from Burlington Parks, Recreation & Waterfront",
     "indoorOutdoor": "Both",
@@ -1685,7 +1691,7 @@ const programsData = [
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
     "subjects": [
-      "Swim"
+      "Skateboarding"
     ],
     "description": "Spend Your Summer at Burlington, Vermont Parks! Find the latest info on Summer Camps, Beaches, and Events from Burlington Parks, Recreation & Waterfront",
     "indoorOutdoor": "Both",
@@ -1718,8 +1724,7 @@ const programsData = [
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
     "subjects": [
-      "Soccer",
-      "Swim"
+      "Soccer"
     ],
     "description": "Spend Your Summer at Burlington, Vermont Parks! Find the latest info on Summer Camps, Beaches, and Events from Burlington Parks, Recreation & Waterfront",
     "indoorOutdoor": "Both",
@@ -1752,8 +1757,7 @@ const programsData = [
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
     "subjects": [
-      "Basketball",
-      "Swim"
+      "Basketball"
     ],
     "description": "Spend Your Summer at Burlington, Vermont Parks! Find the latest info on Summer Camps, Beaches, and Events from Burlington Parks, Recreation & Waterfront",
     "indoorOutdoor": "Both",
@@ -1785,9 +1789,7 @@ const programsData = [
     "hours": "09:30 AM – 12:00 PM",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [
-      "Swim"
-    ],
+    "subjects": [],
     "description": "Spend Your Summer at Burlington, Vermont Parks! Find the latest info on Summer Camps, Beaches, and Events from Burlington Parks, Recreation & Waterfront",
     "indoorOutdoor": "Both",
     "transportation": false,
@@ -1819,7 +1821,7 @@ const programsData = [
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
     "subjects": [
-      "Swim"
+      "Ultimate Frisbee"
     ],
     "description": "Spend Your Summer at Burlington, Vermont Parks! Find the latest info on Summer Camps, Beaches, and Events from Burlington Parks, Recreation & Waterfront",
     "indoorOutdoor": "Both",
@@ -1852,7 +1854,7 @@ const programsData = [
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
     "subjects": [
-      "Swim"
+      "Tennis"
     ],
     "description": "Spend Your Summer at Burlington, Vermont Parks! Find the latest info on Summer Camps, Beaches, and Events from Burlington Parks, Recreation & Waterfront",
     "indoorOutdoor": "Both",
@@ -1884,9 +1886,7 @@ const programsData = [
     "hours": "09:30 AM – 12:00 PM",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [
-      "Swim"
-    ],
+    "subjects": [],
     "description": "Spend Your Summer at Burlington, Vermont Parks! Find the latest info on Summer Camps, Beaches, and Events from Burlington Parks, Recreation & Waterfront",
     "indoorOutdoor": "Both",
     "transportation": false,
@@ -1918,7 +1918,7 @@ const programsData = [
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
     "subjects": [
-      "Swim"
+      "Skateboarding"
     ],
     "description": "Spend Your Summer at Burlington, Vermont Parks! Find the latest info on Summer Camps, Beaches, and Events from Burlington Parks, Recreation & Waterfront",
     "indoorOutdoor": "Both",
@@ -1951,7 +1951,7 @@ const programsData = [
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
     "subjects": [
-      "Swim"
+      "Tennis"
     ],
     "description": "Spend Your Summer at Burlington, Vermont Parks! Find the latest info on Summer Camps, Beaches, and Events from Burlington Parks, Recreation & Waterfront",
     "indoorOutdoor": "Both",
@@ -1984,8 +1984,7 @@ const programsData = [
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
     "subjects": [
-      "Soccer",
-      "Swim"
+      "Soccer"
     ],
     "description": "Spend Your Summer at Burlington, Vermont Parks! Find the latest info on Summer Camps, Beaches, and Events from Burlington Parks, Recreation & Waterfront",
     "indoorOutdoor": "Both",
@@ -2018,8 +2017,7 @@ const programsData = [
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
     "subjects": [
-      "Soccer",
-      "Swim"
+      "Soccer"
     ],
     "description": "Spend Your Summer at Burlington, Vermont Parks! Find the latest info on Summer Camps, Beaches, and Events from Burlington Parks, Recreation & Waterfront",
     "indoorOutdoor": "Both",
@@ -2052,7 +2050,7 @@ const programsData = [
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
     "subjects": [
-      "Swim"
+      "Hockey"
     ],
     "description": "Spend Your Summer at Burlington, Vermont Parks! Find the latest info on Summer Camps, Beaches, and Events from Burlington Parks, Recreation & Waterfront",
     "indoorOutdoor": "Both",
@@ -2085,7 +2083,7 @@ const programsData = [
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
     "subjects": [
-      "Swim"
+      "Hockey"
     ],
     "description": "Spend Your Summer at Burlington, Vermont Parks! Find the latest info on Summer Camps, Beaches, and Events from Burlington Parks, Recreation & Waterfront",
     "indoorOutdoor": "Both",
@@ -2118,8 +2116,7 @@ const programsData = [
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
     "subjects": [
-      "Soccer",
-      "Swim"
+      "Soccer"
     ],
     "description": "Spend Your Summer at Burlington, Vermont Parks! Find the latest info on Summer Camps, Beaches, and Events from Burlington Parks, Recreation & Waterfront",
     "indoorOutdoor": "Both",
@@ -2152,7 +2149,7 @@ const programsData = [
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
     "subjects": [
-      "Swim"
+      "Hockey"
     ],
     "description": "Spend Your Summer at Burlington, Vermont Parks! Find the latest info on Summer Camps, Beaches, and Events from Burlington Parks, Recreation & Waterfront",
     "indoorOutdoor": "Both",
@@ -2185,8 +2182,7 @@ const programsData = [
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
     "subjects": [
-      "Soccer",
-      "Swim"
+      "Soccer"
     ],
     "description": "Spend Your Summer at Burlington, Vermont Parks! Find the latest info on Summer Camps, Beaches, and Events from Burlington Parks, Recreation & Waterfront",
     "indoorOutdoor": "Both",
@@ -2219,7 +2215,7 @@ const programsData = [
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
     "subjects": [
-      "Swim"
+      "Volleyball"
     ],
     "description": "Spend Your Summer at Burlington, Vermont Parks! Find the latest info on Summer Camps, Beaches, and Events from Burlington Parks, Recreation & Waterfront",
     "indoorOutdoor": "Both",
@@ -2252,7 +2248,7 @@ const programsData = [
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
     "subjects": [
-      "Swim"
+      "Chess"
     ],
     "description": "Spend Your Summer at Burlington, Vermont Parks! Find the latest info on Summer Camps, Beaches, and Events from Burlington Parks, Recreation & Waterfront",
     "indoorOutdoor": "Both",
@@ -2285,7 +2281,7 @@ const programsData = [
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
     "subjects": [
-      "Swim"
+      "Chess"
     ],
     "description": "Spend Your Summer at Burlington, Vermont Parks! Find the latest info on Summer Camps, Beaches, and Events from Burlington Parks, Recreation & Waterfront",
     "indoorOutdoor": "Both",
@@ -2318,8 +2314,8 @@ const programsData = [
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
     "subjects": [
-      "Arts",
-      "Swim"
+      "Coding",
+      "Arts"
     ],
     "description": "Spend Your Summer at Burlington, Vermont Parks! Find the latest info on Summer Camps, Beaches, and Events from Burlington Parks, Recreation & Waterfront",
     "indoorOutdoor": "Both",
@@ -2351,9 +2347,7 @@ const programsData = [
     "hours": "09:00 AM – 04:00 PM",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [
-      "Swim"
-    ],
+    "subjects": [],
     "description": "Spend Your Summer at Burlington, Vermont Parks! Find the latest info on Summer Camps, Beaches, and Events from Burlington Parks, Recreation & Waterfront",
     "indoorOutdoor": "Both",
     "transportation": false,
@@ -2385,8 +2379,7 @@ const programsData = [
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
     "subjects": [
-      "Basketball",
-      "Swim"
+      "Basketball"
     ],
     "description": "Spend Your Summer at Burlington, Vermont Parks! Find the latest info on Summer Camps, Beaches, and Events from Burlington Parks, Recreation & Waterfront",
     "indoorOutdoor": "Both",
@@ -2419,8 +2412,7 @@ const programsData = [
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
     "subjects": [
-      "Science",
-      "Swim"
+      "Science"
     ],
     "description": "Spend Your Summer at Burlington, Vermont Parks! Find the latest info on Summer Camps, Beaches, and Events from Burlington Parks, Recreation & Waterfront",
     "indoorOutdoor": "Both",
@@ -2453,7 +2445,7 @@ const programsData = [
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
     "subjects": [
-      "Swim"
+      "Chess"
     ],
     "description": "Spend Your Summer at Burlington, Vermont Parks! Find the latest info on Summer Camps, Beaches, and Events from Burlington Parks, Recreation & Waterfront",
     "indoorOutdoor": "Both",
@@ -2486,7 +2478,7 @@ const programsData = [
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
     "subjects": [
-      "Swim"
+      "Outdoor Education"
     ],
     "description": "Spend Your Summer at Burlington, Vermont Parks! Find the latest info on Summer Camps, Beaches, and Events from Burlington Parks, Recreation & Waterfront",
     "indoorOutdoor": "Both",
@@ -2519,8 +2511,7 @@ const programsData = [
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
     "subjects": [
-      "Equestrian",
-      "Swim"
+      "Equestrian"
     ],
     "description": "Spend Your Summer at Burlington, Vermont Parks! Find the latest info on Summer Camps, Beaches, and Events from Burlington Parks, Recreation & Waterfront",
     "indoorOutdoor": "Both",
@@ -2553,8 +2544,7 @@ const programsData = [
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
     "subjects": [
-      "Arts",
-      "Swim"
+      "Arts"
     ],
     "description": "Spend Your Summer at Burlington, Vermont Parks! Find the latest info on Summer Camps, Beaches, and Events from Burlington Parks, Recreation & Waterfront",
     "indoorOutdoor": "Both",
@@ -2587,8 +2577,7 @@ const programsData = [
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
     "subjects": [
-      "Soccer",
-      "Swim"
+      "Soccer"
     ],
     "description": "Spend Your Summer at Burlington, Vermont Parks! Find the latest info on Summer Camps, Beaches, and Events from Burlington Parks, Recreation & Waterfront",
     "indoorOutdoor": "Both",
@@ -2621,7 +2610,7 @@ const programsData = [
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
     "subjects": [
-      "Swim"
+      "Chess"
     ],
     "description": "Spend Your Summer at Burlington, Vermont Parks! Find the latest info on Summer Camps, Beaches, and Events from Burlington Parks, Recreation & Waterfront",
     "indoorOutdoor": "Both",
@@ -2654,7 +2643,7 @@ const programsData = [
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
     "subjects": [
-      "Swim"
+      "Outdoor Education"
     ],
     "description": "Spend Your Summer at Burlington, Vermont Parks! Find the latest info on Summer Camps, Beaches, and Events from Burlington Parks, Recreation & Waterfront",
     "indoorOutdoor": "Both",
@@ -2686,9 +2675,7 @@ const programsData = [
     "hours": "08:30 AM – 04:30 PM",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [
-      "Swim"
-    ],
+    "subjects": [],
     "description": "Spend Your Summer at Burlington, Vermont Parks! Find the latest info on Summer Camps, Beaches, and Events from Burlington Parks, Recreation & Waterfront",
     "indoorOutdoor": "Both",
     "transportation": false,
@@ -2719,9 +2706,7 @@ const programsData = [
     "hours": "08:30 AM – 04:30 PM",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [
-      "Swim"
-    ],
+    "subjects": [],
     "description": "Spend Your Summer at Burlington, Vermont Parks! Find the latest info on Summer Camps, Beaches, and Events from Burlington Parks, Recreation & Waterfront",
     "indoorOutdoor": "Both",
     "transportation": false,
@@ -2752,9 +2737,7 @@ const programsData = [
     "hours": "08:30 AM – 04:30 PM",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [
-      "Swim"
-    ],
+    "subjects": [],
     "description": "Spend Your Summer at Burlington, Vermont Parks! Find the latest info on Summer Camps, Beaches, and Events from Burlington Parks, Recreation & Waterfront",
     "indoorOutdoor": "Both",
     "transportation": false,
@@ -2785,9 +2768,7 @@ const programsData = [
     "hours": "08:30 AM – 04:30 PM",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [
-      "Swim"
-    ],
+    "subjects": [],
     "description": "Spend Your Summer at Burlington, Vermont Parks! Find the latest info on Summer Camps, Beaches, and Events from Burlington Parks, Recreation & Waterfront",
     "indoorOutdoor": "Both",
     "transportation": false,
@@ -2818,9 +2799,7 @@ const programsData = [
     "hours": "08:30 AM – 04:30 PM",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [
-      "Swim"
-    ],
+    "subjects": [],
     "description": "Spend Your Summer at Burlington, Vermont Parks! Find the latest info on Summer Camps, Beaches, and Events from Burlington Parks, Recreation & Waterfront",
     "indoorOutdoor": "Both",
     "transportation": false,
@@ -2851,9 +2830,7 @@ const programsData = [
     "hours": "08:30 AM – 04:30 PM",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [
-      "Swim"
-    ],
+    "subjects": [],
     "description": "Spend Your Summer at Burlington, Vermont Parks! Find the latest info on Summer Camps, Beaches, and Events from Burlington Parks, Recreation & Waterfront",
     "indoorOutdoor": "Both",
     "transportation": false,
@@ -2884,9 +2861,7 @@ const programsData = [
     "hours": "08:30 AM – 04:30 PM",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [
-      "Swim"
-    ],
+    "subjects": [],
     "description": "Spend Your Summer at Burlington, Vermont Parks! Find the latest info on Summer Camps, Beaches, and Events from Burlington Parks, Recreation & Waterfront",
     "indoorOutdoor": "Both",
     "transportation": false,
@@ -2917,9 +2892,7 @@ const programsData = [
     "hours": "08:30 AM – 04:30 PM",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [
-      "Swim"
-    ],
+    "subjects": [],
     "description": "Spend Your Summer at Burlington, Vermont Parks! Find the latest info on Summer Camps, Beaches, and Events from Burlington Parks, Recreation & Waterfront",
     "indoorOutdoor": "Both",
     "transportation": false,
@@ -2950,9 +2923,7 @@ const programsData = [
     "hours": "08:30 AM – 04:30 PM",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [
-      "Swim"
-    ],
+    "subjects": [],
     "description": "Spend Your Summer at Burlington, Vermont Parks! Find the latest info on Summer Camps, Beaches, and Events from Burlington Parks, Recreation & Waterfront",
     "indoorOutdoor": "Both",
     "transportation": false,
@@ -2983,9 +2954,7 @@ const programsData = [
     "hours": "08:30 AM – 04:30 PM",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [
-      "Swim"
-    ],
+    "subjects": [],
     "description": "Spend Your Summer at Burlington, Vermont Parks! Find the latest info on Summer Camps, Beaches, and Events from Burlington Parks, Recreation & Waterfront",
     "indoorOutdoor": "Both",
     "transportation": false,
@@ -3016,9 +2985,7 @@ const programsData = [
     "hours": "08:30 AM – 04:30 PM",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [
-      "Swim"
-    ],
+    "subjects": [],
     "description": "Spend Your Summer at Burlington, Vermont Parks! Find the latest info on Summer Camps, Beaches, and Events from Burlington Parks, Recreation & Waterfront",
     "indoorOutdoor": "Both",
     "transportation": false,
@@ -3049,9 +3016,7 @@ const programsData = [
     "hours": "08:30 AM – 04:30 PM",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [
-      "Swim"
-    ],
+    "subjects": [],
     "description": "Spend Your Summer at Burlington, Vermont Parks! Find the latest info on Summer Camps, Beaches, and Events from Burlington Parks, Recreation & Waterfront",
     "indoorOutdoor": "Both",
     "transportation": false,
@@ -3082,9 +3047,7 @@ const programsData = [
     "hours": "08:30 AM – 04:30 PM",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [
-      "Swim"
-    ],
+    "subjects": [],
     "description": "Spend Your Summer at Burlington, Vermont Parks! Find the latest info on Summer Camps, Beaches, and Events from Burlington Parks, Recreation & Waterfront",
     "indoorOutdoor": "Both",
     "transportation": false,
@@ -3115,9 +3078,7 @@ const programsData = [
     "hours": "08:30 AM – 04:30 PM",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [
-      "Swim"
-    ],
+    "subjects": [],
     "description": "Spend Your Summer at Burlington, Vermont Parks! Find the latest info on Summer Camps, Beaches, and Events from Burlington Parks, Recreation & Waterfront",
     "indoorOutdoor": "Both",
     "transportation": false,
@@ -3148,9 +3109,7 @@ const programsData = [
     "hours": "08:30 AM – 04:30 PM",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [
-      "Swim"
-    ],
+    "subjects": [],
     "description": "Spend Your Summer at Burlington, Vermont Parks! Find the latest info on Summer Camps, Beaches, and Events from Burlington Parks, Recreation & Waterfront",
     "indoorOutdoor": "Both",
     "transportation": false,
@@ -3181,9 +3140,7 @@ const programsData = [
     "hours": "12:00 AM – 05:00 PM",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [
-      "Swim"
-    ],
+    "subjects": [],
     "description": "Spend Your Summer at Burlington, Vermont Parks! Find the latest info on Summer Camps, Beaches, and Events from Burlington Parks, Recreation & Waterfront",
     "indoorOutdoor": "Both",
     "transportation": false,
@@ -3214,9 +3171,7 @@ const programsData = [
     "hours": "12:00 AM – 05:00 PM",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [
-      "Swim"
-    ],
+    "subjects": [],
     "description": "Spend Your Summer at Burlington, Vermont Parks! Find the latest info on Summer Camps, Beaches, and Events from Burlington Parks, Recreation & Waterfront",
     "indoorOutdoor": "Both",
     "transportation": false,
@@ -3248,7 +3203,7 @@ const programsData = [
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
     "subjects": [
-      "Swim"
+      "Tennis"
     ],
     "description": "Spend Your Summer at Burlington, Vermont Parks! Find the latest info on Summer Camps, Beaches, and Events from Burlington Parks, Recreation & Waterfront",
     "indoorOutdoor": "Both",
@@ -3280,9 +3235,7 @@ const programsData = [
     "hours": "12:00 AM – 05:00 PM",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [
-      "Swim"
-    ],
+    "subjects": [],
     "description": "Spend Your Summer at Burlington, Vermont Parks! Find the latest info on Summer Camps, Beaches, and Events from Burlington Parks, Recreation & Waterfront",
     "indoorOutdoor": "Both",
     "transportation": false,
@@ -3314,7 +3267,7 @@ const programsData = [
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
     "subjects": [
-      "Swim"
+      "Tennis"
     ],
     "description": "Spend Your Summer at Burlington, Vermont Parks! Find the latest info on Summer Camps, Beaches, and Events from Burlington Parks, Recreation & Waterfront",
     "indoorOutdoor": "Both",
@@ -3346,9 +3299,7 @@ const programsData = [
     "hours": "12:00 AM – 05:00 PM",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [
-      "Swim"
-    ],
+    "subjects": [],
     "description": "Spend Your Summer at Burlington, Vermont Parks! Find the latest info on Summer Camps, Beaches, and Events from Burlington Parks, Recreation & Waterfront",
     "indoorOutdoor": "Both",
     "transportation": false,
@@ -3379,9 +3330,7 @@ const programsData = [
     "hours": "12:00 AM – 05:00 PM",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [
-      "Swim"
-    ],
+    "subjects": [],
     "description": "Spend Your Summer at Burlington, Vermont Parks! Find the latest info on Summer Camps, Beaches, and Events from Burlington Parks, Recreation & Waterfront",
     "indoorOutdoor": "Both",
     "transportation": false,
@@ -3443,7 +3392,9 @@ const programsData = [
     "hours": "09:00 AM – 02:00 PM",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [],
+    "subjects": [
+      "Sailing"
+    ],
     "description": "We’ve renamed our beloved windsurfing camp to accurately reflect the content of the camp. YES, your child will still learn windsurfing but this camp has grown to be so much more! We supply all the gear and provide beginner and intermediate instruction on the basics of how to windsurf and stand up paddle board. Campers will stay active with our fleet of standup paddle boards, windsurfers, hobie cats, and various lawn games. No prior experience is required. Campers will walk to SANDBOX to block print their own camp tee!",
     "indoorOutdoor": "Both",
     "transportation": false,
@@ -3474,7 +3425,9 @@ const programsData = [
     "hours": "10:00 AM – 02:00 PM",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [],
+    "subjects": [
+      "Sailing"
+    ],
     "description": "We’ve renamed our beloved windsurfing camp to accurately reflect the content of the camp. YES, your child will still learn windsurfing but this camp has grown to be so much more! We supply all the gear and provide beginner and intermediate instruction on the basics of how to windsurf and stand up paddle board. Campers will stay active with our fleet of standup paddle boards, windsurfers, hobie cats, and various lawn games. No prior experience is required. Campers will walk to SANDBOX to block print their own camp tee!",
     "indoorOutdoor": "Both",
     "transportation": false,
@@ -3505,7 +3458,9 @@ const programsData = [
     "hours": "11:00 AM – 02:00 PM",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [],
+    "subjects": [
+      "Sailing"
+    ],
     "description": "We’ve renamed our beloved windsurfing camp to accurately reflect the content of the camp. YES, your child will still learn windsurfing but this camp has grown to be so much more! We supply all the gear and provide beginner and intermediate instruction on the basics of how to windsurf and stand up paddle board. Campers will stay active with our fleet of standup paddle boards, windsurfers, hobie cats, and various lawn games. No prior experience is required. Campers will walk to SANDBOX to block print their own camp tee!",
     "indoorOutdoor": "Both",
     "transportation": false,
@@ -3536,7 +3491,9 @@ const programsData = [
     "hours": "12:00 AM – 02:00 PM",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [],
+    "subjects": [
+      "Sailing"
+    ],
     "description": "We’ve renamed our beloved windsurfing camp to accurately reflect the content of the camp. YES, your child will still learn windsurfing but this camp has grown to be so much more! We supply all the gear and provide beginner and intermediate instruction on the basics of how to windsurf and stand up paddle board. Campers will stay active with our fleet of standup paddle boards, windsurfers, hobie cats, and various lawn games. No prior experience is required. Campers will walk to SANDBOX to block print their own camp tee!",
     "indoorOutdoor": "Both",
     "transportation": false,
@@ -3567,7 +3524,9 @@ const programsData = [
     "hours": "01:00 AM – 02:00 PM",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [],
+    "subjects": [
+      "Sailing"
+    ],
     "description": "We’ve renamed our beloved windsurfing camp to accurately reflect the content of the camp. YES, your child will still learn windsurfing but this camp has grown to be so much more! We supply all the gear and provide beginner and intermediate instruction on the basics of how to windsurf and stand up paddle board. Campers will stay active with our fleet of standup paddle boards, windsurfers, hobie cats, and various lawn games. No prior experience is required. Campers will walk to SANDBOX to block print their own camp tee!",
     "indoorOutdoor": "Both",
     "transportation": false,
@@ -3598,7 +3557,9 @@ const programsData = [
     "hours": "02:00 AM – 02:00 PM",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [],
+    "subjects": [
+      "Sailing"
+    ],
     "description": "We’ve renamed our beloved windsurfing camp to accurately reflect the content of the camp. YES, your child will still learn windsurfing but this camp has grown to be so much more! We supply all the gear and provide beginner and intermediate instruction on the basics of how to windsurf and stand up paddle board. Campers will stay active with our fleet of standup paddle boards, windsurfers, hobie cats, and various lawn games. No prior experience is required. Campers will walk to SANDBOX to block print their own camp tee!",
     "indoorOutdoor": "Both",
     "transportation": false,
@@ -3629,7 +3590,9 @@ const programsData = [
     "hours": "03:00 AM – 02:00 PM",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [],
+    "subjects": [
+      "Sailing"
+    ],
     "description": "We’ve renamed our beloved windsurfing camp to accurately reflect the content of the camp. YES, your child will still learn windsurfing but this camp has grown to be so much more! We supply all the gear and provide beginner and intermediate instruction on the basics of how to windsurf and stand up paddle board. Campers will stay active with our fleet of standup paddle boards, windsurfers, hobie cats, and various lawn games. No prior experience is required. Campers will walk to SANDBOX to block print their own camp tee!",
     "indoorOutdoor": "Both",
     "transportation": false,
@@ -3660,8 +3623,10 @@ const programsData = [
     "hours": "",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [],
-    "description": "Burlington Tennis Club offers this summer program in South Burlington, VT. Cost: $412 per session.",
+    "subjects": [
+      "Tennis"
+    ],
+    "description": "Burlington Tennis Club offers this summer program in South Burlington, VT. Activities include Tennis. Cost: $412 per session.",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -3942,9 +3907,11 @@ const programsData = [
     "subjects": [
       "Arts",
       "Music",
-      "Outdoor Education",
+      "Tennis",
       "Swim",
-      "Cooking"
+      "Outdoor Education",
+      "Cooking",
+      "Animals"
     ],
     "description": "Our popular one-week day camp invites young campers in the Addison and Chittenden County region to join us for the best things Vermont summers have to offer. Outdoor activities include archery, tennis, swimming, exploring the pond and creek, identifying wildlife, hiking, and gardening. Indoors, we’ll cook together, play music, and explore our artsy side.",
     "indoorOutdoor": "Both",
@@ -4007,8 +3974,10 @@ const programsData = [
     "hours": "",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [],
-    "description": "Camp Paw Paw (Chittenden Humane Society) offers this summer program in South Burlington, VT. Open to students in grades K–6. Cost: $259 per session.",
+    "subjects": [
+      "Animals"
+    ],
+    "description": "Camp Paw Paw (Chittenden Humane Society) offers this summer program in South Burlington, VT. Open to students in grades K–6. Activities include Animals. Cost: $259 per session.",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -4133,7 +4102,9 @@ const programsData = [
     "hours": "09:00 AM – 04:00 PM",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [],
+    "subjects": [
+      "Mountain Biking"
+    ],
     "description": "6/15 9 AM - 6/19 4 PM We offer 30 minute drop off [8:30am-9am] and pick up [3:30pm to 4pm] windows.",
     "indoorOutdoor": "Both",
     "transportation": false,
@@ -4164,7 +4135,9 @@ const programsData = [
     "hours": "09:00 AM – 04:00 PM",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [],
+    "subjects": [
+      "Mountain Biking"
+    ],
     "description": "6/15 9 AM - 6/19 4 PM We offer 30 minute drop off [8:30am-9am] and pick up [3:30pm to 4pm] windows.",
     "indoorOutdoor": "Both",
     "transportation": false,
@@ -4195,7 +4168,9 @@ const programsData = [
     "hours": "09:00 AM – 04:00 PM",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [],
+    "subjects": [
+      "Mountain Biking"
+    ],
     "description": "6/22 9 AM - 6/26 4 PM We offer 30 minute drop off [8:30am-9am] and pick up [3:30pm to 4pm] windows.",
     "indoorOutdoor": "Both",
     "transportation": false,
@@ -4226,7 +4201,9 @@ const programsData = [
     "hours": "09:00 AM – 04:00 PM",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [],
+    "subjects": [
+      "Mountain Biking"
+    ],
     "description": "6/15 9 AM - 6/19 4 PM We offer 30 minute drop off [8:30am-9am] and pick up [3:30pm to 4pm] windows.",
     "indoorOutdoor": "Both",
     "transportation": false,
@@ -4257,7 +4234,9 @@ const programsData = [
     "hours": "09:00 AM – 04:00 PM",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [],
+    "subjects": [
+      "Mountain Biking"
+    ],
     "description": "6/22 9 AM - 6/26 4 PM We offer 30 minute drop off [8:30am-9am] and pick up [3:30pm to 4pm] windows.",
     "indoorOutdoor": "Both",
     "transportation": false,
@@ -4288,7 +4267,9 @@ const programsData = [
     "hours": "09:00 AM – 04:00 PM",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [],
+    "subjects": [
+      "Mountain Biking"
+    ],
     "description": "6/29 9 AM - 7/3 4 PM We offer 30 minute drop off [8:30am-9am] and pick up [3:30pm to 4pm] windows.",
     "indoorOutdoor": "Both",
     "transportation": false,
@@ -4319,7 +4300,9 @@ const programsData = [
     "hours": "09:00 AM – 04:00 PM",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [],
+    "subjects": [
+      "Mountain Biking"
+    ],
     "description": "6/22 9 AM - 6/26 4 PM We offer 30 minute drop off [8:30am-9am] and pick up [3:30pm to 4pm] windows.",
     "indoorOutdoor": "Both",
     "transportation": false,
@@ -4350,7 +4333,9 @@ const programsData = [
     "hours": "09:00 AM – 04:00 PM",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [],
+    "subjects": [
+      "Mountain Biking"
+    ],
     "description": "6/29 9 AM - 7/3 4 PM We offer 30 minute drop off [8:30am-9am] and pick up [3:30pm to 4pm] windows.",
     "indoorOutdoor": "Both",
     "transportation": false,
@@ -4381,7 +4366,9 @@ const programsData = [
     "hours": "09:00 AM – 04:00 PM",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [],
+    "subjects": [
+      "Mountain Biking"
+    ],
     "description": "7/13 9 AM - 7/17 4 PM We offer 30 minute drop off [8:30am-9am] and pick up [3:30pm to 4pm] windows.",
     "indoorOutdoor": "Both",
     "transportation": false,
@@ -4412,7 +4399,9 @@ const programsData = [
     "hours": "09:00 AM – 04:00 PM",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [],
+    "subjects": [
+      "Mountain Biking"
+    ],
     "description": "6/29 9 AM - 7/3 4 PM We offer 30 minute drop off [8:30am-9am] and pick up [3:30pm to 4pm] windows.",
     "indoorOutdoor": "Both",
     "transportation": false,
@@ -4474,7 +4463,9 @@ const programsData = [
     "hours": "09:00 AM – 04:00 PM",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [],
+    "subjects": [
+      "Mountain Biking"
+    ],
     "description": "7/6 9 AM - 7/10 4 PM (9 AM - 4 PM)",
     "indoorOutdoor": "Both",
     "transportation": false,
@@ -4505,7 +4496,9 @@ const programsData = [
     "hours": "09:00 AM – 04:00 PM",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [],
+    "subjects": [
+      "Mountain Biking"
+    ],
     "description": "7/6 9 AM - 7/10 4 PM We offer 30 minute drop off [8:30am-9am] and pick up [3:30pm to 4pm] windows.",
     "indoorOutdoor": "Both",
     "transportation": false,
@@ -4536,7 +4529,9 @@ const programsData = [
     "hours": "09:00 AM – 04:00 PM",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [],
+    "subjects": [
+      "Mountain Biking"
+    ],
     "description": "7/6 9 AM - 7/10 4 PM We offer 30 minute drop off [8:30am-9am] and pick up [3:30pm to 4pm] windows.",
     "indoorOutdoor": "Both",
     "transportation": false,
@@ -4567,7 +4562,9 @@ const programsData = [
     "hours": "09:00 AM – 04:00 PM",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [],
+    "subjects": [
+      "Mountain Biking"
+    ],
     "description": "7/13 9 AM - 7/17 4 PM We offer 30 minute drop off [8:30am-9am] and pick up [3:30pm to 4pm] windows.",
     "indoorOutdoor": "Both",
     "transportation": false,
@@ -4629,7 +4626,9 @@ const programsData = [
     "hours": "09:00 AM – 04:00 PM",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [],
+    "subjects": [
+      "Mountain Biking"
+    ],
     "description": "7/13 9 AM - 7/17 4 PM We offer 30 minute drop off [8:30am-9am] and pick up [3:30pm to 4pm] windows.",
     "indoorOutdoor": "Both",
     "transportation": false,
@@ -4660,7 +4659,9 @@ const programsData = [
     "hours": "09:00 AM – 04:00 PM",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [],
+    "subjects": [
+      "Mountain Biking"
+    ],
     "description": "7/20 9 AM - 7/24 4 PM We offer 30 minute drop off [8:30am-9am] and pick up [3:30pm to 4pm] windows.",
     "indoorOutdoor": "Both",
     "transportation": false,
@@ -4691,7 +4692,9 @@ const programsData = [
     "hours": "09:00 AM – 04:00 PM",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [],
+    "subjects": [
+      "Mountain Biking"
+    ],
     "description": "7/20 9 AM - 7/24 4 PM (9 AM - 4 PM)",
     "indoorOutdoor": "Both",
     "transportation": false,
@@ -4722,7 +4725,9 @@ const programsData = [
     "hours": "09:00 AM – 04:00 PM",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [],
+    "subjects": [
+      "Mountain Biking"
+    ],
     "description": "7/20 9 AM - 7/24 4 PM We offer 30 minute drop off [8:30am-9am] and pick up [3:30pm to 4pm] windows.",
     "indoorOutdoor": "Both",
     "transportation": false,
@@ -4753,7 +4758,9 @@ const programsData = [
     "hours": "09:00 AM – 04:00 PM",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [],
+    "subjects": [
+      "Mountain Biking"
+    ],
     "description": "7/27 9 PM - 7/31 4 PM (9 AM - 4 PM)",
     "indoorOutdoor": "Both",
     "transportation": false,
@@ -4784,7 +4791,9 @@ const programsData = [
     "hours": "09:00 AM – 04:00 PM",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [],
+    "subjects": [
+      "Mountain Biking"
+    ],
     "description": "7/27 9 AM - 7/31 4 PM We offer 30 minute drop off [8:30am-9am] and pick up [3:30pm to 4pm] windows.",
     "indoorOutdoor": "Both",
     "transportation": false,
@@ -4846,7 +4855,9 @@ const programsData = [
     "hours": "09:00 AM – 04:00 PM",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [],
+    "subjects": [
+      "Mountain Biking"
+    ],
     "description": "7/27 9 AM - 7/31 4 PM We offer 30 minute drop off [8:30am-9am] and pick up [3:30pm to 4pm] windows.",
     "indoorOutdoor": "Both",
     "transportation": false,
@@ -4877,7 +4888,9 @@ const programsData = [
     "hours": "09:00 AM – 04:00 PM",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [],
+    "subjects": [
+      "Mountain Biking"
+    ],
     "description": "8/3 9 AM - 8/7 4 PM (9 AM - 4 PM)",
     "indoorOutdoor": "Both",
     "transportation": false,
@@ -4908,7 +4921,9 @@ const programsData = [
     "hours": "09:00 AM – 04:00 PM",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [],
+    "subjects": [
+      "Mountain Biking"
+    ],
     "description": "8/3 9 AM - 8/7 4 PM We offer 30 minute drop off [8:30am-9am] and pick up [3:30pm to 4pm] windows.",
     "indoorOutdoor": "Both",
     "transportation": false,
@@ -4970,7 +4985,9 @@ const programsData = [
     "hours": "09:00 AM – 04:00 PM",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [],
+    "subjects": [
+      "Mountain Biking"
+    ],
     "description": "8/3 9 AM - 8/6 4 PM We offer 30 minute drop off [8:30am-9am] and pick up [3:30pm to 4pm] windows.",
     "indoorOutdoor": "Both",
     "transportation": false,
@@ -5001,7 +5018,9 @@ const programsData = [
     "hours": "09:00 AM – 04:00 PM",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [],
+    "subjects": [
+      "Mountain Biking"
+    ],
     "description": "8/10 9 AM - 8/14 4 PM We offer 30 minute drop off [8:30am-9am] and pick up [3:30pm to 4pm] windows.",
     "indoorOutdoor": "Both",
     "transportation": false,
@@ -5032,7 +5051,9 @@ const programsData = [
     "hours": "09:00 AM – 04:00 PM",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [],
+    "subjects": [
+      "Mountain Biking"
+    ],
     "description": "8/10 9 AM - 8/14 4 PM We offer 30 minute drop off [8:30am-9am] and pick up [3:30pm to 4pm] windows.",
     "indoorOutdoor": "Both",
     "transportation": false,
@@ -5094,7 +5115,9 @@ const programsData = [
     "hours": "09:00 AM – 04:00 PM",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [],
+    "subjects": [
+      "Mountain Biking"
+    ],
     "description": "8/10 9 AM - 8/14 4 PM We offer 30 minute drop off [8:30am-9am] and pick up [3:30pm to 4pm] windows.",
     "indoorOutdoor": "Both",
     "transportation": false,
@@ -5125,8 +5148,10 @@ const programsData = [
     "hours": "",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [],
-    "description": "CHAMP - Champlain Adaptive Mounted Program offers this summer program in South Hero, VT. Open to students in grades 1–12.",
+    "subjects": [
+      "Equestrian"
+    ],
+    "description": "CHAMP - Champlain Adaptive Mounted Program offers this summer program in South Hero, VT. Open to students in grades 1–12. Activities include Equestrian.",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -5189,7 +5214,9 @@ const programsData = [
     "hours": "08:30 AM – 12:30 PM",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [],
+    "subjects": [
+      "Animals"
+    ],
     "description": "Camp Paw Paw offers a unique learning experience for children who share one thing in common: their love for animals. During camp, children will learn about a wide variety of topics including: proper pet care, shelter medicine, animal safety, homeless animals in our community, animal-related careers, HSCC’s mission, and much more!",
     "indoorOutdoor": "Both",
     "transportation": false,
@@ -5220,7 +5247,9 @@ const programsData = [
     "hours": "08:30 AM – 03:00 PM",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [],
+    "subjects": [
+      "Animals"
+    ],
     "description": "Camp Paw Paw offers a unique learning experience for children who share one thing in common: their love for animals. During camp, children will learn about a wide variety of topics including: proper pet care, shelter medicine, animal safety, homeless animals in our community, animal-related careers, HSCC’s mission, and much more!",
     "indoorOutdoor": "Both",
     "transportation": false,
@@ -5251,7 +5280,9 @@ const programsData = [
     "hours": "08:30 AM – 03:00 PM",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [],
+    "subjects": [
+      "Animals"
+    ],
     "description": "Camp Paw Paw offers a unique learning experience for children who share one thing in common: their love for animals. During camp, children will learn about a wide variety of topics including: proper pet care, shelter medicine, animal safety, homeless animals in our community, animal-related careers, HSCC’s mission, and much more!",
     "indoorOutdoor": "Both",
     "transportation": false,
@@ -5282,7 +5313,9 @@ const programsData = [
     "hours": "08:30 AM – 03:00 PM",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [],
+    "subjects": [
+      "Animals"
+    ],
     "description": "Camp Paw Paw offers a unique learning experience for children who share one thing in common: their love for animals. During camp, children will learn about a wide variety of topics including: proper pet care, shelter medicine, animal safety, homeless animals in our community, animal-related careers, HSCC’s mission, and much more!",
     "indoorOutdoor": "Both",
     "transportation": false,
@@ -5313,7 +5346,9 @@ const programsData = [
     "hours": "08:30 AM – 03:00 PM",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [],
+    "subjects": [
+      "Animals"
+    ],
     "description": "Camp Paw Paw offers a unique learning experience for children who share one thing in common: their love for animals. During camp, children will learn about a wide variety of topics including: proper pet care, shelter medicine, animal safety, homeless animals in our community, animal-related careers, HSCC’s mission, and much more!",
     "indoorOutdoor": "Both",
     "transportation": false,
@@ -5344,7 +5379,9 @@ const programsData = [
     "hours": "08:30 AM – 03:00 PM",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [],
+    "subjects": [
+      "Animals"
+    ],
     "description": "Camp Paw Paw offers a unique learning experience for children who share one thing in common: their love for animals. During camp, children will learn about a wide variety of topics including: proper pet care, shelter medicine, animal safety, homeless animals in our community, animal-related careers, HSCC’s mission, and much more!",
     "indoorOutdoor": "Both",
     "transportation": false,
@@ -5406,7 +5443,9 @@ const programsData = [
     "hours": "",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [],
+    "subjects": [
+      "Circus"
+    ],
     "description": "Live your best circus life at Smirkus Camp in a session designed for campers of all skill levels, ages 8 to 16.\n\nOur All Level sessions are open to anyone interested in the magic and fun of circus, whether you are training at a circus school in your home community or this is your first time trying circus.",
     "indoorOutdoor": "Both",
     "transportation": false,
@@ -5438,7 +5477,8 @@ const programsData = [
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
     "subjects": [
-      "Arts"
+      "Arts",
+      "Circus"
     ],
     "description": "mirkling Camp is designed for first-time campers ages 5 to 12, and is a great introduction to the circus arts for all the aspiring clowns and acrobats in your house!\n\nSmirklings, as we call our young performers, will experience the fun of Smirkus learning, and get a taste of what our longer camp sessions have to offer.\n\nThe fun will include the magical feeling of hanging upside-down on a trapeze, balancing spinning plates, walking on a giant globe, and will give a general introduction to the circus arts skills we teach at Smirkus Camp.",
     "indoorOutdoor": "Both",
@@ -5505,7 +5545,7 @@ const programsData = [
     "sessionType": "Summer",
     "subjects": [
       "Science",
-      "Coding",
+      "Sailing",
       "Outdoor Education"
     ],
     "description": "Guppies - Full-day or half-day camps for the youngest of sailors, filled with sailing basics and age-appropriate outdoor ecology. Campers will engage in dynamic on-land activities and enjoy sailing aboard our keelboats. Ages 6-7.",
@@ -5540,7 +5580,7 @@ const programsData = [
     "sessionType": "Summer",
     "subjects": [
       "Science",
-      "Coding",
+      "Sailing",
       "Outdoor Education"
     ],
     "description": "Guppies - Full-day or half-day camps for the youngest of sailors, filled with sailing basics and age-appropriate outdoor ecology. Campers will engage in dynamic on-land activities and enjoy sailing aboard our keelboats. Ages 6-7.",
@@ -5575,7 +5615,7 @@ const programsData = [
     "sessionType": "Summer",
     "subjects": [
       "Science",
-      "Coding",
+      "Sailing",
       "Outdoor Education"
     ],
     "description": "Guppies - Full-day or half-day camps for the youngest of sailors, filled with sailing basics and age-appropriate outdoor ecology. Campers will engage in dynamic on-land activities and enjoy sailing aboard our keelboats. Ages 6-7.",
@@ -5610,7 +5650,9 @@ const programsData = [
     "sessionType": "Summer",
     "subjects": [
       "Arts",
-      "Swim"
+      "Sailing",
+      "Outdoor Education",
+      "Animals"
     ],
     "description": "In Artful Guppies, campers will learn to sail while creating artwork inspired by the lakeshore and the many creatures that live in and around the water. Guided by experienced art teachers, campers will explore different painting styles, including acrylics and watercolors, and experiment with additional mediums through mixed media projects that encourage creativity and self-expression. Upon arrival each day, campers will hop aboard our keelboats and set sail with Community Sailing Center instructors, blending art and adventure on the lake. Community Partner: Burlington Paint & Sip Studio Ages 6-7",
     "indoorOutdoor": "Both",
@@ -5644,7 +5686,8 @@ const programsData = [
     "sessionType": "Summer",
     "subjects": [
       "Arts",
-      "Swim"
+      "Yoga",
+      "Sailing"
     ],
     "description": "Our Gumby Guppies will enjoy a fun-filled day combining yoga and sailing! In partnership with GROW Prenatal and Family Yoga Center, campers will start the day on the water, learning the fundamentals of sailing aboard our 23-foot keelboats. Afternoons are spent exploring the basics of yoga, both on land and while balancing on paddleboards, for a playful and active camp experience. Community Partner: GROW Prenatal and Family Yoga Center Ages: 6 - 7",
     "indoorOutdoor": "Both",
@@ -5678,7 +5721,8 @@ const programsData = [
     "sessionType": "Summer",
     "subjects": [
       "Arts",
-      "Swim"
+      "Yoga",
+      "Sailing"
     ],
     "description": "Our Gumby Guppies will enjoy a fun-filled day combining yoga and sailing! In partnership with GROW Prenatal and Family Yoga Center, campers will start the day on the water, learning the fundamentals of sailing aboard our 23-foot keelboats. Afternoons are spent exploring the basics of yoga, both on land and while balancing on paddleboards, for a playful and active camp experience. Community Partner: GROW Prenatal and Family Yoga Center Ages: 6 - 7",
     "indoorOutdoor": "Both",
@@ -5712,9 +5756,8 @@ const programsData = [
     "sessionType": "Summer",
     "subjects": [
       "Science",
-      "Coding",
-      "Outdoor Education",
-      "Swim"
+      "Sailing",
+      "Outdoor Education"
     ],
     "description": "This full-day or half-day camp is designed especially for our youngest sailors, blending beginner sailing skills with age-appropriate outdoor ecology. Campers will enjoy hands-on activities on land and experience the excitement of sailing aboard our keelboats, making it a fun and engaging week on and off the water. Ages 6-7",
     "indoorOutdoor": "Both",
@@ -5748,9 +5791,8 @@ const programsData = [
     "sessionType": "Summer",
     "subjects": [
       "Science",
-      "Coding",
-      "Outdoor Education",
-      "Swim"
+      "Sailing",
+      "Outdoor Education"
     ],
     "description": "This full-day or half-day camp is designed especially for our youngest sailors, blending beginner sailing skills with age-appropriate outdoor ecology. Campers will enjoy hands-on activities on land and experience the excitement of sailing aboard our keelboats, making it a fun and engaging week on and off the water. Ages 6-8",
     "indoorOutdoor": "Both",
@@ -5784,9 +5826,8 @@ const programsData = [
     "sessionType": "Summer",
     "subjects": [
       "Science",
-      "Coding",
-      "Outdoor Education",
-      "Swim"
+      "Sailing",
+      "Outdoor Education"
     ],
     "description": "This full-day or half-day camp is designed especially for our youngest sailors, blending beginner sailing skills with age-appropriate outdoor ecology. Campers will enjoy hands-on activities on land and experience the excitement of sailing aboard our keelboats, making it a fun and engaging week on and off the water. Ages 6-9",
     "indoorOutdoor": "Both",
@@ -5818,7 +5859,9 @@ const programsData = [
     "hours": "",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [],
+    "subjects": [
+      "Science"
+    ],
     "description": "Montreal",
     "indoorOutdoor": "Both",
     "transportation": false,
@@ -5849,7 +5892,9 @@ const programsData = [
     "hours": "",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [],
+    "subjects": [
+      "Science"
+    ],
     "description": "Montreal",
     "indoorOutdoor": "Both",
     "transportation": false,
@@ -5880,7 +5925,9 @@ const programsData = [
     "hours": "",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [],
+    "subjects": [
+      "Science"
+    ],
     "description": "Montreal",
     "indoorOutdoor": "Both",
     "transportation": false,
@@ -5911,7 +5958,9 @@ const programsData = [
     "hours": "",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [],
+    "subjects": [
+      "Science"
+    ],
     "description": "Montreal",
     "indoorOutdoor": "Both",
     "transportation": false,
@@ -5942,7 +5991,9 @@ const programsData = [
     "hours": "",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [],
+    "subjects": [
+      "Science"
+    ],
     "description": "Montreal",
     "indoorOutdoor": "Both",
     "transportation": false,
@@ -5973,7 +6024,9 @@ const programsData = [
     "hours": "",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [],
+    "subjects": [
+      "Science"
+    ],
     "description": "Montreal",
     "indoorOutdoor": "Both",
     "transportation": false,
@@ -6004,7 +6057,9 @@ const programsData = [
     "hours": "",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [],
+    "subjects": [
+      "Science"
+    ],
     "description": "Montreal",
     "indoorOutdoor": "Both",
     "transportation": false,
@@ -6035,7 +6090,9 @@ const programsData = [
     "hours": "",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [],
+    "subjects": [
+      "Science"
+    ],
     "description": "Montreal",
     "indoorOutdoor": "Both",
     "transportation": false,
@@ -6130,7 +6187,10 @@ const programsData = [
     "sessionType": "Summer",
     "subjects": [
       "Coding",
-      "Arts"
+      "Arts",
+      "Martial Arts",
+      "Gymnastics",
+      "Outdoor Education"
     ],
     "description": "Dunkleys is a small family style, gymnastics camp. With only 50 campers per session, each gymnast is challenged, whether beginner or advanced USAG Level 9! There is a camper/counselor ratio of 5/1 or less during work out sessions. Camp offers one, two or multiple week sessions for Girls, from June 14th until August 14th, with 2 co-ed Weeks 5 & 6 (Special Boys Programming: Gymnastics/Ninja challenges/martial arts.) The Dunkley Camp Adventure strives to instill the values and life skills of: living simply, loving generously, caring deeply and giving fully…. with an emphasis on character building, skill building and fun!",
     "indoorOutdoor": "Both",
@@ -6162,7 +6222,9 @@ const programsData = [
     "hours": "",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [],
+    "subjects": [
+      "Animals"
+    ],
     "description": "Animal Superpowers",
     "indoorOutdoor": "Both",
     "transportation": false,
@@ -6227,7 +6289,11 @@ const programsData = [
     "hours": "",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [],
+    "subjects": [
+      "Science",
+      "Outdoor Education",
+      "Animals"
+    ],
     "description": "Join us at ECHO this summer for a prehistoric adventure as we travel back in time to explore the amazing world of dinosaurs, fossils, and rocks. Through hands-on excavations, rock collecting, and fossil casting, campers will learn about the incredible creatures and forces that shaped our world.",
     "indoorOutdoor": "Both",
     "transportation": false,
@@ -6259,7 +6325,8 @@ const programsData = [
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
     "subjects": [
-      "Science"
+      "Science",
+      "Animals"
     ],
     "description": "oin us at ECHO this summer and discover the superpowers of the animal kingdom! Campers will explore extraordinary adaptations like invisibility, super strength, sonic speed, and night vision. Prepare for a week of exploration, imagination, and real-world science as we celebrate the amazing “heroes” living right in our own backyards!",
     "indoorOutdoor": "Both",
@@ -6325,7 +6392,11 @@ const programsData = [
     "hours": "",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [],
+    "subjects": [
+      "Science",
+      "Outdoor Education",
+      "Animals"
+    ],
     "description": "Join us at ECHO this summer for a prehistoric adventure as we travel back in time to explore the amazing world of dinosaurs, fossils, and rocks. Through hands-on excavations, rock collecting, and fossil casting, campers will learn about the incredible creatures and forces that shaped our world.",
     "indoorOutdoor": "Both",
     "transportation": false,
@@ -6391,7 +6462,8 @@ const programsData = [
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
     "subjects": [
-      "Science"
+      "Science",
+      "Animals"
     ],
     "description": "oin us at ECHO this summer and discover the superpowers of the animal kingdom! Campers will explore extraordinary adaptations like invisibility, super strength, sonic speed, and night vision. Prepare for a week of exploration, imagination, and real-world science as we celebrate the amazing “heroes” living right in our own backyards!",
     "indoorOutdoor": "Both",
@@ -6423,7 +6495,11 @@ const programsData = [
     "hours": "",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [],
+    "subjects": [
+      "Science",
+      "Outdoor Education",
+      "Animals"
+    ],
     "description": "Join us at ECHO this summer for a prehistoric adventure as we travel back in time to explore the amazing world of dinosaurs, fossils, and rocks. Through hands-on excavations, rock collecting, and fossil casting, campers will learn about the incredible creatures and forces that shaped our world.",
     "indoorOutdoor": "Both",
     "transportation": false,
@@ -6523,8 +6599,7 @@ const programsData = [
     "sessionType": "Summer",
     "subjects": [
       "Arts",
-      "Equestrian",
-      "Swim"
+      "Equestrian"
     ],
     "description": "For children ages 5 and up. Children will be kept very busy with horseback riding, games on horseback, crafts, barn chores, caring for the horses, fun barn games, lessons on horse anatomy, breeds, tack, and more! During the warmer days, children will get to bathe the horses, learn the proper way to clean the tack, and have some water fun of their own!",
     "indoorOutdoor": "Both",
@@ -6853,7 +6928,6 @@ const programsData = [
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
     "subjects": [
-      "Coding",
       "Outdoor Education"
     ],
     "description": "First Roots Wild Roots is a nature-based early education program with centers in Hinesburg and Underhill, Vermont. We believe in play-based, outdoor experiences that are appropriate to each child's developmental level.",
@@ -6981,8 +7055,10 @@ const programsData = [
     "hours": "",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [],
-    "description": "Full Stride Summer Hockey Camp offers this summer program in South Burlington, VT.",
+    "subjects": [
+      "Hockey"
+    ],
+    "description": "Full Stride Summer Hockey Camp offers this summer program in South Burlington, VT. Activities include Hockey.",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -7108,7 +7184,8 @@ const programsData = [
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
     "subjects": [
-      "Technology"
+      "Technology",
+      "Writing"
     ],
     "description": "Generator’s Dungeons & Dragons maker program is a 5 day maker camp that is everything D&D!",
     "indoorOutdoor": "Both",
@@ -7140,7 +7217,9 @@ const programsData = [
     "hours": "09:00 AM – 03:00 PM",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [],
+    "subjects": [
+      "Writing"
+    ],
     "description": "Dungeons & Dragons Summer Camp #2 — 5 Days, Mon-Fri, July 6-10, 9am-3pm",
     "indoorOutdoor": "Both",
     "transportation": false,
@@ -7334,10 +7413,9 @@ const programsData = [
     "sessionType": "Summer",
     "subjects": [
       "STEM",
-      "Coding",
       "Arts",
-      "Outdoor Education",
-      "Swim"
+      "Swim",
+      "Outdoor Education"
     ],
     "description": "Y Adventure Camp at Rock Point is our co-ed summer day camp for kids who have completed 2nd grade through age 13. We’re working on lots of fun new things for 2026 — stay tuned!\nThis camp takes place on the beautiful Rock Point property on the shores of Lake Champlain. Campers spend most of the day outside, and will have a chance to tend the gardens, use the outdoor pizza oven, swim, kayak, paddleboard, play games, create arts and crafts, do STEM activities, hike, and much more.* This is a traditional outdoor camp full of fun and adventure. Please see below for weekly Camp themes!\nWe appreciate the collaboration with Rock Point that allows us to access this incredible property at the reduced rate they extend to us as a community partner.\nCampers bring lunch and two healthy snacks each day.",
     "indoorOutdoor": "Both",
@@ -7371,10 +7449,9 @@ const programsData = [
     "sessionType": "Summer",
     "subjects": [
       "STEM",
-      "Coding",
       "Arts",
-      "Outdoor Education",
-      "Swim"
+      "Swim",
+      "Outdoor Education"
     ],
     "description": "Y Adventure Camp at Rock Point is our co-ed summer day camp for kids who have completed 2nd grade through age 13. We’re working on lots of fun new things for 2026 — stay tuned!\nThis camp takes place on the beautiful Rock Point property on the shores of Lake Champlain. Campers spend most of the day outside, and will have a chance to tend the gardens, use the outdoor pizza oven, swim, kayak, paddleboard, play games, create arts and crafts, do STEM activities, hike, and much more.* This is a traditional outdoor camp full of fun and adventure. Please see below for weekly Camp themes!\nWe appreciate the collaboration with Rock Point that allows us to access this incredible property at the reduced rate they extend to us as a community partner.\nCampers bring lunch and two healthy snacks each day.",
     "indoorOutdoor": "Both",
@@ -7408,10 +7485,9 @@ const programsData = [
     "sessionType": "Summer",
     "subjects": [
       "STEM",
-      "Coding",
       "Arts",
-      "Outdoor Education",
-      "Swim"
+      "Swim",
+      "Outdoor Education"
     ],
     "description": "Y Adventure Camp at Rock Point is our co-ed summer day camp for kids who have completed 2nd grade through age 13. We’re working on lots of fun new things for 2026 — stay tuned!\nThis camp takes place on the beautiful Rock Point property on the shores of Lake Champlain. Campers spend most of the day outside, and will have a chance to tend the gardens, use the outdoor pizza oven, swim, kayak, paddleboard, play games, create arts and crafts, do STEM activities, hike, and much more.* This is a traditional outdoor camp full of fun and adventure. Please see below for weekly Camp themes!\nWe appreciate the collaboration with Rock Point that allows us to access this incredible property at the reduced rate they extend to us as a community partner.\nCampers bring lunch and two healthy snacks each day.",
     "indoorOutdoor": "Both",
@@ -7445,10 +7521,9 @@ const programsData = [
     "sessionType": "Summer",
     "subjects": [
       "STEM",
-      "Coding",
       "Arts",
-      "Outdoor Education",
-      "Swim"
+      "Swim",
+      "Outdoor Education"
     ],
     "description": "Y Adventure Camp at Rock Point is our co-ed summer day camp for kids who have completed 2nd grade through age 13. We’re working on lots of fun new things for 2026 — stay tuned!\nThis camp takes place on the beautiful Rock Point property on the shores of Lake Champlain. Campers spend most of the day outside, and will have a chance to tend the gardens, use the outdoor pizza oven, swim, kayak, paddleboard, play games, create arts and crafts, do STEM activities, hike, and much more.* This is a traditional outdoor camp full of fun and adventure. Please see below for weekly Camp themes!\nWe appreciate the collaboration with Rock Point that allows us to access this incredible property at the reduced rate they extend to us as a community partner.\nCampers bring lunch and two healthy snacks each day.",
     "indoorOutdoor": "Both",
@@ -7482,10 +7557,9 @@ const programsData = [
     "sessionType": "Summer",
     "subjects": [
       "STEM",
-      "Coding",
       "Arts",
-      "Outdoor Education",
-      "Swim"
+      "Swim",
+      "Outdoor Education"
     ],
     "description": "Y Adventure Camp at Rock Point is our co-ed summer day camp for kids who have completed 2nd grade through age 13. We’re working on lots of fun new things for 2026 — stay tuned!\nThis camp takes place on the beautiful Rock Point property on the shores of Lake Champlain. Campers spend most of the day outside, and will have a chance to tend the gardens, use the outdoor pizza oven, swim, kayak, paddleboard, play games, create arts and crafts, do STEM activities, hike, and much more.* This is a traditional outdoor camp full of fun and adventure. Please see below for weekly Camp themes!\nWe appreciate the collaboration with Rock Point that allows us to access this incredible property at the reduced rate they extend to us as a community partner.\nCampers bring lunch and two healthy snacks each day.",
     "indoorOutdoor": "Both",
@@ -7519,10 +7593,9 @@ const programsData = [
     "sessionType": "Summer",
     "subjects": [
       "STEM",
-      "Coding",
       "Arts",
-      "Outdoor Education",
-      "Swim"
+      "Swim",
+      "Outdoor Education"
     ],
     "description": "Y Adventure Camp at Rock Point is our co-ed summer day camp for kids who have completed 2nd grade through age 13. We’re working on lots of fun new things for 2026 — stay tuned!\nThis camp takes place on the beautiful Rock Point property on the shores of Lake Champlain. Campers spend most of the day outside, and will have a chance to tend the gardens, use the outdoor pizza oven, swim, kayak, paddleboard, play games, create arts and crafts, do STEM activities, hike, and much more.* This is a traditional outdoor camp full of fun and adventure. Please see below for weekly Camp themes!\nWe appreciate the collaboration with Rock Point that allows us to access this incredible property at the reduced rate they extend to us as a community partner.\nCampers bring lunch and two healthy snacks each day.",
     "indoorOutdoor": "Both",
@@ -7556,10 +7629,9 @@ const programsData = [
     "sessionType": "Summer",
     "subjects": [
       "STEM",
-      "Coding",
       "Arts",
-      "Outdoor Education",
-      "Swim"
+      "Swim",
+      "Outdoor Education"
     ],
     "description": "Y Adventure Camp at Rock Point is our co-ed summer day camp for kids who have completed 2nd grade through age 13. We’re working on lots of fun new things for 2026 — stay tuned!\nThis camp takes place on the beautiful Rock Point property on the shores of Lake Champlain. Campers spend most of the day outside, and will have a chance to tend the gardens, use the outdoor pizza oven, swim, kayak, paddleboard, play games, create arts and crafts, do STEM activities, hike, and much more.* This is a traditional outdoor camp full of fun and adventure. Please see below for weekly Camp themes!\nWe appreciate the collaboration with Rock Point that allows us to access this incredible property at the reduced rate they extend to us as a community partner.\nCampers bring lunch and two healthy snacks each day.",
     "indoorOutdoor": "Both",
@@ -7593,10 +7665,9 @@ const programsData = [
     "sessionType": "Summer",
     "subjects": [
       "STEM",
-      "Coding",
       "Arts",
-      "Outdoor Education",
-      "Swim"
+      "Swim",
+      "Outdoor Education"
     ],
     "description": "Y Adventure Camp at Rock Point is our co-ed summer day camp for kids who have completed 2nd grade through age 13. We’re working on lots of fun new things for 2026 — stay tuned!\nThis camp takes place on the beautiful Rock Point property on the shores of Lake Champlain. Campers spend most of the day outside, and will have a chance to tend the gardens, use the outdoor pizza oven, swim, kayak, paddleboard, play games, create arts and crafts, do STEM activities, hike, and much more.* This is a traditional outdoor camp full of fun and adventure. Please see below for weekly Camp themes!\nWe appreciate the collaboration with Rock Point that allows us to access this incredible property at the reduced rate they extend to us as a community partner.\nCampers bring lunch and two healthy snacks each day.",
     "indoorOutdoor": "Both",
@@ -7628,8 +7699,10 @@ const programsData = [
     "hours": "",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [],
-    "description": "Green Mountain Field Hockey Academy offers this summer program in Burlington, VT.",
+    "subjects": [
+      "Hockey"
+    ],
+    "description": "Green Mountain Field Hockey Academy offers this summer program in Burlington, VT. Activities include Hockey.",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -7659,8 +7732,10 @@ const programsData = [
     "hours": "",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [],
-    "description": "Green Mountain Lacrosse Camp offers this summer program in Vermont. Cost: $150 per session.",
+    "subjects": [
+      "Lacrosse"
+    ],
+    "description": "Green Mountain Lacrosse Camp offers this summer program in Vermont. Activities include Lacrosse. Cost: $150 per session.",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -7754,8 +7829,10 @@ const programsData = [
     "hours": "",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [],
-    "description": "Hard'ack Recreation Area & Pool (dates presented are all of St. Abans Rec - location unclear) offers this summer program in St. Albans, VT. Cost: $318 per session.",
+    "subjects": [
+      "Swim"
+    ],
+    "description": "Hard'ack Recreation Area & Pool (dates presented are all of St. Abans Rec - location unclear) offers this summer program in St. Albans, VT. Activities include Swim. Cost: $318 per session.",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -7786,7 +7863,7 @@ const programsData = [
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
     "subjects": [
-      "Swim"
+      "Hockey"
     ],
     "description": "Hockey camp location in Waterbury, Vermont",
     "indoorOutdoor": "Both",
@@ -7818,8 +7895,10 @@ const programsData = [
     "hours": "",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [],
-    "description": "Hometown Hockey VT offers this summer program in South Burlington, VT.",
+    "subjects": [
+      "Hockey"
+    ],
+    "description": "Hometown Hockey VT offers this summer program in South Burlington, VT. Activities include Hockey.",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -7913,8 +7992,10 @@ const programsData = [
     "hours": "",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [],
-    "description": "International Sailing School & Club offers this summer program in Colchester, VT.",
+    "subjects": [
+      "Sailing"
+    ],
+    "description": "International Sailing School & Club offers this summer program in Colchester, VT. Activities include Sailing.",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -7944,8 +8025,11 @@ const programsData = [
     "hours": "",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [],
-    "description": "Iyengar Yoga Center -Yoga Adventure Camp offers this summer program in Burlington, VT. Cost: $325 per session.",
+    "subjects": [
+      "Yoga",
+      "Outdoor Education"
+    ],
+    "description": "Iyengar Yoga Center -Yoga Adventure Camp offers this summer program in Burlington, VT. Activities include Yoga, Outdoor Education. Cost: $325 per session.",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -8167,8 +8251,7 @@ const programsData = [
     "sessionType": "Summer",
     "subjects": [
       "Science",
-      "Outdoor Education",
-      "Swim"
+      "Outdoor Education"
     ],
     "description": "Do you enjoy being outside and exploring natural areas? This camp will focus on the ecology of the Lake Champlain Watershed. Campers will have the opportunity to explore areas all over the watershed and learn about how they are interconnected. Activities will include hiking, canoeing, and snorkeling all over the Lake Champlain region! Campers will learn more about lake ecology and how water travels throughout our region to end up in Lake Champlain.",
     "indoorOutdoor": "Both",
@@ -8203,7 +8286,7 @@ const programsData = [
     "subjects": [
       "Science",
       "Arts",
-      "Swim"
+      "Sailing"
     ],
     "description": "Have you ever wondered what lies under the surface of the water? Join us for a week of exploring several bodies of water in our region! Campers will get an introduction to snorkeling before starting exploration of various field sites. At some locations we’ll focus on ecology and the different species that call the water “home,” while at other locations we’ll look at human impacts on the underwater environment by learning about nautical archaeology.",
     "indoorOutdoor": "Both",
@@ -8271,8 +8354,9 @@ const programsData = [
     "sessionType": "Summer",
     "subjects": [
       "Arts",
-      "Outdoor Education",
-      "Swim"
+      "Sailing",
+      "Swim",
+      "Outdoor Education"
     ],
     "description": "Calling all kids who have a need for adventure and a love of being on the water! Boats, Boats, Boats is five days of mini expeditions using the Museum’s fleet of boats. Each day will feature a different type of watercraft that we’ll use to travel to an exciting location to eat lunch, explore, and swim before boating back for the end of the camp day. Campers will be able to learn or practice their skill at sailing, rowing, canoeing, and kayaking.",
     "indoorOutdoor": "Both",
@@ -8335,8 +8419,10 @@ const programsData = [
     "hours": "",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [],
-    "description": "Lake Champlain Yacht Club Junior Sailing Program offers this summer program in Vermont.",
+    "subjects": [
+      "Sailing"
+    ],
+    "description": "Lake Champlain Yacht Club Junior Sailing Program offers this summer program in Vermont. Activities include Sailing.",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -8631,7 +8717,9 @@ const programsData = [
     "hours": "",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [],
+    "subjects": [
+      "Swim"
+    ],
     "description": "75 Maple Street, Essex Junction, VT 05452",
     "indoorOutdoor": "Both",
     "transportation": false,
@@ -8884,8 +8972,9 @@ const programsData = [
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
     "subjects": [
-      "Outdoor Education",
-      "Swim"
+      "Mountain Biking",
+      "Swim",
+      "Outdoor Education"
     ],
     "description": "Mountain Bike, Kayak, Hike, Swim, Rock Climb, and more! Are you looking for an exciting outdoor week of adventure for your children (6-14 years old) this summer?",
     "indoorOutdoor": "Both",
@@ -8948,8 +9037,10 @@ const programsData = [
     "hours": "",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [],
-    "description": "Myers Memorial Pool offers this summer program in Vermont.",
+    "subjects": [
+      "Swim"
+    ],
+    "description": "Myers Memorial Pool offers this summer program in Vermont. Activities include Swim.",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -9144,7 +9235,8 @@ const programsData = [
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
     "subjects": [
-      "Arts"
+      "Arts",
+      "Animals"
     ],
     "description": "Come fly on your broom, cast spells with your wand and practice making potions during Wizards and Witches Week! Wizard and Witches week is our Harry Potter inspired week! Campers will receive their letters to Hogwarts on the first day and will be sorted into houses. We will practice our potions, develop our wand skills, and take care of some mythical creatures in this week long camp!",
     "indoorOutdoor": "Both",
@@ -9274,8 +9366,7 @@ const programsData = [
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
     "subjects": [
-      "Reading",
-      "Swim"
+      "Reading"
     ],
     "description": "During Paper Making Camp we will make our own paper pulp in a beater! Then we will add things to our paper such as flower petals and colored paper. We will also use watercolor crayons to draw on it while still wet. Then we will make our own sketch books and cards using the paper we made! We will also learn how to use Jelli Plates to print cool designs onto our paper.",
     "indoorOutdoor": "Both",
@@ -9439,7 +9530,10 @@ const programsData = [
     "subjects": [
       "Science",
       "Arts",
-      "Outdoor Education"
+      "Martial Arts",
+      "Gymnastics",
+      "Outdoor Education",
+      "Animals"
     ],
     "description": "This camp combines all the martial arts, tumbling, and parkour that your kids love, with environmental science and art education! This year we are switching up our science curriculum to a new, more hands on, STEAM based, curriculum. Each of our assistant instructors this year are going to be heading up specific art projects, such as plant impressions in clay, beading animals, and even building volcanoes! We are very excited about it, which is why we have changed the name of our camps this year to Ninja STEAM Camps to reflect our new, more hands-on blending of arts and science based learning. We'll be doing lots of technique oriented Karate and Jiu-Jitsu, playing martial arts games, breaking boards, sword fighting, and delving deeper into meditation and the moral and ethical precepts of the martial arts. We'll also be talking about ants, space, and animal tracking! And we'll delve into ONTA's very own (kid friendly) Kung Fu movie library!",
     "indoorOutdoor": "Both",
@@ -9474,7 +9568,10 @@ const programsData = [
     "subjects": [
       "Science",
       "Arts",
-      "Outdoor Education"
+      "Martial Arts",
+      "Gymnastics",
+      "Outdoor Education",
+      "Animals"
     ],
     "description": "This camp combines all the martial arts, tumbling, and parkour that your kids love, with environmental science and art education! This year we are switching up our science curriculum to a new, more hands on, STEAM based, curriculum. Each of our assistant instructors this year are going to be heading up specific art projects, such as plant impressions in clay, beading animals, and even building volcanoes! We are very excited about it, which is why we have changed the name of our camps this year to Ninja STEAM Camps to reflect our new, more hands-on blending of arts and science based learning. We'll be doing lots of technique oriented Karate and Jiu-Jitsu, playing martial arts games, breaking boards, sword fighting, and delving deeper into meditation and the moral and ethical precepts of the martial arts. We'll also be talking about ants, space, and animal tracking! And we'll delve into ONTA's very own (kid friendly) Kung Fu movie library!",
     "indoorOutdoor": "Both",
@@ -9509,7 +9606,10 @@ const programsData = [
     "subjects": [
       "Science",
       "Arts",
-      "Outdoor Education"
+      "Martial Arts",
+      "Gymnastics",
+      "Outdoor Education",
+      "Animals"
     ],
     "description": "This camp combines all the martial arts, tumbling, and parkour that your kids love, with environmental science and art education! This year we are switching up our science curriculum to a new, more hands on, STEAM based, curriculum. Each of our assistant instructors this year are going to be heading up specific art projects, such as plant impressions in clay, beading animals, and even building volcanoes! We are very excited about it, which is why we have changed the name of our camps this year to Ninja STEAM Camps to reflect our new, more hands-on blending of arts and science based learning. We'll be doing lots of technique oriented Karate and Jiu-Jitsu, playing martial arts games, breaking boards, sword fighting, and delving deeper into meditation and the moral and ethical precepts of the martial arts. We'll also be talking about ants, space, and animal tracking! And we'll delve into ONTA's very own (kid friendly) Kung Fu movie library!",
     "indoorOutdoor": "Both",
@@ -9640,8 +9740,7 @@ const programsData = [
     "sessionType": "Summer",
     "subjects": [
       "Arts",
-      "Equestrian",
-      "Swim"
+      "Equestrian"
     ],
     "description": "For children ages 5 and up. Children will be kept very busy with horseback riding, games on horseback, crafts, barn chores, caring for the horses, fun barn games, lessons on horse anatomy, breeds, tack and more! During the warmer days, children will get to bathe the horses, learn the proper way to clean the tack and have some water fun of their own! All while making friends at ELPH!",
     "indoorOutdoor": "Both",
@@ -9735,8 +9834,10 @@ const programsData = [
     "hours": "",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [],
-    "description": "Regal Gymnastics Academy offers this summer program in Vermont.",
+    "subjects": [
+      "Gymnastics"
+    ],
+    "description": "Regal Gymnastics Academy offers this summer program in Vermont. Activities include Gymnastics.",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -9991,8 +10092,10 @@ const programsData = [
     "hours": "09:00 AM – 12:00 PM",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [],
-    "description": "South Burlington Parks, Recreation and Waterfront offers Chess Wizard Camp in Vermont. Open to students in grades 1–5. Cost: $260 per session.",
+    "subjects": [
+      "Chess"
+    ],
+    "description": "South Burlington Parks, Recreation and Waterfront offers Chess Wizard Camp in Vermont. Open to students in grades 1–5. Activities include Chess. Cost: $260 per session.",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -10022,10 +10125,8 @@ const programsData = [
     "hours": "09:00 AM – 12:00 PM",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [
-      "Soccer"
-    ],
-    "description": "South Burlington Parks, Recreation and Waterfront offers Flag Football Camp 2025 in Vermont. Open to students in grades 4–8. Activities include Soccer. Cost: $175 per session.",
+    "subjects": [],
+    "description": "South Burlington Parks, Recreation and Waterfront offers Flag Football Camp 2025 in Vermont. Open to students in grades 4–8. Cost: $175 per session.",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -10088,8 +10189,10 @@ const programsData = [
     "hours": "09:00 AM – 12:00 PM",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [],
-    "description": "South Burlington Parks, Recreation and Waterfront offers Baseball Camp in Vermont. Open to students in grades 2–6. Cost: $175 per session.",
+    "subjects": [
+      "Baseball"
+    ],
+    "description": "South Burlington Parks, Recreation and Waterfront offers Baseball Camp in Vermont. Open to students in grades 2–6. Activities include Baseball. Cost: $175 per session.",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -10119,8 +10222,10 @@ const programsData = [
     "hours": "09:00 AM – 12:00 PM",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [],
-    "description": "South Burlington Parks, Recreation and Waterfront offers Tennis Camp in Vermont. Open to students in grades K–7. Cost: $145 per session.",
+    "subjects": [
+      "Tennis"
+    ],
+    "description": "South Burlington Parks, Recreation and Waterfront offers Tennis Camp in Vermont. Open to students in grades K–7. Activities include Tennis. Cost: $145 per session.",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -10216,8 +10321,10 @@ const programsData = [
     "hours": "09:00 AM – 12:00 PM",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [],
-    "description": "South Burlington Parks, Recreation and Waterfront offers Chess Wizard Camp in Vermont. Open to students in grades 1–5. Cost: $260 per session.",
+    "subjects": [
+      "Chess"
+    ],
+    "description": "South Burlington Parks, Recreation and Waterfront offers Chess Wizard Camp in Vermont. Open to students in grades 1–5. Activities include Chess. Cost: $260 per session.",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -10346,8 +10453,11 @@ const programsData = [
     "hours": "09:00 AM – 12:00 PM",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [],
-    "description": "South Burlington Parks, Recreation and Waterfront offers Lake Adventures Camp - Community Sailing Center in Vermont. Open to students in grades 3–4. Cost: $285 per session.",
+    "subjects": [
+      "Sailing",
+      "Outdoor Education"
+    ],
+    "description": "South Burlington Parks, Recreation and Waterfront offers Lake Adventures Camp - Community Sailing Center in Vermont. Open to students in grades 3–4. Activities include Sailing, Outdoor Education. Cost: $285 per session.",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -10377,8 +10487,10 @@ const programsData = [
     "hours": "10:00 AM – 02:00 PM",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [],
-    "description": "South Burlington Parks, Recreation and Waterfront offers Pottery Camp in Vermont. Open to students in grades 4–5. Cost: $125 per session.",
+    "subjects": [
+      "Arts"
+    ],
+    "description": "South Burlington Parks, Recreation and Waterfront offers Pottery Camp in Vermont. Open to students in grades 4–5. Activities include Arts. Cost: $125 per session.",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -10408,8 +10520,10 @@ const programsData = [
     "hours": "01:00 AM – 03:00 PM",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [],
-    "description": "South Burlington Parks, Recreation and Waterfront offers Pottery Camp in Vermont. Open to students in grades 7–12. Cost: $125 per session.",
+    "subjects": [
+      "Arts"
+    ],
+    "description": "South Burlington Parks, Recreation and Waterfront offers Pottery Camp in Vermont. Open to students in grades 7–12. Activities include Arts. Cost: $125 per session.",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -10536,8 +10650,10 @@ const programsData = [
     "hours": "01:00 AM – 04:00 PM",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [],
-    "description": "South Burlington Parks, Recreation and Waterfront offers Tennis Camp in Vermont. Open to students in grades K–7. Cost: $116 per session.",
+    "subjects": [
+      "Tennis"
+    ],
+    "description": "South Burlington Parks, Recreation and Waterfront offers Tennis Camp in Vermont. Open to students in grades K–7. Activities include Tennis. Cost: $116 per session.",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -10631,8 +10747,10 @@ const programsData = [
     "hours": "01:00 AM – 04:00 PM",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [],
-    "description": "South Burlington Parks, Recreation and Waterfront offers Tennis Camp in Vermont. Open to students in grades K–7. Cost: $145 per session.",
+    "subjects": [
+      "Tennis"
+    ],
+    "description": "South Burlington Parks, Recreation and Waterfront offers Tennis Camp in Vermont. Open to students in grades K–7. Activities include Tennis. Cost: $145 per session.",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -10662,8 +10780,11 @@ const programsData = [
     "hours": "01:00 AM – 04:00 PM",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [],
-    "description": "South Burlington Parks, Recreation and Waterfront offers Lake Adventures Camp - Community Sailing Center in Vermont. Open to students in grades 6–9. Cost: $285 per session.",
+    "subjects": [
+      "Sailing",
+      "Outdoor Education"
+    ],
+    "description": "South Burlington Parks, Recreation and Waterfront offers Lake Adventures Camp - Community Sailing Center in Vermont. Open to students in grades 6–9. Activities include Sailing, Outdoor Education. Cost: $285 per session.",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -10693,8 +10814,10 @@ const programsData = [
     "hours": "",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [],
-    "description": "South Burlington Recreation & Parks Tennis Camp offers this summer program in South Burlington, VT. Cost: $116 per session.",
+    "subjects": [
+      "Tennis"
+    ],
+    "description": "South Burlington Recreation & Parks Tennis Camp offers this summer program in South Burlington, VT. Activities include Tennis. Cost: $116 per session.",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -10888,6 +11011,7 @@ const programsData = [
     "sessionType": "Summer",
     "subjects": [
       "Coding",
+      "Writing",
       "Arts"
     ],
     "description": "HiTech Yeti offers two virtual Summer Tech Camps: Create Minecraft D&D, and Unity 2/5D Game Design. Camps run June 3 - August 23, 2024, 11am - 5pm.",
@@ -10954,8 +11078,10 @@ const programsData = [
     "hours": "09:00 AM – 03:30 PM",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [],
-    "description": "Talent Skatepark offers Skate Camp in Burlington, VT. Cost: $425 per session.",
+    "subjects": [
+      "Skateboarding"
+    ],
+    "description": "Talent Skatepark offers Skate Camp in Burlington, VT. Activities include Skateboarding. Cost: $425 per session.",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -10985,8 +11111,10 @@ const programsData = [
     "hours": "09:00 AM – 03:30 PM",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [],
-    "description": "Talent Skatepark offers Skate Camp in Burlington, VT. Cost: $425 per session.",
+    "subjects": [
+      "Skateboarding"
+    ],
+    "description": "Talent Skatepark offers Skate Camp in Burlington, VT. Activities include Skateboarding. Cost: $425 per session.",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -11016,8 +11144,10 @@ const programsData = [
     "hours": "09:00 AM – 03:30 PM",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [],
-    "description": "Talent Skatepark offers Skate Camp in Burlington, VT. Cost: $425 per session.",
+    "subjects": [
+      "Skateboarding"
+    ],
+    "description": "Talent Skatepark offers Skate Camp in Burlington, VT. Activities include Skateboarding. Cost: $425 per session.",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -11047,8 +11177,10 @@ const programsData = [
     "hours": "09:00 AM – 03:30 PM",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [],
-    "description": "Talent Skatepark offers Skate Camp in Burlington, VT. Cost: $425 per session.",
+    "subjects": [
+      "Skateboarding"
+    ],
+    "description": "Talent Skatepark offers Skate Camp in Burlington, VT. Activities include Skateboarding. Cost: $425 per session.",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -11078,8 +11210,10 @@ const programsData = [
     "hours": "09:00 AM – 03:30 PM",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [],
-    "description": "Talent Skatepark offers Skate Camp in Burlington, VT. Cost: $425 per session.",
+    "subjects": [
+      "Skateboarding"
+    ],
+    "description": "Talent Skatepark offers Skate Camp in Burlington, VT. Activities include Skateboarding. Cost: $425 per session.",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -11109,8 +11243,10 @@ const programsData = [
     "hours": "09:00 AM – 03:30 PM",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [],
-    "description": "Talent Skatepark offers Skate Camp in Burlington, VT. Cost: $425 per session.",
+    "subjects": [
+      "Skateboarding"
+    ],
+    "description": "Talent Skatepark offers Skate Camp in Burlington, VT. Activities include Skateboarding. Cost: $425 per session.",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -11140,8 +11276,10 @@ const programsData = [
     "hours": "09:00 AM – 03:30 PM",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [],
-    "description": "Talent Skatepark offers Skate Camp in Burlington, VT. Cost: $425 per session.",
+    "subjects": [
+      "Skateboarding"
+    ],
+    "description": "Talent Skatepark offers Skate Camp in Burlington, VT. Activities include Skateboarding. Cost: $425 per session.",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -11365,8 +11503,10 @@ const programsData = [
     "hours": "",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [],
-    "description": "Vermont Hockey Camps offers this summer program in Vermont.",
+    "subjects": [
+      "Hockey"
+    ],
+    "description": "Vermont Hockey Camps offers this summer program in Vermont. Activities include Hockey.",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -11430,8 +11570,10 @@ const programsData = [
     "hours": "",
     "daysOffered": "Mon–Fri",
     "sessionType": "Summer",
-    "subjects": [],
-    "description": "Vermont Lacrosse Camps offers this summer program in Vermont.",
+    "subjects": [
+      "Lacrosse"
+    ],
+    "description": "Vermont Lacrosse Camps offers this summer program in Vermont. Activities include Lacrosse.",
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
@@ -12117,8 +12259,8 @@ const programsData = [
     "subjects": [
       "Arts",
       "Sports",
-      "Outdoor Education",
-      "Swim"
+      "Swim",
+      "Outdoor Education"
     ],
     "description": "At Day Camp, boys have a chance to experience many of the great activities camp has to offer, then return home for dinner! In a typical day, boys experience a mix of small and large group games, swimming, and other great activities such as archery, arts + crafts, and more. We help boys try new things and make new friends in a safe, welcoming environment. Lunch and an afternoon snack are provided by camp, and transportation is provided by bus from South Burlington (see the schedule below).",
     "indoorOutdoor": "Both",
@@ -12153,8 +12295,8 @@ const programsData = [
     "subjects": [
       "Arts",
       "Sports",
-      "Outdoor Education",
-      "Swim"
+      "Swim",
+      "Outdoor Education"
     ],
     "description": "At Day Camp, boys have a chance to experience many of the great activities camp has to offer, then return home for dinner! In a typical day, boys experience a mix of small and large group games, swimming, and other great activities such as archery, arts + crafts, and more. We help boys try new things and make new friends in a safe, welcoming environment. Lunch and an afternoon snack are provided by camp, and transportation is provided by bus from South Burlington (see the schedule below).",
     "indoorOutdoor": "Both",
@@ -12189,8 +12331,8 @@ const programsData = [
     "subjects": [
       "Arts",
       "Sports",
-      "Outdoor Education",
-      "Swim"
+      "Swim",
+      "Outdoor Education"
     ],
     "description": "At Day Camp, boys have a chance to experience many of the great activities camp has to offer, then return home for dinner! In a typical day, boys experience a mix of small and large group games, swimming, and other great activities such as archery, arts + crafts, and more. We help boys try new things and make new friends in a safe, welcoming environment. Lunch and an afternoon snack are provided by camp, and transportation is provided by bus from South Burlington (see the schedule below).",
     "indoorOutdoor": "Both",
@@ -12225,8 +12367,8 @@ const programsData = [
     "subjects": [
       "Arts",
       "Sports",
-      "Outdoor Education",
-      "Swim"
+      "Swim",
+      "Outdoor Education"
     ],
     "description": "At Day Camp, boys have a chance to experience many of the great activities camp has to offer, then return home for dinner! In a typical day, boys experience a mix of small and large group games, swimming, and other great activities such as archery, arts + crafts, and more. We help boys try new things and make new friends in a safe, welcoming environment. Lunch and an afternoon snack are provided by camp, and transportation is provided by bus from South Burlington (see the schedule below).",
     "indoorOutdoor": "Both",
@@ -12261,8 +12403,8 @@ const programsData = [
     "subjects": [
       "Arts",
       "Sports",
-      "Outdoor Education",
-      "Swim"
+      "Swim",
+      "Outdoor Education"
     ],
     "description": "At Day Camp, boys have a chance to experience many of the great activities camp has to offer, then return home for dinner! In a typical day, boys experience a mix of small and large group games, swimming, and other great activities such as archery, arts + crafts, and more. We help boys try new things and make new friends in a safe, welcoming environment. Lunch and an afternoon snack are provided by camp, and transportation is provided by bus from South Burlington (see the schedule below).",
     "indoorOutdoor": "Both",
@@ -12297,8 +12439,8 @@ const programsData = [
     "subjects": [
       "Arts",
       "Sports",
-      "Outdoor Education",
-      "Swim"
+      "Swim",
+      "Outdoor Education"
     ],
     "description": "At Day Camp, boys have a chance to experience many of the great activities camp has to offer, then return home for dinner! In a typical day, boys experience a mix of small and large group games, swimming, and other great activities such as archery, arts + crafts, and more. We help boys try new things and make new friends in a safe, welcoming environment. Lunch and an afternoon snack are provided by camp, and transportation is provided by bus from South Burlington (see the schedule below).",
     "indoorOutdoor": "Both",
@@ -12333,8 +12475,8 @@ const programsData = [
     "subjects": [
       "Arts",
       "Sports",
-      "Outdoor Education",
-      "Swim"
+      "Swim",
+      "Outdoor Education"
     ],
     "description": "At Day Camp, boys have a chance to experience many of the great activities camp has to offer, then return home for dinner! In a typical day, boys experience a mix of small and large group games, swimming, and other great activities such as archery, arts + crafts, and more. We help boys try new things and make new friends in a safe, welcoming environment. Lunch and an afternoon snack are provided by camp, and transportation is provided by bus from South Burlington (see the schedule below).",
     "indoorOutdoor": "Both",
@@ -12369,8 +12511,8 @@ const programsData = [
     "subjects": [
       "Arts",
       "Sports",
-      "Outdoor Education",
-      "Swim"
+      "Swim",
+      "Outdoor Education"
     ],
     "description": "At Day Camp, boys have a chance to experience many of the great activities camp has to offer, then return home for dinner! In a typical day, boys experience a mix of small and large group games, swimming, and other great activities such as archery, arts + crafts, and more. We help boys try new things and make new friends in a safe, welcoming environment. Lunch and an afternoon snack are provided by camp, and transportation is provided by bus from South Burlington (see the schedule below).",
     "indoorOutdoor": "Both",
