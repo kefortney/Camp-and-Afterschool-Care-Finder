@@ -422,9 +422,16 @@ const CITY_COORDS = {
   'Barre City':       [44.1970, -72.5024],
 };
 
+// Vermont bounding box  SW corner → NE corner
+const VT_BOUNDS = [[42.73, -73.44], [45.02, -71.46]];
+
 function renderMap(programs) {
   if (!mapInstance) {
-    mapInstance = L.map('mapContainer').setView([44.26, -72.58], 8);
+    mapInstance = L.map('mapContainer', {
+      maxBounds: VT_BOUNDS,
+      maxBoundsViscosity: 0.8,
+    });
+    mapInstance.fitBounds(VT_BOUNDS);
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
       maxZoom: 18,
@@ -492,8 +499,9 @@ function renderMap(programs) {
     marker.addTo(mapInstance);
   });
 
-  // Give the browser time to paint the now-visible container
-  setTimeout(() => mapInstance.invalidateSize(), 200);
+  // Ensure tiles render correctly after container becomes visible
+  mapInstance.invalidateSize();
+  setTimeout(() => mapInstance.invalidateSize(), 300);
 }
 
 // ===== View Switching =====
@@ -511,8 +519,8 @@ function switchView(view) {
   if (view === 'list')          renderCards(lastFiltered);
   else if (view === 'calendar') renderCalendar(lastFiltered);
   else if (view === 'map') {
-    // Defer until after the browser has laid out the now-visible container
-    requestAnimationFrame(() => renderMap(lastFiltered));
+    // Double rAF: first frame commits layout, second fires after paint
+    requestAnimationFrame(() => requestAnimationFrame(() => renderMap(lastFiltered)));
   }
 }
 
@@ -612,7 +620,7 @@ function update() {
 
   if (currentView === 'list')          renderCards(lastFiltered);
   else if (currentView === 'calendar') renderCalendar(lastFiltered);
-  else if (currentView === 'map')      requestAnimationFrame(() => renderMap(lastFiltered));
+  else if (currentView === 'map')      requestAnimationFrame(() => requestAnimationFrame(() => renderMap(lastFiltered)));
 }
 
 searchInput.addEventListener('input', e => {
