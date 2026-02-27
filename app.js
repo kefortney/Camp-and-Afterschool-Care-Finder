@@ -299,13 +299,20 @@ function renderCalendar(programs) {
 
   monthLabel.textContent = `${MONTH_FULL[month]} ${year}`;
 
-  // Build a map of ISO date → [programs]
+  // Build a map of ISO date → [programs], spanning all days start→end
   const dayMap = {};
   const undated = [];
   programs.forEach(p => {
     if (p.startDate) {
-      if (!dayMap[p.startDate]) dayMap[p.startDate] = [];
-      dayMap[p.startDate].push(p);
+      const start = parseDate(p.startDate);
+      const end = p.endDate ? parseDate(p.endDate) : start;
+      const cur = new Date(start);
+      while (cur <= end) {
+        const iso = toIso(cur);
+        if (!dayMap[iso]) dayMap[iso] = [];
+        dayMap[iso].push(p);
+        cur.setDate(cur.getDate() + 1);
+      }
     } else {
       undated.push(p);
     }
