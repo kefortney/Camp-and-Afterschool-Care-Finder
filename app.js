@@ -404,6 +404,8 @@ const CITY_COORDS = {
   'Plymouth':         [43.5382, -72.7273],
   'Bolton':           [44.3966, -72.8666],
   'Underhill':        [44.5318, -72.8862],
+  'South Hero':       [44.6344, -73.3098],
+  'Williamstown':     [44.1076, -72.5393],
   'Cabot':            [44.4040, -72.3162],
   'Craftsbury':       [44.6554, -72.3729],
   'Peacham':          [44.3287, -72.1762],
@@ -490,7 +492,8 @@ function renderMap(programs) {
     marker.addTo(mapInstance);
   });
 
-  setTimeout(() => mapInstance.invalidateSize(), 50);
+  // Give the browser time to paint the now-visible container
+  setTimeout(() => mapInstance.invalidateSize(), 200);
 }
 
 // ===== View Switching =====
@@ -505,9 +508,12 @@ function switchView(view) {
     btn.classList.toggle('active', btn.dataset.view === view);
   });
 
-  if (view === 'list')     renderCards(lastFiltered);
-  if (view === 'calendar') renderCalendar(lastFiltered);
-  if (view === 'map')      renderMap(lastFiltered);
+  if (view === 'list')          renderCards(lastFiltered);
+  else if (view === 'calendar') renderCalendar(lastFiltered);
+  else if (view === 'map') {
+    // Defer until after the browser has laid out the now-visible container
+    requestAnimationFrame(() => renderMap(lastFiltered));
+  }
 }
 
 // ===== Modal =====
@@ -606,7 +612,7 @@ function update() {
 
   if (currentView === 'list')          renderCards(lastFiltered);
   else if (currentView === 'calendar') renderCalendar(lastFiltered);
-  else if (currentView === 'map')      renderMap(lastFiltered);
+  else if (currentView === 'map')      requestAnimationFrame(() => renderMap(lastFiltered));
 }
 
 searchInput.addEventListener('input', e => {
