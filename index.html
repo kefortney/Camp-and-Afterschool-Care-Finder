@@ -82,6 +82,16 @@
         </div>
 
         <div class="filter-group">
+          <label for="filterMonth">Month</label>
+          <select id="filterMonth" aria-label="Filter by month">
+            <option value="">Any Month</option>
+            <option value="6">June</option>
+            <option value="7">July</option>
+            <option value="8">August</option>
+          </select>
+        </div>
+
+        <div class="filter-group">
           <label for="filterMaxCost">Max Cost (weekly equiv.)</label>
           <select id="filterMaxCost" aria-label="Filter by maximum cost">
             <option value="">Any Cost</option>
@@ -142,6 +152,10 @@
         <div class="modal-section">
           <h4>Program Details</h4>
           <div class="modal-detail-grid">
+            <div class="modal-detail-item">
+              <span class="modal-detail-label">📅 Week Dates</span>
+              <span class="modal-detail-value" id="modalDates"></span>
+            </div>
             <div class="modal-detail-item">
               <span class="modal-detail-label">Grades Served</span>
               <span class="modal-detail-value" id="modalGrades"></span>

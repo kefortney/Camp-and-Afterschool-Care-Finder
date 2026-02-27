@@ -28,7 +28,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "",
+    "endDate": ""
   },
   {
     "id": 2,
@@ -57,7 +59,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "",
+    "endDate": ""
   },
   {
     "id": 3,
@@ -88,7 +92,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "",
+    "endDate": ""
   },
   {
     "id": 4,
@@ -119,7 +125,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "",
+    "endDate": ""
   },
   {
     "id": 5,
@@ -148,7 +156,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "",
+    "endDate": ""
   },
   {
     "id": 6,
@@ -177,7 +187,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "",
+    "endDate": ""
   },
   {
     "id": 7,
@@ -206,7 +218,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "",
+    "endDate": ""
   },
   {
     "id": 8,
@@ -237,7 +251,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "",
+    "endDate": ""
   },
   {
     "id": 9,
@@ -268,7 +284,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2026-08-10",
+    "endDate": "2026-08-14"
   },
   {
     "id": 10,
@@ -297,7 +315,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2026-06-22",
+    "endDate": "2026-06-26"
   },
   {
     "id": 11,
@@ -326,7 +346,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2026-06-29",
+    "endDate": "2026-07-03"
   },
   {
     "id": 12,
@@ -355,7 +377,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2026-07-06",
+    "endDate": "2026-07-10"
   },
   {
     "id": 13,
@@ -384,7 +408,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2026-07-13",
+    "endDate": "2026-07-17"
   },
   {
     "id": 14,
@@ -413,7 +439,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2026-07-27",
+    "endDate": "2026-07-31"
   },
   {
     "id": 15,
@@ -442,7 +470,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2026-08-03",
+    "endDate": "2026-08-07"
   },
   {
     "id": 16,
@@ -471,7 +501,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2026-08-10",
+    "endDate": "2026-08-14"
   },
   {
     "id": 17,
@@ -500,7 +532,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2026-08-17",
+    "endDate": "2026-08-12"
   },
   {
     "id": 18,
@@ -533,7 +567,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "",
+    "endDate": ""
   },
   {
     "id": 19,
@@ -566,7 +602,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "",
+    "endDate": ""
   },
   {
     "id": 20,
@@ -595,7 +633,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "",
+    "endDate": ""
   },
   {
     "id": 21,
@@ -627,7 +667,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2026-06-22",
+    "endDate": "2026-06-26"
   },
   {
     "id": 22,
@@ -658,7 +700,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2026-06-29",
+    "endDate": "2026-07-03"
   },
   {
     "id": 23,
@@ -692,7 +736,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2026-07-06",
+    "endDate": "2026-07-10"
   },
   {
     "id": 24,
@@ -727,7 +773,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2026-07-13",
+    "endDate": "2026-07-17"
   },
   {
     "id": 25,
@@ -758,7 +806,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2026-07-20",
+    "endDate": "2026-07-24"
   },
   {
     "id": 26,
@@ -790,7 +840,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2026-07-27",
+    "endDate": "2026-07-31"
   },
   {
     "id": 27,
@@ -822,7 +874,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2026-08-03",
+    "endDate": "2026-08-07"
   },
   {
     "id": 28,
@@ -855,7 +909,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2026-08-10",
+    "endDate": "2026-08-14"
   },
   {
     "id": 29,
@@ -887,7 +943,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2026-08-17",
+    "endDate": "2026-08-12"
   },
   {
     "id": 30,
@@ -918,7 +976,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "",
+    "endDate": ""
   },
   {
     "id": 31,
@@ -947,7 +1007,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "",
+    "endDate": ""
   },
   {
     "id": 32,
@@ -978,7 +1040,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "",
+    "endDate": ""
   },
   {
     "id": 33,
@@ -1009,7 +1073,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2025-06-16",
+    "endDate": "2025-06-20"
   },
   {
     "id": 34,
@@ -1038,7 +1104,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2025-06-16",
+    "endDate": "2025-06-20"
   },
   {
     "id": 35,
@@ -1067,7 +1135,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2025-06-16",
+    "endDate": "2025-06-20"
   },
   {
     "id": 36,
@@ -1098,7 +1168,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2025-06-16",
+    "endDate": "2025-06-20"
   },
   {
     "id": 37,
@@ -1127,7 +1199,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2025-06-16",
+    "endDate": "2025-06-20"
   },
   {
     "id": 38,
@@ -1156,7 +1230,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2025-06-23",
+    "endDate": "2025-06-27"
   },
   {
     "id": 39,
@@ -1185,7 +1261,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2025-06-23",
+    "endDate": "2025-06-27"
   },
   {
     "id": 40,
@@ -1214,7 +1292,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2025-06-23",
+    "endDate": "2025-06-27"
   },
   {
     "id": 41,
@@ -1243,7 +1323,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2025-06-23",
+    "endDate": "2025-06-27"
   },
   {
     "id": 42,
@@ -1274,7 +1356,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2025-06-30",
+    "endDate": "2025-07-03"
   },
   {
     "id": 43,
@@ -1305,7 +1389,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2025-06-30",
+    "endDate": "2025-07-09"
   },
   {
     "id": 44,
@@ -1334,7 +1420,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2025-07-07",
+    "endDate": "2025-07-11"
   },
   {
     "id": 45,
@@ -1363,7 +1451,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2025-07-07",
+    "endDate": "2025-07-11"
   },
   {
     "id": 46,
@@ -1392,7 +1482,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2025-07-07",
+    "endDate": "2025-07-11"
   },
   {
     "id": 47,
@@ -1421,7 +1513,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2025-07-14",
+    "endDate": "2025-07-18"
   },
   {
     "id": 48,
@@ -1450,7 +1544,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2025-07-14",
+    "endDate": "2025-07-18"
   },
   {
     "id": 49,
@@ -1479,7 +1575,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2025-07-14",
+    "endDate": "2025-07-18"
   },
   {
     "id": 50,
@@ -1508,7 +1606,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2025-07-14",
+    "endDate": "2025-07-18"
   },
   {
     "id": 51,
@@ -1537,7 +1637,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2025-07-21",
+    "endDate": "2025-07-25"
   },
   {
     "id": 52,
@@ -1568,7 +1670,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2025-07-21",
+    "endDate": "2025-07-25"
   },
   {
     "id": 53,
@@ -1599,7 +1703,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2025-07-28",
+    "endDate": "2025-08-01"
   },
   {
     "id": 54,
@@ -1628,7 +1734,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2025-07-28",
+    "endDate": "2025-08-01"
   },
   {
     "id": 55,
@@ -1657,7 +1765,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2025-07-28",
+    "endDate": "2025-08-01"
   },
   {
     "id": 56,
@@ -1686,7 +1796,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2025-07-28",
+    "endDate": "2025-08-01"
   },
   {
     "id": 57,
@@ -1715,7 +1827,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2025-08-04",
+    "endDate": "2025-08-08"
   },
   {
     "id": 58,
@@ -1744,7 +1858,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2025-08-11",
+    "endDate": "2025-08-15"
   },
   {
     "id": 59,
@@ -1773,7 +1889,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2025-08-11",
+    "endDate": "2025-08-15"
   },
   {
     "id": 60,
@@ -1804,7 +1922,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2025-08-18",
+    "endDate": "2025-08-22"
   },
   {
     "id": 61,
@@ -1835,7 +1955,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2025-06-23",
+    "endDate": "2025-06-27"
   },
   {
     "id": 62,
@@ -1864,7 +1986,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2025-06-30",
+    "endDate": "2025-07-03"
   },
   {
     "id": 63,
@@ -1893,7 +2017,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2025-07-21",
+    "endDate": "2025-07-25"
   },
   {
     "id": 64,
@@ -1924,7 +2050,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2025-08-04",
+    "endDate": "2025-08-08"
   },
   {
     "id": 65,
@@ -1953,7 +2081,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2025-08-11",
+    "endDate": "2025-08-15"
   },
   {
     "id": 66,
@@ -1984,7 +2114,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2025-08-18",
+    "endDate": "2025-08-22"
   },
   {
     "id": 67,
@@ -2013,7 +2145,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2025-06-23",
+    "endDate": "2025-06-27"
   },
   {
     "id": 68,
@@ -2042,7 +2176,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2025-06-16",
+    "endDate": "2025-06-20"
   },
   {
     "id": 69,
@@ -2071,7 +2207,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2025-06-23",
+    "endDate": "2025-06-27"
   },
   {
     "id": 70,
@@ -2102,7 +2240,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2025-07-07",
+    "endDate": "2025-07-11"
   },
   {
     "id": 71,
@@ -2131,7 +2271,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2025-07-14",
+    "endDate": "2025-07-18"
   },
   {
     "id": 72,
@@ -2162,7 +2304,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2025-07-28",
+    "endDate": "2025-08-01"
   },
   {
     "id": 73,
@@ -2193,7 +2337,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2025-08-04",
+    "endDate": "2025-08-08"
   },
   {
     "id": 74,
@@ -2222,7 +2368,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2025-08-11",
+    "endDate": "2025-08-15"
   },
   {
     "id": 75,
@@ -2251,7 +2399,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2025-08-11",
+    "endDate": "2025-08-15"
   },
   {
     "id": 76,
@@ -2282,7 +2432,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2025-08-11",
+    "endDate": "2025-08-15"
   },
   {
     "id": 77,
@@ -2313,7 +2465,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2025-08-11",
+    "endDate": "2025-08-15"
   },
   {
     "id": 78,
@@ -2344,7 +2498,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2025-08-18",
+    "endDate": "2025-08-22"
   },
   {
     "id": 79,
@@ -2373,7 +2529,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2025-08-18",
+    "endDate": "2025-08-22"
   },
   {
     "id": 80,
@@ -2402,7 +2560,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2025-08-18",
+    "endDate": "2025-08-22"
   },
   {
     "id": 81,
@@ -2431,7 +2591,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2025-06-23",
+    "endDate": "2025-06-27"
   },
   {
     "id": 82,
@@ -2460,7 +2622,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2025-06-23",
+    "endDate": "2025-06-27"
   },
   {
     "id": 83,
@@ -2489,7 +2653,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2025-06-30",
+    "endDate": "2025-07-05"
   },
   {
     "id": 84,
@@ -2518,7 +2684,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2025-06-30",
+    "endDate": "2025-07-06"
   },
   {
     "id": 85,
@@ -2547,7 +2715,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2025-07-07",
+    "endDate": "2025-07-11"
   },
   {
     "id": 86,
@@ -2576,7 +2746,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2025-07-07",
+    "endDate": "2025-07-11"
   },
   {
     "id": 87,
@@ -2605,7 +2777,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2025-07-14",
+    "endDate": "2025-07-18"
   },
   {
     "id": 88,
@@ -2634,7 +2808,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2025-07-14",
+    "endDate": "2025-07-18"
   },
   {
     "id": 89,
@@ -2663,7 +2839,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2025-07-21",
+    "endDate": "2025-07-25"
   },
   {
     "id": 90,
@@ -2692,7 +2870,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2025-07-21",
+    "endDate": "2025-07-25"
   },
   {
     "id": 91,
@@ -2721,7 +2901,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2025-07-28",
+    "endDate": "2025-08-01"
   },
   {
     "id": 92,
@@ -2750,7 +2932,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2025-07-28",
+    "endDate": "2025-08-01"
   },
   {
     "id": 93,
@@ -2779,7 +2963,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2025-08-04",
+    "endDate": "2025-08-08"
   },
   {
     "id": 94,
@@ -2808,7 +2994,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2025-08-04",
+    "endDate": "2025-08-08"
   },
   {
     "id": 95,
@@ -2837,7 +3025,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2025-08-11",
+    "endDate": "2025-08-15"
   },
   {
     "id": 96,
@@ -2866,7 +3056,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2025-06-23",
+    "endDate": "2025-06-27"
   },
   {
     "id": 97,
@@ -2895,7 +3087,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2025-07-07",
+    "endDate": "2025-07-11"
   },
   {
     "id": 98,
@@ -2924,7 +3118,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2025-07-07",
+    "endDate": "2025-07-11"
   },
   {
     "id": 99,
@@ -2953,7 +3149,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2025-07-14",
+    "endDate": "2025-07-18"
   },
   {
     "id": 100,
@@ -2982,7 +3180,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2025-07-21",
+    "endDate": "2025-07-25"
   },
   {
     "id": 101,
@@ -3011,7 +3211,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2025-07-28",
+    "endDate": "2025-08-01"
   },
   {
     "id": 102,
@@ -3040,7 +3242,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2025-08-04",
+    "endDate": "2025-08-08"
   },
   {
     "id": 103,
@@ -3069,7 +3273,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "",
+    "endDate": ""
   },
   {
     "id": 104,
@@ -3098,7 +3304,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2026-06-29",
+    "endDate": "2026-07-03"
   },
   {
     "id": 105,
@@ -3127,7 +3335,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2026-07-06",
+    "endDate": "2026-07-10"
   },
   {
     "id": 106,
@@ -3156,7 +3366,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2026-07-13",
+    "endDate": "2026-07-17"
   },
   {
     "id": 107,
@@ -3185,7 +3397,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2026-07-20",
+    "endDate": "2026-07-24"
   },
   {
     "id": 108,
@@ -3214,7 +3428,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2026-07-27",
+    "endDate": "2026-07-31"
   },
   {
     "id": 109,
@@ -3243,7 +3459,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2026-08-03",
+    "endDate": "2026-08-07"
   },
   {
     "id": 110,
@@ -3272,7 +3490,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2026-08-10",
+    "endDate": "2026-08-14"
   },
   {
     "id": 111,
@@ -3301,7 +3521,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "",
+    "endDate": ""
   },
   {
     "id": 112,
@@ -3330,7 +3552,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2026-06-22",
+    "endDate": "2026-06-26"
   },
   {
     "id": 113,
@@ -3359,7 +3583,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2026-06-29",
+    "endDate": "2026-07-03"
   },
   {
     "id": 114,
@@ -3388,7 +3614,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2026-07-06",
+    "endDate": "2026-07-10"
   },
   {
     "id": 115,
@@ -3417,7 +3645,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2026-07-13",
+    "endDate": "2026-07-17"
   },
   {
     "id": 116,
@@ -3446,7 +3676,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2026-07-20",
+    "endDate": "2026-07-24"
   },
   {
     "id": 117,
@@ -3475,7 +3707,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2026-07-27",
+    "endDate": "2026-07-31"
   },
   {
     "id": 118,
@@ -3504,7 +3738,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2026-08-03",
+    "endDate": "2026-08-07"
   },
   {
     "id": 119,
@@ -3533,7 +3769,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2026-08-10",
+    "endDate": "2026-08-14"
   },
   {
     "id": 120,
@@ -3568,7 +3806,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2026-07-20",
+    "endDate": "2026-07-24"
   },
   {
     "id": 121,
@@ -3597,7 +3837,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "",
+    "endDate": ""
   },
   {
     "id": 122,
@@ -3626,7 +3868,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "",
+    "endDate": ""
   },
   {
     "id": 123,
@@ -3655,7 +3899,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "",
+    "endDate": ""
   },
   {
     "id": 124,
@@ -3686,7 +3932,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "",
+    "endDate": ""
   },
   {
     "id": 125,
@@ -3715,7 +3963,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "",
+    "endDate": ""
   },
   {
     "id": 126,
@@ -3744,7 +3994,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2026-06-15",
+    "endDate": "2026-06-19"
   },
   {
     "id": 127,
@@ -3773,7 +4025,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2026-06-15",
+    "endDate": "2026-06-19"
   },
   {
     "id": 128,
@@ -3802,7 +4056,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2026-06-15",
+    "endDate": "2026-06-19"
   },
   {
     "id": 129,
@@ -3831,7 +4087,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2026-06-15",
+    "endDate": "2026-06-19"
   },
   {
     "id": 130,
@@ -3860,7 +4118,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2026-06-22",
+    "endDate": "2026-06-26"
   },
   {
     "id": 131,
@@ -3889,7 +4149,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2026-06-22",
+    "endDate": "2026-06-26"
   },
   {
     "id": 132,
@@ -3918,7 +4180,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2026-06-22",
+    "endDate": "2026-06-26"
   },
   {
     "id": 133,
@@ -3947,7 +4211,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2026-06-29",
+    "endDate": "2026-07-03"
   },
   {
     "id": 134,
@@ -3976,7 +4242,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2026-06-29",
+    "endDate": "2026-07-03"
   },
   {
     "id": 135,
@@ -4005,7 +4273,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2026-06-29",
+    "endDate": "2026-07-03"
   },
   {
     "id": 136,
@@ -4034,7 +4304,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2026-06-29",
+    "endDate": "2026-07-03"
   },
   {
     "id": 137,
@@ -4063,7 +4335,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2026-07-06",
+    "endDate": "2026-07-10"
   },
   {
     "id": 138,
@@ -4092,7 +4366,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2026-07-06",
+    "endDate": "2026-07-10"
   },
   {
     "id": 139,
@@ -4121,7 +4397,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2026-07-06",
+    "endDate": "2026-07-10"
   },
   {
     "id": 140,
@@ -4150,7 +4428,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2026-07-13",
+    "endDate": "2026-07-17"
   },
   {
     "id": 141,
@@ -4179,7 +4459,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2026-07-13",
+    "endDate": "2026-07-17"
   },
   {
     "id": 142,
@@ -4208,7 +4490,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2026-07-13",
+    "endDate": "2026-07-17"
   },
   {
     "id": 143,
@@ -4237,7 +4521,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2026-07-20",
+    "endDate": "2026-07-24"
   },
   {
     "id": 144,
@@ -4266,7 +4552,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2026-07-20",
+    "endDate": "2026-07-24"
   },
   {
     "id": 145,
@@ -4295,7 +4583,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2026-07-20",
+    "endDate": "2026-07-24"
   },
   {
     "id": 146,
@@ -4324,7 +4614,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2026-07-27",
+    "endDate": "2026-07-31"
   },
   {
     "id": 147,
@@ -4353,7 +4645,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2026-07-27",
+    "endDate": "2026-07-31"
   },
   {
     "id": 148,
@@ -4382,7 +4676,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2026-07-27",
+    "endDate": "2026-07-31"
   },
   {
     "id": 149,
@@ -4411,7 +4707,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2026-07-27",
+    "endDate": "2026-07-31"
   },
   {
     "id": 150,
@@ -4440,7 +4738,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2026-08-03",
+    "endDate": "2026-08-07"
   },
   {
     "id": 151,
@@ -4469,7 +4769,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2026-08-03",
+    "endDate": "2026-08-07"
   },
   {
     "id": 152,
@@ -4498,7 +4800,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2026-08-03",
+    "endDate": "2026-08-07"
   },
   {
     "id": 153,
@@ -4527,7 +4831,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2026-08-03",
+    "endDate": "2026-08-07"
   },
   {
     "id": 154,
@@ -4556,7 +4862,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2026-08-10",
+    "endDate": "2026-08-14"
   },
   {
     "id": 155,
@@ -4585,7 +4893,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2026-08-10",
+    "endDate": "2026-08-14"
   },
   {
     "id": 156,
@@ -4614,7 +4924,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2026-08-10",
+    "endDate": "2026-08-14"
   },
   {
     "id": 157,
@@ -4643,7 +4955,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2026-08-10",
+    "endDate": "2026-08-14"
   },
   {
     "id": 158,
@@ -4672,7 +4986,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "",
+    "endDate": ""
   },
   {
     "id": 159,
@@ -4703,7 +5019,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "",
+    "endDate": ""
   },
   {
     "id": 160,
@@ -4732,7 +5050,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2026-08-10",
+    "endDate": "2026-08-14"
   },
   {
     "id": 161,
@@ -4761,7 +5081,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2026-07-06",
+    "endDate": "2026-07-10"
   },
   {
     "id": 162,
@@ -4790,7 +5112,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2026-07-13",
+    "endDate": "2026-07-17"
   },
   {
     "id": 163,
@@ -4819,7 +5143,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2026-07-20",
+    "endDate": "2026-07-24"
   },
   {
     "id": 164,
@@ -4848,7 +5174,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2026-07-27",
+    "endDate": "2026-07-31"
   },
   {
     "id": 165,
@@ -4877,7 +5205,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2026-08-03",
+    "endDate": "2026-08-07"
   },
   {
     "id": 166,
@@ -4906,7 +5236,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "",
+    "endDate": ""
   },
   {
     "id": 167,
@@ -4935,7 +5267,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "",
+    "endDate": ""
   },
   {
     "id": 168,
@@ -4966,7 +5300,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "",
+    "endDate": ""
   },
   {
     "id": 169,
@@ -4997,7 +5333,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "",
+    "endDate": ""
   },
   {
     "id": 170,
@@ -5030,7 +5368,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2026-06-22",
+    "endDate": "2026-06-26"
   },
   {
     "id": 171,
@@ -5063,7 +5403,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2026-07-06",
+    "endDate": "2026-07-10"
   },
   {
     "id": 172,
@@ -5096,7 +5438,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2026-07-13",
+    "endDate": "2026-07-17"
   },
   {
     "id": 173,
@@ -5128,7 +5472,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2026-07-20",
+    "endDate": "2026-07-24"
   },
   {
     "id": 174,
@@ -5160,7 +5506,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2026-07-27",
+    "endDate": "2026-07-31"
   },
   {
     "id": 175,
@@ -5192,7 +5540,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2026-08-03",
+    "endDate": "2026-08-07"
   },
   {
     "id": 176,
@@ -5226,7 +5576,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2026-08-10",
+    "endDate": "2026-08-14"
   },
   {
     "id": 177,
@@ -5260,7 +5612,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2026-08-17",
+    "endDate": "2026-08-21"
   },
   {
     "id": 178,
@@ -5294,7 +5648,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2026-08-24",
+    "endDate": "2026-08-28"
   },
   {
     "id": 179,
@@ -5323,7 +5679,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2026-06-29",
+    "endDate": "2026-07-03"
   },
   {
     "id": 180,
@@ -5352,7 +5710,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2026-07-06",
+    "endDate": "2026-07-10"
   },
   {
     "id": 181,
@@ -5381,7 +5741,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2026-07-13",
+    "endDate": "2026-07-17"
   },
   {
     "id": 182,
@@ -5410,7 +5772,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2026-07-20",
+    "endDate": "2026-07-24"
   },
   {
     "id": 183,
@@ -5439,7 +5803,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2026-07-27",
+    "endDate": "2026-07-31"
   },
   {
     "id": 184,
@@ -5468,7 +5834,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2026-08-03",
+    "endDate": "2026-08-07"
   },
   {
     "id": 185,
@@ -5497,7 +5865,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2026-08-10",
+    "endDate": "2026-08-14"
   },
   {
     "id": 186,
@@ -5526,7 +5896,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2026-08-17",
+    "endDate": "2026-08-21"
   },
   {
     "id": 187,
@@ -5555,7 +5927,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "",
+    "endDate": ""
   },
   {
     "id": 188,
@@ -5584,7 +5958,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "",
+    "endDate": ""
   },
   {
     "id": 189,
@@ -5616,7 +5992,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "",
+    "endDate": ""
   },
   {
     "id": 190,
@@ -5645,7 +6023,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2026-06-22",
+    "endDate": "2026-06-26"
   },
   {
     "id": 191,
@@ -5677,7 +6057,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2026-06-29",
+    "endDate": "2026-07-03"
   },
   {
     "id": 192,
@@ -5706,7 +6088,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2026-07-06",
+    "endDate": "2026-07-10"
   },
   {
     "id": 193,
@@ -5737,7 +6121,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2026-07-13",
+    "endDate": "2026-07-17"
   },
   {
     "id": 194,
@@ -5769,7 +6155,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2026-07-20",
+    "endDate": "2026-07-24"
   },
   {
     "id": 195,
@@ -5798,7 +6186,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2026-07-27",
+    "endDate": "2026-07-31"
   },
   {
     "id": 196,
@@ -5830,7 +6220,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2026-08-03",
+    "endDate": "2026-08-07"
   },
   {
     "id": 197,
@@ -5861,7 +6253,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2026-08-10",
+    "endDate": "2026-08-14"
   },
   {
     "id": 198,
@@ -5890,7 +6284,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2026-08-17",
+    "endDate": "2026-08-21"
   },
   {
     "id": 199,
@@ -5922,7 +6318,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2026-08-24",
+    "endDate": "2026-08-28"
   },
   {
     "id": 200,
@@ -5953,7 +6351,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "",
+    "endDate": ""
   },
   {
     "id": 201,
@@ -5982,7 +6382,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "",
+    "endDate": ""
   },
   {
     "id": 202,
@@ -6011,7 +6413,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "",
+    "endDate": ""
   },
   {
     "id": 203,
@@ -6042,7 +6446,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "",
+    "endDate": ""
   },
   {
     "id": 204,
@@ -6073,7 +6479,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2026-06-22",
+    "endDate": "2026-06-26"
   },
   {
     "id": 205,
@@ -6104,7 +6512,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2026-06-29",
+    "endDate": "2026-07-03"
   },
   {
     "id": 206,
@@ -6135,7 +6545,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2026-07-06",
+    "endDate": "2026-07-10"
   },
   {
     "id": 207,
@@ -6166,7 +6578,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2026-07-13",
+    "endDate": "2026-07-17"
   },
   {
     "id": 208,
@@ -6197,7 +6611,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2026-07-20",
+    "endDate": "2026-07-24"
   },
   {
     "id": 209,
@@ -6228,7 +6644,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2026-07-27",
+    "endDate": "2026-07-31"
   },
   {
     "id": 210,
@@ -6259,7 +6677,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2026-08-03",
+    "endDate": "2026-08-07"
   },
   {
     "id": 211,
@@ -6291,7 +6711,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "",
+    "endDate": ""
   },
   {
     "id": 212,
@@ -6320,7 +6742,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "",
+    "endDate": ""
   },
   {
     "id": 213,
@@ -6349,7 +6773,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "",
+    "endDate": ""
   },
   {
     "id": 214,
@@ -6380,7 +6806,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "",
+    "endDate": ""
   },
   {
     "id": 215,
@@ -6409,7 +6837,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "",
+    "endDate": ""
   },
   {
     "id": 216,
@@ -6438,7 +6868,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "",
+    "endDate": ""
   },
   {
     "id": 217,
@@ -6467,7 +6899,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "",
+    "endDate": ""
   },
   {
     "id": 218,
@@ -6496,7 +6930,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "",
+    "endDate": ""
   },
   {
     "id": 219,
@@ -6527,7 +6963,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2026-06-22",
+    "endDate": "2026-06-26"
   },
   {
     "id": 220,
@@ -6556,7 +6994,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2026-07-06",
+    "endDate": "2026-07-10"
   },
   {
     "id": 221,
@@ -6587,7 +7027,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2026-07-20",
+    "endDate": "2026-07-24"
   },
   {
     "id": 222,
@@ -6618,7 +7060,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2026-07-27",
+    "endDate": "2026-07-31"
   },
   {
     "id": 223,
@@ -6647,7 +7091,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "",
+    "endDate": ""
   },
   {
     "id": 224,
@@ -6676,7 +7122,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "",
+    "endDate": ""
   },
   {
     "id": 225,
@@ -6707,7 +7155,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "",
+    "endDate": ""
   },
   {
     "id": 226,
@@ -6742,7 +7192,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2026-06-22",
+    "endDate": "2026-06-26"
   },
   {
     "id": 227,
@@ -6777,7 +7229,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2026-06-29",
+    "endDate": "2026-07-02"
   },
   {
     "id": 228,
@@ -6812,7 +7266,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2026-07-06",
+    "endDate": "2026-07-10"
   },
   {
     "id": 229,
@@ -6847,7 +7303,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2026-07-13",
+    "endDate": "2026-07-17"
   },
   {
     "id": 230,
@@ -6882,7 +7340,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2026-07-20",
+    "endDate": "2026-07-24"
   },
   {
     "id": 231,
@@ -6917,7 +7377,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2026-07-27",
+    "endDate": "2026-07-31"
   },
   {
     "id": 232,
@@ -6952,7 +7414,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2026-08-03",
+    "endDate": "2026-08-07"
   },
   {
     "id": 233,
@@ -6987,7 +7451,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2026-08-10",
+    "endDate": "2026-08-14"
   },
   {
     "id": 234,
@@ -7016,7 +7482,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "",
+    "endDate": ""
   },
   {
     "id": 235,
@@ -7045,7 +7513,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "",
+    "endDate": ""
   },
   {
     "id": 236,
@@ -7074,7 +7544,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "",
+    "endDate": ""
   },
   {
     "id": 237,
@@ -7105,7 +7577,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "",
+    "endDate": ""
   },
   {
     "id": 238,
@@ -7134,7 +7608,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "",
+    "endDate": ""
   },
   {
     "id": 239,
@@ -7163,7 +7639,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "",
+    "endDate": ""
   },
   {
     "id": 240,
@@ -7192,7 +7670,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "",
+    "endDate": ""
   },
   {
     "id": 241,
@@ -7221,7 +7701,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "",
+    "endDate": ""
   },
   {
     "id": 242,
@@ -7252,7 +7734,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "",
+    "endDate": ""
   },
   {
     "id": 243,
@@ -7281,7 +7765,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "",
+    "endDate": ""
   },
   {
     "id": 244,
@@ -7310,7 +7796,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "",
+    "endDate": ""
   },
   {
     "id": 245,
@@ -7339,7 +7827,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "",
+    "endDate": ""
   },
   {
     "id": 246,
@@ -7368,7 +7858,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "",
+    "endDate": ""
   },
   {
     "id": 247,
@@ -7397,7 +7889,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "",
+    "endDate": ""
   },
   {
     "id": 248,
@@ -7428,7 +7922,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "",
+    "endDate": ""
   },
   {
     "id": 249,
@@ -7457,7 +7953,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "",
+    "endDate": ""
   },
   {
     "id": 250,
@@ -7488,7 +7986,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2026-06-29",
+    "endDate": "2026-07-03"
   },
   {
     "id": 251,
@@ -7521,7 +8021,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2026-07-06",
+    "endDate": "2026-07-10"
   },
   {
     "id": 252,
@@ -7554,7 +8056,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2026-07-20",
+    "endDate": "2026-07-24"
   },
   {
     "id": 253,
@@ -7586,7 +8090,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2026-07-27",
+    "endDate": "2026-07-31"
   },
   {
     "id": 254,
@@ -7619,7 +8125,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2026-08-10",
+    "endDate": "2026-08-14"
   },
   {
     "id": 255,
@@ -7648,7 +8156,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "",
+    "endDate": ""
   },
   {
     "id": 256,
@@ -7677,7 +8187,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "",
+    "endDate": ""
   },
   {
     "id": 257,
@@ -7709,7 +8221,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "",
+    "endDate": ""
   },
   {
     "id": 258,
@@ -7740,7 +8254,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "",
+    "endDate": ""
   },
   {
     "id": 259,
@@ -7771,7 +8287,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "",
+    "endDate": ""
   },
   {
     "id": 260,
@@ -7803,7 +8321,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "",
+    "endDate": ""
   },
   {
     "id": 261,
@@ -7834,7 +8354,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "",
+    "endDate": ""
   },
   {
     "id": 262,
@@ -7863,7 +8385,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "",
+    "endDate": ""
   },
   {
     "id": 263,
@@ -7894,7 +8418,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "",
+    "endDate": ""
   },
   {
     "id": 264,
@@ -7925,7 +8451,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "",
+    "endDate": ""
   },
   {
     "id": 265,
@@ -7954,7 +8482,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "",
+    "endDate": ""
   },
   {
     "id": 266,
@@ -7983,7 +8513,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2026-06-22",
+    "endDate": "2026-06-26"
   },
   {
     "id": 267,
@@ -8012,7 +8544,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2026-07-20",
+    "endDate": "2026-07-24"
   },
   {
     "id": 268,
@@ -8041,7 +8575,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2026-08-03",
+    "endDate": "2026-08-07"
   },
   {
     "id": 269,
@@ -8072,7 +8608,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "",
+    "endDate": ""
   },
   {
     "id": 270,
@@ -8101,7 +8639,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "",
+    "endDate": ""
   },
   {
     "id": 271,
@@ -8130,7 +8670,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "",
+    "endDate": ""
   },
   {
     "id": 272,
@@ -8161,7 +8703,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "",
+    "endDate": ""
   },
   {
     "id": 273,
@@ -8193,7 +8737,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "",
+    "endDate": ""
   },
   {
     "id": 274,
@@ -8222,7 +8768,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "",
+    "endDate": ""
   },
   {
     "id": 275,
@@ -8251,7 +8799,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "",
+    "endDate": ""
   },
   {
     "id": 276,
@@ -8282,7 +8832,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "",
+    "endDate": ""
   },
   {
     "id": 277,
@@ -8313,7 +8865,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "",
+    "endDate": ""
   },
   {
     "id": 278,
@@ -8344,7 +8898,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "",
+    "endDate": ""
   },
   {
     "id": 279,
@@ -8373,7 +8929,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "",
+    "endDate": ""
   },
   {
     "id": 280,
@@ -8405,7 +8963,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2026-06-22",
+    "endDate": "2026-06-26"
   },
   {
     "id": 281,
@@ -8436,7 +8996,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2026-06-29",
+    "endDate": "2026-07-02"
   },
   {
     "id": 282,
@@ -8465,7 +9027,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2026-07-06",
+    "endDate": "2026-07-10"
   },
   {
     "id": 283,
@@ -8494,7 +9058,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2026-07-13",
+    "endDate": "2026-07-17"
   },
   {
     "id": 284,
@@ -8527,7 +9093,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2026-07-20",
+    "endDate": "2026-07-24"
   },
   {
     "id": 285,
@@ -8559,7 +9127,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2026-07-27",
+    "endDate": "2026-07-31"
   },
   {
     "id": 286,
@@ -8588,7 +9158,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2026-08-03",
+    "endDate": "2026-08-07"
   },
   {
     "id": 287,
@@ -8620,7 +9192,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2026-08-10",
+    "endDate": "2026-08-14"
   },
   {
     "id": 288,
@@ -8651,7 +9225,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2026-08-17",
+    "endDate": "2026-08-21"
   },
   {
     "id": 289,
@@ -8680,7 +9256,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2026-08-24",
+    "endDate": "2026-08-28"
   },
   {
     "id": 290,
@@ -8713,7 +9291,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2026-06-15",
+    "endDate": "2026-06-19"
   },
   {
     "id": 291,
@@ -8746,7 +9326,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2026-07-13",
+    "endDate": "2026-07-17"
   },
   {
     "id": 292,
@@ -8779,7 +9361,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2026-08-03",
+    "endDate": "2026-08-07"
   },
   {
     "id": 293,
@@ -8808,7 +9392,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "",
+    "endDate": ""
   },
   {
     "id": 294,
@@ -8837,7 +9423,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "",
+    "endDate": ""
   },
   {
     "id": 295,
@@ -8866,7 +9454,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "",
+    "endDate": ""
   },
   {
     "id": 296,
@@ -8897,7 +9487,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "",
+    "endDate": ""
   },
   {
     "id": 297,
@@ -8926,7 +9518,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "",
+    "endDate": ""
   },
   {
     "id": 298,
@@ -8955,7 +9549,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "",
+    "endDate": ""
   },
   {
     "id": 299,
@@ -8984,7 +9580,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "",
+    "endDate": ""
   },
   {
     "id": 300,
@@ -9013,7 +9611,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "",
+    "endDate": ""
   },
   {
     "id": 301,
@@ -9044,7 +9644,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "",
+    "endDate": ""
   },
   {
     "id": 302,
@@ -9073,7 +9675,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "",
+    "endDate": ""
   },
   {
     "id": 303,
@@ -9104,7 +9708,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "",
+    "endDate": ""
   },
   {
     "id": 304,
@@ -9135,7 +9741,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "",
+    "endDate": ""
   },
   {
     "id": 305,
@@ -9164,7 +9772,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "",
+    "endDate": ""
   },
   {
     "id": 306,
@@ -9195,7 +9805,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2025-06-17",
+    "endDate": "2025-06-20"
   },
   {
     "id": 307,
@@ -9224,7 +9836,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2025-06-23",
+    "endDate": "2025-06-27"
   },
   {
     "id": 308,
@@ -9255,7 +9869,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2025-06-23",
+    "endDate": "2025-06-27"
   },
   {
     "id": 309,
@@ -9286,7 +9902,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2025-07-07",
+    "endDate": "2025-07-11"
   },
   {
     "id": 310,
@@ -9315,7 +9933,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2025-07-07",
+    "endDate": "2025-07-11"
   },
   {
     "id": 311,
@@ -9344,7 +9964,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2025-07-14",
+    "endDate": "2025-07-18"
   },
   {
     "id": 312,
@@ -9375,7 +9997,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2025-07-14",
+    "endDate": "2025-07-18"
   },
   {
     "id": 313,
@@ -9406,7 +10030,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2025-07-21",
+    "endDate": "2025-07-25"
   },
   {
     "id": 314,
@@ -9435,7 +10061,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2025-07-28",
+    "endDate": "2025-08-01"
   },
   {
     "id": 315,
@@ -9466,7 +10094,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2025-08-04",
+    "endDate": "2025-08-08"
   },
   {
     "id": 316,
@@ -9497,7 +10127,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2025-08-04",
+    "endDate": "2025-08-08"
   },
   {
     "id": 317,
@@ -9528,7 +10160,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2025-08-04",
+    "endDate": "2025-08-08"
   },
   {
     "id": 318,
@@ -9557,7 +10191,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2025-08-11",
+    "endDate": "2025-08-15"
   },
   {
     "id": 319,
@@ -9586,7 +10222,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2025-06-17",
+    "endDate": "2025-06-23"
   },
   {
     "id": 320,
@@ -9615,7 +10253,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2025-06-17",
+    "endDate": "2025-06-23"
   },
   {
     "id": 321,
@@ -9646,7 +10286,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2025-07-07",
+    "endDate": "2025-07-11"
   },
   {
     "id": 322,
@@ -9675,7 +10317,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2025-07-21",
+    "endDate": "2025-07-25"
   },
   {
     "id": 323,
@@ -9706,7 +10350,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2025-08-04",
+    "endDate": "2025-08-08"
   },
   {
     "id": 324,
@@ -9735,7 +10381,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2025-06-17",
+    "endDate": "2025-06-20"
   },
   {
     "id": 325,
@@ -9766,7 +10414,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2025-06-23",
+    "endDate": "2025-06-27"
   },
   {
     "id": 326,
@@ -9795,7 +10445,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2025-07-21",
+    "endDate": "2025-07-25"
   },
   {
     "id": 327,
@@ -9824,7 +10476,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2025-08-11",
+    "endDate": "2025-08-15"
   },
   {
     "id": 328,
@@ -9853,7 +10507,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2025-08-11",
+    "endDate": "2025-08-15"
   },
   {
     "id": 329,
@@ -9882,7 +10538,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "",
+    "endDate": ""
   },
   {
     "id": 330,
@@ -9911,7 +10569,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "",
+    "endDate": ""
   },
   {
     "id": 331,
@@ -9940,7 +10600,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "",
+    "endDate": ""
   },
   {
     "id": 332,
@@ -9969,7 +10631,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "",
+    "endDate": ""
   },
   {
     "id": 333,
@@ -9998,7 +10662,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "",
+    "endDate": ""
   },
   {
     "id": 334,
@@ -10029,7 +10695,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "",
+    "endDate": ""
   },
   {
     "id": 335,
@@ -10061,7 +10729,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "",
+    "endDate": ""
   },
   {
     "id": 336,
@@ -10090,7 +10760,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "",
+    "endDate": ""
   },
   {
     "id": 337,
@@ -10119,7 +10791,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2026-06-22",
+    "endDate": "2026-06-26"
   },
   {
     "id": 338,
@@ -10148,7 +10822,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2026-07-06",
+    "endDate": "2026-07-10"
   },
   {
     "id": 339,
@@ -10177,7 +10853,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2026-07-13",
+    "endDate": "2026-07-17"
   },
   {
     "id": 340,
@@ -10206,7 +10884,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2026-07-20",
+    "endDate": "2026-07-24"
   },
   {
     "id": 341,
@@ -10235,7 +10915,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2026-08-03",
+    "endDate": "2026-08-07"
   },
   {
     "id": 342,
@@ -10264,7 +10946,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2026-08-10",
+    "endDate": "2026-08-14"
   },
   {
     "id": 343,
@@ -10293,7 +10977,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2026-08-17",
+    "endDate": "2026-08-21"
   },
   {
     "id": 344,
@@ -10322,7 +11008,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "",
+    "endDate": ""
   },
   {
     "id": 345,
@@ -10353,7 +11041,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "",
+    "endDate": ""
   },
   {
     "id": 346,
@@ -10384,7 +11074,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "",
+    "endDate": ""
   },
   {
     "id": 347,
@@ -10413,7 +11105,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "",
+    "endDate": ""
   },
   {
     "id": 348,
@@ -10444,7 +11138,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "",
+    "endDate": ""
   },
   {
     "id": 349,
@@ -10473,7 +11169,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "",
+    "endDate": ""
   },
   {
     "id": 350,
@@ -10502,7 +11200,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "",
+    "endDate": ""
   },
   {
     "id": 351,
@@ -10531,7 +11231,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "",
+    "endDate": ""
   },
   {
     "id": 352,
@@ -10560,7 +11262,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "",
+    "endDate": ""
   },
   {
     "id": 353,
@@ -10589,7 +11293,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "",
+    "endDate": ""
   },
   {
     "id": 354,
@@ -10620,7 +11326,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "",
+    "endDate": ""
   },
   {
     "id": 355,
@@ -10651,7 +11359,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "",
+    "endDate": ""
   },
   {
     "id": 356,
@@ -10682,7 +11392,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "",
+    "endDate": ""
   },
   {
     "id": 357,
@@ -10713,7 +11425,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "",
+    "endDate": ""
   },
   {
     "id": 358,
@@ -10742,7 +11456,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "",
+    "endDate": ""
   },
   {
     "id": 359,
@@ -10771,7 +11487,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "",
+    "endDate": ""
   },
   {
     "id": 360,
@@ -10802,7 +11520,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "",
+    "endDate": ""
   },
   {
     "id": 361,
@@ -10833,7 +11553,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2026-06-22",
+    "endDate": "2026-06-26"
   },
   {
     "id": 362,
@@ -10864,7 +11586,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2026-06-29",
+    "endDate": "2026-07-02"
   },
   {
     "id": 363,
@@ -10895,7 +11619,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2026-07-06",
+    "endDate": "2026-07-10"
   },
   {
     "id": 364,
@@ -10926,7 +11652,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2026-07-13",
+    "endDate": "2026-07-17"
   },
   {
     "id": 365,
@@ -10957,7 +11685,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2026-07-20",
+    "endDate": "2026-07-24"
   },
   {
     "id": 366,
@@ -10988,7 +11718,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2026-07-27",
+    "endDate": "2026-07-31"
   },
   {
     "id": 367,
@@ -11019,7 +11751,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2026-08-03",
+    "endDate": "2026-08-07"
   },
   {
     "id": 368,
@@ -11050,7 +11784,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2026-08-10",
+    "endDate": "2026-08-14"
   },
   {
     "id": 369,
@@ -11079,7 +11815,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "",
+    "endDate": ""
   },
   {
     "id": 370,
@@ -11108,7 +11846,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "",
+    "endDate": ""
   },
   {
     "id": 371,
@@ -11137,7 +11877,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "",
+    "endDate": ""
   },
   {
     "id": 372,
@@ -11166,7 +11908,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "",
+    "endDate": ""
   },
   {
     "id": 373,
@@ -11200,7 +11944,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2026-06-29",
+    "endDate": "2026-07-03"
   },
   {
     "id": 374,
@@ -11234,7 +11980,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2026-07-06",
+    "endDate": "2026-07-10"
   },
   {
     "id": 375,
@@ -11268,7 +12016,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2026-07-13",
+    "endDate": "2026-07-17"
   },
   {
     "id": 376,
@@ -11302,7 +12052,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2026-07-20",
+    "endDate": "2026-07-24"
   },
   {
     "id": 377,
@@ -11336,7 +12088,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2026-07-27",
+    "endDate": "2026-07-31"
   },
   {
     "id": 378,
@@ -11370,7 +12124,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2026-08-03",
+    "endDate": "2026-08-07"
   },
   {
     "id": 379,
@@ -11404,7 +12160,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2026-08-10",
+    "endDate": "2026-08-14"
   },
   {
     "id": 380,
@@ -11438,7 +12196,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2026-08-17",
+    "endDate": "2026-08-12"
   },
   {
     "id": 381,
@@ -11467,7 +12227,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "",
+    "endDate": ""
   },
   {
     "id": 382,
@@ -11498,7 +12260,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2026-06-22",
+    "endDate": "2026-06-26"
   },
   {
     "id": 383,
@@ -11529,7 +12293,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2026-06-29",
+    "endDate": "2026-07-02"
   },
   {
     "id": 384,
@@ -11560,7 +12326,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2026-07-06",
+    "endDate": "2026-07-10"
   },
   {
     "id": 385,
@@ -11591,7 +12359,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2026-07-13",
+    "endDate": "2026-07-17"
   },
   {
     "id": 386,
@@ -11622,7 +12392,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2026-07-20",
+    "endDate": "2026-07-24"
   },
   {
     "id": 387,
@@ -11653,7 +12425,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2026-07-27",
+    "endDate": "2026-07-31"
   },
   {
     "id": 388,
@@ -11684,7 +12458,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2026-08-03",
+    "endDate": "2026-08-07"
   },
   {
     "id": 389,
@@ -11715,7 +12491,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2026-08-10",
+    "endDate": "2026-08-14"
   },
   {
     "id": 390,
@@ -11746,7 +12524,9 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2026-08-17",
+    "endDate": "2026-08-21"
   },
   {
     "id": 391,
@@ -11777,6 +12557,8 @@ const programsData = [
     "indoorOutdoor": "Both",
     "transportation": false,
     "mealsProvided": false,
-    "acceptingRegistration": true
+    "acceptingRegistration": true,
+    "startDate": "2026-08-24",
+    "endDate": "2026-08-28"
   }
 ];

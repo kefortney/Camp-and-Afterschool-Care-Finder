@@ -133,6 +133,20 @@ def build_hours(start_time: str, end_time: str) -> str:
     return ""
 
 
+def normalize_date(raw: str) -> str:
+    """Normalize M/D/YYYY or M/D/YY to YYYY-MM-DD for consistent JS sorting."""
+    raw = (raw or "").strip()
+    if not raw:
+        return ""
+    m = re.match(r"(\d{1,2})/(\d{1,2})/(\d{2,4})$", raw)
+    if not m:
+        return raw
+    month, day, year = int(m.group(1)), int(m.group(2)), int(m.group(3))
+    if year < 100:
+        year += 2000
+    return f"{year:04d}-{month:02d}-{day:02d}"
+
+
 # ── main conversion ───────────────────────────────────────────────────────────
 
 def convert():
@@ -185,6 +199,10 @@ def convert():
         # Subjects
         subjects = extract_subjects(name, desc)
 
+        # Dates
+        start_date = normalize_date(row.get("Start Date") or "")
+        end_date   = normalize_date(row.get("End Date") or "")
+
         # Type
         pre_after = (row.get("Pre/After Care") or "").strip().lower()
         prog_type = "Both" if pre_after in ("yes", "y", "true") else "Summer Camp"
@@ -217,6 +235,8 @@ def convert():
             "transportation":      False,
             "mealsProvided":       False,
             "acceptingRegistration": True,
+            "startDate":             start_date,
+            "endDate":               end_date,
         }
 
         programs.append(entry)
@@ -235,11 +255,13 @@ def convert():
     with_cost    = sum(1 for p in programs if p["cost"] > 0)
     with_hours   = sum(1 for p in programs if p["hours"])
     with_subjects = sum(1 for p in programs if p["subjects"])
+    with_dates    = sum(1 for p in programs if p["startDate"])
     print(f"  city present:    {with_city}/{len(programs)}")
     print(f"  grades present:  {with_grades}/{len(programs)}")
     print(f"  cost > 0:        {with_cost}/{len(programs)}")
     print(f"  hours present:   {with_hours}/{len(programs)}")
     print(f"  subjects found:  {with_subjects}/{len(programs)}")
+    print(f"  dates present:   {with_dates}/{len(programs)}")
 
 
 if __name__ == "__main__":

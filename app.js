@@ -6,7 +6,8 @@ let activeFilters = {
   city: '',
   subject: '',
   maxCost: '',
-  scholarship: ''
+  scholarship: '',
+  month: ''
 };
 
 let currentProgram = null;
@@ -19,6 +20,7 @@ const filterCity      = document.getElementById('filterCity');
 const filterSubject   = document.getElementById('filterSubject');
 const filterMaxCost   = document.getElementById('filterMaxCost');
 const filterScholarship = document.getElementById('filterScholarship');
+const filterMonth       = document.getElementById('filterMonth');
 const cardsGrid       = document.getElementById('cardsGrid');
 const resultsCount    = document.getElementById('resultsCount');
 const noResults       = document.getElementById('noResults');
@@ -54,6 +56,36 @@ function normalizeCostToWeekly(cost, period) {
 function formatCost(cost, period) {
   if (!cost || cost === 0) return 'Contact for pricing';
   return `$${cost.toLocaleString()} / ${period}`;
+}
+
+// ===== Date Helpers =====
+const MONTH_ABBR = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+const MONTH_FULL = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+
+function parseDate(iso) {
+  if (!iso) return null;
+  const [y, m, d] = iso.split('-').map(Number);
+  return new Date(y, m - 1, d); // local time, no UTC shift
+}
+
+/** "Jun 22" */
+function fmtShort(iso) {
+  const d = parseDate(iso);
+  if (!d) return '';
+  return `${MONTH_ABBR[d.getMonth()]} ${d.getDate()}`;
+}
+
+/** "Jun 22 – 26" or "Jun 29 – Jul 3" */
+function fmtWeekRange(startIso, endIso) {
+  const s = parseDate(startIso);
+  if (!s) return '';
+  const label = `${MONTH_ABBR[s.getMonth()]} ${s.getDate()}`;
+  const e = parseDate(endIso);
+  if (!e) return `Week of ${label}`;
+  if (s.getMonth() === e.getMonth()) {
+    return `${label}–${e.getDate()}`;
+  }
+  return `${label} – ${MONTH_ABBR[e.getMonth()]} ${e.getDate()}`;
 }
 
 // ===== Filtering =====
@@ -95,6 +127,13 @@ function applyFilters() {
     // Scholarship / Financial Aid
     if (activeFilters.scholarship === 'yes' && !p.scholarshipAvailable) return false;
 
+    // Month (matches week start date)
+    if (activeFilters.month) {
+      if (!p.startDate) return true; // no date info — keep it visible
+      const d = parseDate(p.startDate);
+      if (d && (d.getMonth() + 1) !== parseInt(activeFilters.month, 10)) return false;
+    }
+
     return true;
   });
 }
@@ -110,7 +149,15 @@ function renderCards(programs) {
   }
   noResults.style.display = 'none';
 
-  programs.forEach(p => {
+  // Sort: dated entries first (ascending by start date), undated last
+  const sorted = [...programs].sort((a, b) => {
+    if (a.startDate && b.startDate) return a.startDate.localeCompare(b.startDate);
+    if (a.startDate) return -1;
+    if (b.startDate) return 1;
+    return 0;
+  });
+
+  sorted.forEach(p => {
     const card = document.createElement('article');
     card.className = 'program-card';
 
@@ -144,9 +191,16 @@ function renderCards(programs) {
       ? `<a href="${p.website}" target="_blank" rel="noopener noreferrer" class="btn-website" title="Visit website">🔗</a>`
       : '';
 
+    const weekBadgeHtml = p.startDate
+      ? `<span class="week-badge">📅 ${fmtWeekRange(p.startDate, p.endDate)}</span>`
+      : '';
+
     card.innerHTML = `
       <div class="card-header">
-        <span class="card-type-badge ${badgeClass}">${p.type}</span>
+        <div class="card-header-top">
+          <span class="card-type-badge ${badgeClass}">${p.type}</span>
+          ${weekBadgeHtml}
+        </div>
         <div class="card-title">${p.name}</div>
         <div class="card-org">${p.organization}</div>
       </div>
@@ -183,7 +237,7 @@ function renderCards(programs) {
 
     card.querySelector('.btn-details').addEventListener('click', () => openModal(p));
     cardsGrid.appendChild(card);
-  });
+  }); // end sorted.forEach
 }
 
 // ===== Modal =====
@@ -206,6 +260,16 @@ function openModal(p) {
 
   document.getElementById('modalGrades').textContent = gradesText;
   document.getElementById('modalSession').textContent = p.sessionType || 'Summer';
+
+  const dateEl = document.getElementById('modalDates');
+  if (dateEl) {
+    if (p.startDate) {
+      dateEl.textContent = fmtWeekRange(p.startDate, p.endDate);
+      dateEl.closest('.modal-detail-item').style.display = '';
+    } else {
+      dateEl.closest('.modal-detail-item').style.display = 'none';
+    }
+  }
   document.getElementById('modalHours').textContent = p.hours || 'See website for hours';
   document.getElementById('modalDays').textContent = p.daysOffered || '';
   document.getElementById('modalCost').textContent = (!p.cost || p.cost === 0)
@@ -287,9 +351,10 @@ filterCity.addEventListener('change', e => { activeFilters.city = e.target.value
 filterSubject.addEventListener('change', e => { activeFilters.subject = e.target.value; update(); });
 filterMaxCost.addEventListener('change', e => { activeFilters.maxCost = e.target.value; update(); });
 filterScholarship.addEventListener('change', e => { activeFilters.scholarship = e.target.value; update(); });
+filterMonth.addEventListener('change', e => { activeFilters.month = e.target.value; update(); });
 
 btnReset.addEventListener('click', () => {
-  activeFilters = { search: '', type: '', grades: '', city: '', subject: '', maxCost: '', scholarship: '' };
+  activeFilters = { search: '', type: '', grades: '', city: '', subject: '', maxCost: '', scholarship: '', month: '' };
   searchInput.value = '';
   filterType.value = '';
   filterGrades.value = '';
@@ -297,6 +362,7 @@ btnReset.addEventListener('click', () => {
   filterSubject.value = '';
   filterMaxCost.value = '';
   filterScholarship.value = '';
+  filterMonth.value = '';
   update();
 });
 

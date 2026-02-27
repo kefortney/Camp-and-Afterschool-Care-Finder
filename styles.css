@@ -258,6 +258,25 @@ main {
   position: relative;
 }
 
+.card-header-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+  margin-bottom: 0.5rem;
+}
+
+.week-badge {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--primary-dark);
+  background: var(--primary-light);
+  border-radius: 20px;
+  padding: 0.2rem 0.65rem;
+  white-space: nowrap;
+}
+
 .card-type-badge {
   display: inline-block;
   font-size: 0.72rem;
@@ -266,7 +285,6 @@ main {
   letter-spacing: 0.06em;
   border-radius: 20px;
   padding: 0.2rem 0.65rem;
-  margin-bottom: 0.5rem;
 }
 
 .badge-camp {
