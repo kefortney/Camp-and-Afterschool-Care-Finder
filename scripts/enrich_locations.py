@@ -6,13 +6,16 @@ import urllib.parse
 import urllib.request
 from pathlib import Path
 
-CAMP_PATH = Path("data/2026 Summer Camp.csv")
+CAMP_PATH = Path("data/camp/summer_camp_2026.csv")
 
 USER_AGENT = "CampFinderAddressEnricher/1.0 (local use)"
 REQUEST_DELAY_SECONDS = 0.7
 
 STREET_HINT_RE = re.compile(
-    r"\b(st|street|rd|road|ave|avenue|ln|lane|dr|drive|ct|court|blvd|way|pkwy|parkway|pl|place|cir|circle|ter|terrace|hwy|highway|route|rt)\b",
+    (
+        r"\b(st|street|rd|road|ave|avenue|ln|lane|dr|drive|ct|court|blvd|way|"
+        r"pkwy|parkway|pl|place|cir|circle|ter|terrace|hwy|highway|route|rt)\b"
+    ),
     re.I,
 )
 
@@ -37,7 +40,8 @@ def normalize_city(value: str) -> str:
 
 
 def fetch_nominatim(query: str):
-    url = "https://nominatim.openstreetmap.org/search?" + urllib.parse.urlencode(
+    base_url = "https://nominatim.openstreetmap.org/search?"
+    url = base_url + urllib.parse.urlencode(
         {
             "q": query,
             "format": "jsonv2",
@@ -93,7 +97,10 @@ def city_matches(item, expected_city: str) -> bool:
         or address.get("municipality")
         or ""
     )
-    if found_city and normalize_city(found_city) == normalize_city(expected_city):
+    if (
+        found_city
+        and normalize_city(found_city) == normalize_city(expected_city)
+    ):
         return True
     display_name = (item.get("display_name") or "").lower()
     return normalize_city(expected_city) in display_name

@@ -1,5 +1,5 @@
 """
-Convert data/2026 Summer Camp.csv → data.js
+Convert data/camp/summer_camp_2026.csv → data.js
 
 Run from the project root:
     python3 scripts/csv_to_data_js.py
@@ -10,12 +10,27 @@ import json
 import re
 from pathlib import Path
 
-CAMP_PATH = Path("data/2026 Summer Camp.csv")
+CAMP_PATH = Path("data/camp/summer_camp_2026.csv")
 OUT_PATH = Path("data.js")
 
-GRADE_ORDER = ["K", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]
+GRADE_ORDER = [
+    "K",
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+    "10",
+    "11",
+    "12",
+]
 
 # ── helpers ──────────────────────────────────────────────────────────────────
+
 
 def normalize_grade(raw: str) -> str:
     val = raw.strip().upper()
@@ -37,7 +52,7 @@ def grade_from_age(age_str: str, is_start: bool) -> str:
     if is_start:
         grade_index = age - 5
     else:
-        grade_index = age - 6   # end age is exclusive-ish
+        grade_index = age - 6  # end age is exclusive-ish
     if 0 <= grade_index < len(GRADE_ORDER):
         return GRADE_ORDER[grade_index]
     return ""
@@ -83,66 +98,305 @@ def parse_cost(raw: str):
 
 def has_scholarship(cost_text: str, notes_text: str) -> bool:
     combined = ((cost_text or "") + " " + (notes_text or "")).lower()
-    keywords = ["scholarship", "financial aid", "sliding scale", "subsidy",
-                "income-based", "need-based", "assistance", "reduced", "free"]
+    keywords = [
+        "scholarship",
+        "financial aid",
+        "sliding scale",
+        "subsidy",
+        "income-based",
+        "need-based",
+        "assistance",
+        "reduced",
+        "free",
+    ]
     return any(kw in combined for kw in keywords)
 
 
 SUBJECT_KEYWORDS = [
     # Academic / STEM
-    ("STEM",               ["stem"]),
-    ("Science",            ["science", "biology", "chemistry", "physics", "ecology", "botany",
-                             "paleontolog", "astrono", "space camp", "rocket science", "geology"]),
-    ("Technology",         ["technology", "engineering", "robotics", "maker", "makerspace",
-                             "3d print", "fabricat", "electronics"]),
-    ("Coding",             ["coding", "programming", "python", "javascript", "web dev",
-                             "game design", "minecraft", "computer science", "app development", "scratch"]),
-    ("Math",               ["math", "mathematics"]),
-    ("Chess",              ["chess"]),
-    ("Reading",            ["reading", "literacy", "books"]),
-    ("Writing",            ["writing", "creative writing", "journalism", "poetry", "fiction",
-                             "storytell", "dungeons", "d&d", "role-playing", "narrative"]),
+    ("STEM", ["stem"]),
+    (
+        "Science",
+        [
+            "science",
+            "biology",
+            "chemistry",
+            "physics",
+            "ecology",
+            "botany",
+            "paleontolog",
+            "astrono",
+            "space camp",
+            "rocket science",
+            "geology",
+        ],
+    ),
+    (
+        "Technology",
+        [
+            "technology",
+            "engineering",
+            "robotics",
+            "maker",
+            "makerspace",
+            "3d print",
+            "fabricat",
+            "electronics",
+        ],
+    ),
+    (
+        "Coding",
+        [
+            "coding",
+            "programming",
+            "python",
+            "javascript",
+            "web dev",
+            "game design",
+            "minecraft",
+            "computer science",
+            "app development",
+            "scratch",
+        ],
+    ),
+    ("Math", ["math", "mathematics"]),
+    ("Chess", ["chess"]),
+    ("Reading", ["reading", "literacy", "books"]),
+    (
+        "Writing",
+        [
+            "writing",
+            "creative writing",
+            "journalism",
+            "poetry",
+            "fiction",
+            "storytell",
+            "dungeons",
+            "d&d",
+            "role-playing",
+            "narrative",
+        ],
+    ),
     # Arts & Performance
-    ("Arts",               ["art", "arts", "craft", "crafts", "painting", "sculpture", "drawing",
-                             "ceramics", "visual", "printmaking", "pottery", "collage", "illustration",
-                             "mosaic", "photography", "filmmaking", "animation", "textile", "fiber arts"]),
-    ("Drama",              ["drama", "theater", "theatre", "acting", "improv", "musical", "stagecraft",
-                             "playwriting", "puppetry"]),
-    ("Circus",             ["circus", "acrobat", "juggling", "clown", "aerial", "trapeze", "smirkus",
-                             "stilts", "tightrope"]),
-    ("Music",              ["music", "singing", "band", "orchestra", "guitar", "piano", "instrument",
-                             "choir", "drum", "ukulele", "songwrit", "violin", "cello", "composit"]),
-    ("Dance",              ["dance", "dancing", "ballet", "hip hop", "hip-hop", "tap dance",
-                             "contemporary dance", "ballroom", "salsa", "latin dance"]),
+    (
+        "Arts",
+        [
+            "art",
+            "arts",
+            "craft",
+            "crafts",
+            "painting",
+            "sculpture",
+            "drawing",
+            "ceramics",
+            "visual",
+            "printmaking",
+            "pottery",
+            "collage",
+            "illustration",
+            "mosaic",
+            "photography",
+            "filmmaking",
+            "animation",
+            "textile",
+            "fiber arts",
+        ],
+    ),
+    (
+        "Drama",
+        [
+            "drama",
+            "theater",
+            "theatre",
+            "acting",
+            "improv",
+            "musical",
+            "stagecraft",
+            "playwriting",
+            "puppetry",
+        ],
+    ),
+    (
+        "Circus",
+        [
+            "circus",
+            "acrobat",
+            "juggling",
+            "clown",
+            "aerial",
+            "trapeze",
+            "smirkus",
+            "stilts",
+            "tightrope",
+        ],
+    ),
+    (
+        "Music",
+        [
+            "music",
+            "singing",
+            "band",
+            "orchestra",
+            "guitar",
+            "piano",
+            "instrument",
+            "choir",
+            "drum",
+            "ukulele",
+            "songwrit",
+            "violin",
+            "cello",
+            "composit",
+        ],
+    ),
+    (
+        "Dance",
+        [
+            "dance",
+            "dancing",
+            "ballet",
+            "hip hop",
+            "hip-hop",
+            "tap dance",
+            "contemporary dance",
+            "ballroom",
+            "salsa",
+            "latin dance",
+        ],
+    ),
     # Individual / Racket Sports
-    ("Tennis",             ["tennis", "pickleball"]),
-    ("Martial Arts",       ["martial art", "aikido", "karate", "judo", "jiu-jitsu", "taekwondo",
-                             "kung fu", "self-defense", "wrestling"]),
-    ("Gymnastics",         ["gymnastics", "gymnast", "tumbling"]),
-    ("Yoga",               ["yoga"]),
-    ("Skateboarding",      ["skate camp", "skateboard", "skating camp", "skate school", "skate park"]),
+    ("Tennis", ["tennis", "pickleball"]),
+    (
+        "Martial Arts",
+        [
+            "martial art",
+            "aikido",
+            "karate",
+            "judo",
+            "jiu-jitsu",
+            "taekwondo",
+            "kung fu",
+            "self-defense",
+            "wrestling",
+        ],
+    ),
+    ("Gymnastics", ["gymnastics", "gymnast", "tumbling"]),
+    ("Yoga", ["yoga"]),
+    (
+        "Skateboarding",
+        [
+            "skate camp",
+            "skateboard",
+            "skating camp",
+            "skate school",
+            "skate park",
+        ],
+    ),
     # Team Sports
-    ("Soccer",             ["soccer"]),
-    ("Basketball",         ["basketball"]),
-    ("Volleyball",         ["volleyball"]),
-    ("Hockey",             ["hockey"]),
-    ("Lacrosse",           ["lacrosse"]),
-    ("Baseball",           ["baseball", "softball"]),
-    ("Sports",             ["sport", "sports", "athletic", "athletics", "multi-sport", "multisport"]),
+    ("Soccer", ["soccer"]),
+    ("Basketball", ["basketball"]),
+    ("Volleyball", ["volleyball"]),
+    ("Hockey", ["hockey"]),
+    ("Lacrosse", ["lacrosse"]),
+    ("Baseball", ["baseball", "softball"]),
+    (
+        "Sports",
+        [
+            "sport",
+            "sports",
+            "athletic",
+            "athletics",
+            "multi-sport",
+            "multisport",
+        ],
+    ),
     # Outdoor / Adventure
-    ("Mountain Biking",    ["mountain bike", "mountain biking", "mtb"]),
-    ("Disc Golf",          ["disc golf", "disk golf"]),
-    ("Ultimate Frisbee",   ["ultimate frisbee", "ultimate disc", "ultimate camp"]),
-    ("Sailing",            ["sail", "sailing", "windsurf", "windsurfing", "nautical", "regatta", "boating"]),
-    ("Swim",               ["swim", "swimming", "aquatic", "pool", "water safety", "lifeguard"]),
-    ("Outdoor Education",  ["outdoor", "wilderness", "nature", "hiking", "kayak", "canoe", "camping",
-                             "environmental", "conservation", "garden", "gardening", "farm", "farming",
-                             "forest", "archery", "climbing", "trail", "backpack", "survival", "adventure"]),
-    ("Equestrian",         ["horse", "equestrian", "riding", "pony", "mounted", "stable", "equine"]),
+    ("Mountain Biking", ["mountain bike", "mountain biking", "mtb"]),
+    ("Disc Golf", ["disc golf", "disk golf"]),
+    (
+        "Ultimate Frisbee",
+        ["ultimate frisbee", "ultimate disc", "ultimate camp"],
+    ),
+    (
+        "Sailing",
+        [
+            "sail",
+            "sailing",
+            "windsurf",
+            "windsurfing",
+            "nautical",
+            "regatta",
+            "boating",
+        ],
+    ),
+    (
+        "Swim",
+        ["swim", "swimming", "aquatic", "pool", "water safety", "lifeguard"],
+    ),
+    (
+        "Outdoor Education",
+        [
+            "outdoor",
+            "wilderness",
+            "nature",
+            "hiking",
+            "kayak",
+            "canoe",
+            "camping",
+            "environmental",
+            "conservation",
+            "garden",
+            "gardening",
+            "farm",
+            "farming",
+            "forest",
+            "archery",
+            "climbing",
+            "trail",
+            "backpack",
+            "survival",
+            "adventure",
+        ],
+    ),
+    (
+        "Equestrian",
+        [
+            "horse",
+            "equestrian",
+            "riding",
+            "pony",
+            "mounted",
+            "stable",
+            "equine",
+        ],
+    ),
     # Other
-    ("Cooking",            ["cook", "cooking", "culinary", "baking", "food", "chef", "nutrition", "restaurant"]),
-    ("Animals",            ["animal", "veterinar", "wildlife", "creature", "humane society", "zoolog",
-                             "pet care", "paw paw"]),
+    (
+        "Cooking",
+        [
+            "cook",
+            "cooking",
+            "culinary",
+            "baking",
+            "food",
+            "chef",
+            "nutrition",
+            "restaurant",
+        ],
+    ),
+    (
+        "Animals",
+        [
+            "animal",
+            "veterinar",
+            "wildlife",
+            "creature",
+            "humane society",
+            "zoolog",
+            "pet care",
+            "paw paw",
+        ],
+    ),
 ]
 
 
@@ -155,8 +409,16 @@ def extract_subjects(name: str, description: str) -> list:
     return found
 
 
-def build_fallback_description(org: str, name: str, city: str, subjects: list,
-                               sg: str, eg: str, cost: int, period: str) -> str:
+def build_fallback_description(
+    org: str,
+    name: str,
+    city: str,
+    subjects: list,
+    sg: str,
+    eg: str,
+    cost: int,
+    period: str,
+) -> str:
     """Generate a plain-English description from available metadata."""
     parts = []
 
@@ -208,7 +470,8 @@ def normalize_date(raw: str) -> str:
     return f"{year:04d}-{month:02d}-{day:02d}"
 
 
-# ── main conversion ───────────────────────────────────────────────────────────
+# ── main conversion ──────────────────────────────────────────────────────────
+
 
 def convert():
     with CAMP_PATH.open("r", encoding="utf-8-sig", newline="") as f:
@@ -218,16 +481,14 @@ def convert():
     uid = 1
 
     for row in rows:
-        org      = (row.get("Organization") or "").strip()
-        name     = (row.get("Camp Name") or "").strip() or org
-        website  = (row.get("Webpage") or "").strip()
-        desc     = (row.get("Camp Description") or "").strip()
-        city     = (row.get("City") or "").strip()
+        org = (row.get("Organization") or "").strip()
+        name = (row.get("Camp Name") or "").strip() or org
+        website = (row.get("Webpage") or "").strip()
+        desc = (row.get("Camp Description") or "").strip()
+        city = (row.get("City") or "").strip()
         location = (row.get("Location") or "").strip()
         cost_raw = (row.get("Cost") or "").strip()
-        notes    = (row.get("Notes") or "").strip()
-        reg_text = (row.get("Registration") or "").strip()
-
+        notes = (row.get("Notes") or "").strip()
         # Skip rows with no meaningful identity
         if not org and not name:
             continue
@@ -263,48 +524,56 @@ def convert():
         # Fallback description if blank
         if not desc:
             desc = build_fallback_description(
-                org, name, city, subjects,
-                sg, eg, cost_val, cost_period or "session"
+                org,
+                name,
+                city,
+                subjects,
+                sg,
+                eg,
+                cost_val,
+                cost_period or "session",
             )
 
         # Dates
         start_date = normalize_date(row.get("Start Date") or "")
-        end_date   = normalize_date(row.get("End Date") or "")
+        end_date = normalize_date(row.get("End Date") or "")
 
         # Type
         pre_after = (row.get("Pre/After Care") or "").strip().lower()
-        prog_type = "Both" if pre_after in ("yes", "y", "true") else "Summer Camp"
+        prog_type = (
+            "Both" if pre_after in ("yes", "y", "true") else "Summer Camp"
+        )
 
         entry = {
-            "id":                  uid,
-            "name":                name,
-            "type":                prog_type,
-            "organization":        org,
-            "address":             location,
-            "city":                city,
-            "state":               "VT",
-            "zip":                 "",
-            "phone":               "",
-            "email":               "",
-            "website":             website,
-            "gradesMin":           sg,
-            "gradesMax":           eg,
-            "ageMin":              age_min,
-            "ageMax":              age_max,
-            "cost":                cost_val if cost_val is not None else 0,
-            "costPeriod":          cost_period or "session",
+            "id": uid,
+            "name": name,
+            "type": prog_type,
+            "organization": org,
+            "address": location,
+            "city": city,
+            "state": "VT",
+            "zip": "",
+            "phone": "",
+            "email": "",
+            "website": website,
+            "gradesMin": sg,
+            "gradesMax": eg,
+            "ageMin": age_min,
+            "ageMax": age_max,
+            "cost": cost_val if cost_val is not None else 0,
+            "costPeriod": cost_period or "session",
             "scholarshipAvailable": scholarship,
-            "hours":               hours,
-            "daysOffered":         "Mon–Fri",
-            "sessionType":         "Summer",
-            "subjects":            subjects,
-            "description":         desc,
-            "indoorOutdoor":       "Both",
-            "transportation":      False,
-            "mealsProvided":       False,
+            "hours": hours,
+            "daysOffered": "Mon–Fri",
+            "sessionType": "Summer",
+            "subjects": subjects,
+            "description": desc,
+            "indoorOutdoor": "Both",
+            "transportation": False,
+            "mealsProvided": False,
             "acceptingRegistration": True,
-            "startDate":             start_date,
-            "endDate":               end_date,
+            "startDate": start_date,
+            "endDate": end_date,
         }
 
         programs.append(entry)
@@ -318,12 +587,12 @@ def convert():
     print(f"Written {len(programs)} programs to {OUT_PATH}")
 
     # Summary
-    with_city    = sum(1 for p in programs if p["city"])
-    with_grades  = sum(1 for p in programs if p["gradesMin"] and p["gradesMax"])
-    with_cost    = sum(1 for p in programs if p["cost"] > 0)
-    with_hours   = sum(1 for p in programs if p["hours"])
+    with_city = sum(1 for p in programs if p["city"])
+    with_grades = sum(1 for p in programs if p["gradesMin"] and p["gradesMax"])
+    with_cost = sum(1 for p in programs if p["cost"] > 0)
+    with_hours = sum(1 for p in programs if p["hours"])
     with_subjects = sum(1 for p in programs if p["subjects"])
-    with_dates    = sum(1 for p in programs if p["startDate"])
+    with_dates = sum(1 for p in programs if p["startDate"])
     print(f"  city present:    {with_city}/{len(programs)}")
     print(f"  grades present:  {with_grades}/{len(programs)}")
     print(f"  cost > 0:        {with_cost}/{len(programs)}")

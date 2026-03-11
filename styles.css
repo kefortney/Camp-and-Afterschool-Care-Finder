@@ -9,8 +9,6 @@
   --primary: #2a7d4f;
   --primary-dark: #1e5e3a;
   --primary-light: #d6efe2;
-  --accent: #f4a624;
-  --accent-dark: #d48f10;
   --bg: #f5f7f5;
   --white: #ffffff;
   --gray-100: #f8f9fa;
@@ -86,6 +84,42 @@ header p.subtitle {
   opacity: 0.88;
   max-width: 560px;
   margin: 0 auto;
+}
+
+/* ===== Category Tabs ===== */
+.tab-nav {
+  display: flex;
+  gap: 0.35rem;
+  max-width: 1200px;
+  margin: -1.1rem auto 0;
+  padding: 0 1rem;
+  position: relative;
+  z-index: 2;
+}
+
+.tab-btn {
+  border: 1.5px solid var(--gray-400);
+  border-bottom: none;
+  border-radius: 10px 10px 0 0;
+  background: var(--white);
+  color: var(--gray-600);
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  padding: 0.62rem 1rem 0.6rem;
+  cursor: pointer;
+  transition: color var(--transition), background var(--transition), border-color var(--transition);
+}
+
+.tab-btn:hover {
+  color: var(--primary);
+  border-color: var(--primary);
+}
+
+.tab-btn.active {
+  color: var(--primary-dark);
+  border-color: var(--primary);
+  background: #ecf8ef;
 }
 
 /* ===== Main Layout ===== */
@@ -227,6 +261,10 @@ main {
 .btn-reset:hover {
   border-color: var(--primary);
   color: var(--primary);
+}
+
+.hidden {
+  display: none !important;
 }
 
 /* ===== Program Cards Grid ===== */
@@ -423,20 +461,23 @@ main {
 }
 
 .btn-website {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.3rem;
-  border: 1.5px solid var(--gray-400);
+  flex: 1;
+  background: #60a5fa;
+  color: var(--white);
+  border: none;
   border-radius: var(--radius-sm);
-  padding: 0.45rem 0.8rem;
-  font-size: 0.84rem;
-  color: var(--gray-600);
-  transition: all var(--transition);
+  padding: 0.5rem 1rem;
+  font-size: 0.88rem;
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background var(--transition);
 }
 
 .btn-website:hover {
-  border-color: var(--primary);
-  color: var(--primary);
+  background: #3b82f6;
+  color: var(--white);
   text-decoration: none;
 }
 
@@ -589,6 +630,51 @@ main {
   font-size: 0.9rem;
   color: var(--gray-600);
   line-height: 1.6;
+}
+
+.modal-org-programs {
+  padding: 1rem 1.5rem;
+  border-top: 1px solid var(--gray-200);
+  background: var(--gray-100);
+}
+
+.modal-org-heading {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--gray-800);
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.modal-org-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.modal-org-link {
+  background: var(--white);
+  border: 1px solid var(--gray-400);
+  border-radius: 4px;
+  padding: 0.25rem 0.6rem;
+  font-size: 0.82rem;
+  color: var(--primary);
+  cursor: pointer;
+  transition: background var(--transition), color var(--transition);
+}
+
+.modal-org-link:hover {
+  background: var(--primary);
+  color: var(--white);
+  border-color: var(--primary);
+}
+
+.modal-org-more {
+  font-size: 0.82rem;
+  color: var(--gray-600);
+  align-self: center;
 }
 
 .modal-footer {
@@ -821,6 +907,18 @@ footer {
 
 /* ===== Responsive ===== */
 @media (max-width: 640px) {
+  .tab-nav {
+    margin-top: -0.9rem;
+    overflow-x: auto;
+    padding-bottom: 0.1rem;
+  }
+
+  .tab-btn {
+    white-space: nowrap;
+    font-size: 0.85rem;
+    padding: 0.55rem 0.8rem;
+  }
+
   .search-row {
     flex-direction: column;
   }

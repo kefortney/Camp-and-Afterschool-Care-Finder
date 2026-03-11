@@ -1,7 +1,7 @@
 """
 Fetch missing Camp Description values from each camp's website.
 
-Reads data/2026 Summer Camp.csv, fills in blank Camp Description fields
+Reads data/camp/summer_camp_2026.csv, fills in blank Camp Description fields
 by fetching the webpage and extracting the best available description text,
 then writes the updated CSV back in place.
 
@@ -14,7 +14,6 @@ Existing descriptions are never overwritten.
 
 import csv
 import re
-import sys
 import time
 import urllib.error
 import urllib.parse
@@ -22,30 +21,31 @@ import urllib.request
 from html.parser import HTMLParser
 from pathlib import Path
 
-CAMP_PATH = Path("data/2026 Summer Camp.csv")
+CAMP_PATH = Path("data/camp/summer_camp_2026.csv")
 
 USER_AGENT = "CampFinderDescriptionFetcher/1.0 (local research tool)"
-REQUEST_DELAY = 0.8   # seconds between requests
-TIMEOUT       = 15    # seconds per request
-MIN_DESC_LEN  = 40    # ignore descriptions shorter than this
-MAX_DESC_LEN  = 500   # truncate descriptions longer than this
+REQUEST_DELAY = 0.8  # seconds between requests
+TIMEOUT = 15  # seconds per request
+MIN_DESC_LEN = 40  # ignore descriptions shorter than this
+MAX_DESC_LEN = 500  # truncate descriptions longer than this
 
 
-# ── HTML parser ───────────────────────────────────────────────────────────────
+# -- HTML parser -------------------------------------------------------------
+
 
 class MetaDescParser(HTMLParser):
     """Extracts meta description / og:description and first body paragraphs."""
 
     def __init__(self):
         super().__init__()
-        self.og_desc    = ""
-        self.meta_desc  = ""
-        self._in_body   = False
-        self._in_p      = False
-        self._p_texts   = []
-        self._cur_p     = []
+        self.og_desc = ""
+        self.meta_desc = ""
+        self._in_body = False
+        self._in_p = False
+        self._p_texts = []
+        self._cur_p = []
         self._skip_tags = set()
-        self._depth     = 0
+        self._depth = 0
         self._skip_depth = None
 
     def handle_starttag(self, tag, attrs):
@@ -67,8 +67,8 @@ class MetaDescParser(HTMLParser):
 
         # <meta name="description" …>
         if tag == "meta":
-            name    = attr_dict.get("name", "").lower()
-            prop    = attr_dict.get("property", "").lower()
+            name = attr_dict.get("name", "").lower()
+            prop = attr_dict.get("property", "").lower()
             content = attr_dict.get("content", "").strip()
             if not content:
                 return
@@ -119,8 +119,6 @@ class MetaDescParser(HTMLParser):
         return ""
 
 
-# ── fetcher ───────────────────────────────────────────────────────────────────
-
 def fetch_description(url: str) -> str:
     """Fetch a URL and return the best description string, or '' on failure."""
     if not url.startswith(("http://", "https://")):
@@ -152,7 +150,8 @@ def fetch_description(url: str) -> str:
     return parser.best_description()
 
 
-# ── main ──────────────────────────────────────────────────────────────────────
+# -- main --------------------------------------------------------------------
+
 
 def main():
     with CAMP_PATH.open("r", encoding="utf-8-sig", newline="") as f:
@@ -167,20 +166,26 @@ def main():
         and (r.get("Webpage") or "").strip()
     ]
 
+    already_have_desc = sum(
+        1 for r in rows if (r.get("Camp Description") or "").strip()
+    )
+
     print(f"Rows total:          {len(rows)}")
-    print(f"Already have desc:   {sum(1 for r in rows if (r.get('Camp Description') or '').strip())}")
+    print(f"Already have desc:   {already_have_desc}")
     print(f"Will attempt to fetch: {len(targets)}")
     print()
 
     updated = 0
-    failed  = 0
+    failed = 0
 
     for n, idx in enumerate(targets, 1):
         row = rows[idx]
-        url = (row.get("Webpage") or "").strip().split()[0]  # take first URL if multiple
+        # Take first URL if multiple are present.
+        url = (row.get("Webpage") or "").strip().split()[0]
         org = (row.get("Organization") or "").strip()
 
-        print(f"[{n}/{len(targets)}] {org[:50]:<50}  {url[:60]}", end="  ", flush=True)
+        prefix = f"[{n}/{len(targets)}] {org[:50]:<50}  {url[:60]}"
+        print(prefix, end="  ", flush=True)
 
         desc = fetch_description(url)
         time.sleep(REQUEST_DELAY)
@@ -188,22 +193,22 @@ def main():
         if desc:
             rows[idx]["Camp Description"] = desc
             updated += 1
-            print(f"✓  ({len(desc)} chars)")
+            print(f"ok ({len(desc)} chars)")
         else:
             failed += 1
-            print("✗  (no description found)")
+            print("no description found")
 
         # Save progress every 25 rows so a Ctrl-C doesn't lose everything
         if n % 25 == 0:
             _write_csv(CAMP_PATH, fieldnames, rows)
-            print(f"  ── progress saved ({updated} updated so far) ──")
+            print(f"  -- progress saved ({updated} updated so far) --")
 
     # Final save
     _write_csv(CAMP_PATH, fieldnames, rows)
 
     print()
     print(f"Done.  Updated: {updated}  |  No description found: {failed}")
-    print(f"Re-run   python3 scripts/csv_to_data_js.py   to rebuild data.js")
+    print("Re-run python3 scripts/csv_to_data_js.py to rebuild data.js")
 
 
 def _write_csv(path, fieldnames, rows):

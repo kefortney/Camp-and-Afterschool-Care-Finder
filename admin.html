@@ -85,6 +85,20 @@
       box-shadow: 0 0 0 3px rgba(42,125,79,0.15);
     }
     .toolbar-actions { display: flex; gap: 0.5rem; align-items: center; margin-left: auto; }
+    .toolbar-select {
+      min-width: 220px;
+      padding: 0.56rem 0.7rem;
+      border: 1.5px solid var(--gray-400);
+      border-radius: var(--radius-sm);
+      font-size: 0.9rem;
+      background: var(--white);
+      color: var(--text);
+    }
+    .toolbar-select:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(42,125,79,0.15);
+    }
 
     /* ===== Buttons ===== */
     .btn-primary {
@@ -162,6 +176,7 @@
     .td-org  { max-width: 200px; }
     .td-trunc { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; display: block; }
     .td-actions { white-space: nowrap; display: flex; gap: 0.4rem; }
+    .td-readonly { font-size: 0.78rem; color: var(--gray-600); font-style: italic; }
     .badge-camp { background: #dbeafe; color: #1d4ed8; }
     .badge-both { background: #ede9fe; color: #5b21b6; }
     .type-badge {
@@ -308,7 +323,7 @@
     <div class="header-content">
       <span class="header-icon">⚙️</span>
       <h1>Admin – Program Data Editor</h1>
-      <p class="subtitle">Edit, add, or remove camp and afterschool program entries. Download data.js when done and replace the file in the repository.</p>
+      <p class="subtitle">View all camp, afterschool, and daycare records together. Camp rows are editable and export back to data.js.</p>
     </div>
   </header>
 
@@ -318,6 +333,9 @@
         <span class="search-icon">🔍</span>
         <input type="search" id="adminSearch" placeholder="Search by name, org, city, or subject…" autocomplete="off" />
       </div>
+      <select id="typeFilter" class="toolbar-select" aria-label="Filter by program type">
+        <option value="">All Program Types</option>
+      </select>
       <div class="toolbar-actions">
         <span id="dirtyBadge" class="dirty-badge" style="display:none;">⚠ Unsaved changes</span>
         <button class="btn-secondary" id="btnSaveAll">💾 Save All</button>
@@ -376,7 +394,7 @@
                 <label for="fType">Program Type</label>
                 <select id="fType">
                   <option value="Summer Camp">Summer Camp</option>
-                  <option value="Both">Summer Camp + Pre/After Care</option>
+                  <option value="Both">Summer Camp (with Extended Hours)</option>
                 </select>
               </div>
               <div class="form-group">
@@ -574,15 +592,28 @@
     ];
 
     const MONTH_ABBR = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+    const PROVIDER_CSV_PATH = 'data/providers/provider_data_20260304.csv';
 
     // ===== State =====
-    const _saved = localStorage.getItem('adminData');
-    let adminData = _saved ? JSON.parse(_saved) : programsData.map(p => ({ ...p }));
+    const _saved = localStorage.getItem('adminCampData');
+    const savedCampRows = _saved ? JSON.parse(_saved) : null;
+
+    let campRows = (savedCampRows || programsData || []).map(p => ({
+      ...p,
+      uid: p.uid || `camp-${p.id}`,
+      category: 'camp',
+      source: 'camp',
+      programTypeLabel: p.type || 'Summer Camp'
+    }));
+    let providerRows = [];
+    let adminData = [...campRows];
+
     let sortCol   = 'name';
     let sortDir   = 'asc';
     let searchQuery = '';
-    let editingId   = null;  // null = new entry
-    let deletingId  = null;
+    let selectedTypeFilter = '';
+    let editingUid  = null;  // null = new entry
+    let deletingUid = null;
     let isDirty     = false;
 
     // ===== Helpers =====
@@ -605,6 +636,194 @@
       document.getElementById('dirtyBadge').style.display = '';
     }
 
+    function asString(v) {
+      return String(v || '').trim();
+    }
+
+    function parseNumber(raw) {
+      const n = parseInt(String(raw || '').replace(/[^0-9-]/g, ''), 10);
+      return Number.isFinite(n) ? n : 0;
+    }
+
+    function yesNoToBool(raw) {
+      return asString(raw).toLowerCase() === 'yes';
+    }
+
+    function parseCsv(csvText) {
+      const rows = [];
+      let cur = '';
+      let row = [];
+      let inQuotes = false;
+
+      for (let i = 0; i < csvText.length; i++) {
+        const ch = csvText[i];
+        const next = csvText[i + 1];
+
+        if (ch === '"') {
+          if (inQuotes && next === '"') {
+            cur += '"';
+            i++;
+          } else {
+            inQuotes = !inQuotes;
+          }
+          continue;
+        }
+
+        if (ch === ',' && !inQuotes) {
+          row.push(cur);
+          cur = '';
+          continue;
+        }
+
+        if ((ch === '\n' || ch === '\r') && !inQuotes) {
+          if (ch === '\r' && next === '\n') i++;
+          row.push(cur);
+          const hasData = row.some(cell => asString(cell) !== '');
+          if (hasData) rows.push(row);
+          row = [];
+          cur = '';
+          continue;
+        }
+
+        cur += ch;
+      }
+
+      if (cur.length || row.length) {
+        row.push(cur);
+        const hasData = row.some(cell => asString(cell) !== '');
+        if (hasData) rows.push(row);
+      }
+
+      if (rows.length === 0) return [];
+
+      const header = rows[0].map(h => asString(h));
+      return rows.slice(1).map(r => {
+        const obj = {};
+        header.forEach((h, idx) => {
+          obj[h] = r[idx] ?? '';
+        });
+        return obj;
+      });
+    }
+
+    function providerToProgram(row) {
+      const programType = asString(row['Provider Program Type']);
+      const isAfterschool = programType.toLowerCase().includes('afterschool');
+
+      const schoolAgeCap = parseNumber(row['School Age Licensed Capacity']);
+      const infantCap = parseNumber(row['Infant Licensed Capacity']);
+      const toddlerCap = parseNumber(row['Toddler Licensed Capacity']);
+      const preschoolCap = parseNumber(row['Preschool Licensed Capacity']);
+
+      let gradesMin = '';
+      let gradesMax = '';
+      if (schoolAgeCap > 0) {
+        gradesMin = 'K';
+        gradesMax = '12';
+      }
+
+      let ageMin = null;
+      let ageMax = null;
+      if (infantCap > 0) ageMin = 0;
+      if (toddlerCap > 0) ageMax = 4;
+      if (preschoolCap > 0 && ageMax === null) ageMax = 5;
+      if (schoolAgeCap > 0 && ageMax === null) ageMax = 17;
+
+      const start = asString(row['Usual Program Start']);
+      const end = asString(row['Usual Program End']);
+      const hours = start && end ? `${start} - ${end}` : '';
+
+      const addr1 = asString(row['Address 1']);
+      const addr2 = asString(row['Address 2']);
+      const address = [addr1, addr2].filter(Boolean).join(', ');
+
+      const stars = asString(row['Current STARS Level']);
+      const typeLabel = programType || (isAfterschool ? 'Afterschool Care' : 'Daycare');
+
+      return {
+        uid: `provider-${asString(row['Provider ID'])}`,
+        id: parseNumber(row['Provider ID']),
+        category: isAfterschool ? 'afterschool' : 'daycare',
+        source: 'provider',
+        programTypeLabel: typeLabel,
+        type: isAfterschool ? 'Afterschool Care' : 'Daycare',
+        providerProgramType: typeLabel,
+        name: asString(row['Provider Name']) || 'Unknown Provider',
+        organization: asString(row['License Type']) || asString(row['Provider Name']) || '',
+        address,
+        city: asString(row['Provider Town']),
+        state: 'VT',
+        zip: asString(row['Zip Code']),
+        phone: asString(row['Phone Number']),
+        email: asString(row['Email Address']),
+        website: '',
+        gradesMin,
+        gradesMax,
+        ageMin,
+        ageMax,
+        cost: 0,
+        costPeriod: 'session',
+        scholarshipAvailable: false,
+        hours,
+        daysOffered: '',
+        sessionType: asString(row['Special Schedule']) || 'Year-round',
+        subjects: [],
+        description: [typeLabel, stars, asString(row['County']), asString(row['Provider Referral Status'])].filter(Boolean).join(' · '),
+        indoorOutdoor: 'Both',
+        transportation: false,
+        mealsProvided: yesNoToBool(row['Reported Food Program Participation']),
+        acceptingRegistration: asString(row['Provider Referral Status']) !== 'Inactive',
+        startDate: '',
+        endDate: ''
+      };
+    }
+
+    async function loadProviderRows() {
+      try {
+        const resp = await fetch(PROVIDER_CSV_PATH, { cache: 'no-store' });
+        if (!resp.ok) return [];
+        const text = await resp.text();
+        const rows = parseCsv(text);
+        providerRowsOriginal = rows; // Store original data
+        return rows.map(providerToProgram);
+      } catch (err) {
+        console.error('Could not load provider CSV for admin view:', err);
+        return [];
+      }
+    }
+
+    function campOnlyRows() {
+      return adminData.filter(p => p.source === 'camp');
+    }
+
+    function recombineRows() {
+      adminData = [...campRows, ...providerRows];
+    }
+
+    function normalizeTypeLabel(p) {
+      return p.programTypeLabel || p.providerProgramType || p.type || 'Unknown';
+    }
+
+    function refreshTypeFilterOptions() {
+      const select = document.getElementById('typeFilter');
+      const current = selectedTypeFilter;
+      const uniqueTypes = [...new Set(adminData.map(normalizeTypeLabel))].filter(Boolean).sort();
+
+      select.innerHTML = '<option value="">All Program Types</option>';
+      uniqueTypes.forEach(typeLabel => {
+        const opt = document.createElement('option');
+        opt.value = typeLabel;
+        opt.textContent = typeLabel;
+        select.appendChild(opt);
+      });
+
+      if (current && uniqueTypes.includes(current)) {
+        select.value = current;
+      } else {
+        selectedTypeFilter = '';
+      }
+    }
+
     // ===== Build static elements once =====
     function buildSubjectsGrid() {
       document.getElementById('subjectsGrid').innerHTML = SUBJECTS.map(s =>
@@ -623,8 +842,9 @@
     function getSortedFiltered() {
       const q = searchQuery.toLowerCase().trim();
       let rows = adminData.filter(p => {
+        if (selectedTypeFilter && normalizeTypeLabel(p) !== selectedTypeFilter) return false;
         if (!q) return true;
-        return [p.name, p.organization, p.city, p.type, ...(p.subjects || [])]
+        return [p.name, p.organization, p.city, normalizeTypeLabel(p), ...(p.subjects || [])]
           .join(' ').toLowerCase().includes(q);
       });
 
@@ -652,8 +872,10 @@
       const tbody = document.getElementById('adminTbody');
 
       tbody.innerHTML = rows.map(p => {
-        const badgeClass = p.type === 'Summer Camp' ? 'badge-camp' : 'badge-both';
-        const typeLabel  = p.type === 'Summer Camp' ? 'Camp' : 'Camp+Care';
+        const badgeClass = p.category === 'camp' ? 'badge-camp' : 'badge-both';
+        const typeLabel = normalizeTypeLabel(p);
+        const actionsHtml = `<button class="btn-icon edit" data-uid="${esc(p.uid)}">✏ Edit</button>
+             <button class="btn-icon del"  data-uid="${esc(p.uid)}">✕ Delete</button>`;
         return `<tr>
           <td class="td-name"><span class="td-trunc" title="${esc(p.name)}">${esc(p.name)}</span></td>
           <td class="td-org"><span class="td-trunc" title="${esc(p.organization)}">${esc(p.organization)}</span></td>
@@ -661,19 +883,16 @@
           <td><span class="type-badge ${badgeClass}">${typeLabel}</span></td>
           <td>${esc(gradeRange(p))}</td>
           <td>${fmtDate(p.startDate)}</td>
-          <td><div class="td-actions">
-            <button class="btn-icon edit" data-id="${p.id}">✏ Edit</button>
-            <button class="btn-icon del"  data-id="${p.id}">✕ Delete</button>
-          </div></td>
+          <td><div class="td-actions">${actionsHtml}</div></td>
         </tr>`;
       }).join('');
 
       // Attach row button listeners
       tbody.querySelectorAll('.btn-icon.edit').forEach(btn =>
-        btn.addEventListener('click', () => openEditModal(parseInt(btn.dataset.id)))
+        btn.addEventListener('click', () => openEditModal(btn.dataset.uid))
       );
       tbody.querySelectorAll('.btn-icon.del').forEach(btn =>
-        btn.addEventListener('click', () => confirmDelete(parseInt(btn.dataset.id)))
+        btn.addEventListener('click', () => confirmDelete(btn.dataset.uid))
       );
 
       // Update sort indicators
@@ -699,7 +918,7 @@
       const el = document.getElementById('tableStats');
       const total = adminData.length;
       if (shown === undefined) shown = getSortedFiltered().length;
-      el.innerHTML = `Showing <strong>${shown}</strong> of <strong>${total}</strong> programs`;
+      el.innerHTML = `Showing <strong>${shown}</strong> of <strong>${total}</strong> programs (${campRows.length} camp + ${providerRows.length} provider records, all editable)`;
     }
 
     // ===== Sort =====
@@ -716,6 +935,11 @@
     // ===== Blank Program =====
     function blankProgram() {
       return {
+        uid: null,
+        source: 'camp',
+        category: 'camp',
+        programTypeLabel: 'Summer Camp',
+        providerProgramType: 'Summer Camp',
         id: null, name: '', type: 'Summer Camp', organization: '',
         address: '', city: '', state: 'VT', zip: '',
         phone: '', email: '', website: '',
@@ -729,11 +953,12 @@
     }
 
     // ===== Edit Modal =====
-    function openEditModal(id) {
-      editingId = id;
-      const p = id === null ? blankProgram() : adminData.find(x => x.id === id);
+    function openEditModal(uid) {
+      editingUid = uid;
+      const p = uid === null ? blankProgram() : adminData.find(x => x.uid === uid);
+      if (!p) return;
 
-      document.getElementById('modalHeading').textContent = id === null ? 'Add Program' : 'Edit Program';
+      document.getElementById('modalHeading').textContent = uid === null ? 'Add Program' : 'Edit Program';
       document.getElementById('fName').value        = p.name || '';
       document.getElementById('fOrg').value         = p.organization || '';
       document.getElementById('fType').value        = p.type || 'Summer Camp';
@@ -768,7 +993,7 @@
         if (cb) cb.checked = subs.includes(s);
       });
 
-      document.getElementById('btnDuplicate').style.display = id === null ? 'none' : '';
+      document.getElementById('btnDuplicate').style.display = uid === null ? 'none' : '';
       openModal('editModal');
       document.getElementById('fName').focus();
     }
@@ -784,9 +1009,14 @@
       });
 
       return {
-        id:                   editingId,
+        uid:                  editingUid,
+        source:               'camp',
+        category:             'camp',
         name:                 document.getElementById('fName').value.trim(),
         type:                 document.getElementById('fType').value,
+        providerProgramType:  document.getElementById('fType').value,
+        programTypeLabel:     document.getElementById('fType').value,
+        id:                   null,
         organization:         document.getElementById('fOrg').value.trim(),
         address:              document.getElementById('fAddress').value.trim(),
         city:                 document.getElementById('fCity').value.trim(),
@@ -819,38 +1049,80 @@
     function handleSave(e) {
       e.preventDefault();
       const entry = readFormIntoObject();
-
-      if (editingId === null) {
-        entry.id = Math.max(0, ...adminData.map(p => p.id)) + 1;
-        adminData.push(entry);
+      
+      if (editingUid === null) {
+        // New camp record
+        const maxCampId = Math.max(0, ...campRows.map(p => p.id || 0));
+        entry.id = maxCampId + 1;
+        entry.uid = `camp-${entry.id}`;
+        entry.source = 'camp';
+        campRows.push(entry);
       } else {
-        const idx = adminData.findIndex(p => p.id === editingId);
-        if (idx >= 0) adminData[idx] = entry;
+        // Existing record - determine if camp or provider
+        const existing = adminData.find(x => x.uid === editingUid);
+        if (existing && existing.source === 'provider') {
+          // Update provider record
+          const idx = providerRows.findIndex(p => p.uid === editingUid);
+          if (idx >= 0) {
+            entry.source = 'provider';
+            entry.id = providerRows[idx].id;
+            providerRows[idx] = entry;
+          }
+        } else {
+          // Update camp record
+          const idx = campRows.findIndex(p => p.uid === editingUid);
+          if (idx >= 0) {
+            entry.id = campRows[idx].id;
+            entry.uid = campRows[idx].uid;
+            entry.source = 'camp';
+            campRows[idx] = entry;
+          }
+        }
       }
 
+      recombineRows();
+      refreshTypeFilterOptions();
       markDirty();
       closeModal('editModal');
       renderTable();
     }
 
     // ===== Delete =====
-    function confirmDelete(id) {
-      deletingId = id;
-      const p = adminData.find(x => x.id === id);
+    function confirmDelete(uid) {
+      deletingUid = uid;
+      const p = adminData.find(x => x.uid === uid);
+      if (!p) return;
       document.getElementById('deleteModalName').textContent = p ? p.name : '';
       openModal('deleteModal');
     }
 
     function executeDelete() {
-      adminData = adminData.filter(p => p.id !== deletingId);
+      const toDelete = adminData.find(x => x.uid === deletingUid);
+      if (toDelete && toDelete.source === 'provider') {
+        // Delete provider record
+        providerRows = providerRows.filter(p => p.uid !== deletingUid);
+      } else {
+        // Delete camp record
+        campRows = campRows.filter(p => p.uid !== deletingUid);
+      }
+      recombineRows();
+      refreshTypeFilterOptions();
       markDirty();
       closeModal('deleteModal');
       renderTable();
     }
 
-    // ===== Save All (localStorage) =====
-    function saveAll() {
-      localStorage.setItem('adminData', JSON.stringify(adminData));
+    // ===== Save All (localStorage + CSV) =====
+    async function saveAll() {
+      // Save camp data to localStorage
+      localStorage.setItem('adminCampData', JSON.stringify(campRows));
+      
+      // Save provider data to CSV if modified
+      if (providerRows.length > 0) {
+        const providerCsvContent = generateProviderCsv(providerRows);
+        await saveProviderCsv(providerCsvContent);
+      }
+      
       isDirty = false;
       document.getElementById('dirtyBadge').style.display = 'none';
       const btn = document.getElementById('btnSaveAll');
@@ -860,9 +1132,69 @@
       setTimeout(() => { btn.textContent = orig; btn.disabled = false; }, 1500);
     }
 
+    // ===== Provider CSV Export =====
+    function generateProviderCsv(providerPrograms) {
+      if (!providerRowsOriginal || providerRowsOriginal.length === 0) return '';
+      
+      const header = providerRowsOriginal[0] ? Object.keys(providerRowsOriginal[0]) : [];
+      const csvRows = [header.map(escapeCsvField).join(',')];
+      
+      providerPrograms.forEach(prog => {
+        // Find the original row to preserve all fields
+        const originalIdx = providerRows.findIndex(p => p.uid === prog.uid);
+        if (originalIdx >= 0 && providerRowsOriginal[originalIdx]) {
+          const originalRow = providerRowsOriginal[originalIdx];
+          const row = { ...originalRow };
+          
+          // Update fields that may have changed
+          row['Provider Name'] = prog.name || row['Provider Name'];
+          row['Provider Town'] = prog.city || row['Provider Town'];
+          row['Zip Code'] = prog.zip || row['Zip Code'];
+          row['Phone Number'] = prog.phone || row['Phone Number'];
+          row['Email Address'] = prog.email || row['Email Address'];
+          row['Provider Program Type'] = prog.type || row['Provider Program Type'];
+          
+          const values = header.map(h => escapeCsvField(row[h] ?? ''));
+          csvRows.push(values.join(','));
+        }
+      });
+      
+      return csvRows.join('\n');
+    }
+
+    function escapeCsvField(field) {
+      field = String(field ?? '');
+      if (field.includes(',') || field.includes('"') || field.includes('\n')) {
+        return '"' + field.replace(/"/g, '""') + '"';
+      }
+      return field;
+    }
+
+    async function saveProviderCsv(csvContent) {
+      try {
+        const response = await fetch('/__save_csv', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            path: PROVIDER_CSV_PATH,
+            content: csvContent
+          })
+        });
+        if (!response.ok) {
+          console.error('Failed to save provider CSV:', response.statusText);
+        }
+      } catch (err) {
+        console.error('Error saving provider CSV:', err);
+      }
+    }
+
     // ===== Export =====
     function exportDataJs() {
-      const json = JSON.stringify(adminData, null, 2);
+      const campExport = campRows.map(({ source, category, programTypeLabel, providerProgramType, uid, ...rest }) => ({
+        ...rest,
+        type: rest.type || 'Summer Camp'
+      }));
+      const json = JSON.stringify(campExport, null, 2);
       const content = `const programsData = ${json};\n`;
       const blob = new Blob([content], { type: 'text/javascript' });
       const url  = URL.createObjectURL(blob);
@@ -889,9 +1221,15 @@
     }
 
     // ===== Init =====
-    buildSubjectsGrid();
-    buildGradeSelects();
-    renderTable();
+    async function init() {
+      buildSubjectsGrid();
+      buildGradeSelects();
+
+      providerRows = await loadProviderRows();
+      recombineRows();
+      refreshTypeFilterOptions();
+      renderTable();
+    }
 
     // Toolbar buttons
     document.getElementById('btnAdd').addEventListener('click', () => openEditModal(null));
@@ -904,6 +1242,10 @@
       searchQuery = e.target.value;
       renderTable();
     });
+    document.getElementById('typeFilter').addEventListener('change', e => {
+      selectedTypeFilter = e.target.value;
+      renderTable();
+    });
 
     // Sortable columns
     document.querySelectorAll('thead th[data-col]').forEach(th =>
@@ -913,9 +1255,12 @@
     // Duplicate button
     document.getElementById('btnDuplicate').addEventListener('click', () => {
       const entry = readFormIntoObject();
-      entry.id = Math.max(0, ...adminData.map(p => p.id)) + 1;
+      entry.id = Math.max(0, ...campRows.map(p => p.id || 0)) + 1;
+      entry.uid = `camp-${entry.id}`;
       entry.name = entry.name + ' (Copy)';
-      adminData.push(entry);
+      campRows.push(entry);
+      recombineRows();
+      refreshTypeFilterOptions();
       markDirty();
       closeModal('editModal');
       renderTable();
@@ -949,6 +1294,8 @@
     window.addEventListener('beforeunload', e => {
       if (isDirty) { e.preventDefault(); e.returnValue = ''; }
     });
+
+    init();
   </script>
 </body>
 </html>

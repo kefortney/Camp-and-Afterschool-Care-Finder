@@ -1,8 +1,8 @@
 import csv
 from pathlib import Path
 
-camp_path = Path("data/2026 Summer Camp.csv")
-map_path = Path("data/Age to Grade.csv")
+camp_path = Path("data/camp/summer_camp_2026.csv")
+map_path = Path("data/camp/age_to_grade.csv")
 
 with map_path.open("r", encoding="utf-8-sig", newline="") as file:
     mapping_rows = list(csv.DictReader(file))

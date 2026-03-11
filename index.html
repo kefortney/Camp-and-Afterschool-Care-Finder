@@ -15,9 +15,15 @@
     <div class="header-content">
       <span class="header-icon">🏕️</span>
       <h1>Camp &amp; Afterschool Care Finder</h1>
-      <p class="subtitle">Explore summer camps and afterschool programs for K–12 students. Filter by grade, subject, location, and budget.</p>
+      <p class="subtitle">Explore summer camps, afterschool programs, and daycare options. Filter by location, age, schedule, and program details.</p>
     </div>
   </header>
+
+  <nav class="tab-nav" aria-label="Program category navigation">
+    <button class="tab-btn active" id="tabCamp" data-category="camp" aria-pressed="true">Camps</button>
+    <button class="tab-btn" id="tabAfterschool" data-category="afterschool" aria-pressed="false">Afterschool</button>
+    <button class="tab-btn" id="tabDaycare" data-category="daycare" aria-pressed="false">Daycare</button>
+  </nav>
 
   <!-- ===== Main Content ===== -->
   <main>
@@ -40,16 +46,14 @@
 
       <div class="filter-grid">
         <div class="filter-group">
-          <label for="filterType">Program Type</label>
+          <label id="labelType" for="filterType">Program Model</label>
           <select id="filterType" aria-label="Filter by program type">
-            <option value="">All Types</option>
-            <option value="Summer Camp">Summer Camp</option>
-            <option value="Both">Summer Camp + Pre/After Care</option>
+            <option value="">All Models</option>
           </select>
         </div>
 
         <div class="filter-group">
-          <label for="filterGrades">Grade</label>
+          <label id="labelGrades" for="filterGrades">Grade</label>
           <select id="filterGrades" aria-label="Filter by grade">
             <option value="">All Grades</option>
             <option value="K">Kindergarten</option>
@@ -69,28 +73,51 @@
         </div>
 
         <div class="filter-group">
-          <label for="filterCity">City</label>
+          <label id="labelCity" for="filterCity">City</label>
           <select id="filterCity" aria-label="Filter by city">
             <option value="">All Cities</option>
           </select>
         </div>
 
         <div class="filter-group">
-          <label for="filterSubject">Subject / Activity</label>
+          <label id="labelSubject" for="filterSubject">Subject / Activity</label>
           <select id="filterSubject" aria-label="Filter by subject or activity">
             <option value="">All Activities</option>
           </select>
         </div>
 
         <div class="filter-group">
-          <label for="filterWeek">Week</label>
+          <label id="labelWeek" for="filterWeek">Week</label>
           <select id="filterWeek" aria-label="Filter by week">
             <option value="">Any Week</option>
           </select>
         </div>
 
+        <div class="filter-group" id="groupCounty">
+          <label id="labelCounty" for="filterCounty">County</label>
+          <select id="filterCounty" aria-label="Filter by county">
+            <option value="">All Counties</option>
+          </select>
+        </div>
+
+        <div class="filter-group" id="groupStars">
+          <label id="labelStars" for="filterStars">STARS Rating</label>
+          <select id="filterStars" aria-label="Filter by STARS rating">
+            <option value="">Any Rating</option>
+          </select>
+        </div>
+
+        <div class="filter-group" id="groupStatus">
+          <label id="labelStatus" for="filterStatus">Status</label>
+          <select id="filterStatus" aria-label="Filter by provider status">
+            <option value="">Any Status</option>
+            <option value="Active">Active</option>
+            <option value="Inactive">Inactive</option>
+          </select>
+        </div>
+
         <div class="filter-group">
-          <label for="filterMaxCost">Max Cost (weekly equiv.)</label>
+          <label id="labelMaxCost" for="filterMaxCost">Max Cost (weekly equiv.)</label>
           <select id="filterMaxCost" aria-label="Filter by maximum cost">
             <option value="">Any Cost</option>
             <option value="100">Up to $100/wk</option>
@@ -102,7 +129,7 @@
         </div>
 
         <div class="filter-group">
-          <label for="filterScholarship">Financial Aid</label>
+          <label id="labelScholarship" for="filterScholarship">Financial Aid</label>
           <select id="filterScholarship" aria-label="Filter by scholarship availability">
             <option value="">Any</option>
             <option value="yes">Aid Available</option>
@@ -129,8 +156,8 @@
       <div class="cards-grid" id="cardsGrid" role="list" aria-label="Program listings"></div>
       <div class="no-results" id="noResults" style="display:none;" role="status">
         <span class="no-results-icon">🔎</span>
-        <h3>No programs found</h3>
-        <p>Try adjusting your search or filters to see more results.</p>
+        <h3 id="noResultsTitle">No programs found</h3>
+        <p id="noResultsHint">Try adjusting your search or filters to see more results.</p>
       </div>
     </div>
 
@@ -239,6 +266,8 @@
           </div>
         </div>
       </div>
+
+      <div id="modalOrgPrograms" class="modal-org-programs" style="display:none"></div>
 
       <div class="modal-footer">
         <a class="btn-primary" id="modalWebsiteLink" href="#" target="_blank" rel="noopener noreferrer">🌐 Visit Website</a>

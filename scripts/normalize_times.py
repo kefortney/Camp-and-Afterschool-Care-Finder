@@ -2,7 +2,7 @@ import csv
 import re
 from pathlib import Path
 
-CAMP_PATH = Path("data/2026 Summer Camp.csv")
+CAMP_PATH = Path("data/camp/summer_camp_2026.csv")
 
 TIME_RE = re.compile(r"^\s*(\d{1,3})\s*:\s*(\d{2})\s*([AaPp][Mm])?\s*$")
 
