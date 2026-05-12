@@ -1,19 +1,20 @@
 """
-Fetch missing Camp Description values from each camp's website.
+Fetch missing description values from each program's registration URL.
 
-Reads data/camp/summer_camp_2026.csv, fills in blank Camp Description fields
-by fetching the webpage and extracting the best available description text,
+Reads data/programs.csv, fills in blank description fields by fetching
+the registration_url and extracting the best available description text,
 then writes the updated CSV back in place.
 
 Run from the project root:
     python3 scripts/fetch_descriptions.py
 
-Only rows with a Webpage URL and a blank Camp Description are processed.
+Only rows with a registration_url and a blank description are processed.
 Existing descriptions are never overwritten.
 """
 
 import csv
 import re
+import sys
 import time
 import urllib.error
 import urllib.parse
@@ -21,7 +22,8 @@ import urllib.request
 from html.parser import HTMLParser
 from pathlib import Path
 
-CAMP_PATH = Path("data/camp/summer_camp_2026.csv")
+PROGRAMS_PATH = Path("data/programs.csv")
+ORGS_PATH     = Path("data/organizations.csv")
 
 USER_AGENT = "CampFinderDescriptionFetcher/1.0 (local research tool)"
 REQUEST_DELAY = 0.8  # seconds between requests
@@ -132,7 +134,8 @@ def fetch_description(url: str) -> str:
             if "html" not in content_type.lower():
                 return ""
             raw = resp.read(200_000)  # cap at ~200 KB
-    except (urllib.error.URLError, OSError, ValueError):
+    except (urllib.error.URLError, OSError, ValueError) as e:
+        print(f"Warning: could not fetch {url}: {e}", file=sys.stderr)
         return ""
 
     # Decode — try UTF-8 then latin-1 fallback
@@ -154,7 +157,16 @@ def fetch_description(url: str) -> str:
 
 
 def main():
-    with CAMP_PATH.open("r", encoding="utf-8-sig", newline="") as f:
+    # Load org name lookup for display only
+    org_names = {}
+    if ORGS_PATH.exists():
+        with ORGS_PATH.open("r", encoding="utf-8", newline="") as f:
+            for r in csv.DictReader(f):
+                oid = (r.get("org_id") or "").strip()
+                if oid:
+                    org_names[oid] = (r.get("org_name") or "").strip()
+
+    with PROGRAMS_PATH.open("r", encoding="utf-8-sig", newline="") as f:
         reader = csv.DictReader(f)
         fieldnames = reader.fieldnames
         rows = list(reader)
@@ -162,12 +174,12 @@ def main():
     # Identify rows that need a description
     targets = [
         i for i, r in enumerate(rows)
-        if not (r.get("Camp Description") or "").strip()
-        and (r.get("Webpage") or "").strip()
+        if not (r.get("description") or "").strip()
+        and (r.get("registration_url") or "").strip()
     ]
 
     already_have_desc = sum(
-        1 for r in rows if (r.get("Camp Description") or "").strip()
+        1 for r in rows if (r.get("description") or "").strip()
     )
 
     print(f"Rows total:          {len(rows)}")
@@ -180,9 +192,8 @@ def main():
 
     for n, idx in enumerate(targets, 1):
         row = rows[idx]
-        # Take first URL if multiple are present.
-        url = (row.get("Webpage") or "").strip().split()[0]
-        org = (row.get("Organization") or "").strip()
+        url = (row.get("registration_url") or "").strip().split()[0]
+        org = org_names.get((row.get("org_id") or "").strip(), (row.get("program_name") or ""))
 
         prefix = f"[{n}/{len(targets)}] {org[:50]:<50}  {url[:60]}"
         print(prefix, end="  ", flush=True)
@@ -191,7 +202,7 @@ def main():
         time.sleep(REQUEST_DELAY)
 
         if desc:
-            rows[idx]["Camp Description"] = desc
+            rows[idx]["description"] = desc
             updated += 1
             print(f"ok ({len(desc)} chars)")
         else:
@@ -200,18 +211,18 @@ def main():
 
         # Save progress every 25 rows so a Ctrl-C doesn't lose everything
         if n % 25 == 0:
-            _write_csv(CAMP_PATH, fieldnames, rows)
+            _write_csv(PROGRAMS_PATH, fieldnames, rows)
             print(f"  -- progress saved ({updated} updated so far) --")
 
     # Final save
-    _write_csv(CAMP_PATH, fieldnames, rows)
+    _write_csv(PROGRAMS_PATH, fieldnames, rows)
 
     print()
     print(f"Done.  Updated: {updated}  |  No description found: {failed}")
-    print("Re-run python3 scripts/csv_to_data_js.py to rebuild data.js")
+    print("Next step: python scripts/build_data_js.py")
 
 
-def _write_csv(path, fieldnames, rows):
+def _write_csv(path: Path, fieldnames, rows):
     with path.open("w", encoding="utf-8", newline="") as f:
         writer = csv.DictWriter(f, fieldnames=fieldnames)
         writer.writeheader()

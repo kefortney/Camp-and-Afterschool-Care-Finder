@@ -3,19 +3,19 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Summer Camps – Camp &amp; Afterschool Care Finder</title>
-  <meta name="description" content="Find summer camps for K–12 students in Vermont. Filter by grade, subject, cost, location, and more." />
+  <title>Afterschool Programs – Camp &amp; Afterschool Care Finder</title>
+  <meta name="description" content="Find afterschool programs for K–12 students in Vermont. Filter by grade, county, organization, and more." />
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
   <link rel="stylesheet" href="styles.css" />
 </head>
-<body data-category="camp">
+<body data-category="afterschool">
 
   <!-- Page hero -->
   <div class="page-hero">
     <div class="page-hero-content">
-      <span class="page-hero-icon">🏕️</span>
-      <h1>Summer Camps</h1>
-      <p>Browse Vermont summer programs for K–12 students. Filter by grade, subject, cost, location, and schedule.</p>
+      <span class="page-hero-icon">🎒</span>
+      <h1>Afterschool Programs</h1>
+      <p>Find free and low-cost afterschool programs for Vermont students. Includes 21st Century Community Learning Centers and more.</p>
     </div>
   </div>
 
@@ -74,9 +74,9 @@
         </div>
 
         <div class="filter-group">
-          <label id="labelSubject" for="filterSubject">Subject / Activity</label>
+          <label id="labelSubject" for="filterSubject">Enrichment Tags</label>
           <select id="filterSubject" aria-label="Filter by subject or activity">
-            <option value="">All Activities</option>
+            <option value="">All Tags</option>
           </select>
         </div>
 
@@ -287,7 +287,7 @@
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script src="data.js"></script>
   <script src="app.js"></script>
-  <script>window.NAV_PAGE = 'camps';</script>
+  <script>window.NAV_PAGE = 'afterschool';</script>
   <script src="nav.js"></script>
 </body>
 </html>

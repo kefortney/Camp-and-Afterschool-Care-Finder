@@ -6,7 +6,8 @@ import urllib.parse
 import urllib.request
 from pathlib import Path
 
-CAMP_PATH = Path("data/camp/summer_camp_2026.csv")
+PROGRAMS_PATH = Path("data/programs.csv")
+ORGS_PATH     = Path("data/organizations.csv")
 
 USER_AGENT = "CampFinderAddressEnricher/1.0 (local use)"
 REQUEST_DELAY_SECONDS = 0.7
@@ -129,30 +130,23 @@ def choose_result(results, expected_city: str):
     return fallback
 
 
-def enrich_row(row):
-    location = (row.get("Location") or "").strip()
-    city = (row.get("City") or "").strip()
-    org = (row.get("Organization") or "").strip()
+def enrich_row(row, org_name):
+    location = (row.get("site_address") or "").strip()
+    city = (row.get("site_city") or "").strip()
 
     if looks_street_address(location):
         return None
 
     queries = []
-
     if location and city:
         queries.append(f"{location}, {city}, Vermont")
-    if org and city:
-        queries.append(f"{org}, {city}, Vermont")
-    if location and org and city:
-        queries.append(f"{org} {location}, {city}, Vermont")
+    if org_name and city:
+        queries.append(f"{org_name}, {city}, Vermont")
+    if location and org_name and city:
+        queries.append(f"{org_name} {location}, {city}, Vermont")
 
     seen = set()
-    deduped_queries = []
-    for query in queries:
-        key = query.lower()
-        if key not in seen:
-            deduped_queries.append(query)
-            seen.add(key)
+    deduped_queries = [q for q in queries if not (q.lower() in seen or seen.add(q.lower()))]
 
     for query in deduped_queries:
         try:
@@ -170,7 +164,17 @@ def enrich_row(row):
 
 
 def main():
-    with CAMP_PATH.open("r", encoding="utf-8", newline="") as file:
+    # Load org name lookup
+    org_names = {}
+    if ORGS_PATH.exists():
+        with ORGS_PATH.open("r", encoding="utf-8", newline="") as f:
+            for r in csv.DictReader(f):
+                org_id = (r.get("org_id") or "").strip()
+                name   = (r.get("org_name") or "").strip()
+                if org_id:
+                    org_names[org_id] = name
+
+    with PROGRAMS_PATH.open("r", encoding="utf-8", newline="") as file:
         reader = csv.DictReader(file)
         fieldnames = reader.fieldnames
         rows = list(reader)
@@ -180,25 +184,26 @@ def main():
     standardized_existing = 0
 
     for row in rows:
-        location = (row.get("Location") or "").strip()
-        city = (row.get("City") or "").strip()
-        org = (row.get("Organization") or "").strip()
+        location = (row.get("site_address") or "").strip()
+        city = (row.get("site_city") or "").strip()
+        org_id = (row.get("org_id") or "").strip()
+        org_name = org_names.get(org_id, "")
 
         if looks_street_address(location):
             if city and not location_has_city_or_state(location, city):
-                row["Location"] = f"{location}, {city}, VT"
+                row["site_address"] = f"{location}, {city}, VT"
                 standardized_existing += 1
             continue
-        if not city or (not location and not org):
+        if not city or (not location and not org_name):
             continue
 
         checked += 1
-        full_address = enrich_row(row)
+        full_address = enrich_row(row, org_name)
         if full_address:
-            row["Location"] = full_address
+            row["site_address"] = full_address
             updated += 1
 
-    with CAMP_PATH.open("w", encoding="utf-8", newline="") as file:
+    with PROGRAMS_PATH.open("w", encoding="utf-8", newline="") as file:
         writer = csv.DictWriter(file, fieldnames=fieldnames)
         writer.writeheader()
         writer.writerows(rows)
@@ -207,6 +212,7 @@ def main():
     print("Locations updated:", updated)
     print("Street rows standardized:", standardized_existing)
     print("Rows total:", len(rows))
+    print("Next step: python scripts/build_data_js.py")
 
 
 if __name__ == "__main__":

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hackathon – Camp &amp; Afterschool Care Finder</title>
+  <meta name="description" content="Join the DAD Guild Hackathon and help build a better resource for Vermont families finding summer camps and afterschool programs." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <div class="static-hero">
+    <div class="static-hero-content">
+      <span class="static-hero-icon">🛠️</span>
+      <h1>Hackathon — Build for Vermont Families</h1>
+      <p>Join the DAD Guild to help make it easier for Vermont families to find summer camps and afterschool programs for their kids.</p>
+      <a class="hero-cta" href="https://www.dadguild.org/events/ooj1rojyfcuufo87uyicmcul8nisgq" target="_blank" rel="noopener noreferrer">View the Event →</a>
+    </div>
+  </div>
+
+  <div class="static-page">
+
+    <section class="static-section">
+      <h2>The Challenge</h2>
+      <p>Every summer, thousands of Vermont families scramble to find camps and programs for their kids — and the experience is far harder than it needs to be. There is no central registry for Vermont summer programs. No searchable statewide database. No single place to compare costs, grades served, or available schedules.</p>
+      <p>Instead, families must piece together information from dozens of individual program websites, Facebook pages, school newsletters, and word of mouth. Families with more time and more digital fluency consistently find better programs. Families with less — often lower-income families who stand to benefit most from subsidized programs — too often miss out entirely.</p>
+      <p>This project is an attempt to fix that. We're building an open, free, searchable tool for Vermont families — and we need your help to make it better.</p>
+      <a class="link-btn" href="index.html">See the Live Tool</a>
+      <a class="link-btn link-btn-outline" href="https://github.com/kefortney/Camp-and-Afterschool-Care-Finder" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+    </section>
+
+    <section class="static-section">
+      <h2>Why This Data Is Hard to Gather</h2>
+      <p>If you're wondering why we don't just "scrape it all" — here's what makes this problem genuinely hard:</p>
+
+      <div class="static-card">
+        <h3>No central registry for summer camps</h3>
+        <p>Vermont licenses childcare providers, which creates a public dataset. But summer camps are not licensed the same way, so no equivalent database exists. Every program is its own island.</p>
+      </div>
+
+      <div class="static-card">
+        <h3>Wildly inconsistent data formats</h3>
+        <p>Some programs post structured registration forms. Others publish PDFs. Some post on Facebook only. A few send home paper flyers. Cost might be listed as "$250/week", "$50/day", "sliding scale", or "call us." Dates might be "June 23 – July 4" or "summer 2026" or nothing at all.</p>
+      </div>
+
+      <div class="static-card">
+        <h3>Data goes stale quickly</h3>
+        <p>Programs change their dates, drop sessions, add new programs, or close entirely from year to year. Maintaining accuracy requires re-verifying every record annually — a time-consuming manual process.</p>
+      </div>
+
+      <div class="static-card">
+        <h3>Many programs have minimal web presence</h3>
+        <p>Smaller programs — especially those serving rural communities — may have no website, or a website that hasn't been updated in years. Finding accurate information requires direct phone or email outreach.</p>
+      </div>
+
+      <div class="static-card">
+        <h3>Geocoding and address normalization is manual-intensive</h3>
+        <p>Address formats are inconsistent, many programs share a school or community center address rather than their own, and some programs have no fixed location at all. Placing them accurately on a map requires human judgment.</p>
+      </div>
+
+      <div class="static-card">
+        <h3>Missing geographic coverage</h3>
+        <p>Our current dataset covers the Burlington area reasonably well, but large parts of Vermont — particularly rural northeastern and southeastern counties — are significantly underrepresented. Filling those gaps takes local knowledge.</p>
+      </div>
+    </section>
+
+    <section class="static-section">
+      <h2>Ways to Contribute</h2>
+      <p>Whether you're a developer, a researcher, a designer, or just someone who knows Vermont programs — there's a way for you to help.</p>
+
+      <div class="contrib-grid">
+        <div class="contrib-card">
+          <h4>Add missing camps</h4>
+          <p>Research programs not yet in the dataset and add rows to <code>data/programs.csv</code>. Rural Vermont towns are especially underrepresented.</p>
+        </div>
+        <div class="contrib-card">
+          <h4>Add towns to the map</h4>
+          <p>The map view uses a hardcoded coordinate lookup (<code>CITY_COORDS</code> in <code>app.js</code>). Many Vermont towns are missing — add their lat/lng to show programs on the map.</p>
+        </div>
+        <div class="contrib-card">
+          <h4>Improve data quality scripts</h4>
+          <p>The <code>scripts/</code> directory has Python tools for address enrichment, cost parsing, and description fetching. There's a lot of room to make them smarter.</p>
+        </div>
+        <div class="contrib-card">
+          <h4>Improve the search &amp; filter UI</h4>
+          <p>Better mobile layout, smarter autocomplete, a "near me" feature, or improvements to the map popups — UX improvements go a long way.</p>
+        </div>
+        <div class="contrib-card">
+          <h4>Add more afterschool programs</h4>
+          <p>Only 10 afterschool programs are currently in the dataset. Research other Vermont afterschool providers and add them to <code>data/programs.csv</code> with <code>program_type = afterschool</code>.</p>
+        </div>
+        <div class="contrib-card">
+          <h4>Improve cost normalization</h4>
+          <p>Cost data in <code>data/programs.csv</code> is stored both as raw text (<code>cost_raw</code>) and a normalized weekly number (<code>cost_per_week</code>). Many rows have missing or inconsistent <code>cost_per_week</code> values — filling these in makes the cost filter more reliable.</p>
+        </div>
+        <div class="contrib-card">
+          <h4>Fix bugs &amp; open issues</h4>
+          <p>Check the GitHub Issues board for known bugs and feature requests. Many are small, well-scoped, and good for a hackathon sprint.</p>
+        </div>
+        <div class="contrib-card">
+          <h4>Documentation</h4>
+          <p>Improve the README, add inline code comments, or write a contributor guide to help future contributors onboard faster.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="static-section">
+      <h2>Get Started</h2>
+      <p>Everything you need to contribute is in the GitHub repo. No login, no special access — just fork and go.</p>
+
+      <h3>Quick Setup</h3>
+      <ol>
+        <li>Clone or fork the repo: <code>git clone https://github.com/kefortney/Camp-and-Afterschool-Care-Finder.git</code></li>
+        <li>Start a local server: <code>python -m http.server 8000</code> (or <code>python scripts/dev_server.py</code> for live reload)</li>
+        <li>Open <code>http://localhost:8000</code> in your browser</li>
+        <li>Edit files, reload, repeat — no build step required</li>
+      </ol>
+
+      <h3>Working with Data</h3>
+      <ol>
+        <li>Edit <code>data/programs.csv</code> or <code>data/organizations.csv</code> in Excel, Google Sheets, or any text editor</li>
+        <li>Run <code>python scripts/validate_data.py</code> — fix any errors it reports</li>
+        <li>Run <code>python scripts/build_data_js.py</code> to regenerate <code>data.js</code></li>
+        <li>Reload the browser to see your changes</li>
+      </ol>
+
+      <div style="margin-top:1.5rem;">
+        <a class="link-btn" href="https://github.com/kefortney/Camp-and-Afterschool-Care-Finder" target="_blank" rel="noopener noreferrer">GitHub Repo</a>
+        <a class="link-btn link-btn-outline" href="https://kefortney.github.io/Camp-and-Afterschool-Care-Finder/" target="_blank" rel="noopener noreferrer">Live Site</a>
+        <a class="link-btn link-btn-outline" href="https://github.com/kefortney/Camp-and-Afterschool-Care-Finder/issues" target="_blank" rel="noopener noreferrer">Issues Board</a>
+        <a class="link-btn link-btn-outline" href="data.html">Data Docs</a>
+      </div>
+    </section>
+
+    <section class="static-section">
+      <h2>About the DAD Guild Event</h2>
+      <p>This project is being featured at a <a href="https://www.dadguild.org/events/ooj1rojyfcuufo87uyicmcul8nisgq" target="_blank" rel="noopener noreferrer">DAD Guild hackathon event</a>. The DAD Guild is a community of parents and technologists who come together to build tools that matter for families. We're bringing this project to the event to make real progress on the data coverage and tooling gaps described above.</p>
+      <p>Whether you've never contributed to open source before or you're a seasoned developer, you're welcome. Bring your laptop, your local knowledge, and your ideas.</p>
+      <a class="link-btn" href="https://www.dadguild.org/events/ooj1rojyfcuufo87uyicmcul8nisgq" target="_blank" rel="noopener noreferrer">Register for the Event →</a>
+    </section>
+
+  </div>
+
+  <footer>
+    <p>Camp &amp; Afterschool Care Finder &mdash; Open source. Built for Vermont families.</p>
+    <p style="margin-top:0.4rem;"><a href="https://github.com/kefortney/Camp-and-Afterschool-Care-Finder" target="_blank" rel="noopener noreferrer">GitHub Repository</a></p>
+  </footer>
+
+  <script>window.NAV_PAGE = 'hackathon';</script>
+  <script src="nav.js"></script>
+</body>
+</html>

@@ -1,12 +1,28 @@
 // ===== State =====
-let activeCategory = 'camp';
+let activeCategory = document.body.dataset.category || 'camp';
 let allPrograms = [];
 let lastFiltered = [];
 let currentView = 'list';
 let mapInstance = null;
 let calendarState = { year: 2026, month: 5 };
 let currentProgram = null;
-let orgMap = new Map(); // orgId -> org record, populated at init
+
+const TODAY = new Date().toISOString().slice(0, 10);
+
+function isPast(p) {
+  if (p.endDate) return p.endDate < TODAY;
+  if (p.startDate) return p.startDate < TODAY;
+  return false;
+}
+
+function programYear(p) {
+  const d = p.endDate || p.startDate;
+  return d ? d.slice(0, 4) : null;
+}
+// Org lookup keyed by orgId, populated synchronously from data.js ORGANIZATIONS
+const orgMap = new Map(
+  (typeof ORGANIZATIONS !== 'undefined' ? ORGANIZATIONS : []).map(o => [o.orgId, o])
+);
 
 let activeFilters = {
   search: '',
@@ -19,7 +35,8 @@ let activeFilters = {
   scholarship: '',
   county: '',
   stars: '',
-  status: ''
+  status: '',
+  showPast: false
 };
 
 // ===== DOM References =====
@@ -34,6 +51,7 @@ const filterScholarship = document.getElementById('filterScholarship');
 const filterCounty = document.getElementById('filterCounty');
 const filterStars = document.getElementById('filterStars');
 const filterStatus = document.getElementById('filterStatus');
+const filterShowPast = document.getElementById('filterShowPast');
 
 const labelType = document.getElementById('labelType');
 const labelGrades = document.getElementById('labelGrades');
@@ -59,8 +77,6 @@ const btnReset = document.getElementById('btnReset');
 const btnClearSearch = document.getElementById('btnClearSearch');
 const modalOverlay = document.getElementById('modalOverlay');
 const modalClose = document.getElementById('modalClose');
-
-const tabButtons = document.querySelectorAll('.tab-btn');
 
 // ===== Helpers =====
 const gradeOrder = ['K', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'];
@@ -106,39 +122,7 @@ const categoryUiConfig = {
     emptyTitle: 'No afterschool programs found',
     emptyHint: 'Try broadening county, rating, or status filters to see more options.'
   },
-  daycare: {
-    searchPlaceholder: 'Search daycare providers by name, town, or keyword...',
-    typeLabel: 'Care Model',
-    typeAny: 'All Care Models',
-    gradeLabel: 'Age / Grade',
-    gradeAny: 'All Ages / Grades',
-    cityLabel: 'City',
-    cityAny: 'All Cities',
-    subjectLabel: 'Program Tags',
-    subjectAny: 'All Tags',
-    weekLabel: 'Week',
-    countyLabel: 'County',
-    starsLabel: 'STARS Rating',
-    statusLabel: 'Status',
-    maxCostLabel: 'Max Cost (weekly)',
-    scholarshipLabel: 'Financial Aid',
-    emptyTitle: 'No daycare providers found',
-    emptyHint: 'Try broadening county, rating, or status filters to see more providers.'
-  }
 };
-
-function parseNumber(raw) {
-  const n = parseInt(String(raw || '').replace(/[^0-9-]/g, ''), 10);
-  return Number.isFinite(n) ? n : 0;
-}
-
-function yesNoToBool(raw) {
-  return String(raw || '').trim().toLowerCase() === 'yes';
-}
-
-function asString(raw) {
-  return String(raw || '').trim();
-}
 
 function gradeToIndex(g) {
   return gradeOrder.indexOf(String(g));
@@ -149,6 +133,7 @@ function gradesOverlap(progMin, progMax, filterGrade) {
   const pMin = gradeToIndex(progMin);
   const pMax = gradeToIndex(progMax);
   const fIdx = gradeToIndex(filterGrade);
+  // pMin/pMax of -1 means unknown grades — show the program rather than hide it
   if (pMin < 0 || pMax < 0) return true;
   return fIdx >= pMin && fIdx <= pMax;
 }
@@ -220,8 +205,7 @@ function show(el, isVisible) {
 
 function categoryLabel(cat) {
   if (cat === 'camp') return 'camps';
-  if (cat === 'afterschool') return 'afterschool programs';
-  return 'daycare providers';
+  return 'afterschool programs';
 }
 
 function categoryUi() {
@@ -247,285 +231,6 @@ function applyCategoryUiText() {
 
   const gradeAnyOption = filterGrades.querySelector('option[value=""]');
   if (gradeAnyOption) gradeAnyOption.textContent = ui.gradeAny;
-}
-
-function normalizeCampPrograms(camps) {
-  return camps.map(p => ({
-    ...p,
-    uid: `camp-${p.id}`,
-    category: 'camp',
-    county: '',
-    starsLevel: '',
-    referralStatus: 'Active',
-    providerProgramType: p.type
-  }));
-}
-
-// ===== Organizations =====
-const ORG_PATTERNS = [
-  { re: /^Rec Kids/i,                                    orgId: 'rec-kids-essex' },
-  { re: /^Part 2/i,                                      orgId: 'part-2' },
-  { re: /Heartworks/i,                                   orgId: 'heartworks' },
-  { re: /Boys and Girls Club of Burlington/i,            orgId: 'bgc-burlington' },
-  { re: /Boys & Girls Club of Rutland/i,                 orgId: 'bgc-rutland' },
-  { re: /Burlington City Kids/i,                         orgId: 'burlington-city-kids' },
-  { re: /Burlington Vt School District Afterschool/i,    orgId: 'burlington-sd' },
-  { re: /King Street Center/i,                           orgId: 'king-street-center' },
-  { re: /Miller Community/i,                             orgId: 'miller-rec' },
-  { re: /ONE Arts/i,                                     orgId: 'one-arts' },
-  { re: /Milton Family/i,                                orgId: 'milton-family-center' },
-  { re: /Thrive After School/i,                          orgId: 'thrive-winooski' },
-  { re: /Healthy Kids Extended Day/i,                    orgId: 'healthy-kids' },
-  { re: /Y School Age Program/i,                         orgId: 'y-gbymca' },
-  { re: /The Y ASPIRE/i,                                 orgId: 'y-aspire' },
-  { re: /^Community Connections/i,                       orgId: 'community-connections' },
-  { re: /^School'?s Out/i,                               orgId: 'south-burlington-sd' },
-  { re: /^A\.?C\.?E\.?\s+(Before|After|At)/i,           orgId: 'ace-colchester' },
-];
-
-function resolveOrgId(providerName) {
-  for (const { re, orgId } of ORG_PATTERNS) {
-    if (re.test(providerName)) return orgId;
-  }
-  return null;
-}
-
-async function loadOrganizations() {
-  try {
-    const resp = await fetch('data/organizations.csv', { cache: 'no-store' });
-    if (!resp.ok) return;
-    const text = await resp.text();
-    const rows = parseCsv(text);
-    rows.forEach(row => {
-      const id = asString(row['orgId']);
-      if (id) orgMap.set(id, row);
-    });
-  } catch (err) {
-    console.error('Could not load organizations CSV:', err);
-  }
-}
-
-function parseCsv(csvText) {
-  const rows = [];
-  let cur = '';
-  let row = [];
-  let inQuotes = false;
-
-  for (let i = 0; i < csvText.length; i++) {
-    const ch = csvText[i];
-    const next = csvText[i + 1];
-
-    if (ch === '"') {
-      if (inQuotes && next === '"') {
-        cur += '"';
-        i++;
-      } else {
-        inQuotes = !inQuotes;
-      }
-      continue;
-    }
-
-    if (ch === ',' && !inQuotes) {
-      row.push(cur);
-      cur = '';
-      continue;
-    }
-
-    if ((ch === '\n' || ch === '\r') && !inQuotes) {
-      if (ch === '\r' && next === '\n') i++;
-      row.push(cur);
-      const hasData = row.some(cell => asString(cell) !== '');
-      if (hasData) rows.push(row);
-      row = [];
-      cur = '';
-      continue;
-    }
-
-    cur += ch;
-  }
-
-  if (cur.length || row.length) {
-    row.push(cur);
-    const hasData = row.some(cell => asString(cell) !== '');
-    if (hasData) rows.push(row);
-  }
-
-  if (rows.length === 0) return [];
-
-  const header = rows[0].map(h => asString(h));
-  return rows.slice(1).map(r => {
-    const obj = {};
-    header.forEach((h, idx) => {
-      obj[h] = r[idx] ?? '';
-    });
-    return obj;
-  });
-}
-
-function providerSubjects(programType, row) {
-  const subjects = [];
-  if (String(programType).includes('Afterschool')) subjects.push('Afterschool');
-  if (yesNoToBool(row['Prequalified Prekindgarten Program'])) subjects.push('Pre-K');
-  if (yesNoToBool(row['Reported Food Program Participation'])) subjects.push('Food Program');
-  if (yesNoToBool(row['Special Services Status'])) subjects.push('Special Services');
-  if (row['Current STARS Level']) subjects.push(String(row['Current STARS Level']).trim());
-  return [...new Set(subjects)];
-}
-
-function providerDescription(row) {
-  const model = asString(row['Provider Program Type']);
-  const stars = asString(row['Current STARS Level']);
-  const county = asString(row['County']);
-  const status = asString(row['Provider Referral Status']) || 'Unknown';
-  const schedule = asString(row['Special Schedule']);
-  const details = [model, stars, county ? `${county} County` : '', `Status: ${status}`, schedule].filter(Boolean);
-  return details.join(' · ');
-}
-
-function providerToProgram(row) {
-  const programType = asString(row['Provider Program Type']);
-  const isAfterschool = programType.includes('Afterschool');
-  const orgId = resolveOrgId(asString(row['Provider Name']));
-  const org = orgId ? orgMap.get(orgId) : null;
-
-  const schoolAgeCap = parseNumber(row['School Age Licensed Capacity']);
-  const infantCap = parseNumber(row['Infant Licensed Capacity']);
-  const toddlerCap = parseNumber(row['Toddler Licensed Capacity']);
-  const preschoolCap = parseNumber(row['Preschool Licensed Capacity']);
-
-  let gradesMin = '';
-  let gradesMax = '';
-  if (schoolAgeCap > 0) {
-    gradesMin = 'K';
-    gradesMax = '12';
-  }
-
-  let ageMin = null;
-  let ageMax = null;
-  if (infantCap > 0) ageMin = 0;
-  if (toddlerCap > 0) ageMax = 4;
-  if (preschoolCap > 0 && ageMax === null) ageMax = 5;
-  if (schoolAgeCap > 0 && ageMax === null) ageMax = 17;
-
-  const start = asString(row['Usual Program Start']);
-  const end = asString(row['Usual Program End']);
-  const hours = start && end ? `${start} - ${end}` : '';
-
-  const addr1 = asString(row['Address 1']);
-  const addr2 = asString(row['Address 2']);
-  const address = [addr1, addr2].filter(Boolean).join(', ');
-
-  return {
-    uid: `provider-${asString(row['Provider ID'])}`,
-    id: parseNumber(row['Provider ID']),
-    category: isAfterschool ? 'afterschool' : 'daycare',
-    type: isAfterschool ? 'Afterschool Care' : 'Daycare',
-    providerProgramType: programType,
-    name: asString(row['Provider Name']) || 'Unknown Provider',
-    organization: asString(row['License Type']) || asString(row['Provider Name']) || '',
-    address,
-    city: asString(row['Provider Town']),
-    state: 'VT',
-    zip: asString(row['Zip Code']),
-    phone: asString(row['Phone Number']),
-    email: asString(row['Email Address']),
-    website: org ? asString(org['website']) : '',
-    gradesMin,
-    gradesMax,
-    ageMin,
-    ageMax,
-    cost: 0,
-    costPeriod: 'session',
-    scholarshipAvailable: false,
-    hours,
-    daysOffered: '',
-    sessionType: asString(row['Special Schedule']) || 'Year-round',
-    subjects: providerSubjects(programType, row),
-    description: providerDescription(row),
-    indoorOutdoor: 'Both',
-    transportation: false,
-    mealsProvided: yesNoToBool(row['Reported Food Program Participation']),
-    acceptingRegistration: asString(row['Provider Referral Status']) !== 'Inactive',
-    startDate: '',
-    endDate: '',
-    county: asString(row['County']),
-    starsLevel: asString(row['Current STARS Level']),
-    referralStatus: asString(row['Provider Referral Status']) || 'Unknown',
-    orgId,
-    orgName: org ? asString(org['name']) : ''
-  };
-}
-
-async function loadProviderPrograms() {
-  try {
-    const resp = await fetch('data/providers/provider_data_20260304.csv', { cache: 'no-store' });
-    if (!resp.ok) return [];
-    const text = await resp.text();
-    const rows = parseCsv(text);
-    return rows.map(providerToProgram);
-  } catch (err) {
-    console.error('Could not load provider CSV:', err);
-    return [];
-  }
-}
-
-function subsidizedToProgram(row, idx) {
-  const subjects = asString(row['Subjects']).split('|').map(s => s.trim()).filter(Boolean);
-  const orgId = asString(row['orgId']) || null;
-  const org = orgId ? orgMap.get(orgId) : null;
-  return {
-    uid: `subsidized-${idx}`,
-    id: idx,
-    category: 'afterschool',
-    type: '21CCLC Afterschool (Free)',
-    isFree: true,
-    providerProgramType: asString(row['Funding Source']) || '21st Century Community Learning Centers',
-    name: asString(row['Name']) || 'Unknown Program',
-    organization: asString(row['Organization']) || asString(row['Supervisory Union']),
-    address: asString(row['Address']),
-    city: asString(row['City']),
-    state: asString(row['State']) || 'VT',
-    zip: asString(row['Zip']),
-    phone: asString(row['Phone']) || (org ? asString(org['phone']) : ''),
-    email: asString(row['Email']) || (org ? asString(org['email']) : ''),
-    website: asString(row['Website']) || (org ? asString(org['website']) : ''),
-    gradesMin: asString(row['Grades Min']),
-    gradesMax: asString(row['Grades Max']),
-    ageMin: null,
-    ageMax: null,
-    cost: 0,
-    costPeriod: 'session',
-    scholarshipAvailable: true,
-    hours: asString(row['Hours']),
-    daysOffered: 'Monday-Friday',
-    sessionType: asString(row['Session Type']) || 'School Year Only',
-    subjects,
-    description: asString(row['Description']),
-    indoorOutdoor: 'Both',
-    transportation: false,
-    mealsProvided: false,
-    acceptingRegistration: true,
-    startDate: '',
-    endDate: '',
-    county: asString(row['County']),
-    starsLevel: '',
-    referralStatus: 'Active',
-    orgId,
-    orgName: org ? asString(org['name']) : (asString(row['Organization']) || '')
-  };
-}
-
-async function loadSubsidizedPrograms() {
-  try {
-    const resp = await fetch('data/subsidized/21cclc_2025_2026.csv', { cache: 'no-store' });
-    if (!resp.ok) return [];
-    const text = await resp.text();
-    const rows = parseCsv(text);
-    return rows.map((row, idx) => subsidizedToProgram(row, idx));
-  } catch (err) {
-    console.error('Could not load subsidized CSV:', err);
-    return [];
-  }
 }
 
 function categoryPrograms() {
@@ -569,7 +274,7 @@ function populateWeekDropdown(programs) {
 
 function updateFilterVisibility() {
   const isCamp = activeCategory === 'camp';
-  const isProvider = !isCamp;
+  const isProvider = !isCamp; // every non-camp category is an afterschool/provider page
 
   show(filterSubject.closest('.filter-group'), isCamp);
   show(filterWeek.closest('.filter-group'), isCamp);
@@ -611,6 +316,8 @@ function applyFilters() {
   const isCamp = activeCategory === 'camp';
 
   return categoryPrograms().filter(p => {
+    if (!activeFilters.showPast && isPast(p)) return false;
+
     if (search) {
       const haystack = [
         p.name,
@@ -664,6 +371,9 @@ function renderCards(programs) {
   noResults.style.display = 'none';
 
   const sorted = [...programs].sort((a, b) => {
+    // Past programs always sort after current programs
+    const aPast = isPast(a), bPast = isPast(b);
+    if (aPast !== bPast) return aPast ? 1 : -1;
     if (a.startDate && b.startDate) return a.startDate.localeCompare(b.startDate);
     if (a.startDate) return -1;
     if (b.startDate) return 1;
@@ -671,8 +381,9 @@ function renderCards(programs) {
   });
 
   sorted.forEach(p => {
+    const past = isPast(p);
     const card = document.createElement('article');
-    card.className = 'program-card';
+    card.className = past ? 'program-card program-card--past' : 'program-card';
 
     const badgeClass = p.category === 'camp' ? 'badge-camp'
       : p.category === 'afterschool' ? 'badge-afterschool'
@@ -702,11 +413,16 @@ function renderCards(programs) {
       ? `<span class="week-badge">${fmtWeekRange(p.startDate, p.endDate)}</span>`
       : '';
 
+    const pYear = past ? programYear(p) : null;
+    const yearChipHtml = pYear
+      ? `<span class="year-chip">${pYear}</span>`
+      : '';
+
     card.innerHTML = `
       <div class="card-header">
         <div class="card-header-top">
           <span class="card-type-badge ${badgeClass}">${p.type}</span>
-          ${weekBadgeHtml}
+          ${yearChipHtml}${weekBadgeHtml}
         </div>
         <div class="card-title">${p.name}</div>
         <div class="card-org">${p.organization || ''}</div>
@@ -889,6 +605,8 @@ function renderMap(programs) {
     `);
 
     marker.on('popupopen', () => {
+      // setTimeout(0): Leaflet inserts popup DOM asynchronously; delay one tick
+      // so the anchor elements exist before we attach click listeners.
       setTimeout(() => {
         document.querySelectorAll('.leaflet-popup a[data-id]').forEach(a => {
           a.addEventListener('click', e => {
@@ -992,7 +710,7 @@ function openModal(p) {
     if (siblings.length > 0) {
       orgSection.style.display = '';
       const org = orgMap.get(p.orgId);
-      const orgLabel = org ? asString(org['name']) : (p.orgName || 'this organization');
+      const orgLabel = org ? org.name : (p.orgName || 'this organization');
       orgSection.innerHTML = `
         <h4 class="modal-org-heading">More from ${orgLabel}</h4>
         <ul class="modal-org-list">
@@ -1077,21 +795,8 @@ function clearAllFilters() {
   filterCounty.value = '';
   filterStars.value = '';
   filterStatus.value = '';
-}
-
-function setCategory(cat) {
-  activeCategory = cat;
-  tabButtons.forEach(btn => {
-    const active = btn.dataset.category === cat;
-    btn.classList.toggle('active', active);
-    btn.setAttribute('aria-pressed', active ? 'true' : 'false');
-  });
-
-  clearAllFilters();
-  applyCategoryUiText();
-  updateFilterVisibility();
-  populateFiltersForCategory();
-  update();
+  filterShowPast.checked = false;
+  activeFilters.showPast = false;
 }
 
 // ===== Event Listeners =====
@@ -1106,6 +811,7 @@ filterScholarship.addEventListener('change', e => { activeFilters.scholarship = 
 filterCounty.addEventListener('change', e => { activeFilters.county = e.target.value; update(); });
 filterStars.addEventListener('change', e => { activeFilters.stars = e.target.value; update(); });
 filterStatus.addEventListener('change', e => { activeFilters.status = e.target.value; update(); });
+filterShowPast.addEventListener('change', e => { activeFilters.showPast = e.target.checked; update(); });
 
 btnClearSearch.addEventListener('click', () => {
   searchInput.value = '';
@@ -1149,21 +855,9 @@ document.getElementById('btnCalNext').addEventListener('click', () => {
   renderCalendar(lastFiltered);
 });
 
-tabButtons.forEach(btn => {
-  btn.addEventListener('click', () => setCategory(btn.dataset.category));
-});
-
 // ===== Boot =====
-async function init() {
-  // Load org lookup first — provider and subsidized loaders read from orgMap
-  await loadOrganizations();
-  const campPrograms = normalizeCampPrograms(programsData || []);
-  const [providerPrograms, subsidizedPrograms] = await Promise.all([
-    loadProviderPrograms(),
-    loadSubsidizedPrograms()
-  ]);
-  allPrograms = [...campPrograms, ...providerPrograms, ...subsidizedPrograms];
-
+function init() {
+  allPrograms = typeof PROGRAMS !== 'undefined' ? PROGRAMS : [];
   applyCategoryUiText();
   updateFilterVisibility();
   populateFiltersForCategory();

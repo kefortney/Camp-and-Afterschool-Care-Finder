@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Data – Camp &amp; Afterschool Care Finder</title>
+  <meta name="description" content="Dataset documentation and field schemas for the Camp and Afterschool Care Finder." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <div class="static-hero">
+    <div class="static-hero-content">
+      <span class="static-hero-icon">📊</span>
+      <h1>Data Documentation</h1>
+      <p>Schema reference, field descriptions, and sourcing notes for every dataset in this project.</p>
+    </div>
+  </div>
+
+  <div class="static-page">
+
+    <section class="static-section">
+      <h2>Overview</h2>
+      <p>All data lives in two canonical CSV files — <code>data/programs.csv</code> and <code>data/organizations.csv</code>. A Python pipeline validates and joins them into <code>data.js</code>, the JavaScript module loaded by the app at runtime.</p>
+      <p><strong>Pipeline order:</strong> edit CSVs → <code>python scripts/validate_data.py</code> (check for errors) → <code>python scripts/build_data_js.py</code> (regenerate data.js). Utility scripts like <code>backfill_age_grade.py</code> and <code>fetch_descriptions.py</code> run before validation to fill in missing fields.</p>
+      <a class="link-btn" href="https://github.com/kefortney/Camp-and-Afterschool-Care-Finder/tree/main/data" target="_blank" rel="noopener noreferrer">Browse data/ on GitHub</a>
+    </section>
+
+    <!-- ===== Dataset 1: Programs ===== -->
+    <section class="static-section">
+      <h2>Programs</h2>
+      <div class="static-card">
+        <h3>data/programs.csv</h3>
+        <div class="dataset-meta">
+          <span><strong>Rows:</strong> 401 programs (391 camps, 10 afterschool)</span>
+          <span><strong>Updated:</strong> Annually (spring for camps; fall for afterschool)</span>
+          <span><strong>Source:</strong> Manual research — program websites, direct outreach, Vermont AOE grant data</span>
+        </div>
+        <p>The unified program registry. Each row is one program (one session of one camp, or one afterschool program). Foreign key <code>org_id</code> must match a row in <code>organizations.csv</code> — validated by <code>validate_data.py</code> before building.</p>
+        <table class="schema-table">
+          <thead>
+            <tr><th>Field</th><th>Type</th><th>Description</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><code>program_id</code></td><td>string</td><td>Unique program identifier (kebab-case slug, e.g. <code>bgc-burlington-camp-2026-1</code>). Auto-generated; never rename.</td></tr>
+            <tr><td><code>org_id</code></td><td>string (FK)</td><td>Foreign key referencing <code>organizations.csv</code>. Must match an <code>org_id</code> exactly. Use the Admin dropdown — never type free text.</td></tr>
+            <tr><td><code>program_name</code></td><td>string</td><td>Full display name of the program or session.</td></tr>
+            <tr><td><code>program_type</code></td><td>enum</td><td><code>camp</code> or <code>afterschool</code>.</td></tr>
+            <tr><td><code>program_year</code></td><td>integer</td><td>Program year (e.g. 2026).</td></tr>
+            <tr><td><code>description</code></td><td>text</td><td>Description of the program. May be auto-fetched via <code>scripts/fetch_descriptions.py</code>.</td></tr>
+            <tr><td><code>session_type</code></td><td>enum</td><td><code>day</code>, <code>residential</code>, <code>hybrid</code>, or <code>drop-in</code>.</td></tr>
+            <tr><td><code>schedule_type</code></td><td>enum</td><td><code>seasonal</code>, <code>weekly</code>, <code>daily</code>, or <code>year-round</code>.</td></tr>
+            <tr><td><code>grades_min</code></td><td>string</td><td>Minimum grade served (PK, K, 1–12). Backfilled from <code>age_min</code> by <code>backfill_age_grade.py</code>.</td></tr>
+            <tr><td><code>grades_max</code></td><td>string</td><td>Maximum grade served.</td></tr>
+            <tr><td><code>age_min</code></td><td>integer</td><td>Minimum age for eligibility.</td></tr>
+            <tr><td><code>age_max</code></td><td>integer</td><td>Maximum age for eligibility.</td></tr>
+            <tr><td><code>start_date</code></td><td>date (YYYY-MM-DD)</td><td>First day of the session. Used by the Calendar view.</td></tr>
+            <tr><td><code>end_date</code></td><td>date (YYYY-MM-DD)</td><td>Last day of the session.</td></tr>
+            <tr><td><code>days_of_week</code></td><td>string</td><td>Days the program runs (e.g., "Mon–Fri").</td></tr>
+            <tr><td><code>start_time</code></td><td>string (HH:MM AM/PM)</td><td>Daily start time. Normalized by <code>normalize_times.py</code>.</td></tr>
+            <tr><td><code>end_time</code></td><td>string (HH:MM AM/PM)</td><td>Daily end time.</td></tr>
+            <tr><td><code>pre_after_care</code></td><td>string</td><td>Extended care availability (before/after hours).</td></tr>
+            <tr><td><code>cost_raw</code></td><td>string</td><td>Cost as listed by the provider — raw, unnormalized.</td></tr>
+            <tr><td><code>cost_per_week</code></td><td>numeric</td><td>Normalized weekly cost in dollars. 0 = free or unknown.</td></tr>
+            <tr><td><code>cost_notes</code></td><td>string</td><td>Sliding scale, sibling discounts, or other cost notes.</td></tr>
+            <tr><td><code>meals_provided</code></td><td>boolean</td><td>TRUE if meals are included.</td></tr>
+            <tr><td><code>transportation_provided</code></td><td>boolean</td><td>TRUE if transportation is available.</td></tr>
+            <tr><td><code>transportation_notes</code></td><td>string</td><td>Transportation details.</td></tr>
+            <tr><td><code>activities</code></td><td>comma-separated</td><td>Canonical activity tags from the allowed list (see <code>validate_data.py</code>).</td></tr>
+            <tr><td><code>site_address</code></td><td>string</td><td>Street address of the program site (if different from org address). Enriched by <code>enrich_locations.py</code>.</td></tr>
+            <tr><td><code>site_city</code></td><td>string</td><td>City/town where the program runs. <strong>Must match a town name in <code>data/Vermont_Town_GEOID_RPC_County.geojson</code></strong> (use <code>TOWNNAMEMC</code> spelling, e.g. <code>Burlington</code>, <code>Saint Albans City</code>). Used for City filter, map, and auto-county lookup.</td></tr>
+            <tr><td><code>site_county</code></td><td>string</td><td>Vermont county. Filled automatically by <code>infer_counties.py</code> from the GeoJSON town→county map. Used for County filter.</td></tr>
+            <tr><td><code>registration_url</code></td><td>URL</td><td>Link to the program's registration or info page.</td></tr>
+            <tr><td><code>funding_source</code></td><td>string</td><td>Funding mechanism (e.g., "21st Century Community Learning Centers" for free afterschool programs).</td></tr>
+            <tr><td><code>confidence</code></td><td>enum</td><td><code>confirmed</code>, <code>likely</code>, or <code>inactive</code>. Programs with <code>inactive</code> are excluded from the public site.</td></tr>
+            <tr><td><code>verified_date</code></td><td>date (YYYY-MM-DD)</td><td>When the data was last verified against the source.</td></tr>
+            <tr><td><code>notes</code></td><td>text</td><td>Internal notes; not shown in the UI.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ===== Dataset 2: Organizations ===== -->
+    <section class="static-section">
+      <h2>Organizations</h2>
+      <div class="static-card">
+        <h3>data/organizations.csv</h3>
+        <div class="dataset-meta">
+          <span><strong>Rows:</strong> 148 organizations</span>
+          <span><strong>Updated:</strong> As needed</span>
+          <span><strong>Source:</strong> Compiled from program websites and direct outreach</span>
+        </div>
+        <p>The organization registry. Every <code>org_id</code> referenced in <code>programs.csv</code> must exist here. Organization contact info (phone, email, website) is merged into program records at build time and shown in the detail modal.</p>
+        <table class="schema-table">
+          <thead>
+            <tr><th>Field</th><th>Type</th><th>Description</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><code>org_id</code></td><td>string (PK)</td><td>Unique kebab-case slug (e.g., <code>bgc-burlington</code>). Once set, never renamed — programs reference it as a foreign key.</td></tr>
+            <tr><td><code>org_name</code></td><td>string</td><td>Organization's full display name.</td></tr>
+            <tr><td><code>org_type</code></td><td>enum</td><td><code>nonprofit</code>, <code>municipal</code>, <code>school</code>, <code>private</code>, <code>university</code>, or <code>faith-based</code>.</td></tr>
+            <tr><td><code>website</code></td><td>URL</td><td>Organization's main website.</td></tr>
+            <tr><td><code>phone</code></td><td>string</td><td>Main contact phone number.</td></tr>
+            <tr><td><code>email</code></td><td>string</td><td>Main contact email address.</td></tr>
+            <tr><td><code>street_address</code></td><td>string</td><td>Organization's primary office street address.</td></tr>
+            <tr><td><code>city</code></td><td>string</td><td>City or town.</td></tr>
+            <tr><td><code>county</code></td><td>string</td><td>Vermont county.</td></tr>
+            <tr><td><code>state</code></td><td>string</td><td>State abbreviation (VT).</td></tr>
+            <tr><td><code>zip</code></td><td>string</td><td>ZIP code.</td></tr>
+            <tr><td><code>financial_aid_available</code></td><td>boolean</td><td>TRUE if the organization offers any financial assistance.</td></tr>
+            <tr><td><code>financial_aid_notes</code></td><td>text</td><td>Details on sliding scale, subsidies, or scholarship processes.</td></tr>
+            <tr><td><code>registration_policy</code></td><td>string</td><td>Notes on registration approach (e.g., "First-come first-served").</td></tr>
+            <tr><td><code>registration_opens</code></td><td>string</td><td>When registration typically opens each year.</td></tr>
+            <tr><td><code>confidence</code></td><td>enum</td><td><code>confirmed</code>, <code>likely</code>, or <code>inactive</code>.</td></tr>
+            <tr><td><code>verified_date</code></td><td>date (YYYY-MM-DD)</td><td>When org data was last confirmed.</td></tr>
+            <tr><td><code>notes</code></td><td>text</td><td>Internal notes; not shown in the UI.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ===== Dataset 3: Age to Grade ===== -->
+    <section class="static-section">
+      <h2>Age to Grade Mapping</h2>
+      <div class="static-card">
+        <h3>data/camp/age_to_grade.csv</h3>
+        <div class="dataset-meta">
+          <span><strong>Rows:</strong> 13</span>
+          <span><strong>Updated:</strong> Rarely</span>
+          <span><strong>Source:</strong> Vermont standard age-grade equivalencies</span>
+        </div>
+        <p>Lookup table used by <code>scripts/backfill_age_grade.py</code> to bidirectionally fill in missing <code>age_min</code>/<code>age_max</code> or <code>grades_min</code>/<code>grades_max</code> in <code>programs.csv</code>.</p>
+        <table class="schema-table">
+          <thead>
+            <tr><th>Field</th><th>Type</th><th>Description</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><code>Start Age</code></td><td>integer</td><td>Lower bound of the age range for this grade.</td></tr>
+            <tr><td><code>End Age</code></td><td>integer</td><td>Upper bound of the age range for this grade.</td></tr>
+            <tr><td><code>Grade</code></td><td>string</td><td>Corresponding grade level (K, 1–12).</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ===== Data Pipeline ===== -->
+    <section class="static-section">
+      <h2>Data Pipeline Scripts</h2>
+      <p>All scripts live in <code>scripts/</code> and operate on CSVs in <code>data/</code>. Run from the project root.</p>
+
+      <div class="static-card">
+        <h3>scripts/validate_data.py</h3>
+        <p>Validates <code>programs.csv</code> and <code>organizations.csv</code> for foreign key integrity, required fields, and enum values. Exit code 0 = pass; exit code 1 = errors that block the build. Run this before <code>build_data_js.py</code>.</p>
+      </div>
+
+      <div class="static-card">
+        <h3>scripts/build_data_js.py</h3>
+        <p>Runs <code>validate_data.py</code> first (aborts on errors), then joins <code>programs.csv</code> + <code>organizations.csv</code> and writes <code>data.js</code> — the JavaScript module loaded by the app. <strong>Run this after editing any CSV.</strong></p>
+      </div>
+
+      <div class="static-card">
+        <h3>scripts/backfill_age_grade.py</h3>
+        <p>Fills missing <code>grades_min</code>/<code>grades_max</code> from <code>age_min</code>/<code>age_max</code> (and vice versa) in <code>programs.csv</code> using <code>data/camp/age_to_grade.csv</code>. Run before <code>build_data_js.py</code> when adding programs with only age or only grade data.</p>
+      </div>
+
+      <div class="static-card">
+        <h3>scripts/enrich_locations.py</h3>
+        <p>Geocodes and standardizes <code>site_address</code> in <code>programs.csv</code> by querying the OpenStreetMap Nominatim API. Fills in missing addresses and normalizes format to "Street, City, VT ZIP".</p>
+      </div>
+
+      <div class="static-card">
+        <h3>scripts/fetch_descriptions.py</h3>
+        <p>Fetches program descriptions from <code>registration_url</code> for rows with a blank <code>description</code> in <code>programs.csv</code>. Extracts the <code>&lt;meta name="description"&gt;</code> tag or first paragraph from each URL. Saves progress every 25 rows.</p>
+      </div>
+
+      <div class="static-card">
+        <h3>scripts/normalize_times.py</h3>
+        <p>Standardizes <code>start_time</code> and <code>end_time</code> strings in <code>programs.csv</code> to 12-hour format (HH:MM AM/PM), handling inconsistent inputs like "9am", "09:00", "9:00 AM", etc.</p>
+      </div>
+
+      <div class="static-card">
+        <h3>scripts/dev_server.py</h3>
+        <p>Local development server. Serves static files and supports saving CSV edits from the Admin page via a <code>POST /__save_csv</code> endpoint. Run with <code>python scripts/dev_server.py</code> then open <code>http://127.0.0.1:8000</code>.</p>
+      </div>
+    </section>
+
+  </div>
+
+  <footer>
+    <p>Camp &amp; Afterschool Care Finder &mdash; Open source. Built for Vermont families.</p>
+    <p style="margin-top:0.4rem;"><a href="https://github.com/kefortney/Camp-and-Afterschool-Care-Finder" target="_blank" rel="noopener noreferrer">GitHub Repository</a></p>
+  </footer>
+
+  <script>window.NAV_PAGE = 'data';</script>
+  <script src="nav.js"></script>
+</body>
+</html>

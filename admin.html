@@ -8,6 +8,98 @@
     /* ===== Design Tokens (match main site) ===== */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+    /* ===== Top Navigation Bar ===== */
+    .top-nav {
+      background: linear-gradient(135deg, #1e5e3a 0%, #2a7d4f 100%);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 1.5rem;
+      height: 56px;
+      position: sticky;
+      top: 0;
+      z-index: 200;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+      gap: 1rem;
+    }
+    .top-nav-brand {
+      font-weight: 700;
+      font-size: 1rem;
+      color: #fff;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .top-nav-brand:hover { color: #fff; opacity: 0.9; text-decoration: none; }
+    .top-nav-icon { font-size: 1.2rem; }
+    .top-nav-links {
+      display: flex;
+      align-items: center;
+      gap: 0.15rem;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .top-nav-links a {
+      color: rgba(255,255,255,0.82);
+      text-decoration: none;
+      padding: 0.4rem 0.75rem;
+      border-radius: 6px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      white-space: nowrap;
+      display: block;
+      transition: color 0.2s, background 0.2s;
+    }
+    .top-nav-links a:hover { color: #fff; background: rgba(255,255,255,0.12); text-decoration: none; }
+    .top-nav-links a.active { color: #fff; background: rgba(255,255,255,0.18); font-weight: 700; }
+    .top-nav-hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0.4rem;
+    }
+    .top-nav-hamburger span { display: block; width: 22px; height: 2px; background: #fff; border-radius: 2px; }
+
+    /* ===== Page Hero ===== */
+    .page-hero {
+      background: linear-gradient(135deg, #1e5e3a 0%, #2a7d4f 60%, #3a9e65 100%);
+      color: #fff;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .page-hero-content { position: relative; max-width: 800px; margin: 0 auto; }
+    .page-hero-icon { font-size: 2rem; margin-bottom: 0.3rem; display: block; }
+    .page-hero h1 { font-size: clamp(1.3rem, 3vw, 1.9rem); font-weight: 700; margin-bottom: 0.3rem; }
+    .page-hero p { font-size: 0.95rem; opacity: 0.88; max-width: 540px; margin: 0 auto; }
+
+    @media (max-width: 640px) {
+      .top-nav { padding: 0 1rem; }
+      .top-nav-hamburger { display: flex; }
+      .top-nav-links {
+        display: none;
+        position: absolute;
+        top: 56px; left: 0; right: 0;
+        background: #1e5e3a;
+        flex-direction: column;
+        align-items: stretch;
+        padding: 0.5rem 0;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        gap: 0;
+      }
+      .top-nav-links.open { display: flex; }
+      .top-nav-links a { padding: 0.75rem 1.25rem; border-radius: 0; font-size: 0.95rem; }
+    }
+
     :root {
       --primary: #2a7d4f;
       --primary-dark: #1e5e3a;
@@ -302,6 +394,19 @@
     /* ===== Delete confirm body ===== */
     #deleteModal .modal-body p { font-size: 0.95rem; line-height: 1.6; }
 
+    /* ===== View toggle ===== */
+    .view-toggle { display: flex; gap: 4px; }
+    .view-btn {
+      padding: 6px 14px; border-radius: 6px; border: 1px solid var(--gray-300);
+      background: var(--white); color: var(--gray-700); font-size: 0.85rem;
+      font-weight: 500; cursor: pointer; transition: all 0.15s;
+    }
+    .view-btn:hover { background: var(--gray-100); }
+    .view-btn.active {
+      background: var(--primary); color: var(--white);
+      border-color: var(--primary); font-weight: 600;
+    }
+
     /* ===== Footer ===== */
     footer {
       text-align: center; padding: 1.25rem;
@@ -319,47 +424,68 @@
 </head>
 <body>
 
-  <header>
-    <div class="header-content">
-      <span class="header-icon">⚙️</span>
-      <h1>Admin – Program Data Editor</h1>
-      <p class="subtitle">View all camp, afterschool, and daycare records together. Camp rows are editable and export back to data.js.</p>
+  <div class="page-hero" style="padding:1.5rem 1.5rem 2rem;">
+    <div class="page-hero-content">
+      <span class="page-hero-icon">⚙️</span>
+      <h1>Data Editor</h1>
+      <p>Manage programs and organizations. Edit and save back to CSV; rebuild data.js with <code>python scripts/build_data_js.py</code>.</p>
     </div>
-  </header>
+  </div>
 
   <main>
     <div class="toolbar">
+      <div class="view-toggle">
+        <button class="view-btn active" data-view="programs">Programs</button>
+        <button class="view-btn" data-view="orgs">Organizations</button>
+      </div>
       <div class="search-box">
         <span class="search-icon">🔍</span>
-        <input type="search" id="adminSearch" placeholder="Search by name, org, city, or subject…" autocomplete="off" />
+        <input type="search" id="adminSearch" placeholder="Search…" autocomplete="off" />
       </div>
-      <select id="typeFilter" class="toolbar-select" aria-label="Filter by program type">
-        <option value="">All Program Types</option>
+      <select id="typeFilter" class="toolbar-select" aria-label="Filter by type" style="display:none;">
+        <option value="">All Types</option>
       </select>
       <div class="toolbar-actions">
         <span id="dirtyBadge" class="dirty-badge" style="display:none;">⚠ Unsaved changes</span>
         <button class="btn-secondary" id="btnSaveAll">💾 Save All</button>
-        <button class="btn-secondary" id="btnExport">⬇ Download data.js</button>
-        <button class="btn-primary" id="btnAdd">+ Add Program</button>
+        <button class="btn-primary" id="btnAdd">+ Add</button>
       </div>
     </div>
 
     <p class="stats" id="tableStats"></p>
 
-    <div class="table-wrapper">
+    <!-- Programs table -->
+    <div class="table-wrapper" id="programsView">
       <table id="adminTable">
         <thead>
           <tr>
             <th class="sortable" data-col="name">Name <span class="sort-indicator"></span></th>
-            <th class="sortable" data-col="organization">Organization <span class="sort-indicator"></span></th>
+            <th class="sortable" data-col="orgName">Organization <span class="sort-indicator"></span></th>
             <th class="sortable" data-col="city">City <span class="sort-indicator"></span></th>
-            <th class="sortable" data-col="type">Type <span class="sort-indicator"></span></th>
+            <th class="sortable" data-col="category">Type <span class="sort-indicator"></span></th>
             <th>Grades</th>
             <th class="sortable" data-col="startDate">Start Date <span class="sort-indicator"></span></th>
             <th>Actions</th>
           </tr>
         </thead>
         <tbody id="adminTbody"></tbody>
+      </table>
+    </div>
+
+    <!-- Organizations table -->
+    <div class="table-wrapper" id="orgsView" style="display:none;">
+      <table id="orgsTable">
+        <thead>
+          <tr>
+            <th class="sortable" data-col="name">Name <span class="sort-indicator"></span></th>
+            <th class="sortable" data-col="type">Type <span class="sort-indicator"></span></th>
+            <th class="sortable" data-col="city">City <span class="sort-indicator"></span></th>
+            <th class="sortable" data-col="county">County <span class="sort-indicator"></span></th>
+            <th class="sortable" data-col="confidence">Confidence <span class="sort-indicator"></span></th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="orgsTbody"></tbody>
       </table>
     </div>
   </main>
@@ -379,37 +505,61 @@
             <legend>Identity</legend>
             <div class="form-row">
               <div class="form-group full">
-                <label for="fName">Name *</label>
+                <label for="fName">Program Name *</label>
                 <input type="text" id="fName" required />
               </div>
             </div>
             <div class="form-row">
               <div class="form-group full">
-                <label for="fOrg">Organization *</label>
-                <input type="text" id="fOrg" required />
+                <label for="fOrgId">Organization * <small style="font-weight:400;color:#6b7280;">(select from list — do not type free text)</small></label>
+                <select id="fOrgId" required>
+                  <option value="">— select organization —</option>
+                </select>
               </div>
             </div>
             <div class="form-row">
               <div class="form-group">
-                <label for="fType">Program Type</label>
-                <select id="fType">
-                  <option value="Summer Camp">Summer Camp</option>
-                  <option value="Both">Summer Camp (with Extended Hours)</option>
+                <label for="fCategory">Program Type</label>
+                <select id="fCategory">
+                  <option value="camp">Camp (summer)</option>
+                  <option value="afterschool">Afterschool</option>
                 </select>
               </div>
               <div class="form-group">
                 <label for="fSessionType">Session Type</label>
-                <input type="text" id="fSessionType" value="Summer" readonly />
+                <select id="fSessionType">
+                  <option value="day">Day</option>
+                  <option value="residential">Residential (overnight)</option>
+                  <option value="hybrid">Hybrid</option>
+                  <option value="drop-in">Drop-in</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="fScheduleType">Schedule</label>
+                <select id="fScheduleType">
+                  <option value="seasonal">Seasonal</option>
+                  <option value="weekly">Weekly</option>
+                  <option value="daily">Daily</option>
+                  <option value="year-round">Year-round</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="fConfidence">Confidence</label>
+                <select id="fConfidence">
+                  <option value="confirmed">Confirmed</option>
+                  <option value="likely">Likely</option>
+                  <option value="inactive">Inactive</option>
+                </select>
               </div>
             </div>
           </fieldset>
 
-          <!-- Location -->
+          <!-- Site Location -->
           <fieldset>
-            <legend>Location</legend>
+            <legend>Site Location <small style="font-weight:400;color:#6b7280;">(program site, if different from org address)</small></legend>
             <div class="form-row">
               <div class="form-group full">
-                <label for="fAddress">Address</label>
+                <label for="fAddress">Street Address</label>
                 <input type="text" id="fAddress" />
               </div>
             </div>
@@ -418,34 +568,15 @@
                 <label for="fCity">City</label>
                 <input type="text" id="fCity" />
               </div>
-              <div class="form-group narrow">
-                <label for="fState">State</label>
-                <input type="text" id="fState" maxlength="2" />
-              </div>
-              <div class="form-group narrow">
-                <label for="fZip">Zip</label>
-                <input type="text" id="fZip" maxlength="10" />
-              </div>
-            </div>
-          </fieldset>
-
-          <!-- Contact -->
-          <fieldset>
-            <legend>Contact</legend>
-            <div class="form-row">
               <div class="form-group">
-                <label for="fPhone">Phone</label>
-                <input type="tel" id="fPhone" />
-              </div>
-              <div class="form-group">
-                <label for="fEmail">Email</label>
-                <input type="email" id="fEmail" />
+                <label for="fCounty">County</label>
+                <input type="text" id="fCounty" placeholder="e.g. Chittenden" />
               </div>
             </div>
             <div class="form-row">
               <div class="form-group full">
-                <label for="fWebsite">Website URL</label>
-                <input type="url" id="fWebsite" placeholder="https://…" />
+                <label for="fRegUrl">Registration URL</label>
+                <input type="url" id="fRegUrl" placeholder="https://…" />
               </div>
             </div>
           </fieldset>
@@ -549,7 +680,7 @@
         <div class="modal-footer">
           <button type="button" class="btn-secondary" id="editCancelBtn">Cancel</button>
           <button type="button" class="btn-secondary" id="btnDuplicate" style="display:none;">⧉ Duplicate</button>
-          <button type="submit" class="btn-primary">Save Program</button>
+          <button type="submit" class="btn-primary" id="editSubmitBtn">Save Program</button>
         </div>
       </form>
     </div>
@@ -559,7 +690,7 @@
   <div class="modal-overlay" id="deleteModal">
     <div class="modal modal-narrow">
       <div class="modal-header">
-        <h2>Delete Program?</h2>
+        <h2 id="deleteModalHeading">Delete?</h2>
         <button class="modal-close" id="deleteModalClose">✕</button>
       </div>
       <div class="modal-body">
@@ -572,48 +703,173 @@
     </div>
   </div>
 
+  <!-- ===== Organization Edit Modal ===== -->
+  <div class="modal-overlay" id="orgModal">
+    <div class="modal modal-wide">
+      <div class="modal-header">
+        <h2 id="orgModalHeading">Edit Organization</h2>
+        <button class="modal-close" id="orgModalClose">✕</button>
+      </div>
+      <form id="orgForm">
+        <div class="modal-body">
+
+          <fieldset>
+            <legend>Identity</legend>
+            <div class="form-row">
+              <div class="form-group full">
+                <label for="ofName">Organization Name *</label>
+                <input type="text" id="ofName" required />
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="ofId">Org ID <small style="font-weight:400;color:#6b7280;">(slug, read-only after creation)</small></label>
+                <input type="text" id="ofId" pattern="[a-z0-9][a-z0-9\-]*[a-z0-9]" title="kebab-case only" />
+              </div>
+              <div class="form-group">
+                <label for="ofType">Org Type</label>
+                <select id="ofType">
+                  <option value="">— unset —</option>
+                  <option value="nonprofit">Nonprofit</option>
+                  <option value="municipal">Municipal / Recreation Dept</option>
+                  <option value="school">School / School District</option>
+                  <option value="private">Private / For-profit</option>
+                  <option value="university">University</option>
+                  <option value="faith-based">Faith-based</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="ofConfidence">Confidence</label>
+                <select id="ofConfidence">
+                  <option value="confirmed">Confirmed</option>
+                  <option value="likely">Likely</option>
+                  <option value="inactive">Inactive</option>
+                </select>
+              </div>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>Contact</legend>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="ofPhone">Phone</label>
+                <input type="tel" id="ofPhone" />
+              </div>
+              <div class="form-group">
+                <label for="ofEmail">Email</label>
+                <input type="email" id="ofEmail" />
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group full">
+                <label for="ofWebsite">Website</label>
+                <input type="url" id="ofWebsite" placeholder="https://…" />
+              </div>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>Address</legend>
+            <div class="form-row">
+              <div class="form-group full">
+                <label for="ofAddress">Street Address</label>
+                <input type="text" id="ofAddress" />
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="ofCity">City</label>
+                <input type="text" id="ofCity" />
+              </div>
+              <div class="form-group">
+                <label for="ofCounty">County</label>
+                <input type="text" id="ofCounty" />
+              </div>
+              <div class="form-group narrow">
+                <label for="ofState">State</label>
+                <input type="text" id="ofState" maxlength="2" value="VT" />
+              </div>
+              <div class="form-group narrow">
+                <label for="ofZip">Zip</label>
+                <input type="text" id="ofZip" maxlength="10" />
+              </div>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>Financial Aid</legend>
+            <div class="form-row checkbox-row">
+              <label><input type="checkbox" id="ofFinAid" /> Financial Aid Available</label>
+            </div>
+            <div class="form-row">
+              <div class="form-group full">
+                <label for="ofFinAidNotes">Financial Aid Notes</label>
+                <textarea id="ofFinAidNotes" rows="2"></textarea>
+              </div>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>Notes</legend>
+            <div class="form-row">
+              <div class="form-group full">
+                <label for="ofNotes">Internal Notes</label>
+                <textarea id="ofNotes" rows="2"></textarea>
+              </div>
+            </div>
+          </fieldset>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn-secondary" id="orgCancelBtn">Cancel</button>
+          <button type="submit" class="btn-primary">Save Organization</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
   <footer>
-    <p>Admin Tool – Camp &amp; Afterschool Care Finder &mdash; After exporting, replace <code>data.js</code> in the repository and commit.</p>
+    <p>Admin Tool – Camp &amp; Afterschool Care Finder &mdash; Save All stores edits to localStorage. To persist: run <code>python scripts/build_data_js.py</code> after editing CSVs directly, or use the dev server's CSV save endpoint.</p>
   </footer>
 
   <script src="data.js"></script>
+  <script>window.NAV_PAGE = 'admin';</script>
+  <script src="nav.js"></script>
   <script>
     // ===== Constants =====
-    const GRADES = ['K','1','2','3','4','5','6','7','8','9','10','11','12'];
+    const GRADES = ['PK','K','1','2','3','4','5','6','7','8','9','10','11','12'];
 
     const SUBJECTS = [
-      'STEM','Science','Technology','Coding','Math','Chess',
-      'Reading','Writing','Arts','Drama','Circus','Music',
-      'Dance','Tennis','Martial Arts','Gymnastics','Yoga',
-      'Skateboarding','Soccer','Basketball','Volleyball','Hockey',
-      'Lacrosse','Baseball','Sports','Mountain Biking','Disc Golf',
-      'Ultimate Frisbee','Sailing','Swim','Outdoor Education',
-      'Equestrian','Cooking','Animals'
+      'STEM','Coding','Robotics','Science','Math','Arts','Music',
+      'Theater','Dance','Sports','Outdoor Education','Nature','Swimming',
+      'Hiking','Horseback Riding','Cooking','Language','Leadership',
+      'Community Service','Special Needs Support','Academic Enrichment',
+      'Maker','Film & Media'
     ];
 
     const MONTH_ABBR = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
-    const PROVIDER_CSV_PATH = 'data/providers/provider_data_20260304.csv';
 
     // ===== State =====
-    const _saved = localStorage.getItem('adminCampData');
-    const savedCampRows = _saved ? JSON.parse(_saved) : null;
+    // Load programs from data.js PROGRAMS (preferred) or localStorage fallback
+    const _savedP = localStorage.getItem('adminProgramData');
+    const _savedO = localStorage.getItem('adminOrgData');
 
-    let campRows = (savedCampRows || programsData || []).map(p => ({
-      ...p,
-      uid: p.uid || `camp-${p.id}`,
-      category: 'camp',
-      source: 'camp',
-      programTypeLabel: p.type || 'Summer Camp'
-    }));
-    let providerRows = [];
-    let adminData = [...campRows];
+    let campRows = (_savedP ? JSON.parse(_savedP) : null) ||
+                  (typeof PROGRAMS !== 'undefined' ? PROGRAMS : []);
+    let orgRows  = (_savedO ? JSON.parse(_savedO) : null) ||
+                  (typeof ORGANIZATIONS !== 'undefined' ? [...ORGANIZATIONS] : []);
 
-    let sortCol   = 'name';
-    let sortDir   = 'asc';
+    let activeView = 'programs'; // 'programs' | 'orgs'
+    let sortCol    = 'name';
+    let sortDir    = 'asc';
+    let orgSortCol = 'name';
+    let orgSortDir = 'asc';
     let searchQuery = '';
-    let selectedTypeFilter = '';
     let editingUid  = null;  // null = new entry
+    let editingOrgId = null; // null = new org
     let deletingUid = null;
+    let deletingOrgId = null;
     let isDirty     = false;
 
     // ===== Helpers =====
@@ -631,196 +887,40 @@
       return '—';
     }
 
+    function esc(str) {
+      return String(str ?? '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+    }
+
     function markDirty() {
       isDirty = true;
       document.getElementById('dirtyBadge').style.display = '';
     }
 
-    function asString(v) {
-      return String(v || '').trim();
-    }
+    // ===== View Toggle =====
+    function setView(view) {
+      activeView = view;
+      searchQuery = '';
+      document.getElementById('adminSearch').value = '';
 
-    function parseNumber(raw) {
-      const n = parseInt(String(raw || '').replace(/[^0-9-]/g, ''), 10);
-      return Number.isFinite(n) ? n : 0;
-    }
+      document.querySelectorAll('.view-btn').forEach(b => b.classList.toggle('active', b.dataset.view === view));
 
-    function yesNoToBool(raw) {
-      return asString(raw).toLowerCase() === 'yes';
-    }
+      const progView = document.getElementById('programsView');
+      const orgsView = document.getElementById('orgsView');
+      const typeFilter = document.getElementById('typeFilter');
+      const btnAdd = document.getElementById('btnAdd');
 
-    function parseCsv(csvText) {
-      const rows = [];
-      let cur = '';
-      let row = [];
-      let inQuotes = false;
-
-      for (let i = 0; i < csvText.length; i++) {
-        const ch = csvText[i];
-        const next = csvText[i + 1];
-
-        if (ch === '"') {
-          if (inQuotes && next === '"') {
-            cur += '"';
-            i++;
-          } else {
-            inQuotes = !inQuotes;
-          }
-          continue;
-        }
-
-        if (ch === ',' && !inQuotes) {
-          row.push(cur);
-          cur = '';
-          continue;
-        }
-
-        if ((ch === '\n' || ch === '\r') && !inQuotes) {
-          if (ch === '\r' && next === '\n') i++;
-          row.push(cur);
-          const hasData = row.some(cell => asString(cell) !== '');
-          if (hasData) rows.push(row);
-          row = [];
-          cur = '';
-          continue;
-        }
-
-        cur += ch;
-      }
-
-      if (cur.length || row.length) {
-        row.push(cur);
-        const hasData = row.some(cell => asString(cell) !== '');
-        if (hasData) rows.push(row);
-      }
-
-      if (rows.length === 0) return [];
-
-      const header = rows[0].map(h => asString(h));
-      return rows.slice(1).map(r => {
-        const obj = {};
-        header.forEach((h, idx) => {
-          obj[h] = r[idx] ?? '';
-        });
-        return obj;
-      });
-    }
-
-    function providerToProgram(row) {
-      const programType = asString(row['Provider Program Type']);
-      const isAfterschool = programType.toLowerCase().includes('afterschool');
-
-      const schoolAgeCap = parseNumber(row['School Age Licensed Capacity']);
-      const infantCap = parseNumber(row['Infant Licensed Capacity']);
-      const toddlerCap = parseNumber(row['Toddler Licensed Capacity']);
-      const preschoolCap = parseNumber(row['Preschool Licensed Capacity']);
-
-      let gradesMin = '';
-      let gradesMax = '';
-      if (schoolAgeCap > 0) {
-        gradesMin = 'K';
-        gradesMax = '12';
-      }
-
-      let ageMin = null;
-      let ageMax = null;
-      if (infantCap > 0) ageMin = 0;
-      if (toddlerCap > 0) ageMax = 4;
-      if (preschoolCap > 0 && ageMax === null) ageMax = 5;
-      if (schoolAgeCap > 0 && ageMax === null) ageMax = 17;
-
-      const start = asString(row['Usual Program Start']);
-      const end = asString(row['Usual Program End']);
-      const hours = start && end ? `${start} - ${end}` : '';
-
-      const addr1 = asString(row['Address 1']);
-      const addr2 = asString(row['Address 2']);
-      const address = [addr1, addr2].filter(Boolean).join(', ');
-
-      const stars = asString(row['Current STARS Level']);
-      const typeLabel = programType || (isAfterschool ? 'Afterschool Care' : 'Daycare');
-
-      return {
-        uid: `provider-${asString(row['Provider ID'])}`,
-        id: parseNumber(row['Provider ID']),
-        category: isAfterschool ? 'afterschool' : 'daycare',
-        source: 'provider',
-        programTypeLabel: typeLabel,
-        type: isAfterschool ? 'Afterschool Care' : 'Daycare',
-        providerProgramType: typeLabel,
-        name: asString(row['Provider Name']) || 'Unknown Provider',
-        organization: asString(row['License Type']) || asString(row['Provider Name']) || '',
-        address,
-        city: asString(row['Provider Town']),
-        state: 'VT',
-        zip: asString(row['Zip Code']),
-        phone: asString(row['Phone Number']),
-        email: asString(row['Email Address']),
-        website: '',
-        gradesMin,
-        gradesMax,
-        ageMin,
-        ageMax,
-        cost: 0,
-        costPeriod: 'session',
-        scholarshipAvailable: false,
-        hours,
-        daysOffered: '',
-        sessionType: asString(row['Special Schedule']) || 'Year-round',
-        subjects: [],
-        description: [typeLabel, stars, asString(row['County']), asString(row['Provider Referral Status'])].filter(Boolean).join(' · '),
-        indoorOutdoor: 'Both',
-        transportation: false,
-        mealsProvided: yesNoToBool(row['Reported Food Program Participation']),
-        acceptingRegistration: asString(row['Provider Referral Status']) !== 'Inactive',
-        startDate: '',
-        endDate: ''
-      };
-    }
-
-    async function loadProviderRows() {
-      try {
-        const resp = await fetch(PROVIDER_CSV_PATH, { cache: 'no-store' });
-        if (!resp.ok) return [];
-        const text = await resp.text();
-        const rows = parseCsv(text);
-        providerRowsOriginal = rows; // Store original data
-        return rows.map(providerToProgram);
-      } catch (err) {
-        console.error('Could not load provider CSV for admin view:', err);
-        return [];
-      }
-    }
-
-    function campOnlyRows() {
-      return adminData.filter(p => p.source === 'camp');
-    }
-
-    function recombineRows() {
-      adminData = [...campRows, ...providerRows];
-    }
-
-    function normalizeTypeLabel(p) {
-      return p.programTypeLabel || p.providerProgramType || p.type || 'Unknown';
-    }
-
-    function refreshTypeFilterOptions() {
-      const select = document.getElementById('typeFilter');
-      const current = selectedTypeFilter;
-      const uniqueTypes = [...new Set(adminData.map(normalizeTypeLabel))].filter(Boolean).sort();
-
-      select.innerHTML = '<option value="">All Program Types</option>';
-      uniqueTypes.forEach(typeLabel => {
-        const opt = document.createElement('option');
-        opt.value = typeLabel;
-        opt.textContent = typeLabel;
-        select.appendChild(opt);
-      });
-
-      if (current && uniqueTypes.includes(current)) {
-        select.value = current;
+      if (view === 'programs') {
+        progView.style.display = '';
+        orgsView.style.display = 'none';
+        typeFilter.style.display = '';
+        btnAdd.textContent = '+ Add Program';
+        renderTable();
       } else {
-        selectedTypeFilter = '';
+        progView.style.display = 'none';
+        orgsView.style.display = '';
+        typeFilter.style.display = 'none';
+        btnAdd.textContent = '+ Add Organization';
+        renderOrgsTable();
       }
     }
 
@@ -833,18 +933,33 @@
 
     function buildGradeSelects() {
       const opts = '<option value="">— unset —</option>' +
-        GRADES.map(g => `<option value="${g}">${g === 'K' ? 'Kindergarten' : 'Grade ' + g}</option>`).join('');
+        GRADES.map(g => `<option value="${g}">${g === 'K' ? 'Kindergarten' : g === 'PK' ? 'Pre-K' : 'Grade ' + g}</option>`).join('');
       document.getElementById('fGradesMin').innerHTML = opts;
       document.getElementById('fGradesMax').innerHTML = opts;
     }
 
-    // ===== Sort / Filter =====
+    function buildOrgSelect() {
+      const sel = document.getElementById('fOrgId');
+      const sorted = [...orgRows].sort((a, b) => (a.name || '').localeCompare(b.name || ''));
+      sel.innerHTML = '<option value="">— select organization —</option>' +
+        sorted.map(o => `<option value="${esc(o.orgId)}">${esc(o.name)}</option>`).join('');
+    }
+
+    function refreshTypeFilterOptions() {
+      const select = document.getElementById('typeFilter');
+      const uniqueTypes = [...new Set(campRows.map(p => p.category || ''))].filter(Boolean).sort();
+      select.innerHTML = '<option value="">All Types</option>' +
+        uniqueTypes.map(t => `<option value="${t}">${t === 'camp' ? 'Camp' : 'Afterschool'}</option>`).join('');
+    }
+
+    // ===== Programs: Sort / Filter =====
     function getSortedFiltered() {
       const q = searchQuery.toLowerCase().trim();
-      let rows = adminData.filter(p => {
-        if (selectedTypeFilter && normalizeTypeLabel(p) !== selectedTypeFilter) return false;
+      const typeFilter = document.getElementById('typeFilter').value;
+      let rows = campRows.filter(p => {
+        if (typeFilter && (p.category || '') !== typeFilter) return false;
         if (!q) return true;
-        return [p.name, p.organization, p.city, normalizeTypeLabel(p), ...(p.subjects || [])]
+        return [p.name, p.orgName, p.organization, p.city, ...(p.subjects || [])]
           .join(' ').toLowerCase().includes(q);
       });
 
@@ -866,37 +981,37 @@
       return rows;
     }
 
-    // ===== Render Table =====
+    // ===== Render Programs Table =====
     function renderTable() {
       const rows = getSortedFiltered();
       const tbody = document.getElementById('adminTbody');
 
       tbody.innerHTML = rows.map(p => {
-        const badgeClass = p.category === 'camp' ? 'badge-camp' : 'badge-both';
-        const typeLabel = normalizeTypeLabel(p);
-        const actionsHtml = `<button class="btn-icon edit" data-uid="${esc(p.uid)}">✏ Edit</button>
-             <button class="btn-icon del"  data-uid="${esc(p.uid)}">✕ Delete</button>`;
+        const badgeClass = (p.category || 'camp') === 'camp' ? 'badge-camp' : 'badge-both';
+        const typeLabel  = p.category === 'afterschool' ? 'Afterschool' : 'Camp';
+        const orgDisplay = p.orgName || p.organization || p.orgId || '—';
         return `<tr>
           <td class="td-name"><span class="td-trunc" title="${esc(p.name)}">${esc(p.name)}</span></td>
-          <td class="td-org"><span class="td-trunc" title="${esc(p.organization)}">${esc(p.organization)}</span></td>
+          <td class="td-org"><span class="td-trunc" title="${esc(orgDisplay)}">${esc(orgDisplay)}</span></td>
           <td>${esc(p.city || '—')}</td>
           <td><span class="type-badge ${badgeClass}">${typeLabel}</span></td>
           <td>${esc(gradeRange(p))}</td>
           <td>${fmtDate(p.startDate)}</td>
-          <td><div class="td-actions">${actionsHtml}</div></td>
+          <td><div class="td-actions">
+            <button class="btn-icon edit" data-uid="${esc(p.uid)}">✏ Edit</button>
+            <button class="btn-icon del"  data-uid="${esc(p.uid)}">✕ Delete</button>
+          </div></td>
         </tr>`;
       }).join('');
 
-      // Attach row button listeners
       tbody.querySelectorAll('.btn-icon.edit').forEach(btn =>
         btn.addEventListener('click', () => openEditModal(btn.dataset.uid))
       );
       tbody.querySelectorAll('.btn-icon.del').forEach(btn =>
-        btn.addEventListener('click', () => confirmDelete(btn.dataset.uid))
+        btn.addEventListener('click', () => confirmDelete(btn.dataset.uid, 'program'))
       );
 
-      // Update sort indicators
-      document.querySelectorAll('thead th[data-col]').forEach(th => {
+      document.querySelectorAll('#adminTable thead th[data-col]').forEach(th => {
         const ind = th.querySelector('.sort-indicator');
         if (th.dataset.col === sortCol) {
           th.classList.add('sort-active');
@@ -907,85 +1022,130 @@
         }
       });
 
-      updateStats(rows.length);
-    }
-
-    function esc(str) {
-      return String(str ?? '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
-    }
-
-    function updateStats(shown) {
       const el = document.getElementById('tableStats');
-      const total = adminData.length;
-      if (shown === undefined) shown = getSortedFiltered().length;
-      el.innerHTML = `Showing <strong>${shown}</strong> of <strong>${total}</strong> programs (${campRows.length} camp + ${providerRows.length} provider records, all editable)`;
+      el.innerHTML = `Showing <strong>${rows.length}</strong> of <strong>${campRows.length}</strong> programs`;
+    }
+
+    // ===== Render Organizations Table =====
+    function getOrgsSortedFiltered() {
+      const q = searchQuery.toLowerCase().trim();
+      let rows = orgRows.filter(o => {
+        if (!q) return true;
+        return [o.name, o.city, o.county, o.type].join(' ').toLowerCase().includes(q);
+      });
+      rows.sort((a, b) => {
+        let av = ((a[orgSortCol] ?? '')).toLowerCase();
+        let bv = ((b[orgSortCol] ?? '')).toLowerCase();
+        if (av < bv) return orgSortDir === 'asc' ? -1 : 1;
+        if (av > bv) return orgSortDir === 'asc' ?  1 : -1;
+        return 0;
+      });
+      return rows;
+    }
+
+    function renderOrgsTable() {
+      const rows = getOrgsSortedFiltered();
+      const tbody = document.getElementById('orgsTbody');
+
+      tbody.innerHTML = rows.map(o => {
+        return `<tr>
+          <td class="td-name"><span class="td-trunc" title="${esc(o.name)}">${esc(o.name)}</span></td>
+          <td>${esc(o.type || '—')}</td>
+          <td>${esc(o.city || '—')}</td>
+          <td>${esc(o.county || '—')}</td>
+          <td><span class="type-badge ${o.confidence === 'confirmed' ? 'badge-camp' : 'badge-both'}">${esc(o.confidence || '—')}</span></td>
+          <td><div class="td-actions">
+            <button class="btn-icon edit" data-orgid="${esc(o.orgId)}">✏ Edit</button>
+            <button class="btn-icon del"  data-orgid="${esc(o.orgId)}">✕ Delete</button>
+          </div></td>
+        </tr>`;
+      }).join('');
+
+      tbody.querySelectorAll('.btn-icon.edit').forEach(btn =>
+        btn.addEventListener('click', () => openOrgModal(btn.dataset.orgid))
+      );
+      tbody.querySelectorAll('.btn-icon.del').forEach(btn =>
+        btn.addEventListener('click', () => confirmDelete(btn.dataset.orgid, 'org'))
+      );
+
+      document.querySelectorAll('#orgsTable thead th[data-col]').forEach(th => {
+        const ind = th.querySelector('.sort-indicator');
+        if (th.dataset.col === orgSortCol) {
+          th.classList.add('sort-active');
+          ind.textContent = orgSortDir === 'asc' ? ' ▲' : ' ▼';
+        } else {
+          th.classList.remove('sort-active');
+          ind.textContent = '';
+        }
+      });
+
+      const el = document.getElementById('tableStats');
+      el.innerHTML = `Showing <strong>${rows.length}</strong> of <strong>${orgRows.length}</strong> organizations`;
     }
 
     // ===== Sort =====
     function handleSort(col) {
-      if (sortCol === col) {
-        sortDir = sortDir === 'asc' ? 'desc' : 'asc';
+      if (activeView === 'programs') {
+        if (sortCol === col) sortDir = sortDir === 'asc' ? 'desc' : 'asc';
+        else { sortCol = col; sortDir = 'asc'; }
+        renderTable();
       } else {
-        sortCol = col;
-        sortDir = 'asc';
+        if (orgSortCol === col) orgSortDir = orgSortDir === 'asc' ? 'desc' : 'asc';
+        else { orgSortCol = col; orgSortDir = 'asc'; }
+        renderOrgsTable();
       }
-      renderTable();
     }
 
     // ===== Blank Program =====
     function blankProgram() {
       return {
-        uid: null,
-        source: 'camp',
-        category: 'camp',
-        programTypeLabel: 'Summer Camp',
-        providerProgramType: 'Summer Camp',
-        id: null, name: '', type: 'Summer Camp', organization: '',
-        address: '', city: '', state: 'VT', zip: '',
-        phone: '', email: '', website: '',
+        uid: null, id: null,
+        category: 'camp', orgId: '', orgName: '', name: '',
+        sessionType: 'day', scheduleType: 'seasonal', confidence: 'confirmed',
+        address: '', city: '', county: '',
         gradesMin: '', gradesMax: '', ageMin: null, ageMax: null,
-        cost: 0, costPeriod: 'session', scholarshipAvailable: false,
-        hours: '', daysOffered: 'Mon–Fri', sessionType: 'Summer',
+        cost: 0, costPeriod: 'week', scholarshipAvailable: false,
+        hours: '', daysOffered: 'Mon–Fri',
         subjects: [], description: '', indoorOutdoor: 'Both',
         transportation: false, mealsProvided: false,
-        acceptingRegistration: true, startDate: '', endDate: ''
+        acceptingRegistration: true, startDate: '', endDate: '',
+        registrationUrl: ''
       };
     }
 
-    // ===== Edit Modal =====
+    // ===== Edit Modal (Programs) =====
     function openEditModal(uid) {
       editingUid = uid;
-      const p = uid === null ? blankProgram() : adminData.find(x => x.uid === uid);
+      const p = uid === null ? blankProgram() : campRows.find(x => x.uid === uid);
       if (!p) return;
 
       document.getElementById('modalHeading').textContent = uid === null ? 'Add Program' : 'Edit Program';
-      document.getElementById('fName').value        = p.name || '';
-      document.getElementById('fOrg').value         = p.organization || '';
-      document.getElementById('fType').value        = p.type || 'Summer Camp';
-      document.getElementById('fSessionType').value = p.sessionType || 'Summer';
-      document.getElementById('fAddress').value     = p.address || '';
-      document.getElementById('fCity').value        = p.city || '';
-      document.getElementById('fState').value       = p.state || 'VT';
-      document.getElementById('fZip').value         = p.zip || '';
-      document.getElementById('fPhone').value       = p.phone || '';
-      document.getElementById('fEmail').value       = p.email || '';
-      document.getElementById('fWebsite').value     = p.website || '';
-      document.getElementById('fGradesMin').value   = p.gradesMin || '';
-      document.getElementById('fGradesMax').value   = p.gradesMax || '';
-      document.getElementById('fAgeMin').value      = p.ageMin != null ? p.ageMin : '';
-      document.getElementById('fAgeMax').value      = p.ageMax != null ? p.ageMax : '';
-      document.getElementById('fStartDate').value   = p.startDate || '';
-      document.getElementById('fEndDate').value     = p.endDate || '';
-      document.getElementById('fHours').value       = p.hours || '';
-      document.getElementById('fDays').value        = p.daysOffered || 'Mon–Fri';
-      document.getElementById('fCost').value        = p.cost != null ? p.cost : '';
-      document.getElementById('fCostPeriod').value  = p.costPeriod || 'session';
-      document.getElementById('fIndoorOutdoor').value = p.indoorOutdoor || 'Both';
-      document.getElementById('fScholarship').checked   = !!p.scholarshipAvailable;
+      document.getElementById('fName').value           = p.name || '';
+      document.getElementById('fOrgId').value          = p.orgId || '';
+      document.getElementById('fCategory').value       = p.category || 'camp';
+      document.getElementById('fSessionType').value    = p.sessionType || 'day';
+      document.getElementById('fScheduleType').value   = p.scheduleType || 'seasonal';
+      document.getElementById('fConfidence').value     = p.confidence || 'confirmed';
+      document.getElementById('fAddress').value        = p.address || '';
+      document.getElementById('fCity').value           = p.city || '';
+      document.getElementById('fCounty').value         = p.county || '';
+      document.getElementById('fRegUrl').value         = p.registrationUrl || p.website || '';
+      document.getElementById('fGradesMin').value      = p.gradesMin || '';
+      document.getElementById('fGradesMax').value      = p.gradesMax || '';
+      document.getElementById('fAgeMin').value         = p.ageMin != null ? p.ageMin : '';
+      document.getElementById('fAgeMax').value         = p.ageMax != null ? p.ageMax : '';
+      document.getElementById('fStartDate').value      = p.startDate || '';
+      document.getElementById('fEndDate').value        = p.endDate || '';
+      document.getElementById('fHours').value          = p.hours || '';
+      document.getElementById('fDays').value           = p.daysOffered || 'Mon–Fri';
+      document.getElementById('fCost').value           = p.cost != null ? p.cost : '';
+      document.getElementById('fCostPeriod').value     = p.costPeriod || 'week';
+      document.getElementById('fIndoorOutdoor').value  = p.indoorOutdoor || 'Both';
+      document.getElementById('fScholarship').checked  = !!p.scholarshipAvailable;
       document.getElementById('fTransportation').checked = !!p.transportation;
-      document.getElementById('fMeals').checked         = !!p.mealsProvided;
-      document.getElementById('fAccepting').checked     = p.acceptingRegistration !== false;
-      document.getElementById('fDescription').value  = p.description || '';
+      document.getElementById('fMeals').checked        = !!p.mealsProvided;
+      document.getElementById('fAccepting').checked    = p.acceptingRegistration !== false;
+      document.getElementById('fDescription').value    = p.description || '';
 
       const subs = p.subjects || [];
       SUBJECTS.forEach(s => {
@@ -1002,6 +1162,8 @@
       const ageMinVal = document.getElementById('fAgeMin').value;
       const ageMaxVal = document.getElementById('fAgeMax').value;
       const costVal   = document.getElementById('fCost').value;
+      const orgId     = document.getElementById('fOrgId').value;
+      const org       = orgRows.find(o => o.orgId === orgId);
 
       const subjects = SUBJECTS.filter(s => {
         const cb = document.getElementById(subjectToId(s));
@@ -1010,31 +1172,28 @@
 
       return {
         uid:                  editingUid,
-        source:               'camp',
-        category:             'camp',
-        name:                 document.getElementById('fName').value.trim(),
-        type:                 document.getElementById('fType').value,
-        providerProgramType:  document.getElementById('fType').value,
-        programTypeLabel:     document.getElementById('fType').value,
         id:                   null,
-        organization:         document.getElementById('fOrg').value.trim(),
+        category:             document.getElementById('fCategory').value,
+        orgId:                orgId,
+        orgName:              org ? org.name : orgId,
+        organization:         org ? org.name : orgId,
+        name:                 document.getElementById('fName').value.trim(),
+        sessionType:          document.getElementById('fSessionType').value,
+        scheduleType:         document.getElementById('fScheduleType').value,
+        confidence:           document.getElementById('fConfidence').value,
         address:              document.getElementById('fAddress').value.trim(),
         city:                 document.getElementById('fCity').value.trim(),
-        state:                document.getElementById('fState').value.trim() || 'VT',
-        zip:                  document.getElementById('fZip').value.trim(),
-        phone:                document.getElementById('fPhone').value.trim(),
-        email:                document.getElementById('fEmail').value.trim(),
-        website:              document.getElementById('fWebsite').value.trim(),
+        county:               document.getElementById('fCounty').value.trim(),
+        registrationUrl:      document.getElementById('fRegUrl').value.trim(),
         gradesMin:            document.getElementById('fGradesMin').value,
         gradesMax:            document.getElementById('fGradesMax').value,
         ageMin:               ageMinVal ? parseInt(ageMinVal, 10) : null,
         ageMax:               ageMaxVal ? parseInt(ageMaxVal, 10) : null,
-        cost:                 costVal ? parseInt(costVal, 10) : 0,
+        cost:                 costVal ? parseFloat(costVal) : 0,
         costPeriod:           document.getElementById('fCostPeriod').value,
         scholarshipAvailable: document.getElementById('fScholarship').checked,
         hours:                document.getElementById('fHours').value.trim(),
         daysOffered:          document.getElementById('fDays').value.trim(),
-        sessionType:          'Summer',
         subjects:             subjects,
         description:          document.getElementById('fDescription').value.trim(),
         indoorOutdoor:        document.getElementById('fIndoorOutdoor').value,
@@ -1043,86 +1202,160 @@
         acceptingRegistration: document.getElementById('fAccepting').checked,
         startDate:            document.getElementById('fStartDate').value,
         endDate:              document.getElementById('fEndDate').value,
+        // Pass through merged org contact fields so modal display still works
+        phone:   org ? org.phone   : '',
+        email:   org ? org.email   : '',
+        website: org ? org.website : '',
+        state:   'VT',
+        zip:     org ? org.zip     : '',
       };
     }
 
     function handleSave(e) {
       e.preventDefault();
       const entry = readFormIntoObject();
-      
+
       if (editingUid === null) {
-        // New camp record
-        const maxCampId = Math.max(0, ...campRows.map(p => p.id || 0));
-        entry.id = maxCampId + 1;
-        entry.uid = `camp-${entry.id}`;
-        entry.source = 'camp';
+        const maxId = Math.max(0, ...campRows.map(p => p.id || 0));
+        entry.id  = maxId + 1;
+        entry.uid = `prog-${entry.id}`;
         campRows.push(entry);
       } else {
-        // Existing record - determine if camp or provider
-        const existing = adminData.find(x => x.uid === editingUid);
-        if (existing && existing.source === 'provider') {
-          // Update provider record
-          const idx = providerRows.findIndex(p => p.uid === editingUid);
-          if (idx >= 0) {
-            entry.source = 'provider';
-            entry.id = providerRows[idx].id;
-            providerRows[idx] = entry;
-          }
-        } else {
-          // Update camp record
-          const idx = campRows.findIndex(p => p.uid === editingUid);
-          if (idx >= 0) {
-            entry.id = campRows[idx].id;
-            entry.uid = campRows[idx].uid;
-            entry.source = 'camp';
-            campRows[idx] = entry;
-          }
+        const idx = campRows.findIndex(p => p.uid === editingUid);
+        if (idx >= 0) {
+          entry.id  = campRows[idx].id;
+          entry.uid = campRows[idx].uid;
+          campRows[idx] = entry;
         }
       }
 
-      recombineRows();
       refreshTypeFilterOptions();
       markDirty();
       closeModal('editModal');
       renderTable();
     }
 
+    // ===== Org Modal =====
+    function blankOrg() {
+      return {
+        orgId: '', name: '', type: '', phone: '', email: '', website: '',
+        address: '', city: '', county: '', state: 'VT', zip: '',
+        financialAidAvailable: false, financialAidNotes: '', confidence: 'likely', notes: ''
+      };
+    }
+
+    function openOrgModal(orgId) {
+      editingOrgId = orgId;
+      const o = orgId === null ? blankOrg() : orgRows.find(x => x.orgId === orgId);
+      if (!o) return;
+
+      document.getElementById('orgModalHeading').textContent = orgId === null ? 'Add Organization' : 'Edit Organization';
+      document.getElementById('ofId').value          = o.orgId || '';
+      document.getElementById('ofId').readOnly       = orgId !== null; // can't rename slug
+      document.getElementById('ofName').value        = o.name || '';
+      document.getElementById('ofType').value        = o.type || '';
+      document.getElementById('ofConfidence').value  = o.confidence || 'likely';
+      document.getElementById('ofPhone').value       = o.phone || '';
+      document.getElementById('ofEmail').value       = o.email || '';
+      document.getElementById('ofWebsite').value     = o.website || '';
+      document.getElementById('ofAddress').value     = o.address || '';
+      document.getElementById('ofCity').value        = o.city || '';
+      document.getElementById('ofCounty').value      = o.county || '';
+      document.getElementById('ofState').value       = o.state || 'VT';
+      document.getElementById('ofZip').value         = o.zip || '';
+      document.getElementById('ofFinAid').checked    = !!o.financialAidAvailable;
+      document.getElementById('ofFinAidNotes').value = o.financialAidNotes || '';
+      document.getElementById('ofNotes').value       = o.notes || '';
+
+      openModal('orgModal');
+      document.getElementById('ofName').focus();
+    }
+
+    function handleOrgSave(e) {
+      e.preventDefault();
+      const entry = {
+        orgId:                document.getElementById('ofId').value.trim(),
+        name:                 document.getElementById('ofName').value.trim(),
+        type:                 document.getElementById('ofType').value,
+        confidence:           document.getElementById('ofConfidence').value,
+        phone:                document.getElementById('ofPhone').value.trim(),
+        email:                document.getElementById('ofEmail').value.trim(),
+        website:              document.getElementById('ofWebsite').value.trim(),
+        address:              document.getElementById('ofAddress').value.trim(),
+        city:                 document.getElementById('ofCity').value.trim(),
+        county:               document.getElementById('ofCounty').value.trim(),
+        state:                document.getElementById('ofState').value.trim() || 'VT',
+        zip:                  document.getElementById('ofZip').value.trim(),
+        financialAidAvailable: document.getElementById('ofFinAid').checked,
+        financialAidNotes:    document.getElementById('ofFinAidNotes').value.trim(),
+        notes:                document.getElementById('ofNotes').value.trim(),
+      };
+
+      if (editingOrgId === null) {
+        if (!entry.orgId) {
+          alert('Org ID (slug) is required for new organizations.');
+          return;
+        }
+        if (orgRows.some(o => o.orgId === entry.orgId)) {
+          alert(`Org ID "${entry.orgId}" already exists.`);
+          return;
+        }
+        orgRows.push(entry);
+      } else {
+        const idx = orgRows.findIndex(o => o.orgId === editingOrgId);
+        if (idx >= 0) orgRows[idx] = entry;
+      }
+
+      buildOrgSelect(); // refresh dropdown options
+      markDirty();
+      closeModal('orgModal');
+      renderOrgsTable();
+    }
+
     // ===== Delete =====
-    function confirmDelete(uid) {
-      deletingUid = uid;
-      const p = adminData.find(x => x.uid === uid);
-      if (!p) return;
-      document.getElementById('deleteModalName').textContent = p ? p.name : '';
+    function confirmDelete(id, kind) {
+      if (kind === 'program') {
+        deletingUid   = id;
+        deletingOrgId = null;
+        const p = campRows.find(x => x.uid === id);
+        document.getElementById('deleteModalHeading').textContent = 'Delete Program?';
+        document.getElementById('deleteModalName').textContent = p ? p.name : id;
+      } else {
+        deletingOrgId = id;
+        deletingUid   = null;
+        const o = orgRows.find(x => x.orgId === id);
+        document.getElementById('deleteModalHeading').textContent = 'Delete Organization?';
+        document.getElementById('deleteModalName').textContent = o ? o.name : id;
+      }
       openModal('deleteModal');
     }
 
     function executeDelete() {
-      const toDelete = adminData.find(x => x.uid === deletingUid);
-      if (toDelete && toDelete.source === 'provider') {
-        // Delete provider record
-        providerRows = providerRows.filter(p => p.uid !== deletingUid);
-      } else {
-        // Delete camp record
+      if (deletingUid !== null) {
         campRows = campRows.filter(p => p.uid !== deletingUid);
+        refreshTypeFilterOptions();
+        closeModal('deleteModal');
+        renderTable();
+      } else if (deletingOrgId !== null) {
+        // Guard: don't delete an org that programs reference
+        const inUse = campRows.some(p => p.orgId === deletingOrgId);
+        if (inUse) {
+          alert('Cannot delete: programs still reference this organization. Re-assign them first.');
+          closeModal('deleteModal');
+          return;
+        }
+        orgRows = orgRows.filter(o => o.orgId !== deletingOrgId);
+        buildOrgSelect();
+        closeModal('deleteModal');
+        renderOrgsTable();
       }
-      recombineRows();
-      refreshTypeFilterOptions();
       markDirty();
-      closeModal('deleteModal');
-      renderTable();
     }
 
-    // ===== Save All (localStorage + CSV) =====
+    // ===== Save All (localStorage) =====
     async function saveAll() {
-      // Save camp data to localStorage
-      localStorage.setItem('adminCampData', JSON.stringify(campRows));
-      
-      // Save provider data to CSV if modified
-      if (providerRows.length > 0) {
-        const providerCsvContent = generateProviderCsv(providerRows);
-        await saveProviderCsv(providerCsvContent);
-      }
-      
+      localStorage.setItem('adminProgramData', JSON.stringify(campRows));
+      localStorage.setItem('adminOrgData',     JSON.stringify(orgRows));
       isDirty = false;
       document.getElementById('dirtyBadge').style.display = 'none';
       const btn = document.getElementById('btnSaveAll');
@@ -1130,84 +1363,6 @@
       btn.textContent = '✓ Saved';
       btn.disabled = true;
       setTimeout(() => { btn.textContent = orig; btn.disabled = false; }, 1500);
-    }
-
-    // ===== Provider CSV Export =====
-    function generateProviderCsv(providerPrograms) {
-      if (!providerRowsOriginal || providerRowsOriginal.length === 0) return '';
-      
-      const header = providerRowsOriginal[0] ? Object.keys(providerRowsOriginal[0]) : [];
-      const csvRows = [header.map(escapeCsvField).join(',')];
-      
-      providerPrograms.forEach(prog => {
-        // Find the original row to preserve all fields
-        const originalIdx = providerRows.findIndex(p => p.uid === prog.uid);
-        if (originalIdx >= 0 && providerRowsOriginal[originalIdx]) {
-          const originalRow = providerRowsOriginal[originalIdx];
-          const row = { ...originalRow };
-          
-          // Update fields that may have changed
-          row['Provider Name'] = prog.name || row['Provider Name'];
-          row['Provider Town'] = prog.city || row['Provider Town'];
-          row['Zip Code'] = prog.zip || row['Zip Code'];
-          row['Phone Number'] = prog.phone || row['Phone Number'];
-          row['Email Address'] = prog.email || row['Email Address'];
-          row['Provider Program Type'] = prog.type || row['Provider Program Type'];
-          
-          const values = header.map(h => escapeCsvField(row[h] ?? ''));
-          csvRows.push(values.join(','));
-        }
-      });
-      
-      return csvRows.join('\n');
-    }
-
-    function escapeCsvField(field) {
-      field = String(field ?? '');
-      if (field.includes(',') || field.includes('"') || field.includes('\n')) {
-        return '"' + field.replace(/"/g, '""') + '"';
-      }
-      return field;
-    }
-
-    async function saveProviderCsv(csvContent) {
-      try {
-        const response = await fetch('/__save_csv', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            path: PROVIDER_CSV_PATH,
-            content: csvContent
-          })
-        });
-        if (!response.ok) {
-          console.error('Failed to save provider CSV:', response.statusText);
-        }
-      } catch (err) {
-        console.error('Error saving provider CSV:', err);
-      }
-    }
-
-    // ===== Export =====
-    function exportDataJs() {
-      const campExport = campRows.map(({ source, category, programTypeLabel, providerProgramType, uid, ...rest }) => ({
-        ...rest,
-        type: rest.type || 'Summer Camp'
-      }));
-      const json = JSON.stringify(campExport, null, 2);
-      const content = `const programsData = ${json};\n`;
-      const blob = new Blob([content], { type: 'text/javascript' });
-      const url  = URL.createObjectURL(blob);
-      const a    = document.createElement('a');
-      a.href     = url;
-      a.download = 'data.js';
-      document.body.appendChild(a);
-      a.click();
-      document.body.removeChild(a);
-      URL.revokeObjectURL(url);
-      // Clear dirty flag after successful export
-      isDirty = false;
-      document.getElementById('dirtyBadge').style.display = 'none';
     }
 
     // ===== Modal helpers =====
@@ -1221,71 +1376,77 @@
     }
 
     // ===== Init =====
-    async function init() {
+    function init() {
       buildSubjectsGrid();
       buildGradeSelects();
-
-      providerRows = await loadProviderRows();
-      recombineRows();
+      buildOrgSelect();
       refreshTypeFilterOptions();
       renderTable();
     }
 
+    // View toggle
+    document.querySelectorAll('.view-btn').forEach(btn =>
+      btn.addEventListener('click', () => setView(btn.dataset.view))
+    );
+
     // Toolbar buttons
-    document.getElementById('btnAdd').addEventListener('click', () => openEditModal(null));
+    document.getElementById('btnAdd').addEventListener('click', () => {
+      if (activeView === 'programs') openEditModal(null);
+      else openOrgModal(null);
+    });
     document.getElementById('btnSaveAll').addEventListener('click', saveAll);
-    document.getElementById('btnExport').addEventListener('click', exportDataJs);
     document.getElementById('btnConfirmDelete').addEventListener('click', executeDelete);
 
     // Search
     document.getElementById('adminSearch').addEventListener('input', e => {
       searchQuery = e.target.value;
-      renderTable();
+      if (activeView === 'programs') renderTable();
+      else renderOrgsTable();
     });
-    document.getElementById('typeFilter').addEventListener('change', e => {
-      selectedTypeFilter = e.target.value;
-      renderTable();
+    document.getElementById('typeFilter').addEventListener('change', () => renderTable());
+
+    // Sortable columns — delegated to document so it works for both tables
+    document.addEventListener('click', e => {
+      const th = e.target.closest('th[data-col]');
+      if (th) handleSort(th.dataset.col);
     });
 
-    // Sortable columns
-    document.querySelectorAll('thead th[data-col]').forEach(th =>
-      th.addEventListener('click', () => handleSort(th.dataset.col))
-    );
-
-    // Duplicate button
+    // Duplicate program button
     document.getElementById('btnDuplicate').addEventListener('click', () => {
       const entry = readFormIntoObject();
-      entry.id = Math.max(0, ...campRows.map(p => p.id || 0)) + 1;
-      entry.uid = `camp-${entry.id}`;
+      entry.id  = Math.max(0, ...campRows.map(p => p.id || 0)) + 1;
+      entry.uid = `prog-${entry.id}`;
       entry.name = entry.name + ' (Copy)';
       campRows.push(entry);
-      recombineRows();
       refreshTypeFilterOptions();
       markDirty();
       closeModal('editModal');
       renderTable();
     });
 
-    // Edit form submit
+    // Form submits
     document.getElementById('editForm').addEventListener('submit', handleSave);
+    document.getElementById('orgForm').addEventListener('submit', handleOrgSave);
 
     // Modal close buttons
-    document.getElementById('editModalClose').addEventListener('click', () => closeModal('editModal'));
-    document.getElementById('editCancelBtn').addEventListener('click', () => closeModal('editModal'));
-    document.getElementById('deleteModalClose').addEventListener('click', () => closeModal('deleteModal'));
-    document.getElementById('deleteCancelBtn').addEventListener('click', () => closeModal('deleteModal'));
-
-    // Backdrop click closes
-    ['editModal', 'deleteModal'].forEach(id => {
+    ['editModal','orgModal','deleteModal'].forEach(id => {
+      const closeBtn = document.getElementById(id.replace('Modal','ModalClose').replace('delete','delete'));
       document.getElementById(id).addEventListener('click', e => {
         if (e.target.id === id) closeModal(id);
       });
     });
+    document.getElementById('editModalClose').addEventListener('click',   () => closeModal('editModal'));
+    document.getElementById('editCancelBtn').addEventListener('click',    () => closeModal('editModal'));
+    document.getElementById('orgModalClose').addEventListener('click',    () => closeModal('orgModal'));
+    document.getElementById('orgCancelBtn').addEventListener('click',     () => closeModal('orgModal'));
+    document.getElementById('deleteModalClose').addEventListener('click', () => closeModal('deleteModal'));
+    document.getElementById('deleteCancelBtn').addEventListener('click',  () => closeModal('deleteModal'));
 
     // Esc key
     document.addEventListener('keydown', e => {
       if (e.key === 'Escape') {
         closeModal('editModal');
+        closeModal('orgModal');
         closeModal('deleteModal');
       }
     });

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About – Camp &amp; Afterschool Care Finder</title>
+  <meta name="description" content="About the Camp and Afterschool Care Finder — an open-source tool helping Vermont families find K–12 programs." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <div class="static-hero">
+    <div class="static-hero-content">
+      <span class="static-hero-icon">🏕️</span>
+      <h1>Camp &amp; Afterschool Care Finder</h1>
+      <p>An open-source tool helping Vermont families find summer camps and afterschool programs for K–12 students.</p>
+    </div>
+  </div>
+
+  <div class="static-page">
+
+    <section class="static-section">
+      <h2>About the Project</h2>
+      <p>This was originally created by parents of a pre-schooler in the Burlington area who suddenly needed to find Summer Camps for that age range and were started to find no easy way to do so. Two years of doing this research manually in Google Sheets (and sharing it with like parents) led to the idea of building a tool to make this process easier for other families in the future.</p>
+      <p>The Camp &amp; Afterschool Care Finder is a free, publicly accessible, community supporter web tool built for Vermont families. It aggregates information about summer camps and afterschool programs serving kindergarten through 12th-grade students across Vermont. Families can filter by grade level, city, program type, cost, subject area, and schedule to quickly find programs that fit their child and their budget. Programs can be browsed as a list, on a calendar, or on an interactive map.</p>
+      <p>The project is entirely open source. All data is collected from public sources and is freely available in this repository (see the 
+        <a href="https://github.com/kefortney/Camp-and-Afterschool-Care-Finder" target="_blank" rel="noopener noreferrer">GitHub repository</a>
+        ).</p>
+
+    </section>
+
+    <section class="static-section">
+      <h2>Why This Matters</h2>
+      <p>Finding a summer camp or afterschool program in Vermont is harder than it should be. There is no central registry or statewide database for summer programs. Each organization maintains its own website, or doesn't have one at all, and information about availability, cost, grades served, and registration deadlines is scattered across dozens of disconnected sources. And for any parent who has the pleasure, these camps are filled quickly, so early registration within hours of them being posted is crucial</p>
+      <p>The result: families who have the time and resources to do extensive research can find great programs, while families with less time or less familiarity with navigating websites often miss out entirely. Lower-income or time-constrained families are disproportionately affected, as subsidized and free programs like 21st Century Community Learning Centers are often unknown even to the families who need them most.</p>
+      <p>Geographic access is also unequal. Programs in Burlington are well-documented compared to programs in rural Vermont towns, and the lack of visibility for smaller programs makes it harder for them to reach capacity even when spots are available.</p>
+      <p>This project is a first step toward a more equitable information landscape for Vermont families. The outputs: a web app and a dataset are just first steps toward that goal. The initial hope of solving a collective action problem in creating a more accessible and transparent information ecosystem will hopefully lead to questions on how we can grow and expand Camps and Afterschool Care for working families.</p>
+    </section>
+
+    <section class="static-section">
+      <h2>Contribute on GitHub</h2>
+      <p>This project is open source and welcomes contributions of all kinds — from adding missing programs to the dataset, to improving the search UI, to fixing bugs and improving documentation.</p>
+      <a class="link-btn" href="https://github.com/kefortney/Camp-and-Afterschool-Care-Finder" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+      <a class="link-btn link-btn-outline" href="https://github.com/kefortney/Camp-and-Afterschool-Care-Finder/issues" target="_blank" rel="noopener noreferrer">Open Issues</a>
+      <h3>How to Contribute</h3>
+      <ol>
+        <li><strong>Fork the repository</strong> on GitHub and clone it locally.</li>
+        <li><strong>Add or improve data</strong> — the easiest contribution is researching missing programs and adding rows to <code>data/programs.csv</code> or verifying existing records against current program websites.</li>
+        <li><strong>Run the data pipeline</strong> — after editing CSVs, run <code>python scripts/validate_data.py</code> then <code>python scripts/build_data_js.py</code> to regenerate <code>data.js</code>.</li>
+        <li><strong>Test locally</strong> — run <code>python -m http.server 8000</code> and open <code>http://localhost:8000</code>.</li>
+        <li><strong>Submit a pull request</strong> with a description of what you added or changed.</li>
+      </ol>
+      <p>New to open source? Check the Issues board for tickets labeled <strong>good first issue</strong>. All experience levels are welcome.</p>
+    </section>
+
+    <section class="static-section">
+      <h2>The Data</h2>
+      <p>All data lives in two CSV files. A Python pipeline validates and joins them into <code>data.js</code>, the module loaded by the app. See the <a href="data.html">Data page</a> for full field-by-field documentation.</p>
+
+      <div class="static-card">
+        <h3>Programs — <code>data/programs.csv</code></h3>
+        <p>The unified program registry: 401 programs covering 391 summer camps and 10 afterschool programs. Each row is one program session with dates, grades served, hours, cost, location, activities, and a description. After editing, run <code>python scripts/validate_data.py</code> then <code>python scripts/build_data_js.py</code> to regenerate <code>data.js</code>.</p>
+      </div>
+
+      <div class="static-card">
+        <h3>Organizations — <code>data/organizations.csv</code></h3>
+        <p>The organization registry: 148 organizations that run programs in the dataset. Provides website, phone, email, address, financial aid availability, and registration policy. Every program row references an <code>org_id</code> that must match a record here — enforced by <code>validate_data.py</code> before building.</p>
+      </div>
+    </section>
+
+    <section class="static-section">
+      <h2>Resources</h2>
+      <ul>
+        <li><a href="https://dcf.vermont.gov/cdd/families/find-care/map" target="_blank" rel="noopener noreferrer">Vermont Childcare &amp; Daycare Finder (DCF)</a> — State of Vermont interactive map for licensed childcare providers.</li>
+        <li><a href="https://kefortney.github.io/Camp-and-Afterschool-Care-Finder/" target="_blank" rel="noopener noreferrer">Live Site (GitHub Pages)</a></li>
+        <li><a href="https://github.com/kefortney/Camp-and-Afterschool-Care-Finder" target="_blank" rel="noopener noreferrer">GitHub Repository</a></li>
+      </ul>
+    </section>
+
+  </div>
+
+  <footer>
+    <p>Camp &amp; Afterschool Care Finder &mdash; Open source. Built for Vermont families.</p>
+    <p style="margin-top:0.4rem;">Program information is collected from public sources. Contact programs directly to confirm availability and details.</p>
+  </footer>
+
+  <script>window.NAV_PAGE = 'about';</script>
+  <script src="nav.js"></script>
+</body>
+</html>
