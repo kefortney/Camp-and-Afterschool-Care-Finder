@@ -851,6 +851,15 @@ main {
   border-radius: 20px;
 }
 
+.reg-opens-badge {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #92400e;
+  background: #fef3c7;
+  padding: 0.2rem 0.6rem;
+  border-radius: 20px;
+}
+
 /* ===== No Results ===== */
 .no-results {
   text-align: center;

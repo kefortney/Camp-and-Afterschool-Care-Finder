@@ -1,7 +1,7 @@
 """
 Backfill grades_min/grades_max from age_min/age_max (and vice versa) in programs.csv.
 
-Uses data/camp/age_to_grade.csv as the lookup table.
+Uses data/age_to_grade.csv as the lookup table.
 Only fills in blank values; never overwrites existing data.
 
 Run from project root:
@@ -12,7 +12,7 @@ import csv
 from pathlib import Path
 
 PROGRAMS_PATH = Path("data/programs.csv")
-AGE_GRADE_PATH = Path("data/camp/age_to_grade.csv")
+AGE_GRADE_PATH = Path("data/age_to_grade.csv")
 
 with AGE_GRADE_PATH.open("r", encoding="utf-8-sig", newline="") as file:
     mapping_rows = list(csv.DictReader(file))

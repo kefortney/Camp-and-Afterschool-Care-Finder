@@ -334,6 +334,23 @@ def build_program_obj(prog: dict, org: dict, uid: int) -> dict:
         "programType":          prog_type,
         "confidence":           prog.get("confidence", "confirmed"),
         "fundingSource":        prog.get("funding_source", ""),
+        # Raw CSV pass-throughs for admin round-trip
+        "programId":      prog.get("program_id", ""),
+        "programYear":    prog.get("program_year", "2026"),
+        "registrationUrl": prog.get("registration_url", ""),
+        "registrationOpens":      prog.get("registration_opens", ""),
+        "registrationOpensEarly": prog.get("registration_opens_early", ""),
+        "registrationNotes":      prog.get("registration_notes", ""),
+        "startTime":      prog.get("start_time", ""),
+        "endTime":        prog.get("end_time", ""),
+        "sessionTypeCsv": prog.get("session_type", ""),
+        "scheduleTypeCsv": prog.get("schedule_type", "weekly"),
+        "preAfterCare":   prog.get("pre_after_care", ""),
+        "costRaw":        prog.get("cost_raw", ""),
+        "activitiesCsv":  prog.get("activities", ""),
+        "transportNotes": prog.get("transportation_notes", ""),
+        "verifiedDate":   prog.get("verified_date", ""),
+        "programNotes":   prog.get("notes", ""),
     }
 
 
@@ -353,6 +370,10 @@ def build_org_obj(org: dict) -> dict:
         "financialAidAvailable": org.get("financial_aid_available", "").lower() in ("true","yes","1"),
         "financialAidNotes":     org.get("financial_aid_notes", ""),
         "confidence":            org.get("confidence", "likely"),
+        "registrationPolicy": org.get("registration_policy", ""),
+        "registrationOpens":  org.get("registration_opens", ""),
+        "verifiedDate":       org.get("verified_date", ""),
+        "notes":              org.get("notes", ""),
     }
 
 
