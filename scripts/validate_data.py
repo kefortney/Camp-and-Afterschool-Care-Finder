@@ -230,6 +230,17 @@ def validate_programs(valid_org_ids: set[str]):
             if vdate and not DATE_RE.match(vdate):
                 warn(f"{label}: verified_date '{vdate}' is not YYYY-MM-DD")
 
+            # Registration dates
+            reg_opens = (row.get("registration_opens") or "").strip()
+            if reg_opens and not DATE_RE.match(reg_opens):
+                warn(f"{label}: registration_opens '{reg_opens}' is not YYYY-MM-DD")
+            reg_early = (row.get("registration_opens_early") or "").strip()
+            if reg_early and not DATE_RE.match(reg_early):
+                warn(f"{label}: registration_opens_early '{reg_early}' is not YYYY-MM-DD")
+            if reg_early and reg_opens and DATE_RE.match(reg_early) and DATE_RE.match(reg_opens):
+                if reg_early > reg_opens:
+                    warn(f"{label}: registration_opens_early '{reg_early}' is after registration_opens '{reg_opens}'")
+
 
 def main():
     print("Validating organizations.csv...")

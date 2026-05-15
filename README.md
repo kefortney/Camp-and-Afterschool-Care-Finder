@@ -48,6 +48,25 @@ The validation script exits 1 on errors (blocks the build). Warnings are printed
 | `scripts/parse_costs.py` | Parse `cost_raw` into a normalized `cost_per_week` value |
 | `scripts/dev_server.py` | Local server with live reload and CSV save endpoint |
 
+## Admin editor
+
+Open `http://localhost:8000/admin.html` while running the dev server to edit programs and organizations through a UI.
+
+**Save All** writes directly to `data/programs.csv` and `data/organizations.csv` on disk (requires `dev_server.py` — falls back to browser localStorage if not running). After saving, rebuild `data.js` to propagate changes:
+
+```bash
+python scripts/build_data_js.py
+```
+
+**Sharing edits with others:**
+
+1. Run `python scripts/dev_server.py`
+2. Edit in the admin → click **Save All** (button confirms "✓ Saved to CSV")
+3. Run `python scripts/build_data_js.py`
+4. Commit `data/programs.csv`, `data/organizations.csv`, and `data.js` — others pull and rebuild
+
+> When Save All writes to CSV it clears localStorage, so the next page load always reflects the latest committed data rather than stale browser state.
+
 ## Data constraints
 
 **`site_city` must match a town name in `data/Vermont_Town_GEOID_RPC_County.geojson`.**

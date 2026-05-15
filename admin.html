@@ -658,19 +658,46 @@
             </div>
           </fieldset>
 
+          <!-- Registration -->
+          <fieldset>
+            <legend>Registration</legend>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="fRegOpens">General Opens</label>
+                <input type="date" id="fRegOpens" />
+              </div>
+              <div class="form-group">
+                <label for="fRegOpensEarly">Early Opens</label>
+                <input type="date" id="fRegOpensEarly" />
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group full">
+                <label for="fRegNotes">Registration Notes</label>
+                <input type="text" id="fRegNotes" placeholder="e.g. Early reg for returning campers; rolling admission" />
+              </div>
+            </div>
+          </fieldset>
+
           <!-- Subjects -->
           <fieldset>
             <legend>Subjects &amp; Activities</legend>
             <div class="subjects-grid" id="subjectsGrid"></div>
           </fieldset>
 
-          <!-- Description -->
+          <!-- Description & Notes -->
           <fieldset>
-            <legend>Description</legend>
+            <legend>Description &amp; Notes</legend>
             <div class="form-row">
               <div class="form-group full">
                 <label for="fDescription">Description</label>
                 <textarea id="fDescription" rows="4"></textarea>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group full">
+                <label for="fNotes">Internal Notes</label>
+                <textarea id="fNotes" rows="2" placeholder="Not shown publicly — use for data quality notes, follow-up reminders, etc."></textarea>
               </div>
             </div>
           </fieldset>
@@ -830,7 +857,7 @@
   </div>
 
   <footer>
-    <p>Admin Tool – Camp &amp; Afterschool Care Finder &mdash; Save All stores edits to localStorage. To persist: run <code>python scripts/build_data_js.py</code> after editing CSVs directly, or use the dev server's CSV save endpoint.</p>
+    <p>Admin Tool – Camp &amp; Afterschool Care Finder &mdash; Save All writes to <code>data/programs.csv</code> and <code>data/organizations.csv</code> when running the dev server, then run <code>python scripts/build_data_js.py</code> to rebuild. Falls back to localStorage when not using the dev server.</p>
   </footer>
 
   <script src="data.js"></script>
@@ -1109,7 +1136,8 @@
         subjects: [], description: '', indoorOutdoor: 'Both',
         transportation: false, mealsProvided: false,
         acceptingRegistration: true, startDate: '', endDate: '',
-        registrationUrl: ''
+        registrationUrl: '', registrationOpens: '', registrationOpensEarly: '',
+        registrationNotes: '', notes: ''
       };
     }
 
@@ -1130,6 +1158,10 @@
       document.getElementById('fCity').value           = p.city || '';
       document.getElementById('fCounty').value         = p.county || '';
       document.getElementById('fRegUrl').value         = p.registrationUrl || p.website || '';
+      document.getElementById('fRegOpens').value      = p.registrationOpens || '';
+      document.getElementById('fRegOpensEarly').value = p.registrationOpensEarly || '';
+      document.getElementById('fRegNotes').value      = p.registrationNotes || '';
+      document.getElementById('fNotes').value         = p.notes || p.programNotes || '';
       document.getElementById('fGradesMin').value      = p.gradesMin || '';
       document.getElementById('fGradesMax').value      = p.gradesMax || '';
       document.getElementById('fAgeMin').value         = p.ageMin != null ? p.ageMin : '';
@@ -1202,6 +1234,10 @@
         acceptingRegistration: document.getElementById('fAccepting').checked,
         startDate:            document.getElementById('fStartDate').value,
         endDate:              document.getElementById('fEndDate').value,
+        registrationOpens:      document.getElementById('fRegOpens').value,
+        registrationOpensEarly: document.getElementById('fRegOpensEarly').value,
+        registrationNotes:      document.getElementById('fRegNotes').value.trim(),
+        notes:                  document.getElementById('fNotes').value.trim(),
         // Pass through merged org contact fields so modal display still works
         phone:   org ? org.phone   : '',
         email:   org ? org.email   : '',
@@ -1214,6 +1250,8 @@
     function handleSave(e) {
       e.preventDefault();
       const entry = readFormIntoObject();
+      // Keep activitiesCsv in sync with whatever subjects are checked
+      entry.activitiesCsv = (entry.subjects || []).join(',');
 
       if (editingUid === null) {
         const maxId = Math.max(0, ...campRows.map(p => p.id || 0));
@@ -1225,6 +1263,10 @@
         if (idx >= 0) {
           entry.id  = campRows[idx].id;
           entry.uid = campRows[idx].uid;
+          // Preserve raw CSV fields not captured by the edit form
+          const RAW = ['programId','programYear','sessionTypeCsv','scheduleTypeCsv',
+            'startTime','endTime','costRaw','preAfterCare','transportNotes','verifiedDate'];
+          RAW.forEach(k => { if (campRows[idx][k] !== undefined) entry[k] = campRows[idx][k]; });
           campRows[idx] = entry;
         }
       }
@@ -1352,17 +1394,154 @@
       markDirty();
     }
 
-    // ===== Save All (localStorage) =====
+    // ===== CSV helpers =====
+    function slugify(s) {
+      return (s || '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+    }
+
+    function escCsvField(v) {
+      const s = (v == null) ? '' : String(v);
+      return (s.includes(',') || s.includes('"') || s.includes('\n') || s.includes('\r'))
+        ? '"' + s.replace(/"/g, '""') + '"'
+        : s;
+    }
+
+    function rowsToCsv(headers, rows) {
+      const lines = [headers.join(',')];
+      for (const row of rows) lines.push(headers.map(h => escCsvField(row[h])).join(','));
+      return lines.join('\n') + '\n';
+    }
+
+    function programToCsvRow(p) {
+      const pid = p.programId ||
+        [p.orgId, slugify(p.name), p.programYear || new Date().getFullYear()]
+          .filter(Boolean).join('-').slice(0, 80);
+      const hoursParts = (p.hours || '').split(/\s*[–\-]\s*/);
+      const startTime  = p.startTime || (hoursParts[0] || '').trim();
+      const endTime    = p.endTime   || (hoursParts[1] || '').trim();
+      return {
+        program_id:              pid,
+        org_id:                  p.orgId || '',
+        program_name:            p.name || '',
+        program_type:            p.category || 'camp',
+        program_year:            p.programYear || new Date().getFullYear(),
+        description:             p.description || '',
+        session_type:            p.sessionTypeCsv || '',
+        grades_min:              p.gradesMin || '',
+        grades_max:              p.gradesMax || '',
+        age_min:                 p.ageMin != null ? p.ageMin : '',
+        age_max:                 p.ageMax != null ? p.ageMax : '',
+        schedule_type:           p.scheduleTypeCsv || '',
+        start_date:              p.startDate || '',
+        end_date:                p.endDate || '',
+        days_of_week:            p.daysOffered || '',
+        start_time:              startTime,
+        end_time:                endTime,
+        pre_after_care:          p.preAfterCare || '',
+        cost_raw:                p.costRaw || (p.cost ? `$${p.cost}${p.costPeriod === 'week' ? '/week' : p.costPeriod === 'day' ? '/day' : ''}` : ''),
+        cost_per_week:           (p.costPeriod === 'week' && p.cost) ? p.cost : '',
+        cost_notes:              '',
+        meals_provided:          p.mealsProvided ? 'Yes' : '',
+        transportation_provided: p.transportation ? 'Yes' : '',
+        transportation_notes:    p.transportNotes || '',
+        activities:              p.activitiesCsv || (p.subjects || []).join(','),
+        site_address:            p.address || '',
+        site_city:               p.city || '',
+        site_county:             p.county || '',
+        registration_url:        p.registrationUrl || '',
+        registration_opens:      p.registrationOpens || '',
+        registration_opens_early: p.registrationOpensEarly || '',
+        registration_notes:      p.registrationNotes || '',
+        funding_source:          p.fundingSource || '',
+        confidence:              p.confidence || 'likely',
+        verified_date:           p.verifiedDate || '',
+        notes:                   p.notes || p.programNotes || '',
+      };
+    }
+
+    function orgToCsvRow(o) {
+      return {
+        org_id:                  o.orgId || '',
+        org_name:                o.name || '',
+        org_type:                o.type || '',
+        website:                 o.website || '',
+        phone:                   o.phone || '',
+        email:                   o.email || '',
+        street_address:          o.address || '',
+        city:                    o.city || '',
+        county:                  o.county || '',
+        state:                   o.state || 'VT',
+        zip:                     o.zip || '',
+        financial_aid_available: o.financialAidAvailable ? 'Yes' : '',
+        financial_aid_notes:     o.financialAidNotes || '',
+        registration_policy:     o.registrationPolicy || '',
+        registration_opens:      o.registrationOpens || '',
+        confidence:              o.confidence || 'likely',
+        verified_date:           o.verifiedDate || '',
+        notes:                   o.notes || '',
+      };
+    }
+
+    // ===== Save All =====
     async function saveAll() {
+      // Always write to localStorage first as a backup
       localStorage.setItem('adminProgramData', JSON.stringify(campRows));
       localStorage.setItem('adminOrgData',     JSON.stringify(orgRows));
       isDirty = false;
       document.getElementById('dirtyBadge').style.display = 'none';
-      const btn = document.getElementById('btnSaveAll');
+
+      const btn  = document.getElementById('btnSaveAll');
       const orig = btn.textContent;
-      btn.textContent = '✓ Saved';
       btn.disabled = true;
-      setTimeout(() => { btn.textContent = orig; btn.disabled = false; }, 1500);
+
+      const PROG_HEADERS = [
+        'program_id','org_id','program_name','program_type','program_year','description',
+        'session_type','grades_min','grades_max','age_min','age_max','schedule_type',
+        'start_date','end_date','days_of_week','start_time','end_time','pre_after_care',
+        'cost_raw','cost_per_week','cost_notes','meals_provided','transportation_provided',
+        'transportation_notes','activities','site_address','site_city','site_county',
+        'registration_url','registration_opens','registration_opens_early','registration_notes',
+        'funding_source','confidence','verified_date','notes',
+      ];
+      const ORG_HEADERS = [
+        'org_id','org_name','org_type','website','phone','email','street_address',
+        'city','county','state','zip','financial_aid_available','financial_aid_notes',
+        'registration_policy','registration_opens','confidence','verified_date','notes',
+      ];
+
+      try {
+        const [pr, or] = await Promise.all([
+          fetch('/__save_csv', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({
+              path: 'data/programs.csv',
+              content: rowsToCsv(PROG_HEADERS, campRows.map(programToCsvRow)),
+            }),
+          }),
+          fetch('/__save_csv', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({
+              path: 'data/organizations.csv',
+              content: rowsToCsv(ORG_HEADERS, orgRows.map(orgToCsvRow)),
+            }),
+          }),
+        ]);
+        if (pr.ok && or.ok) {
+          // Clear localStorage so the next page load uses the rebuilt data.js
+          localStorage.removeItem('adminProgramData');
+          localStorage.removeItem('adminOrgData');
+          btn.textContent = '✓ Saved to CSV';
+        } else {
+          btn.textContent = '✓ Saved (localStorage only)';
+        }
+      } catch {
+        // Dev server not running — localStorage backup is enough
+        btn.textContent = '✓ Saved (localStorage only)';
+      }
+
+      setTimeout(() => { btn.textContent = orig; btn.disabled = false; }, 2000);
     }
 
     // ===== Modal helpers =====

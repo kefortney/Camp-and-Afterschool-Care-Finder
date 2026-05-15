@@ -401,7 +401,14 @@ function renderCards(programs) {
 
     const registrationHtml = !p.acceptingRegistration
       ? '<span class="registration-closed">Closed</span>'
-      : '';
+      : (() => {
+          const today = new Date(); today.setHours(0,0,0,0);
+          const opens = parseDate(p.registrationOpens);
+          const early = parseDate(p.registrationOpensEarly);
+          const next  = (early && early >= today) ? early : (opens && opens >= today) ? opens : null;
+          if (!next) return '';
+          return `<span class="reg-opens-badge">Reg opens ${MONTH_ABBR[next.getMonth()]} ${next.getDate()}</span>`;
+        })();
 
     const subjectTags = (p.subjects || []).slice(0, 3).map(s => `<span class="tag">${s}</span>`).join('');
     const locationText = [p.city, p.state].filter(Boolean).join(', ') || 'Vermont';
@@ -680,8 +687,25 @@ function openModal(p) {
     emailEl.removeAttribute('href');
   }
 
-  document.getElementById('modalRegistration').textContent = p.acceptingRegistration ? 'Open/Active' : 'Closed/Inactive';
-  document.getElementById('modalRegistration').style.color = p.acceptingRegistration ? '#065f46' : '#b91c1c';
+  const regEl = document.getElementById('modalRegistration');
+  if (!p.acceptingRegistration) {
+    regEl.textContent = 'Closed/Inactive';
+    regEl.style.color = '#b91c1c';
+  } else {
+    const fmtRegDate = iso => {
+      const d = parseDate(iso);
+      return d ? `${MONTH_ABBR[d.getMonth()]} ${d.getDate()}, ${d.getFullYear()}` : null;
+    };
+    const parts = [];
+    const early   = fmtRegDate(p.registrationOpensEarly);
+    const general = fmtRegDate(p.registrationOpens);
+    if (early)   parts.push(`Early: ${early}`);
+    if (general) parts.push(early ? `General: ${general}` : `Opens ${general}`);
+    if (!parts.length) parts.push('Open/Active');
+    if (p.registrationNotes) parts.push(`(${p.registrationNotes})`);
+    regEl.textContent = parts.join(' · ');
+    regEl.style.color = '#065f46';
+  }
 
   const tagsContainer = document.getElementById('modalSubjects');
   tagsContainer.innerHTML = (p.subjects || []).length

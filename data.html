@@ -71,9 +71,13 @@
             <tr><td><code>site_city</code></td><td>string</td><td>City/town where the program runs. <strong>Must match a town name in <code>data/Vermont_Town_GEOID_RPC_County.geojson</code></strong> (use <code>TOWNNAMEMC</code> spelling, e.g. <code>Burlington</code>, <code>Saint Albans City</code>). Used for City filter, map, and auto-county lookup.</td></tr>
             <tr><td><code>site_county</code></td><td>string</td><td>Vermont county. Filled automatically by <code>infer_counties.py</code> from the GeoJSON town→county map. Used for County filter.</td></tr>
             <tr><td><code>registration_url</code></td><td>URL</td><td>Link to the program's registration or info page.</td></tr>
+            <tr><td><code>registration_opens</code></td><td>date (YYYY-MM-DD)</td><td>When general/public registration opens. Shown on program cards and detail modal. Leave blank for afterschool programs (enrollment is ongoing).</td></tr>
+            <tr><td><code>registration_opens_early</code></td><td>date (YYYY-MM-DD)</td><td>Optional earlier window for a priority group (returning campers, town residents, siblings, etc.). Must be on or before <code>registration_opens</code>.</td></tr>
+            <tr><td><code>registration_notes</code></td><td>text</td><td>Who qualifies for early registration, rolling/waitlist info, or any other registration context. Shown in the detail modal alongside the dates. Examples: "Early reg for returning campers", "Rolling admission", "Waitlist only as of Jan 15".</td></tr>
             <tr><td><code>funding_source</code></td><td>string</td><td>Funding mechanism (e.g., "21st Century Community Learning Centers" for free afterschool programs).</td></tr>
             <tr><td><code>confidence</code></td><td>enum</td><td><code>confirmed</code>, <code>likely</code>, or <code>inactive</code>. Programs with <code>inactive</code> are excluded from the public site.</td></tr>
             <tr><td><code>verified_date</code></td><td>date (YYYY-MM-DD)</td><td>When the data was last verified against the source.</td></tr>
+            <tr><td><code>notes</code></td><td>text</td><td>Internal notes; not shown publicly. Use for data quality reminders, follow-up items, or anything that doesn't fit other fields.</td></tr>
             <tr><td><code>notes</code></td><td>text</td><td>Internal notes; not shown in the UI.</td></tr>
           </tbody>
         </table>
@@ -123,7 +127,7 @@
     <section class="static-section">
       <h2>Age to Grade Mapping</h2>
       <div class="static-card">
-        <h3>data/camp/age_to_grade.csv</h3>
+        <h3>data/age_to_grade.csv</h3>
         <div class="dataset-meta">
           <span><strong>Rows:</strong> 13</span>
           <span><strong>Updated:</strong> Rarely</span>
@@ -160,7 +164,7 @@
 
       <div class="static-card">
         <h3>scripts/backfill_age_grade.py</h3>
-        <p>Fills missing <code>grades_min</code>/<code>grades_max</code> from <code>age_min</code>/<code>age_max</code> (and vice versa) in <code>programs.csv</code> using <code>data/camp/age_to_grade.csv</code>. Run before <code>build_data_js.py</code> when adding programs with only age or only grade data.</p>
+        <p>Fills missing <code>grades_min</code>/<code>grades_max</code> from <code>age_min</code>/<code>age_max</code> (and vice versa) in <code>programs.csv</code> using <code>data/age_to_grade.csv</code>. Run before <code>build_data_js.py</code> when adding programs with only age or only grade data.</p>
       </div>
 
       <div class="static-card">

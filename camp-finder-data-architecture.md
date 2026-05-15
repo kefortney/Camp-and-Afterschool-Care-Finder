@@ -10,8 +10,7 @@
 data/
   programs.csv              # 401 programs — 391 camps, 10 afterschool
   organizations.csv         # 148 organizations
-  camp/
-    age_to_grade.csv        # 13-row lookup table (unchanged)
+  age_to_grade.csv          # 13-row lookup table (unchanged)
   archive/
     summer_camp_2026.csv    # Archived — original camp CSV, do not delete
     21cclc_2025_2026.csv    # Archived — original afterschool CSV, do not delete
