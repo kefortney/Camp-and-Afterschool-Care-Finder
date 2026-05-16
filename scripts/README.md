@@ -21,3 +21,4 @@ These scripts read a CSV, fill in blanks, and write it back. They are idempotent
 - **`infer_org_types.py`** — Infers `org_type` (nonprofit / municipal / school / private / university / faith-based) from keywords in `org_name`.
 - **`normalize_times.py`** — Canonicalizes program start/end times into a consistent 12-hour format.
 - **`parse_costs.py`** — Parses freeform `cost_raw` strings (e.g. "$200/week", "free", "$50/day") into a numeric `cost_per_week`.
+- **`verify_camp_websites.py`** — Fetches each organization's `website` (2s delay between requests) and looks for camp / afterschool / youth-program keywords in the page. Upgrades the `confidence` column from `likely` to `confirmed` on a match; never downgrades existing `confirmed` rows. Progress is saved every 10 rows.
