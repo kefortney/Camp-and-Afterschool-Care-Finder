@@ -36,6 +36,7 @@ let activeFilters = {
   county: '',
   stars: '',
   status: '',
+  data: '',
   showPast: false
 };
 
@@ -52,6 +53,7 @@ const filterCounty = document.getElementById('filterCounty');
 const filterStars = document.getElementById('filterStars');
 const filterStatus = document.getElementById('filterStatus');
 const filterShowPast = document.getElementById('filterShowPast');
+const filterDate = document.getElementById('filterDate');
 
 const labelType = document.getElementById('labelType');
 const labelGrades = document.getElementById('labelGrades');
@@ -283,6 +285,10 @@ function updateFilterVisibility() {
   show(groupCounty, isProvider);
   show(groupStars, isProvider);
   show(groupStatus, isProvider);
+
+  // camps only filtering for now
+  const groupDate = document.getElementById('groupDate');
+  show(groupDate, isCamp);
 }
 
 function populateFiltersForCategory() {
@@ -315,7 +321,7 @@ function applyFilters() {
   const search = activeFilters.search.toLowerCase().trim();
   const isCamp = activeCategory === 'camp';
 
-  return categoryPrograms().filter(p => {
+  let results = categoryPrograms().filter(p => {
     if (!activeFilters.showPast && isPast(p)) return false;
 
     if (search) {
@@ -358,6 +364,13 @@ function applyFilters() {
 
     return true;
   });
+
+  // future - could condense into the above filtering rather than looping over it again
+  if (isCamp && activeFilters.date) {
+    results = filterCampsByDate(results, activeFilters.date);
+  }
+
+  return results;
 }
 
 // ===== Render Cards =====
@@ -805,6 +818,7 @@ function clearAllFilters() {
     scholarship: '',
     county: '',
     stars: '',
+    date: '',
     status: ''
   };
 
@@ -819,6 +833,7 @@ function clearAllFilters() {
   filterCounty.value = '';
   filterStars.value = '';
   filterStatus.value = '';
+  filterDate.value = '';
   filterShowPast.checked = false;
   activeFilters.showPast = false;
 }
@@ -846,6 +861,11 @@ btnClearSearch.addEventListener('click', () => {
 btnReset.addEventListener('click', () => {
   clearAllFilters();
   populateFiltersForCategory();
+  update();
+});
+
+filterDate.addEventListener('change', e => {
+  activeFilters.date = e.target.value; // back to "YYYY-MM-DD" when cleared
   update();
 });
 
@@ -878,6 +898,51 @@ document.getElementById('btnCalNext').addEventListener('click', () => {
   }
   renderCalendar(lastFiltered);
 });
+
+function filterCampsByDate(programs, selectedDateString) {
+  if (!selectedDateString) return programs;
+
+  // Parse the selected date using local time (avoids UTC-midnight shift).
+  const [sy, sm, sd] = selectedDateString.split('-').map(Number);
+  const selected = new Date(sy, sm - 1, sd);
+  selected.setHours(0, 0, 0, 0);
+
+  // Both full and abbreviated day names for the selected weekday.
+  const FULL_DAYS  = ['sunday','monday','tuesday','wednesday','thursday','friday','saturday'];
+  const SHORT_DAYS = ['sun','mon','tue','wed','thu','fri','sat'];
+  const dow = selected.getDay(); // 0 = Sunday
+  const selectedFull  = FULL_DAYS[dow];
+  const selectedShort = SHORT_DAYS[dow];
+
+  return programs.filter(p => {
+    // Programs with no date info are shown (they can't be ruled out).
+    if (!p.startDate) return true;
+
+    const [startY, startM, startD] = p.startDate.split('-').map(Number);
+    const start = new Date(startY, startM - 1, startD);
+    start.setHours(0, 0, 0, 0);
+
+    // Use endDate if present, otherwise treat as a single-day program.
+    let end = start;
+    if (p.endDate) {
+      const [endY, endM, endD] = p.endDate.split('-').map(Number);
+      end = new Date(endY, endM - 1, endD);
+      end.setHours(0, 0, 0, 0);
+    }
+
+    // Condition A: selected date falls within the program's date range.
+    const inRange = selected >= start && selected <= end;
+    if (!inRange) return false;
+
+    // Condition B: program runs on this day of the week.
+    // If daysOffered is absent or empty, assume it runs every day.
+    if (!p.daysOffered || p.daysOffered.trim() === '') return true;
+
+    const offered = p.daysOffered.toLowerCase();
+    return offered.includes(selectedFull) || offered.includes(selectedShort);
+  });
+}
+
 
 // ===== Boot =====
 function init() {
