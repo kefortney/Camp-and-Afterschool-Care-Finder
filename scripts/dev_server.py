@@ -258,8 +258,10 @@ def main() -> None:
     )
     watcher.start()
 
+    # Bind tracker on the handler class, not on functools.partial — partial()
+    # is a wrapper object; instances only see attributes on LiveReloadHandler.
+    LiveReloadHandler.tracker = tracker
     handler_cls = partial(LiveReloadHandler, directory=str(PROJECT_ROOT))
-    handler_cls.tracker = tracker
 
     server = ThreadingHTTPServer((args.host, args.port), handler_cls)
 

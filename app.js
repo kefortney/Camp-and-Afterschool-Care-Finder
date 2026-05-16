@@ -7,6 +7,9 @@ let mapInstance = null;
 let calendarState = { year: 2026, month: 5 };
 let currentProgram = null;
 
+/** Ordered list of program `uid` values selected for CSV export */
+let exportSelectionOrder = [];
+
 const TODAY = new Date().toISOString().slice(0, 10);
 
 function isPast(p) {
@@ -360,6 +363,168 @@ function applyFilters() {
   });
 }
 
+// ===== Export selection =====
+function getProgramByUid(uid) {
+  return allPrograms.find(p => p.uid === uid);
+}
+
+function isExportSelected(uid) {
+  return exportSelectionOrder.includes(uid);
+}
+
+function addExportSelection(uid) {
+  if (!exportSelectionOrder.includes(uid)) exportSelectionOrder.push(uid);
+}
+
+function removeExportSelectionByUid(uid) {
+  const i = exportSelectionOrder.indexOf(uid);
+  if (i >= 0) exportSelectionOrder.splice(i, 1);
+}
+
+function toggleExportSelection(uid) {
+  if (isExportSelected(uid)) removeExportSelectionByUid(uid);
+  else addExportSelection(uid);
+  renderExportPanel();
+  refreshExportUiForUid(uid);
+}
+
+function clearExportSelection() {
+  exportSelectionOrder = [];
+  renderExportPanel();
+  if (currentView === 'list') renderCards(lastFiltered);
+  syncModalExportToggle();
+}
+
+function refreshExportUiForUid(uid) {
+  if (currentView === 'list') {
+    const card = cardsGrid.querySelector(`article.program-card[data-export-uid="${uid}"]`);
+    if (card) {
+      const cb = card.querySelector('.card-export-checkbox');
+      const sel = isExportSelected(uid);
+      if (cb) cb.checked = sel;
+      card.classList.toggle('program-card--selected', sel);
+    }
+  }
+  if (currentProgram && currentProgram.uid === uid && modalOverlay.classList.contains('open')) {
+    syncModalExportToggle();
+  }
+}
+
+function renderExportPanel() {
+  const listEl = document.getElementById('exportPanelList');
+  const emptyEl = document.getElementById('exportPanelEmpty');
+  const countEl = document.getElementById('exportPanelCount');
+  const mobileCount = document.getElementById('exportCountMobile');
+  const btnCsv = document.getElementById('btnExportCsv');
+  const btnClear = document.getElementById('btnExportClear');
+  if (!listEl || !emptyEl) return;
+
+  const n = exportSelectionOrder.length;
+  if (countEl) countEl.textContent = n === 1 ? '1 selected' : `${n} selected`;
+  if (mobileCount) {
+    if (n === 0) {
+      mobileCount.hidden = true;
+      mobileCount.textContent = '';
+    } else {
+      mobileCount.hidden = false;
+      mobileCount.textContent = n === 1 ? '1 program saved for export' : `${n} programs saved for export`;
+    }
+  }
+  emptyEl.classList.toggle('is-hidden', n > 0);
+  if (btnCsv) btnCsv.disabled = n === 0;
+  if (btnClear) btnClear.disabled = n === 0;
+
+  listEl.innerHTML = '';
+  exportSelectionOrder.forEach(uid => {
+    const p = getProgramByUid(uid);
+    if (!p) return;
+    const li = document.createElement('li');
+    li.className = 'export-panel-item';
+    li.innerHTML = `
+      <div class="export-panel-item-text">
+        <div class="export-panel-item-name"></div>
+        <div class="export-panel-item-org"></div>
+      </div>
+      <button type="button" class="export-panel-remove" aria-label="Remove from export">✕</button>
+    `;
+    li.querySelector('.export-panel-item-name').textContent = p.name;
+    li.querySelector('.export-panel-item-org').textContent = p.organization || '';
+    li.querySelector('.export-panel-remove').addEventListener('click', () => {
+      removeExportSelectionByUid(uid);
+      renderExportPanel();
+      refreshExportUiForUid(uid);
+    });
+    listEl.appendChild(li);
+  });
+}
+
+function syncModalExportToggle() {
+  const btn = document.getElementById('modalExportToggle');
+  if (!btn || !currentProgram) return;
+  const sel = isExportSelected(currentProgram.uid);
+  btn.textContent = sel ? 'Added to export' : 'Save for export';
+  btn.classList.toggle('modal-export-toggle--added', sel);
+  btn.setAttribute('aria-pressed', sel ? 'true' : 'false');
+}
+
+function escapeCsvCell(val) {
+  if (val == null || val === '') return '';
+  const str = String(val);
+  if (/[",\r\n]/.test(str)) return '"' + str.replace(/"/g, '""') + '"';
+  return str;
+}
+
+function exportCostSummary(p) {
+  if (p.isFree) return 'Free (Federally Funded)';
+  if (!p.cost || p.cost === 0) return 'Contact for pricing';
+  return formatCost(p.cost, p.costPeriod);
+}
+
+function downloadExportCsv() {
+  if (exportSelectionOrder.length === 0) return;
+  const headers = ['Name', 'Organization', 'City', 'County', 'Start Date', 'End Date', 'Start Time', 'End Time', 'Days of Week', 'Website', 'Phone', 'Email', 'Full Address', 'Cost', 'Subjects'];
+  const rows = [headers.join(',')];
+  exportSelectionOrder.forEach(uid => {
+    const p = getProgramByUid(uid);
+    if (!p) return;
+  
+    const subjects = (p.subjects || []).join('; ');
+    const address = `${p.address}, ${p.city}, ${p.county}, ${p.state} ${p.zip}`;
+    const hoursParts = (p.hours || '').split(/\s*[–\-]\s*/);
+    const startTime  = p.startTime || (hoursParts[0] || '').trim();
+    const endTime    = p.endTime   || (hoursParts[1] || '').trim();
+
+    rows.push([
+      escapeCsvCell(p.name),
+      escapeCsvCell(p.organization),
+      escapeCsvCell(p.city),
+      escapeCsvCell(p.county),
+      escapeCsvCell(p.startDate),
+      escapeCsvCell(p.endDate),
+      escapeCsvCell(startTime),
+      escapeCsvCell(endTime),
+      escapeCsvCell(p.daysOffered),
+      escapeCsvCell(p.website),
+      escapeCsvCell(p.phone),
+      escapeCsvCell(p.email),
+      escapeCsvCell(address),
+      escapeCsvCell(exportCostSummary(p)),
+      escapeCsvCell(subjects)
+    ].join(','));
+  });
+  const csv = '\ufeff' + rows.join('\r\n');
+  const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'vermont-camps-export.csv';
+  a.rel = 'noopener';
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+}
+
 // ===== Render Cards =====
 function renderCards(programs) {
   cardsGrid.innerHTML = '';
@@ -382,8 +547,12 @@ function renderCards(programs) {
 
   sorted.forEach(p => {
     const past = isPast(p);
+    const exportSel = isExportSelected(p.uid);
     const card = document.createElement('article');
-    card.className = past ? 'program-card program-card--past' : 'program-card';
+    let cardClass = past ? 'program-card program-card--past' : 'program-card';
+    if (exportSel) cardClass += ' program-card--selected';
+    card.className = cardClass;
+    card.dataset.exportUid = p.uid;
 
     const badgeClass = p.category === 'camp' ? 'badge-camp'
       : p.category === 'afterschool' ? 'badge-afterschool'
@@ -447,13 +616,30 @@ function renderCards(programs) {
         <div class="tags">${subjectTags}</div>
       </div>
       <div class="card-footer">
-        <button class="btn-details" data-id="${p.uid}">View Details</button>
+        <label class="card-export-label">
+          <input type="checkbox" class="card-export-checkbox" data-uid="${p.uid}" ${exportSel ? 'checked' : ''} aria-label="Save program for export" />
+          <span>Save for export</span>
+        </label>
+        <button type="button" class="btn-details" data-id="${p.uid}">View Details</button>
         ${p.website ? `<a class="btn-website" href="${p.website}" target="_blank" rel="noopener noreferrer">Visit Website</a>` : ''}
         ${registrationHtml}
       </div>
     `;
 
     card.querySelector('.btn-details').addEventListener('click', () => openModal(p));
+    const cb = card.querySelector('.card-export-checkbox');
+    cb.addEventListener('change', e => {
+      e.stopPropagation();
+      const uid = p.uid;
+      if (e.target.checked) {
+        if (!isExportSelected(uid)) exportSelectionOrder.push(uid);
+      } else {
+        removeExportSelectionByUid(uid);
+      }
+      renderExportPanel();
+      card.classList.toggle('program-card--selected', e.target.checked);
+      if (currentProgram && currentProgram.uid === uid) syncModalExportToggle();
+    });
     cardsGrid.appendChild(card);
   });
 }
@@ -756,6 +942,7 @@ function openModal(p) {
 
   modalOverlay.classList.add('open');
   document.body.style.overflow = 'hidden';
+  syncModalExportToggle();
 }
 
 function closeModal() {
@@ -853,6 +1040,14 @@ modalClose.addEventListener('click', closeModal);
 document.getElementById('modalCloseBtn').addEventListener('click', closeModal);
 modalOverlay.addEventListener('click', e => { if (e.target === modalOverlay) closeModal(); });
 
+document.getElementById('modalExportToggle').addEventListener('click', () => {
+  if (!currentProgram) return;
+  toggleExportSelection(currentProgram.uid);
+});
+
+document.getElementById('btnExportClear').addEventListener('click', () => clearExportSelection());
+document.getElementById('btnExportCsv').addEventListener('click', () => downloadExportCsv());
+
 document.addEventListener('keydown', e => {
   if (e.key === 'Escape' && modalOverlay.classList.contains('open')) closeModal();
 });
@@ -886,6 +1081,7 @@ function init() {
   updateFilterVisibility();
   populateFiltersForCategory();
   update();
+  renderExportPanel();
 }
 
 init();
