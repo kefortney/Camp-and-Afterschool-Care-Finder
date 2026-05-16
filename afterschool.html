@@ -22,6 +22,9 @@
   <!-- ===== Main Content ===== -->
   <main>
 
+    <div class="finder-layout">
+    <div class="finder-primary">
+
     <!-- Search & Filter Panel -->
     <section class="filter-panel" aria-label="Search and filter programs">
       <div class="search-row">
@@ -141,7 +144,10 @@
 
     <!-- Results Header -->
     <div class="results-header">
-      <p class="results-count" id="resultsCount" aria-live="polite"></p>
+      <div class="results-header-left">
+        <p class="results-count" id="resultsCount" aria-live="polite"></p>
+        <p class="export-count-mobile" id="exportCountMobile" aria-live="polite" hidden></p>
+      </div>
       <button class="btn-reset" id="btnReset">Reset All Filters</button>
     </div>
 
@@ -176,6 +182,24 @@
     <!-- Map View -->
     <div id="mapView" style="display:none;">
       <div id="mapContainer" class="map-container"></div>
+    </div>
+
+    </div>
+
+    <aside class="export-panel" id="exportAside" aria-labelledby="exportPanelHeading">
+      <div class="export-panel-header">
+        <h2 class="export-panel-title" id="exportPanelHeading">Selected for export</h2>
+        <p class="export-panel-subtitle">Check programs in the list or from details, then download a spreadsheet.</p>
+        <p class="export-panel-count" id="exportPanelCount" aria-live="polite">0 selected</p>
+      </div>
+      <p class="export-panel-empty" id="exportPanelEmpty">No programs selected yet.</p>
+      <ul class="export-panel-list" id="exportPanelList" aria-label="Programs selected for export"></ul>
+      <div class="export-panel-actions">
+        <button type="button" class="btn-secondary" id="btnExportClear">Clear all</button>
+        <button type="button" class="btn-primary" id="btnExportCsv">Download CSV</button>
+      </div>
+    </aside>
+
     </div>
 
   </main>
@@ -273,7 +297,8 @@
       <div class="modal-footer">
         <a class="btn-primary" id="modalWebsiteLink" href="#" target="_blank" rel="noopener noreferrer">🌐 Visit Website</a>
         <a class="btn-secondary" id="modalEmailBtn" href="#">✉️ Send Email</a>
-        <button class="btn-secondary" id="modalCloseBtn">Close</button>
+        <button type="button" class="btn-secondary" id="modalExportToggle">Save for export</button>
+        <button type="button" class="btn-secondary" id="modalCloseBtn">Close</button>
       </div>
     </div>
   </div>
