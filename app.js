@@ -487,12 +487,13 @@ function downloadExportCsv() {
   exportSelectionOrder.forEach(uid => {
     const p = getProgramByUid(uid);
     if (!p) return;
+  
     const subjects = (p.subjects || []).join('; ');
     const address = `${p.address}, ${p.city}, ${p.county}, ${p.state} ${p.zip}`;
     const hoursParts = (p.hours || '').split(/\s*[–\-]\s*/);
     const startTime  = p.startTime || (hoursParts[0] || '').trim();
     const endTime    = p.endTime   || (hoursParts[1] || '').trim();
-    console.log(p)
+
     rows.push([
       escapeCsvCell(p.name),
       escapeCsvCell(p.organization),
